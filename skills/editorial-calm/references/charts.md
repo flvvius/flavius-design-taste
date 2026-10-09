@@ -12,6 +12,10 @@ Check contrast of essential marks against adjacent colours, including the plot b
 
 Give the chart a brief text summary and access to the underlying values, often through a disclosure table. Hover-only values exclude keyboard and touch users. See [W3C guidance for complex images](https://www.w3.org/WAI/tutorials/images/complex/).
 
+The values need their own responsive layout. For a few paired values, labelled rows can keep each series, date and count together when table columns become cramped. Preserve the comparison table when cross-row scanning needs it. Show one representation at a time and update both from the same data. Keep labels readable and numbers intact. Dense tables may need a labelled, keyboard-accessible scroll region; keep the surrounding prose within the page width.
+
+For a static report enhanced with period controls, put the default data and readable values in the initial HTML. Enable script-dependent controls only when their behavior is ready. A missing script should not turn a readable report into empty headings and inert controls.
+
 At narrow or enlarged sizes, check axis labels, legends and annotations independently of the bars or lines. SVG labels need explicit attention too; scaling the plot can shrink their text. Prefer a readable alternative layout to clipping labels or turning prose into a horizontal scroller.
 
 Keep short category labels intact. When many vertical buckets squeeze labels, a horizontal bar layout can give each label its own row while preserving the same values and scale. Place zero and maximum labels at the matching ends of the actual value axis; labels at the wrong end can contradict otherwise accurate data.

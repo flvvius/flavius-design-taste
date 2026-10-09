@@ -111,5 +111,12 @@
     "artifact": "cycles/07/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "22",
+    "task": "Exact chart values reflow into labelled pairs and remain readable without scripts or the bundled font.",
+    "artifact": "cycles/07/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

@@ -30,10 +30,10 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [16](cycles/16/outcome.md) | Native navigation | XCTest catches state leaking between notes and an off-screen enlarged destination. Self-review. |
 | [17](cycles/17/outcome.md) | Optional native font | Missing Schoolbell no longer crashes; system type scales and preserves reading actions. Self-review. |
 | [18](cycles/18/outcome.md) | Captured inputs | Browser serving and native packaging keep tested bytes and their hashes through edits. Self-review. |
-
 | [19](cycles/19/outcome.md) | Invitation preview | The promised draft appears with its current recipient, validation and repeatable native dismissal. Self-review. |
-
 | [20](cycles/20/outcome.md) | Browser engines | The maintained suite covers Chromium, Firefox and WebKit and records emulation limits. Self-review. |
+| [21](cycles/21/outcome.md) | Chart series | Both periods retain solid and striped marks under forced colours; exact values and bar geometry join the maintained checks. Self-review. |
+| [22](cycles/22/outcome.md) | Readable chart values | Labelled pairs replace cramped narrow columns; the default week remains readable without scripts or the bundled font. Self-review. |
 
 Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
 
@@ -41,8 +41,8 @@ The final [artifact audit](final-audit.json) covers all ten screens and 60 clean
 
 ## Research and current checks
 
-The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 20. [Repository revisions](research/sources.json) make that comparison repeatable.
+The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 20. [Repository revisions](research/sources.json) make that comparison repeatable. The [chart study](research/2026-10-10.md) and [responsive values study](research/2026-10-10-tables.md) add pinned Observable Plot and USWDS source reviews for cycles 21 and 22.
 
-Run `npm run test:tooling` for conversion and browser-helper fixtures. Run `npm run check:browser -- --output .artifacts/browser` for the maintained specimens and the repair notebook. Use `--browser chromium`, `--browser firefox` or `--browser webkit` to select an engine. The default is Chromium. Optional repeated `--surface` arguments select `personal-room`, `editorial-calm` or `repair-notebook`. The default checks all three. A failed measurement or runner error returns a failing exit code. Reports and captures identify their source hashes and limitations.
+Run `npm run test:tooling` for conversion and browser-helper fixtures. Run `npm run check:browser -- --output .artifacts/browser` for the maintained specimens, the repair notebook and both usage-chart periods. Use `--browser chromium`, `--browser firefox` or `--browser webkit` to select an engine. The default is Chromium. Optional repeated `--surface` arguments select `personal-room`, `editorial-calm`, `repair-notebook` or `usage-chart`. The default checks all four. A failed measurement or runner error returns a failing exit code. Reports and captures identify their source hashes and limitations.
 
 Historical evidence belongs to its recorded source version. Regenerating the gallery does not revalidate those screens, and the old ten-cycle final audit is not a claim about later experiments. The [iOS Personal room checks](cycles/15/after/checks.json) add simulator layout, live Dynamic Type changes and programmatic control events. The [native UI checks](cycles/16/after/checks.json) add simulator swipes, taps and unfiltered Apple accessibility audits. Screen-reader use, physical devices, hardware keyboards and other native platforms remain unverified.

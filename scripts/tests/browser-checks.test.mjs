@@ -69,3 +69,18 @@ test('coarse-pointer motion check activates hover and detects an ungated lift', 
     assert.notEqual(defective.after, defective.before);
   } finally {await browser.close();}
 });
+
+test('text spacing installs and measures correctly with page scripts disabled', async () => {
+  const browser = await engine.launch();
+  try {
+    const page = await browser.newPage({javaScriptEnabled: false});
+    await page.setContent('<style>body{font-size:20px}</style><p>Readable spacing</p>');
+    const {applyTextSpacing} = await import('../lib/browser-checks.mjs');
+    await applyTextSpacing(page);
+    const actual = await page.locator('p').evaluate(element => {
+      const style = getComputedStyle(element);
+      return {line: style.lineHeight, letter: style.letterSpacing, word: style.wordSpacing, paragraph: style.marginBlockEnd};
+    });
+    assert.deepEqual(actual, {line: '30px', letter: '2.4px', word: '3.2px', paragraph: '40px'});
+  } finally {await browser.close();}
+});

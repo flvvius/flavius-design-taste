@@ -135,6 +135,51 @@ try {
   }
   const page = await browser.newPage({viewport: {width: 390, height: 844}});
   if (surfaces.some(surface => surface.name === 'usage-chart')) {
+    for (const variant of [{width: 320, mode: 'normal'}, {width: 1440, mode: 'normal'}, {width: 320, mode: 'all-text-200-missing-font'}, {width: 320, mode: 'spacing'}, {width: 320, mode: 'forced-colors'}]) {
+      await check(`usage-chart default week without scripts, ${variant.width}, ${variant.mode}`, async () => {
+        const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: variant.width, height: 960}, forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
+        try {
+          if (variant.mode.endsWith('missing-font')) await fallback.route('**/*.woff2', route => route.abort());
+          await fallback.goto(`${server.url}/eval/cycles/07/index.html`);
+          await waitForFonts(fallback);
+          assert(await fallback.locator('#period').isDisabled());
+          assert(await fallback.locator('#theme').isDisabled());
+          assert.equal(await fallback.locator('#theme').inputValue(), 'light');
+          if (variant.mode.endsWith('missing-font')) {
+            assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
+            await enlargeText(fallback);
+          }
+          if (variant.mode === 'spacing') await applyTextSpacing(fallback);
+          await fallback.locator('details summary').click();
+          const chart = await assertUsageChart(fallback, 'week');
+          const audit = await inspectPage(fallback);
+          assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length, JSON.stringify(audit));
+          const name = `usage-chart-no-script-${variant.width}-${variant.mode}`;
+          reports.push({name, height: 960, ...audit, chart});
+          await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+        } finally {await fallback.close();}
+      });
+    }
+    await check('usage-chart live resizing preserves the period and exposes one values view', async () => {
+      await page.goto(`${server.url}/eval/cycles/07/index.html`);
+      await page.locator('details summary').click();
+      await page.locator('#period').selectOption('month');
+      const snapshots = [];
+      for (const width of [320, 1440, 320]) {
+        await page.setViewportSize({width, height: 960});
+        await assertUsageChart(page, 'month');
+        const details = page.locator('details');
+        assert.equal(await details.getByRole('table').count(), width > 600 ? 1 : 0);
+        assert.equal(await details.getByRole('term').count(), width <= 600 ? 8 : 0);
+        assert.equal(await details.getByRole('definition').count(), width <= 600 ? 8 : 0);
+        snapshots.push({width, snapshot: await details.ariaSnapshot()});
+        const audit = await inspectPage(page);
+        assert(!audit.overflow && !audit.clippedText.length && !audit.outsideViewport.length, JSON.stringify(audit));
+        assert.equal(await page.locator('#period').inputValue(), 'month');
+      }
+      await writeFile(resolve(output, 'usage-chart-resize-semantics.json'), JSON.stringify(snapshots, null, 2) + '\n');
+      await page.setViewportSize({width: 390, height: 844});
+    });
     await check('usage-chart repeated period changes preserve exact values and focus', async () => {
       await page.goto(`${server.url}/eval/cycles/07/index.html`);
       await page.locator('details summary').click();

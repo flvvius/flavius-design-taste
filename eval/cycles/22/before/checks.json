@@ -1,0 +1,105 @@
+{
+  "commit": "36c6f3f8a07e5f57495c0f3e5474384c8d93262f",
+  "engine": "chromium",
+  "version": "149.0.7827.55",
+  "findings": [
+    {
+      "script": true,
+      "headers": [
+        {
+          "text": "Bucket",
+          "lines": [
+            {
+              "x": 16,
+              "y": 1796.296875,
+              "width": 76.640625,
+              "height": 39
+            },
+            {
+              "x": 16,
+              "y": 1848.296875,
+              "width": 29.6875,
+              "height": 39
+            }
+          ]
+        },
+        {
+          "text": "Selected",
+          "lines": [
+            {
+              "x": 135.359375,
+              "y": 1796.296875,
+              "width": 66.328125,
+              "height": 39
+            },
+            {
+              "x": 134.0625,
+              "y": 1848.296875,
+              "width": 67.625,
+              "height": 39
+            }
+          ]
+        },
+        {
+          "text": "Previous",
+          "lines": [
+            {
+              "x": 219.0625,
+              "y": 1796.296875,
+              "width": 76.9375,
+              "height": 39
+            },
+            {
+              "x": 240.171875,
+              "y": 1848.296875,
+              "width": 55.828125,
+              "height": 39
+            }
+          ]
+        }
+      ],
+      "total": "1,120",
+      "rows": 7
+    },
+    {
+      "script": false,
+      "headers": [
+        {
+          "text": "Bucket",
+          "lines": [
+            {
+              "x": 16,
+              "y": 781.140625,
+              "width": 52.796875,
+              "height": 20
+            }
+          ]
+        },
+        {
+          "text": "Selected",
+          "lines": [
+            {
+              "x": 124.109375,
+              "y": 781.140625,
+              "width": 66.96875,
+              "height": 20
+            }
+          ]
+        },
+        {
+          "text": "Previous",
+          "lines": [
+            {
+              "x": 229.609375,
+              "y": 781.140625,
+              "width": 66.390625,
+              "height": 20
+            }
+          ]
+        }
+      ],
+      "total": "",
+      "rows": 0
+    }
+  ]
+}

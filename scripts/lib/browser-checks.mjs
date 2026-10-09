@@ -40,7 +40,12 @@ export async function enlargeText(page, scale = 2) {
 }
 
 export async function applyTextSpacing(page) {
-  await page.addStyleTag({content: '* {line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important} p {margin-block-end: 2em !important}'});
+  await page.evaluate(() => {
+    const style = document.createElement('style');
+    style.textContent = '* {line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important} p {margin-block-end: 2em !important}';
+    document.head.append(style);
+    if (!style.sheet?.cssRules.length) throw new Error('Text spacing override was not installed');
+  });
 }
 
 export async function inspectPage(page) {

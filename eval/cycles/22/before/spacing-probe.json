@@ -1,0 +1,29 @@
+[
+  {
+    "engine": "chromium",
+    "version": "149.0.7827.55",
+    "settledDuringObservation": false,
+    "native": {
+      "spacing": "1.92px",
+      "styles": 4
+    }
+  },
+  {
+    "engine": "firefox",
+    "version": "151.0",
+    "settledDuringObservation": false,
+    "native": {
+      "spacing": "1.92px",
+      "styles": 4
+    }
+  },
+  {
+    "engine": "webkit",
+    "version": "26.5",
+    "settledDuringObservation": false,
+    "native": {
+      "spacing": "1.92px",
+      "styles": 4
+    }
+  }
+]

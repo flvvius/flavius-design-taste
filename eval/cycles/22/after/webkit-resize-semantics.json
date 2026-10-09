@@ -1,0 +1,14 @@
+[
+  {
+    "width": 320,
+    "snapshot": "- group:\n  - text: View exact session counts\n  - paragraph: Session counts by date\n  - heading \"Week 1\" [level=3]\n  - term: Selected 11–17 Sep\n  - definition: \"810\"\n  - term: Previous 14–20 Aug\n  - definition: \"740\"\n  - heading \"Week 2\" [level=3]\n  - term: Selected 18–24 Sep\n  - definition: \"894\"\n  - term: Previous 21–27 Aug\n  - definition: \"812\"\n  - heading \"Week 3\" [level=3]\n  - term: Selected 25 Sep–1 Oct\n  - definition: \"970\"\n  - term: Previous 28 Aug–3 Sep\n  - definition: \"836\"\n  - heading \"Week 4\" [level=3]\n  - term: Selected 2–8 Oct\n  - definition: 1,120\n  - term: Previous 4–10 Sep\n  - definition: \"900\""
+  },
+  {
+    "width": 1440,
+    "snapshot": "- group:\n  - text: View exact session counts\n  - table \"Sessions by selected and corresponding previous dates\":\n    - caption: Sessions by selected and corresponding previous dates\n    - rowgroup:\n      - row \"Bucket Selected Previous\":\n        - columnheader \"Bucket\"\n        - columnheader \"Selected\"\n        - columnheader \"Previous\"\n    - rowgroup:\n      - row \"11–17 Sep vs 14–20 Aug 810 740\":\n        - rowheader \"11–17 Sep vs 14–20 Aug\"\n        - cell \"810\"\n        - cell \"740\"\n      - row \"18–24 Sep vs 21–27 Aug 894 812\":\n        - rowheader \"18–24 Sep vs 21–27 Aug\"\n        - cell \"894\"\n        - cell \"812\"\n      - row \"25 Sep–1 Oct vs 28 Aug–3 Sep 970 836\":\n        - rowheader \"25 Sep–1 Oct vs 28 Aug–3 Sep\"\n        - cell \"970\"\n        - cell \"836\"\n      - row \"2–8 Oct vs 4–10 Sep 1,120 900\":\n        - rowheader \"2–8 Oct vs 4–10 Sep\"\n        - cell \"1,120\"\n        - cell \"900\""
+  },
+  {
+    "width": 320,
+    "snapshot": "- group:\n  - text: View exact session counts\n  - paragraph: Session counts by date\n  - heading \"Week 1\" [level=3]\n  - term: Selected 11–17 Sep\n  - definition: \"810\"\n  - term: Previous 14–20 Aug\n  - definition: \"740\"\n  - heading \"Week 2\" [level=3]\n  - term: Selected 18–24 Sep\n  - definition: \"894\"\n  - term: Previous 21–27 Aug\n  - definition: \"812\"\n  - heading \"Week 3\" [level=3]\n  - term: Selected 25 Sep–1 Oct\n  - definition: \"970\"\n  - term: Previous 28 Aug–3 Sep\n  - definition: \"836\"\n  - heading \"Week 4\" [level=3]\n  - term: Selected 2–8 Oct\n  - definition: 1,120\n  - term: Previous 4–10 Sep\n  - definition: \"900\""
+  }
+]

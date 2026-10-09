@@ -55,6 +55,15 @@ caption { text-align: start; color: var(--muted-foreground); padding-bottom: .75
 th, td { padding: .75rem .5rem; text-align: end; border-bottom: 1px solid var(--border); }
 th { font-weight: 500; }
 th:first-child, td:first-child { text-align: start; padding-left: 0; }
+.counts-list { display: none; margin-top: .75rem; }
+.count-bucket { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.count-bucket h3 { margin: 0 0 .75rem; font-size: 1em; font-weight: 500; }
+.count-bucket dl { margin: 0; }
+.count-bucket dl > div { display: grid; grid-template-columns: minmax(0, 1fr) max-content; align-items: baseline; gap: 1rem; margin-top: .75rem; }
+.count-bucket dt { overflow-wrap: normal; }
+.count-date { display: block; color: var(--muted-foreground); }
+.count-bucket dd { margin: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) { .counts-table { display: none; } .counts-list { display: block; } }
 footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem; }
 @media(max-width:600px){.plot{display:block}.scale{height:auto;flex-direction:row-reverse;margin-inline-start:calc(4.5em + .5rem);margin-bottom:.5rem}.bars{grid-template-columns:1fr;gap:1rem}.bucket{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:.5rem;align-items:center}.pair{grid-column:2;grid-row:1;height:auto;min-height:3rem;flex-direction:column;align-items:start;justify-content:center;border-bottom:0;border-inline-start:1px solid var(--input);background:repeating-linear-gradient(to right,transparent 0 calc(25% - 1px),var(--border) calc(25% - 1px) 25%)}.bar{width:var(--height);height:.75rem}.day{grid-column:1;grid-row:1;text-align:start;padding:0}}
 @media (max-width: 420px) { main { padding-top: 1rem; } header { align-items: start; } .controls label { width: 100%; } .controls select { width: 100%; }  }
@@ -65,22 +74,23 @@ footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem;
 <header>
 <span class="brand">Margin / Workspace</span>
 <label>Appearance
-<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+<select id="theme" disabled><option value="system">System</option><option value="light" selected>Light</option><option value="dark">Dark</option></select>
 </label>
 </header>
 <h1>Usage</h1>
 <p class="muted">See how often your team returns to read.</p>
 <div class="controls">
 <label>Period
-<select id="period"><option value="week">Last 7 days</option><option value="month">Last 28 days</option></select>
+<select id="period" disabled><option value="week">Last 7 days</option><option value="month">Last 28 days</option></select>
 </label>
-<p class="meta" id="range"></p>
+<p class="meta" id="range">2–8 Oct 2026 · compared with 25 Sep–1 Oct</p>
 </div>
+<noscript><p class="muted">Showing 2–8 October 2026. Period and appearance controls are unavailable in this view.</p></noscript>
 <div id="report" aria-live="polite" aria-atomic="true">
 <dl class="metrics">
-<div><dt>Reading sessions</dt><dd id="total"></dd></div>
-<div><dt>Previous period</dt><dd id="prior"></dd></div>
-<div><dt>Change in sessions</dt><dd id="change"></dd></div>
+<div><dt>Reading sessions</dt><dd id="total">1,120</dd></div>
+<div><dt>Previous period</dt><dd id="prior">970</dd></div>
+<div><dt>Change in sessions</dt><dd id="change">+15.5%</dd></div>
 </dl>
 <section aria-labelledby="chart-heading">
 <h2 id="chart-heading">Reading sessions over time</h2>
@@ -89,20 +99,46 @@ footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem;
 <span><i class="key previous" aria-hidden="true"></i>Previous period · striped</span>
 </div>
 <figure aria-labelledby="chart-heading" aria-describedby="summary chart-note">
-<div class="plot" role="img" id="chart" aria-label="Reading sessions comparison">
-<div class="scale"><span id="maximum"></span><span>0</span></div>
-<div class="bars" id="bars" aria-hidden="true"></div>
+<div class="plot" role="img" id="chart" aria-label="Reading sessions. Fri: selected 142, previous 126. Sat: selected 88, previous 80. Sun: selected 76, previous 72. Mon: selected 184, previous 154. Tue: selected 210, previous 168. Wed: selected 196, previous 180. Thu: selected 224, previous 190.">
+<div class="scale"><span id="maximum">300</span><span>0</span></div>
+<div class="bars" id="bars" aria-hidden="true">
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:47.333333333333336%"></span><span class="bar previous" style="--height:42.0%"></span></div><span class="day">Fri</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:29.333333333333332%"></span><span class="bar previous" style="--height:26.666666666666668%"></span></div><span class="day">Sat</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:25.333333333333332%"></span><span class="bar previous" style="--height:24.0%"></span></div><span class="day">Sun</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:61.333333333333336%"></span><span class="bar previous" style="--height:51.333333333333336%"></span></div><span class="day">Mon</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:70.0%"></span><span class="bar previous" style="--height:56.0%"></span></div><span class="day">Tue</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:65.33333333333333%"></span><span class="bar previous" style="--height:60.0%"></span></div><span class="day">Wed</span></div>
+<div class="bucket"><div class="pair"><span class="bar current" style="--height:74.66666666666667%"></span><span class="bar previous" style="--height:63.333333333333336%"></span></div><span class="day">Thu</span></div>
+</div>
 </div>
 <figcaption id="chart-note">Bars share a zero baseline. Previous-period bars align by day or week within each period.</figcaption>
 </figure>
-<p id="summary"></p>
+<p id="summary">1,120 reading sessions, up 15.5% from 970 in the previous period. The busiest bucket was 8 Oct, with 224 sessions. Every bucket exceeded its previous-period count.</p>
 <details>
 <summary>View exact session counts</summary>
-<table>
-<caption id="table-caption"></caption>
+<table class="counts-table">
+<caption id="table-caption">Sessions by selected and corresponding previous dates</caption>
 <thead><tr><th scope="col">Bucket</th><th scope="col">Selected</th><th scope="col">Previous</th></tr></thead>
-<tbody id="rows"></tbody>
+<tbody id="rows">
+<tr><th scope="row">2 Oct<br><span class="muted">vs 25 Sep</span></th><td>142</td><td>126</td></tr>
+<tr><th scope="row">3 Oct<br><span class="muted">vs 26 Sep</span></th><td>88</td><td>80</td></tr>
+<tr><th scope="row">4 Oct<br><span class="muted">vs 27 Sep</span></th><td>76</td><td>72</td></tr>
+<tr><th scope="row">5 Oct<br><span class="muted">vs 28 Sep</span></th><td>184</td><td>154</td></tr>
+<tr><th scope="row">6 Oct<br><span class="muted">vs 29 Sep</span></th><td>210</td><td>168</td></tr>
+<tr><th scope="row">7 Oct<br><span class="muted">vs 30 Sep</span></th><td>196</td><td>180</td></tr>
+<tr><th scope="row">8 Oct<br><span class="muted">vs 1 Oct</span></th><td>224</td><td>190</td></tr>
+</tbody>
 </table>
+<div class="counts-list" id="counts-list">
+<p class="muted">Session counts by date</p>
+<div class="count-bucket"><h3>Fri</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">2 Oct</span></dt><dd>142</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">25 Sep</span></dt><dd>126</dd></div></dl></div>
+<div class="count-bucket"><h3>Sat</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">3 Oct</span></dt><dd>88</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">26 Sep</span></dt><dd>80</dd></div></dl></div>
+<div class="count-bucket"><h3>Sun</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">4 Oct</span></dt><dd>76</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">27 Sep</span></dt><dd>72</dd></div></dl></div>
+<div class="count-bucket"><h3>Mon</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">5 Oct</span></dt><dd>184</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">28 Sep</span></dt><dd>154</dd></div></dl></div>
+<div class="count-bucket"><h3>Tue</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">6 Oct</span></dt><dd>210</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">29 Sep</span></dt><dd>168</dd></div></dl></div>
+<div class="count-bucket"><h3>Wed</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">7 Oct</span></dt><dd>196</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">30 Sep</span></dt><dd>180</dd></div></dl></div>
+<div class="count-bucket"><h3>Thu</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">8 Oct</span></dt><dd>224</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">1 Oct</span></dt><dd>190</dd></div></dl></div>
+</div>
 </details>
 </section>
 </div>
@@ -147,6 +183,7 @@ function render() {
   el('summary').textContent = description;
   el('chart').setAttribute('aria-label', `Reading sessions. ${data.labels.map((label, i) => `${label}: selected ${data.current[i]}, previous ${data.previous[i]}`).join('. ')}.`);
   el('table-caption').textContent = 'Sessions by selected and corresponding previous dates';
+  el('counts-list').innerHTML = '<p class="muted">Session counts by date</p>' + data.labels.map((label, i) => `<div class="count-bucket"><h3>${label}</h3><dl><div><dt><span class="series-name">Selected</span><span class="count-date">${data.dates[i]}</span></dt><dd>${number.format(data.current[i])}</dd></div><div><dt><span class="series-name">Previous</span><span class="count-date">${data.previousDates[i]}</span></dt><dd>${number.format(data.previous[i])}</dd></div></dl></div>`).join('');
   el('rows').innerHTML = data.dates.map((date, i) => `<tr><th scope="row">${date}<br><span class="muted">vs ${data.previousDates[i]}</span></th><td>${number.format(data.current[i])}</td><td>${number.format(data.previous[i])}</td></tr>`).join('');
 }
 const preference = matchMedia('(prefers-color-scheme: dark)');
@@ -156,8 +193,11 @@ function applyTheme() {
 el('period').addEventListener('change', render);
 el('theme').addEventListener('change', applyTheme);
 preference.addEventListener('change', applyTheme);
+el('theme').value = 'system';
 applyTheme();
 render();
+el('period').disabled = false;
+el('theme').disabled = false;
 </script>
 </body>
 </html>

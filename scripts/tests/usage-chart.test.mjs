@@ -8,7 +8,7 @@ const engine = {chromium, firefox, webkit}[process.env.TASTE_TEST_BROWSER ?? 'ch
 if (!engine) throw new Error('Unknown TASTE_TEST_BROWSER');
 const root = fileURLToPath(new URL('../../', import.meta.url));
 
-test('chart audit detects an erased series pattern and a misleading value scale', async () => {
+test('chart audit detects erased patterns, fragmented value labels and a misleading scale', async () => {
   const server = await serve(root), browser = await engine.launch();
   try {
     const page = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 960}});
@@ -17,6 +17,10 @@ test('chart audit detects an erased series pattern and a misleading value scale'
     await assertUsageChart(page, 'week');
     await page.addStyleTag({content: '.previous {background-image: none !important}'});
     await assert.rejects(assertUsageChart(page, 'week'), /Solid and striped/);
+    await page.reload();
+    await page.locator('details summary').click();
+    await page.addStyleTag({content: '.series-name {display: block; width: 1ch; overflow-wrap: anywhere}'});
+    await assert.rejects(assertUsageChart(page, 'week'), /Value labels and numbers must stay intact/);
     await page.reload();
     await page.locator('details summary').click();
     await page.addStyleTag({content: '.bar.current {width: 50% !important}'});
