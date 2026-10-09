@@ -71,5 +71,11 @@
     "task": "Native Personal room reading with iOS Dynamic Type, wrapping controls and live size changes.",
     "reviewMode": "self",
     "taste": "personal-room"
+  },
+  {
+    "cycle": "16",
+    "task": "Native reading navigation and per-item state with XCTest swipes, taps and accessibility audits.",
+    "reviewMode": "self",
+    "taste": "both"
   }
 ]

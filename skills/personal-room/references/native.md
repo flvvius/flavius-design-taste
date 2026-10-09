@@ -22,4 +22,6 @@ Use a scrollable reading region when content grows beyond the viewport. Preserve
 
 Inspect actual platform captures at ordinary and accessibility sizes in both appearances. Check text measurements and target bounds, then review the images for overlap, truncation and a readable composition. Verify live size changes separately from fresh launches.
 
-Programmatic scrolling proves that a destination can be displayed. Dispatching a control event can test its state change. Neither establishes touch gestures, hardware keyboard use or VoiceOver order. State those limits beside the results. The taste folder works without a simulator, build system or repository script; those are verification tools for the application being built.
+Programmatic scrolling proves that a destination can be displayed. Dispatching a control event can test its state change. Neither establishes touch gestures, hardware keyboard use or VoiceOver order. State those limits beside the results. Simulator UI tests can exercise swipes and taps through the same visible controls a reader uses. Run accessibility audits at the opening, action area and new destination, including enlarged text. Keep the default audit findings; do not ignore an issue merely to obtain a passing run. Automated audits cover common defects and still require separate VoiceOver testing.
+
+The taste folder works without a simulator, build system or repository script; those are verification tools for the application being built.

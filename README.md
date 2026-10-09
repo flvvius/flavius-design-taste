@@ -121,6 +121,8 @@ The browser runner checks both specimens and the repair notebook at 320px, 390px
 
 On macOS with Xcode and an available iOS simulator runtime, `npm run check:native -- --output .artifacts/native-room` compiles the [native Personal room specimen](eval/cycles/15/index.html). It creates and removes an isolated simulator, checks ordinary and largest accessibility text, tests live size changes, and captures the results. The skill folders do not depend on this tooling. Simulator layout and programmatic control events do not establish physical-device gestures or VoiceOver behavior.
 
+`npm run check:native-ui -- --output .artifacts/native-ui` adds XCTest swipes, taps and unfiltered accessibility audits at ordinary and largest text sizes in both appearances. It retains full Xcode result bundles and screenshots. Choose a fresh output directory for each run. These tests still need separate VoiceOver and physical-device review.
+
 ## What belongs to Editorial calm
 
 Warm neutral backgrounds, graphite actions, semibold hierarchy, sentence case, readable prose, separated rows, stable navigation and short motion. Settings, forms and statistics belong on the page too.

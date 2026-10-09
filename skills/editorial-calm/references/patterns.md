@@ -37,3 +37,7 @@ Keep the query, results and status together on the page. Distinguish an untouche
 Invalidate pending results as soon as the query changes, including during a debounce delay or composition. A slow success or failure must not replace the latest query's state. Clearing the query also invalidates pending work. Preserve input focus while results arrive. If retry removes its own button, move focus to a stable control before removing it.
 
 Announce status outside a region marked busy so the loading announcement is available while results update. Test success, empty, repeated failure, recovery and out-of-order responses with a deterministic local source. Check composition before treating every input event as a completed query.
+
+## State when the item changes
+
+A reused row, dialog or toolbar must show the current item's title, content and state together. Store selection, completion or saved status with the item it describes. Check changing the first item, opening another and returning; the second must not inherit the first item's state. Navigation should bring a useful destination into view and identify it through the platform's focus or accessibility mechanism. Enlarged text can expose a destination that was visible at ordinary size but is several screens away at larger sizes.

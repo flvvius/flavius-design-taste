@@ -26,6 +26,8 @@ final class RoomController: UIViewController {
     var observer: NSObjectProtocol?
     var eventChecks: [[String: Any]] = []
     var secondNote = false
+    var repairedNotes = Set<String>()
+    var noteKey: String { secondNote ? "loose-spine" : "blue-notebook" }
     var night: Bool { traitCollection.userInterfaceStyle == .dark }
     func ink(_ role: String) -> UIColor {
         UIColor { [palette] traits in palette.color(role, night: traits.userInterfaceStyle == .dark) }
@@ -67,6 +69,10 @@ final class RoomController: UIViewController {
         buttons.append(button)
         return button
     }
+    func updateRepairButton() {
+        buttons[0].isSelected = repairedNotes.contains(noteKey)
+        buttons[0].configuration?.title = buttons[0].isSelected ? "✓ marked as repaired" : "mark as repaired"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ink("background")
@@ -106,8 +112,9 @@ final class RoomController: UIViewController {
         actions.distribution = .fillEqually
         actions.addArrangedSubview(button("mark as repaired", id: "repair") { [weak self] in
             guard let self else { return }
-            self.buttons[0].isSelected.toggle()
-            self.buttons[0].configuration?.title = self.buttons[0].isSelected ? "✓ marked as repaired" : "mark as repaired"
+            if self.repairedNotes.contains(self.noteKey) { self.repairedNotes.remove(self.noteKey) }
+            else { self.repairedNotes.insert(self.noteKey) }
+            self.updateRepairButton()
             self.view.setNeedsLayout()
         })
         actions.addArrangedSubview(button("read next note", id: "next") { [weak self] in
@@ -126,7 +133,16 @@ final class RoomController: UIViewController {
             ]
             for label in self.labels { if let value = values[label.accessibilityIdentifier!] { label.text = value } }
             self.buttons[1].configuration?.title = self.secondNote ? "read previous note" : "read next note"
+            self.updateRepairButton()
             self.view.setNeedsLayout()
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.view.layoutIfNeeded()
+                let heading = self.labels.first(where: { $0.accessibilityIdentifier == "note-title" })!
+                let frame = heading.convert(heading.bounds, to: self.scroll)
+                self.scroll.scrollRectToVisible(frame.insetBy(dx: 0, dy: -24), animated: false)
+                UIAccessibility.post(notification: .screenChanged, argument: heading)
+            }
         })
         stack.addArrangedSubview(actions)
         observer = NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: .main) { [weak self] _ in self?.view.setNeedsLayout() }

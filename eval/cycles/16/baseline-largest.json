@@ -1,0 +1,49 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "C83660E2-2E2B-4F1D-AEAB-1B4777EF3275",
+        "deviceName" : "Design taste XCTest",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "23F77",
+        "osVersion" : "26.5",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "Room · Built with macOS 26.5.1",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1791581064.891,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "skippedTests" : 0,
+  "startTime" : 1791581031.756,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "XCTAssertTrue failed - Reading the next note must show its heading",
+      "targetName" : "RoomUITests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "RoomUITests/testReadingAndControls()",
+      "testIdentifierURL" : "test://com.apple.xcode/Room/RoomUITests/RoomUITests/testReadingAndControls",
+      "testName" : "testReadingAndControls()"
+    }
+  ],
+  "title" : "Test - Room",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

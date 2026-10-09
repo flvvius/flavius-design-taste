@@ -1,0 +1,6 @@
+{
+  "commit": "45a7f87edb7b88da5a333fd27dc87b827dcec8d7",
+  "nativeSourceSha256": "f78f8e08065dc8863a50e976565142d5d4cef2707091d8914553fb4b2798083f",
+  "testSourceSha256": "bc3fe8729f63348732772521184b1b8babbb11dff86dc4757cb200c3d9941ff8",
+  "testSource": "baseline-tests.swift"
+}
