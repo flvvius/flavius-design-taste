@@ -1,0 +1,62 @@
+{
+  "cycle": "07",
+  "verdict": "issues_found",
+  "findings": [
+    {
+      "id": "07-01",
+      "severity": "medium",
+      "title": "Zero label is positioned at the chart maximum",
+      "evidence": [
+        "All six screenshots place \"0 sessions\" above the top gridline, opposite \"300 sessions at top\".",
+        "index.html puts both endpoint labels in .scale before .bars; bars grow upward from the bottom baseline."
+      ],
+      "impact": "The scale visually associates zero with the top of a positive-value chart. The baseline explanation and exact table resolve the ambiguity only after reading additional content.",
+      "recommendation": "Place zero next to the bottom baseline and the maximum next to the top gridline."
+    },
+    {
+      "id": "07-02",
+      "severity": "low",
+      "title": "Weekday abbreviations fragment at enlarged text size",
+      "evidence": [
+        "375-light-200pct.png and 375-dark-200pct.png split Sat, Sun, Mon, Tue, Wed and Thu across lines.",
+        "Independent 375px browser check with root font-size 200% measured .day heights of 107px for those six labels, compared with 61.5px for Fri."
+      ],
+      "impact": "The chart labels become harder to scan even though the page has no horizontal overflow.",
+      "recommendation": "Keep short weekday labels intact and adapt the chart layout at enlarged text sizes."
+    }
+  ],
+  "verification": {
+    "imagesInspected": [
+      "1280-light.png",
+      "1280-dark.png",
+      "375-light.png",
+      "375-dark.png",
+      "375-light-200pct.png",
+      "375-dark-200pct.png"
+    ],
+    "runnerChecks": "All six reports have no errors, failed requests, overflow, text contrast failures, unlabeled controls or small targets. Runner explicitly excludes charts and interaction semantics from its contrast scan.",
+    "independentBrowserChecks": [
+      "Switched week to month and back; bar counts, heights, ranges, summaries and exact table rows update together.",
+      "Week totals independently checked: 1120 selected, 970 previous, +15.5%; peak 8 Oct at 224.",
+      "Month totals independently checked: 3794 selected, 3288 previous, +15.4%; peak 2\u20138 Oct at 1120. All selected buckets exceed corresponding previous buckets.",
+      "Opened exact-count disclosure; seven daily rows and four weekly rows match source data and comparison dates.",
+      "Explicit Light and Dark selection works. System preference changes work after awaiting the media-query event.",
+      "Open exact-count table at 375px and 200% root text size produces no document overflow."
+    ],
+    "limits": "Supplied screenshots show the seven-day view with the exact-count table closed. Month switching and open-table overflow were checked in a browser; no additional screenshots were written."
+  },
+  "guidanceCandidates": [
+    {
+      "candidate": "Explicit contrast checks for essential chart marks",
+      "fixtureStatus": "No verified defect. The fixture uses high-contrast primary bars rather than warning accents."
+    },
+    {
+      "candidate": "Non-colour series identification and crowded-label fallback",
+      "fixtureStatus": "Solid versus striped marks identify series without colour. Enlarged bucket-label fragmentation is verified separately in finding 07-02."
+    },
+    {
+      "candidate": "Access to exact values beyond a prose summary",
+      "fixtureStatus": "No verified defect. Native disclosure exposes a table with exact counts, dates and row/column headers."
+    }
+  ]
+}

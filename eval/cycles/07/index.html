@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Usage · Margin</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground); font: var(--type-bodyWeb)/var(--type-lineHeight) Inter, system-ui, sans-serif; }
+main { max-width: 896px; margin: auto; padding: 2rem var(--space-gutterWeb) 4rem; }
+header, .controls, .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
+header { justify-content: space-between; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.brand { font-weight: 600; letter-spacing: -.03em; }
+label { display: grid; gap: .375rem; font-weight: 500; }
+select { max-width: 100%; min-height: 44px; padding: .5rem 2rem .5rem .75rem; border: 1px solid var(--input); border-radius: var(--radius-control); background: var(--background); color: var(--foreground); font: inherit; }
+select:focus-visible, summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+h1 { margin: 2rem 0 .5rem; font-size: var(--type-pageTitle); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+h2 { margin: 0; font-size: var(--type-section); font-weight: 500; }
+p { margin: .5rem 0; max-width: var(--type-descriptionMeasure); }
+h1, h2, p, label, td, th { overflow-wrap: anywhere; }
+.muted, .meta { color: var(--muted-foreground); }
+.controls { margin: 1.75rem 0; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1.5rem; margin: 2rem 0 0; }
+.metrics dt { color: var(--muted-foreground); }
+.metrics dd { margin: .25rem 0 0; font-size: 2rem; font-weight: 600; line-height: 1.25; font-variant-numeric: tabular-nums; }
+section { margin-top: var(--space-sectionGap); padding-top: var(--space-sectionInset); border-top: 1px solid var(--border); }
+.legend { margin: 1.25rem 0; gap: .75rem 1.5rem; }
+.legend span { display: inline-flex; align-items: center; gap: .5rem; }
+.key { display: inline-block; width: 1rem; height: 1rem; flex: none; }
+.current { background: var(--primary); }
+.previous { border: 1px solid var(--primary); background: repeating-linear-gradient(135deg, transparent 0 4px, var(--primary) 4px 6px); }
+.plot { display:grid;grid-template-columns:3rem minmax(0,1fr);gap:.5rem;margin-top:1rem;padding-top:1.5rem; }
+.scale { display:flex;flex-direction:column;justify-content:space-between;height:12rem;color:var(--muted-foreground);font-size:.875rem;font-variant-numeric:tabular-nums; }
+.bars { display: grid; grid-template-columns: repeat(var(--count,7), minmax(0, 1fr)); gap: clamp(.3rem, 2vw, 1.5rem); }
+.bucket { min-width: 0; }
+.pair { height: 12rem; display: flex; align-items: end; justify-content: center; gap: .25rem; border-bottom: 1px solid var(--input); background: repeating-linear-gradient(to top, transparent 0 calc(25% - 1px), var(--border) calc(25% - 1px) 25%); }
+.bar { width: 35%; height: var(--height); min-height: 2px; }
+.day { display: block; text-align: center; padding-top: .5rem; font-size: .875rem; white-space:nowrap; }
+figcaption { margin-top: 1rem; color: var(--muted-foreground); max-width: 65ch; }
+figure { margin: 0; }
+#summary { margin-top: 1.5rem; max-width: 65ch; }
+details { margin-top: 1.5rem; }
+summary { cursor: pointer; min-height: 44px; padding: .5rem 0; width: fit-content; }
+table { border-collapse: collapse; width: 100%; margin-top: .75rem; font-variant-numeric: tabular-nums; }
+caption { text-align: start; color: var(--muted-foreground); padding-bottom: .75rem; }
+th, td { padding: .75rem .5rem; text-align: end; border-bottom: 1px solid var(--border); }
+th { font-weight: 500; }
+th:first-child, td:first-child { text-align: start; padding-left: 0; }
+footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem; }
+@media(max-width:600px){.plot{display:block}.scale{height:auto;flex-direction:row-reverse;margin-inline-start:calc(4.5em + .5rem);margin-bottom:.5rem}.bars{grid-template-columns:1fr;gap:1rem}.bucket{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:.5rem;align-items:center}.pair{grid-column:2;grid-row:1;height:auto;min-height:3rem;flex-direction:column;align-items:start;justify-content:center;border-bottom:0;border-inline-start:1px solid var(--input);background:repeating-linear-gradient(to right,transparent 0 calc(25% - 1px),var(--border) calc(25% - 1px) 25%)}.bar{width:var(--height);height:.75rem}.day{grid-column:1;grid-row:1;text-align:start;padding:0}}
+@media (max-width: 420px) { main { padding-top: 1rem; } header { align-items: start; } .controls label { width: 100%; } .controls select { width: 100%; }  }
+</style>
+</head>
+<body>
+<main>
+<header>
+<span class="brand">Margin / Workspace</span>
+<label>Appearance
+<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+</label>
+</header>
+<h1>Usage</h1>
+<p class="muted">See how often your team returns to read.</p>
+<div class="controls">
+<label>Period
+<select id="period"><option value="week">Last 7 days</option><option value="month">Last 28 days</option></select>
+</label>
+<p class="meta" id="range"></p>
+</div>
+<div id="report" aria-live="polite" aria-atomic="true">
+<dl class="metrics">
+<div><dt>Reading sessions</dt><dd id="total"></dd></div>
+<div><dt>Previous period</dt><dd id="prior"></dd></div>
+<div><dt>Change in sessions</dt><dd id="change"></dd></div>
+</dl>
+<section aria-labelledby="chart-heading">
+<h2 id="chart-heading">Reading sessions over time</h2>
+<div class="legend" aria-label="Chart series">
+<span><i class="key current" aria-hidden="true"></i>Selected period · solid</span>
+<span><i class="key previous" aria-hidden="true"></i>Previous period · striped</span>
+</div>
+<figure aria-labelledby="chart-heading" aria-describedby="summary chart-note">
+<div class="plot" role="img" id="chart" aria-label="Reading sessions comparison">
+<div class="scale"><span id="maximum"></span><span>0</span></div>
+<div class="bars" id="bars" aria-hidden="true"></div>
+</div>
+<figcaption id="chart-note">Bars share a zero baseline. Previous-period bars align by day or week within each period.</figcaption>
+</figure>
+<p id="summary"></p>
+<details>
+<summary>View exact session counts</summary>
+<table>
+<caption id="table-caption"></caption>
+<thead><tr><th scope="col">Bucket</th><th scope="col">Selected</th><th scope="col">Previous</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</details>
+</section>
+</div>
+<footer>Demo workspace · Sample data through 8 October 2026.<br>A session starts when a reader opens an article after 30 minutes of inactivity. Dates use UTC.</footer>
+</main>
+<script>
+const datasets = {
+  week: {
+    range: '2–8 Oct 2026 · compared with 25 Sep–1 Oct',
+    labels: ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'],
+    dates: ['2 Oct', '3 Oct', '4 Oct', '5 Oct', '6 Oct', '7 Oct', '8 Oct'],
+    previousDates: ['25 Sep', '26 Sep', '27 Sep', '28 Sep', '29 Sep', '30 Sep', '1 Oct'],
+    current: [142, 88, 76, 184, 210, 196, 224],
+    previous: [126, 80, 72, 154, 168, 180, 190]
+  },
+  month: {
+    range: '11 Sep–8 Oct 2026 · compared with 14 Aug–10 Sep',
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    dates: ['11–17 Sep', '18–24 Sep', '25 Sep–1 Oct', '2–8 Oct'],
+    previousDates: ['14–20 Aug', '21–27 Aug', '28 Aug–3 Sep', '4–10 Sep'],
+    current: [810, 894, 970, 1120],
+    previous: [740, 812, 836, 900]
+  }
+};
+const el = id => document.getElementById(id);
+const number = new Intl.NumberFormat('en-GB');
+function render() {
+  const data = datasets[el('period').value];
+  const sum = list => list.reduce((a, b) => a + b, 0);
+  const total = sum(data.current), previous = sum(data.previous);
+  const percent = ((total - previous) / previous * 100).toFixed(1);
+  const ceiling = Math.ceil(Math.max(...data.current, ...data.previous) / 100) * 100;
+  const peak = data.current.indexOf(Math.max(...data.current));
+  el('range').textContent = data.range;
+  el('total').textContent = number.format(total);
+  el('prior').textContent = number.format(previous);
+  el('change').textContent = `+${percent}%`;
+  el('maximum').textContent = number.format(ceiling);
+  el('bars').style.setProperty('--count', data.labels.length);
+  el('bars').innerHTML = data.labels.map((label, i) => `<div class="bucket"><div class="pair"><span class="bar current" style="--height:${data.current[i] / ceiling * 100}%"></span><span class="bar previous" style="--height:${data.previous[i] / ceiling * 100}%"></span></div><span class="day">${label}</span></div>`).join('');
+  const description = `${number.format(total)} reading sessions, up ${percent}% from ${number.format(previous)} in the previous period. The busiest bucket was ${data.dates[peak]}, with ${number.format(data.current[peak])} sessions. Every bucket exceeded its previous-period count.`;
+  el('summary').textContent = description;
+  el('chart').setAttribute('aria-label', `Reading sessions. ${data.labels.map((label, i) => `${label}: selected ${data.current[i]}, previous ${data.previous[i]}`).join('. ')}.`);
+  el('table-caption').textContent = 'Sessions by selected and corresponding previous dates';
+  el('rows').innerHTML = data.dates.map((date, i) => `<tr><th scope="row">${date}<br><span class="muted">vs ${data.previousDates[i]}</span></th><td>${number.format(data.current[i])}</td><td>${number.format(data.previous[i])}</td></tr>`).join('');
+}
+const preference = matchMedia('(prefers-color-scheme: dark)');
+function applyTheme() {
+  document.documentElement.classList.toggle('dark', el('theme').value === 'dark' || (el('theme').value === 'system' && preference.matches));
+}
+el('period').addEventListener('change', render);
+el('theme').addEventListener('change', applyTheme);
+preference.addEventListener('change', applyTheme);
+applyTheme();
+render();
+</script>
+</body>
+</html>

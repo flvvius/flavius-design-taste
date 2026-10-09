@@ -26,6 +26,7 @@ Read the platform reference needed for the work:
 - [Mobile](references/mobile.md) for React Native, SwiftUI, Compose or Flutter.
 - [Desktop](references/desktop.md) for native desktop or Electron/Tauri.
 - [Patterns](references/patterns.md) when deciding how a screen should be structured.
+- [Charts](references/charts.md) for data plots, series identification and readable alternatives.
 - [Review](references/review.md) before delivering a visual change.
 
 Use the portable tokens as defaults, not as an excuse to ignore accessibility or platform conventions. Larger text, localisation, keyboard use and touch targets must work. If a brand requires another accent, change the semantic primary pair and validate contrast; preserve hierarchy and restraint.
