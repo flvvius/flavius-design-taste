@@ -1,4 +1,4 @@
-# Editorial calm
+# Flavius design taste
 
 Flavius Cojocaru's design taste, extracted from Miez. For web, mobile and desktop apps.
 
