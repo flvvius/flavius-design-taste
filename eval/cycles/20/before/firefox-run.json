@@ -1,0 +1,7 @@
+{
+  "baseline": "c21d07a",
+  "runnerHash": "06c821955146fd66d4dc8fd84fe4296bbf3b03aa3e93516148f368526aaab3bc",
+  "state": "interrupted after an independent probe demonstrated that the native font state was settled while the evaluated ready promise did not return",
+  "completedScreenshotFiles": 72,
+  "limitations": "Interruption closed the browser and produced a partial report. Its subsequent browser-closed failures do not establish defects in the examples. No completed overall Firefox result is claimed."
+}

@@ -18,6 +18,7 @@ Look at the render before reading automated findings. Check whether the main act
 - Test important actions twice. Close and reopen overlays, retry failed requests and follow the same destination again. Check where focus lands after activation, not only whether an outline exists.
 - Confirm that the action produces the result its label promises. A success message alone does not establish that a preview, download or saved change exists.
 - Enable reduced motion. Verify that content remains understandable when animation disappears.
+- Verify the actual effect of emulated settings in each requested browser. Record engine names, versions and unverified conditions beside the results.
 - Compare repeated content across screens. Equivalent content should share anatomy.
 
 Report actual visual checks and platform builds performed. A browser specimen proves browser behaviour only; native adoption needs a native render and build.

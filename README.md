@@ -112,12 +112,14 @@ The installed skill folders work without repository tooling. Maintainers can run
 node scripts/build.mjs
 node scripts/check.mjs
 npm ci
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:tooling
 npm run check:browser -- --output .artifacts/browser
+npm run check:browser -- --browser firefox --output .artifacts/browser-firefox
+npm run check:browser -- --browser webkit --output .artifacts/browser-webkit
 ```
 
-The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It also inspects the invitation preview while open, including a 480px-tall viewport with enlarged text. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images and screen readers still require their own review.
+The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It also inspects the invitation preview while open, including a 480px-tall viewport with enlarged text. It tests interactions and writes screenshots plus a report with source hashes. The default engine is Chromium. CI runs the same suite in Chromium, Firefox and WebKit and retains separate artifacts. Each report identifies its engine, version and measured emulation capabilities. Conditions that the engine cannot reproduce stay explicitly unverified. WebKit can match the forced-colour media query without replacing the palette; that run checks the media rules and does not claim colour substitution. Visual composition, images and screen readers still require their own review.
 
 Browser and native runners capture their input bytes before testing. Browsers receive those captured assets, and native builds compile and package the captured files. Report hashes identify those bytes even if the working tree changes during a run. This is a per-file capture, not an atomic Git checkout or a claim that every screenshot or binary is reproducible byte for byte. `python3 -m unittest discover -s scripts/tests -p 'test_*.py'` checks native capture and project packaging without Xcode; these fixtures also run in CI.
 

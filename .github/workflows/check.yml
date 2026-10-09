@@ -13,6 +13,10 @@ jobs:
       - run: python3 -m unittest discover -s scripts/tests -p 'test_*.py'
   browser:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,12 +24,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
       - run: npm run test:tooling
-      - run: npm run check:browser -- --output .artifacts/browser
+        env:
+          TASTE_TEST_BROWSER: ${{ matrix.browser }}
+      - run: npm run check:browser -- --browser ${{ matrix.browser }} --output .artifacts/browser
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: browser-evidence
+          name: browser-evidence-${{ matrix.browser }}
           path: .artifacts/browser
           if-no-files-found: warn

@@ -1,0 +1,16 @@
+{
+  "synchronous": {
+    "check": false,
+    "state": "loaded",
+    "faces": [
+      {
+        "family": "\"Schoolbell\"",
+        "status": "error"
+      }
+    ]
+  },
+  "ready": {
+    "settled": false,
+    "observation": "Native font state inspected; ready promise did not return within 2000ms"
+  }
+}

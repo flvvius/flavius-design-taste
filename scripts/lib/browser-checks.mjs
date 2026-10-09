@@ -103,3 +103,36 @@ export async function inspectPage(page) {
     return {width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: document.documentElement.scrollWidth > innerWidth, outsideViewport, clippedText, contrast, unlabeled, smallTargets};
   });
 }
+
+export async function waitForFonts(page, timeout = 10000) {
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    if (await page.evaluate(() => document.fonts.status) === 'loaded') return;
+    await new Promise(resolve => setTimeout(resolve, 50));
+  }
+  throw new Error('Font loading did not settle within the verification deadline');
+}
+
+export async function forcedColorSupport(browser) {
+  const page = await browser.newPage({forcedColors: 'active'});
+  try {
+    await page.setContent('<body style="color:rgb(1,2,3);background:rgb(4,5,6)">Colour substitution probe</body>');
+    return await page.evaluate(() => {
+      const style = getComputedStyle(document.body);
+      return {media: matchMedia('(forced-colors: active)').matches, colorSubstitution: style.color !== 'rgb(1, 2, 3)' && style.backgroundColor !== 'rgb(4, 5, 6)'};
+    });
+  } finally {await page.close();}
+}
+
+export async function measureHoverTransforms(page, linkSelector, targetSelector) {
+  const target = page.locator(targetSelector).first();
+  const settledTransform = async () => {
+    await target.evaluate(element => getComputedStyle(element).transform);
+    await page.waitForFunction(selector => document.querySelector(selector).getAnimations().every(animation => animation.playState !== 'running'), targetSelector, {timeout: 1000});
+    return target.evaluate(element => getComputedStyle(element).transform);
+  };
+  const before = await settledTransform();
+  const link = page.locator(linkSelector).first();
+  await link.hover();
+  return {before, after: await settledTransform(), hovered: await link.evaluate(element => element.matches(':hover'))};
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "name": "chromium",
+    "colors": {
+      "media": true,
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "navigation": [
+      {
+        "key": "Tab",
+        "focus": "<a class=\"skip\" href=\"#main\">skip to content</a>"
+      },
+      {
+        "key": "Alt+Tab",
+        "focus": "<a class=\"skip\" href=\"#main\">skip to content</a>"
+      }
+    ],
+    "fonts": {
+      "check": false,
+      "faces": [
+        {
+          "family": "Schoolbell",
+          "status": "error"
+        }
+      ]
+    }
+  },
+  {
+    "name": "firefox",
+    "colors": {
+      "media": true,
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)"
+    },
+    "navigation": [
+      {
+        "key": "Tab",
+        "focus": "<a class=\"skip\" href=\"#main\">skip to content</a>"
+      },
+      {
+        "key": "Alt+Tab",
+        "focus": "<body>\n<a class=\"skip\" href=\"#main\">skip to content</a>\n<svg class=\"definitions\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">\n  <defs>\n    <"
+      }
+    ],
+    "fonts": {
+      "check": false,
+      "faces": [
+        {
+          "family": "\"Schoolbell\"",
+          "status": "error"
+        }
+      ]
+    }
+  },
+  {
+    "name": "webkit",
+    "colors": {
+      "media": true,
+      "color": "rgb(1, 2, 3)",
+      "background": "rgb(4, 5, 6)"
+    },
+    "navigation": [
+      {
+        "key": "Tab",
+        "focus": "<button type=\"button\" data-palette=\"paper\" aria-pressed=\"true\">paper</button>"
+      },
+      {
+        "key": "Alt+Tab",
+        "focus": "<a class=\"skip\" href=\"#main\">skip to content</a>"
+      }
+    ],
+    "fonts": {
+      "check": true,
+      "faces": [
+        {
+          "family": "Schoolbell",
+          "status": "error"
+        }
+      ]
+    }
+  }
+]

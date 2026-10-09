@@ -1,20 +1,25 @@
 import assert from 'node:assert/strict';
-import {chromium} from '@playwright/test';
+import {chromium, firefox, webkit} from '@playwright/test';
 import {mkdir, writeFile, mkdtemp} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
 import {captureSources} from './lib/source-snapshot.mjs';
-import {serve, enlargeText, applyTextSpacing, inspectPage} from './lib/browser-checks.mjs';
+import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const argumentsList = process.argv.slice(2);
+const engines = {chromium, firefox, webkit};
+const browserIndex = argumentsList.indexOf('--browser');
+const browserName = browserIndex === -1 ? 'chromium' : argumentsList[browserIndex + 1];
+if (!Object.hasOwn(engines, browserName)) throw new Error('--browser requires chromium, firefox or webkit');
 const outputIndex = argumentsList.indexOf('--output');
 if (outputIndex !== -1 && !argumentsList[outputIndex + 1]) throw new Error('--output requires a directory');
 const output = outputIndex === -1 ? await mkdtemp(resolve(tmpdir(), 'taste-browser-')) : resolve(root, argumentsList[outputIndex + 1]);
 await mkdir(output, {recursive: true});
 let browser;
-const reports = [], failures = [], interactions = [];
+const reports = [], failures = [], interactions = [], unverified = [];
+const capabilities = {};
 const requestedSurfaces = argumentsList.flatMap((value, index) => value === '--surface' ? [argumentsList[index + 1]] : []);
 const allSurfaces = [
   {name: 'personal-room', path: 'examples/personal-room/index.html', themes: ['paper', 'night'], palette: '[data-palette]', setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click()},
@@ -37,7 +42,8 @@ async function check(name, operation) {
 try {
   snapshot = await captureSources(root, sourcePaths);
   server = await serve(root, snapshot.files);
-  browser = await chromium.launch();
+  browser = await engines[browserName].launch();
+  capabilities.forcedColors = await forcedColorSupport(browser);
   for (const surface of surfaces) for (const theme of surface.themes) for (const variant of variants) {
     const page = await browser.newPage({viewport: {width: variant.width, height: variant.height ?? 960}, reducedMotion: 'reduce', forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
     const errors = [], requests = [];
@@ -46,7 +52,7 @@ try {
     page.on('requestfailed', request => requests.push({url: request.url(), error: request.failure()?.errorText}));
     const response = await page.goto(`${server.url}/${surface.path}`, {waitUntil: 'networkidle'});
     assert(response?.ok(), `${surface.path} failed to load: ${response?.status()}`);
-    await page.evaluate(() => document.fonts.ready);
+    await waitForFonts(page);
     await surface.setTheme(page, theme);
     if (surface.setup) await surface.setup(page);
     if (variant.mode.startsWith('all-text-200')) await enlargeText(page);
@@ -84,7 +90,7 @@ try {
     await page.close();
   }
   for (const surface of surfaces) {
-    await check(`${surface.name} forced-colour keyboard focus and control boundaries`, async () => {
+    await check(`${surface.name} forced-colour media rules and keyboard focus`, async () => {
       const forced = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 844}});
       try {
         await forced.goto(`${server.url}/${surface.path}`);
@@ -102,6 +108,14 @@ try {
           const markers = await forced.locator('[data-palette]').evaluateAll(elements => elements.map(element => ({pressed: element.getAttribute('aria-pressed'), underline: getComputedStyle(element).textDecorationLine.includes('underline')})));
           assert(markers.every(marker => marker.underline === (marker.pressed === 'true')), 'Selection must remain distinguishable after colour replacement');
         }
+      } finally {await forced.close();}
+    });
+    const boundaryName = `${surface.name} forced-colour substitution and control boundaries`;
+    if (capabilities.forcedColors.colorSubstitution) {
+      await check(boundaryName, async () => {
+        const forced = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 844}});
+        try {
+          await forced.goto(`${server.url}/${surface.path}`);
         if (surface.setup) await surface.setup(forced);
         const boundaries = await forced.locator('button, input, textarea, select').evaluateAll(elements => elements.filter(element => element.getClientRects().length).map(element => {
           const style = getComputedStyle(element);
@@ -109,13 +123,16 @@ try {
         }));
         assert(boundaries.length);
         assert(boundaries.every(boundary => boundary.width >= 1 && boundary.style !== 'none' && boundary.color !== boundary.background), JSON.stringify(boundaries));
-      } finally {await forced.close();}
-    });
+        } finally {await forced.close();}
+      });
+    } else {
+      unverified.push({name: boundaryName, reason: 'The engine matched the media query but did not substitute colours. Media rules and focus were checked separately.'});
+    }
   }
   const page = await browser.newPage({viewport: {width: 390, height: 844}});
   if (surfaces.some(surface => surface.name === 'personal-room')) {
   await page.goto(`${server.url}/examples/personal-room/index.html`);
-  await check('font loads', async () => {await page.evaluate(() => document.fonts.ready); assert(await page.evaluate(() => document.fonts.check('24px Schoolbell')));});
+  await check('font loads', async () => {await waitForFonts(page); assert(await page.evaluate(() => [...document.fonts].some(face => face.family.replace(/["']/g, '') === 'Schoolbell' && face.status === 'loaded')));});
   await check('repeat project activation reopens story', async () => {
     const link = page.locator('.object-link').first(), summary = page.locator('#project-walks summary');
     await link.click(); await summary.click(); assert(!(await page.locator('#project-walks').evaluate(element => element.open)));
@@ -131,7 +148,7 @@ try {
     const rect = await page.locator(':focus').boundingBox(); assert(rect && rect.y >= 0 && rect.y + rect.height <= 844, JSON.stringify(rect));
   });
   await check('skip link reaches main', async () => {
-    await page.goto(`${server.url}/examples/personal-room/index.html`); await page.keyboard.press('Tab');
+    await page.goto(`${server.url}/examples/personal-room/index.html`); await page.keyboard.press(browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab');
     assert.equal(await page.locator(':focus').getAttribute('class'), 'skip'); await page.keyboard.press('Enter'); assert.equal(await page.locator(':focus').getAttribute('id'), 'main');
   });
   await check('palette keyboard activation preserves focus and pressed state', async () => {
@@ -143,22 +160,22 @@ try {
     assert.equal(await page.locator('html').evaluate(element => getComputedStyle(element).scrollBehavior), 'auto');
     assert.equal(await page.locator('.object-link svg').first().evaluate(element => getComputedStyle(element).transitionDuration), '0s');
   });
-  await check('touch hover does not lift objects', async () => {
-    const touch = await browser.newPage({hasTouch: true, isMobile: true, viewport: {width: 390, height: 844}});
+  await check('coarse-pointer hover does not lift objects', async () => {
+    const touch = await browser.newPage({hasTouch: true, viewport: {width: 390, height: 844}});
     try {
       await touch.goto(`${server.url}/examples/personal-room/index.html`);
-      const object = touch.locator('.object-link svg').first();
-      const before = await object.evaluate(element => getComputedStyle(element).transform);
-      await touch.locator('.object-link').first().dispatchEvent('mouseover');
-      assert.equal(await object.evaluate(element => getComputedStyle(element).transform), before);
+      assert(await touch.evaluate(() => matchMedia('(pointer: coarse)').matches && matchMedia('(hover: none)').matches));
+      const motion = await measureHoverTransforms(touch, '.object-link', '.object-link svg');
+      assert(motion.hovered);
+      assert.equal(motion.after, motion.before);
     } finally {await touch.close();}
   });
   await check('no script and missing font preserve work and stories', async () => {
     const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: 320, height: 844}});
     try {
       await fallback.route('**/*.ttf', route => route.abort());
-      await fallback.goto(`${server.url}/examples/personal-room/index.html`); await fallback.evaluate(() => document.fonts.ready);
-      assert(!(await fallback.evaluate(() => document.fonts.check('24px Schoolbell'))));
+      await fallback.goto(`${server.url}/examples/personal-room/index.html`); await waitForFonts(fallback);
+      assert(await fallback.evaluate(() => [...document.fonts].some(face => face.family.replace(/["']/g, '') === 'Schoolbell' && face.status === 'error')));
       assert(await fallback.locator('.palette').evaluate(element => element.hidden));
       await fallback.locator('#project-notes summary').click(); assert(await fallback.locator('#project-notes').evaluate(element => element.open));
       const audit = await inspectPage(fallback); assert(!audit.overflow); assert.equal(audit.clippedText.length, 0);
@@ -253,9 +270,9 @@ try {
 } catch (error) {
   failures.push({name: 'verification runner', message: error.message});
 } finally {
-  await writeFile(resolve(output, 'checks.json'), JSON.stringify({generatedAt: new Date().toISOString(), browser: browser?.version(), node: process.version, sourceMode: 'captured bytes served throughout the run', sources: snapshot?.hashes ?? {}, reports, interactions, failures, limitations: 'Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification.'}, null, 2) + '\n');
+  await writeFile(resolve(output, 'checks.json'), JSON.stringify({generatedAt: new Date().toISOString(), engine: browserName, browser: browser?.version(), node: process.version, sourceMode: 'captured bytes served throughout the run', sources: snapshot?.hashes ?? {}, capabilities, reports, interactions, unverified, failures, limitations: 'Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification.'}, null, 2) + '\n');
   if (browser) await browser.close();
   if (server) await server.close();
 }
-console.log(JSON.stringify({output, layouts: reports.length, interactions: interactions.length, failures: failures.length}));
+console.log(JSON.stringify({output, engine: browserName, layouts: reports.length, interactions: interactions.length, unverified: unverified.length, failures: failures.length}));
 if (failures.length) process.exitCode = 1;

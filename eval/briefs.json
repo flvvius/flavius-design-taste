@@ -97,5 +97,12 @@
     "artifact": "../examples/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "20",
+    "task": "Browser-engine coverage with observable font state, native navigation and real coarse-pointer hover.",
+    "kind": "tooling",
+    "reviewMode": "self",
+    "taste": "both"
   }
 ]

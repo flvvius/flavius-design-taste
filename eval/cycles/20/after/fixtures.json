@@ -1,0 +1,24 @@
+{
+  "platform": "Darwin",
+  "reports": [
+    {
+      "engine": "chromium",
+      "exitCode": 0,
+      "stdout": "\u2714 local server accepts a trailing slash and returns actual error status (27.340875ms)\n\u2714 text stress doubles explicit and inherited sizes once; audit catches clipping and low contrast (372.193583ms)\n\u2714 settled missing-font state returns with scripts disabled and content remains readable (155.948292ms)\n\u2714 coarse-pointer motion check activates hover and detects an ungated lift (275.006959ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1034.586375\n",
+      "stderr": ""
+    },
+    {
+      "engine": "firefox",
+      "exitCode": 0,
+      "stdout": "\u2714 local server accepts a trailing slash and returns actual error status (20.944209ms)\n\u2714 text stress doubles explicit and inherited sizes once; audit catches clipping and low contrast (1276.611667ms)\n\u2714 settled missing-font state returns with scripts disabled and content remains readable (1115.556167ms)\n\u2714 coarse-pointer motion check activates hover and detects an ungated lift (1311.450917ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 3902.434667\n",
+      "stderr": ""
+    },
+    {
+      "engine": "webkit",
+      "exitCode": 0,
+      "stdout": "\u2714 local server accepts a trailing slash and returns actual error status (21.490292ms)\n\u2714 text stress doubles explicit and inherited sizes once; audit catches clipping and low contrast (643.385125ms)\n\u2714 settled missing-font state returns with scripts disabled and content remains readable (462.290292ms)\n\u2714 coarse-pointer motion check activates hover and detects an ungated lift (641.348375ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1950.344667\n",
+      "stderr": ""
+    }
+  ],
+  "failures": []
+}
