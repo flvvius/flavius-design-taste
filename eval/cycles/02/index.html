@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications · Folio</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font:400 17px/1.625 system-ui,sans-serif}
+.shell{max-width:560px;margin:auto;padding:env(safe-area-inset-top) max(20px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(20px,env(safe-area-inset-left))}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+.brand{font-weight:600}
+main{padding:32px 0 48px}
+h1{font-size:32px;line-height:1.2;font-weight:600;letter-spacing:-.8px;margin:0 0 12px}
+h2{font-size:16px;font-weight:600;margin:0 0 20px}
+p{margin:4px 0;max-width:55ch}
+.muted,.description{color:var(--muted-foreground)}
+section{margin-top:var(--space-sectionGap);border-top:1px solid var(--border);padding-top:var(--space-sectionInset)}
+.row{padding:16px 0;border-bottom:1px solid var(--border)}
+.row:first-of-type{padding-top:0}
+.row:last-child{border-bottom:0}
+.choice{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:48px;cursor:pointer;font-weight:500}
+.description{font-size:15px;margin-top:4px}
+input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:0 4px;accent-color:var(--primary);outline:1px solid var(--input);outline-offset:1px}
+button,select{font:500 15px/1.5 system-ui,sans-serif;min-height:48px;border-radius:var(--radius-control);padding:10px 14px}
+select{border:1px solid var(--input);background:var(--background);color:var(--foreground);max-width:100%}
+button{border:1px solid var(--primary);background:var(--primary);color:var(--primary-foreground);cursor:pointer}
+button.secondary{border-color:var(--input);background:transparent;color:inherit}
+button.danger{background:var(--destructive);border-color:var(--destructive);color:var(--destructive-foreground)}
+:focus-visible{outline:3px solid var(--ring);outline-offset:4px}
+.feedback{font-size:15px;margin-top:12px}
+.feedback:empty{display:none}
+.success{color:var(--foreground)}
+.success::before{content:'✓ ';color:var(--success)}
+.warning{color:var(--foreground)}
+.warning::before{content:'△ ';color:var(--warning-text)}
+.error{color:var(--destructive)}
+.appearance{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+footer{border-top:1px solid var(--border);padding:20px 0 32px;color:var(--muted-foreground);font-size:14px}
+dialog{width:calc(100% - 40px);max-width:440px;max-height:calc(100dvh - 40px);overflow:auto;padding:24px;border:1px solid var(--border);border-radius:var(--radius-overlay);background:var(--popover);color:var(--popover-foreground)}
+dialog::backdrop{background:var(--overlay)}
+dialog h2{font-size:22px;line-height:1.3;margin-bottom:12px}
+@media(max-width:360px){header{align-items:flex-start;flex-direction:column}.appearance{width:100%}.actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><span class="brand">Folio</span><div class="appearance"><label for="theme">Theme</label><select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></header>
+<main>
+<h1>Notifications</h1>
+<p class="muted">Keep the updates you want. Leave the rest quiet.</p>
+<p class="description">Local preview. These choices stay in this browser and do not send notifications.</p>
+<section aria-labelledby="updates-title">
+<h2 id="updates-title">Your updates</h2>
+<div class="row">
+<label class="choice" for="replies"><span>Replies to your notes</span><input id="replies" type="checkbox" aria-describedby="replies-description replies-status"></label>
+<p id="replies-description" class="description">When someone responds to a note you shared.</p>
+<p id="replies-status" class="feedback" role="status"></p>
+</div>
+<div class="row">
+<label class="choice" for="digest"><span>Weekly reading digest</span><input id="digest" type="checkbox" aria-describedby="digest-description digest-status"></label>
+<p id="digest-description" class="description">A weekly summary of saved reading.</p>
+<p id="digest-status" class="feedback" role="status"></p>
+</div>
+<div class="row">
+<label class="choice" for="news"><span>Product announcements</span><input id="news" type="checkbox" aria-describedby="news-description news-status"></label>
+<p id="news-description" class="description">New features and changes to Folio.</p>
+<p id="news-status" class="feedback" role="status"></p>
+</div>
+</section>
+<section aria-labelledby="quiet-title">
+<h2 id="quiet-title">Quiet hours</h2>
+<div class="row">
+<label class="choice" for="quiet"><span>Pause overnight</span><input id="quiet" type="checkbox" aria-describedby="quiet-description quiet-status"></label>
+<p id="quiet-description" class="description">Prefer no notifications between 22:00 and 08:00 in your device's local time.</p>
+<p id="quiet-status" class="feedback" role="status"></p>
+</div>
+</section>
+<section aria-labelledby="reset-title">
+<h2 id="reset-title">Start again</h2>
+<p class="description">Reset these notification choices to their defaults. Your previous choices will be permanently discarded, with no undo.</p>
+<div class="actions"><button id="reset" class="secondary" type="button">Reset notification settings</button></div>
+<p id="reset-status" class="feedback" role="status"></p>
+</section>
+</main>
+<footer>Preferences save as you change them.</footer>
+</div>
+<dialog id="confirmation" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+<h2 id="confirm-title">Reset notification settings?</h2>
+<p id="confirm-description">This permanently discards your current notification choices. Replies, the weekly digest and quiet hours will turn on. Product announcements will turn off. There is no undo.</p>
+<div class="actions"><button id="cancel" class="secondary" type="button" autofocus>Keep my settings</button><button id="confirm-reset" class="danger" type="button">Reset settings</button></div>
+<p id="dialog-status" class="feedback error" role="alert"></p>
+</dialog>
+<script>
+const $=id=>document.getElementById(id);
+const key='folio-notifications-cycle02';
+const defaults={replies:true,digest:true,news:false,quiet:true};
+let state={...defaults},theme='system';
+function message(id,text,kind='success'){const el=$(id);el.textContent=text;el.className='feedback '+kind}
+try{
+  const saved=JSON.parse(localStorage.getItem(key)||'null');
+  if(saved&&typeof saved==='object')for(const id of Object.keys(defaults))if(typeof saved[id]==='boolean')state[id]=saved[id];
+  const storedTheme=localStorage.getItem(key+'-theme');
+  if(['system','light','dark'].includes(storedTheme))theme=storedTheme;
+}catch{message('reset-status','Browser storage is unavailable. Changes will last only for this visit.','warning')}
+const systemTheme=matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(){document.documentElement.classList.toggle('dark',theme==='dark'||theme==='system'&&systemTheme.matches)}
+$('theme').value=theme;applyTheme();systemTheme.addEventListener('change',applyTheme);
+$('theme').addEventListener('change',()=>{
+  theme=$('theme').value;applyTheme();
+  try{localStorage.setItem(key+'-theme',theme)}catch{message('reset-status','Theme changed for this visit. Browser storage is unavailable.','warning')}
+});
+function render(){for(const id of Object.keys(defaults))$(id).checked=state[id]}
+render();
+const names={replies:'Reply updates',digest:'Weekly digest',news:'Product announcements',quiet:'Quiet hours'};
+for(const id of Object.keys(defaults))$(id).addEventListener('change',()=>{
+  state[id]=$(id).checked;
+  let saved=true;
+  try{localStorage.setItem(key,JSON.stringify(state))}catch{saved=false}
+  message('reset-status','');
+  let text=names[id]+(state[id]?' on.':' off.');
+  const warning=id==='quiet'&&!state[id];
+  if(warning)text+=' Notifications may arrive overnight.';
+  text+=saved?' Saved in this browser.':' Browser storage is unavailable; this applies only for this visit.';
+  message(id+'-status',text,warning||!saved?'warning':'success');
+});
+$('reset').addEventListener('click',()=>{message('dialog-status','');$('confirmation').showModal()});
+$('cancel').addEventListener('click',()=>$('confirmation').close());
+$('confirmation').addEventListener('close',()=>$('reset').focus());
+$('confirm-reset').addEventListener('click',()=>{
+  try{localStorage.removeItem(key)}catch{
+    message('dialog-status','Could not erase saved preferences. Your settings have not been reset. Close this dialog and check browser storage permissions.','error');return;
+  }
+  state={...defaults};render();
+  for(const id of Object.keys(defaults))message(id+'-status','');
+  $('confirmation').close();
+  message('reset-status','Notification settings reset. Previous choices were discarded.');
+});
+</script>
+</body>
+</html>

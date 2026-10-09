@@ -1,0 +1,13 @@
+{
+  "cycle": "02",
+  "findings": [
+    {
+      "id": "core-input-boundary-contrast",
+      "severity": "medium",
+      "evidence": "skills/editorial-calm/assets/tokens.json:21 and :48 define input as oklch(0.91 0.004 80) and white at 15% opacity. Independently reproduced baseline-boundaries.json using tokens.srgb.json: #e3e1de against #fcfcfa measures 1.2705:1; #ffffff26 composited over #08090c becomes #2d2e30 and measures 1.4649:1. references/web.md:17-19 recommends preserving semantic control mappings when importing these tokens, while :9 requires visible input boundaries and references/review.md:8 requires 3:1 for essential control boundaries. An empty input with page-colored fill and this role as its sole identifying boundary fails that requirement. Cycle02 avoids this failure through muted-foreground control outlines; its screenshots do not demonstrate an input-boundary failure.",
+      "rootCause": "shared skill/tokens: the input default cannot provide an essential control boundary on either default page background. This is conditional on the boundary identifying the control, not a blanket defect in quiet decorative borders.",
+      "recommendation": "Give input at least 3:1 contrast against its intended default adjacent backgrounds in both themes, retaining border for decorative hairlines. Alternatively, explicitly reserve input for supplemental boundaries and provide a separate essential-control-boundary role with a demonstrated mapping. Check alpha-composited boundary contrast in the package validator."
+    }
+  ],
+  "verdict": "Cycle02 fixture passes the reviewed scope; one shared-default correction is recommended. Inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Verified clickable checkbox labels measure 335 by 48 CSS pixels and toggle their controls, so the small-checkbox scan is a false positive. Confirmation initially focuses cancel; Escape preserves choices and returns focus to reset. Confirmation restores all stated defaults, removes saved preferences and survives reload. A forced storage removal failure keeps the dialog open and preserves choices. No overflow at 375px with body text increased from 17px to 34px. The warning-text measurement is confirmed at 2.2191:1 on the light page, but is not a standalone shared-token defect: references/review.md:9 explicitly prohibits assuming status colors work as body text, the warning/foreground pair measures 7.9388:1, and cycle02 uses foreground for warning text with a redundant colored glyph. Decorative or redundant warning color is legitimate; ordinary warning-colored text on the light page would be a fixture misuse requiring foreground or a validated warning-text variant. No fixture-only defect was verified."
+}

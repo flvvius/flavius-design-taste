@@ -23,3 +23,9 @@ Map control radius to 8px, media to 10px and overlays to 14px through the existi
 Use Button, Input, Select, Dialog and DropdownMenu where their interaction fits. Retain their keyboard and focus behaviour. Card is appropriate only when its boundary conveys a function; it is not the default section wrapper. Tables and lists sit on the page with separators.
 
 For Sidebar or Chart components, define their additional semantic roles using the app's content needs. Those roles are not included in the core palette. Check control borders and status text against the actual backgrounds in both themes.
+
+## Colour roles in controls
+
+Use `input` for the boundary that makes an input, select or unchecked option recognisable. `border` is intentionally quieter and belongs to separators, not essential control identification. `ring` identifies keyboard focus.
+
+Status copy uses `success`, `destructive` or `warning-text` against the page. `warning` is an accent/fill and is not suitable for ordinary light-theme text. For a filled status control, use its paired `-foreground`; a foreground token is not the status colour for plain page text.

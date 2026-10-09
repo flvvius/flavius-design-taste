@@ -18,14 +18,15 @@
       "destructive": "#e7000b",
       "destructive-foreground": "#fafafa",
       "border": "#e3e1de",
-      "input": "#e3e1de",
+      "input": "#898681",
       "ring": "#5b544d",
       "overlay": "#00000080",
       "overlay-foreground": "#ffffff",
       "success": "#007e46",
       "success-foreground": "#fafafa",
       "warning": "#e49e22",
-      "warning-foreground": "#161616"
+      "warning-foreground": "#161616",
+      "warning-text": "#755010"
     },
     "dark": {
       "background": "#08090c",
@@ -45,14 +46,15 @@
       "destructive": "#ff6467",
       "destructive-foreground": "#090909",
       "border": "#ffffff1a",
-      "input": "#ffffff26",
+      "input": "#727479",
       "ring": "#897e74",
       "overlay": "#00000099",
       "overlay-foreground": "#ffffff",
       "success": "#04ab62",
       "success-foreground": "#090909",
       "warning": "#eba941",
-      "warning-foreground": "#090909"
+      "warning-foreground": "#090909",
+      "warning-text": "#eba941"
     }
   },
   "spacing": {

@@ -14,7 +14,7 @@ Typography, whitespace and hairlines carry the design. Content sits on the page 
 - Surfaces are earned by overlays, media frames and interactive controls. Dense operator tools may need grouped surfaces; explain the function they serve. Ask what breaks if a box disappears.
 - Repeated items are hairline-separated rows. Use grids when comparison or media browsing requires them, without wrapping every item in chrome.
 - Titles use weight 600. Body uses 400 and labels 500. Section headings are sentence case, roughly body size. Reserve a tracked uppercase kicker for a meaningful content category.
-- Use semantic colour roles from `assets/tokens.json`. Graphite is the default action colour. Status is text plus a label or glyph, not a decorative tinted pill. Charts may introduce labelled domain colours.
+- Use semantic colour roles from `assets/tokens.json`. Graphite is the default action colour. Status is text plus a label or glyph, not a decorative tinted pill. Use `warning-text` for warning copy; `warning` is an accent or fill. Use `input` for essential control boundaries and `border` for decorative separators. Charts may introduce labelled domain colours.
 - Figures use tabular digits and a muted label. Empty states use a short explanation and at most one useful action. Loading placeholders mirror the final content geometry.
 - Navigation remains stable on frequent screens. No floating blurred docks or decorative scroll motion. Motion communicates a state change and ends within 300ms. Springs are for gestures.
 

@@ -27,7 +27,8 @@ try {
     const errors = []; const failedRequests = [];
     page.on('pageerror',error=>errors.push(error.message));
     page.on('response',response=>{if(response.status()>=400)failedRequests.push({url:response.url(),status:response.status()});});
-    await page.goto(`http://127.0.0.1:${server.address().port}/eval/cycles/${cycle}/`,{waitUntil:'networkidle'});
+    const response=await page.goto(`http://127.0.0.1:${server.address().port}/eval/cycles/${cycle}/`,{waitUntil:'networkidle'});
+    if (!response?.ok()) throw new Error(`Cycle ${cycle} did not load: ${response?.status()}`);
     await page.evaluate(t=>{document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.style.colorScheme=t;},theme);
     await page.evaluate(()=>document.fonts.ready);
     const audit = await page.evaluate(() => {
@@ -49,7 +50,8 @@ try {
         if(ratio<(large?3:4.5))contrast.push({text:text.slice(0,90),tag:el.tagName,ratio:+ratio.toFixed(2),required:large?3:4.5,color:s.color,background:bg});
       }
       const unlabeled=[...document.querySelectorAll('input:not([type="hidden"]),select,textarea')].filter(el=>visible(el)&&!el.labels?.length&&!el.getAttribute('aria-label')&&!el.getAttribute('aria-labelledby')).map(el=>el.outerHTML.slice(0,180));
-      const smallTargets=[...document.querySelectorAll('button,a[href],input:not([type="hidden"]),select')].filter(visible).filter(el=>{const r=el.getBoundingClientRect();return r.width<24||r.height<24;}).map(el=>({text:(el.textContent||el.getAttribute('aria-label')||el.tagName).trim().slice(0,50),width:Math.round(el.getBoundingClientRect().width),height:Math.round(el.getBoundingClientRect().height)}));
+      const targetRect=el=>{const own=el.getBoundingClientRect();if(el.matches('input[type=checkbox],input[type=radio]')){const label=[...(el.labels??[])].find(visible);if(label){const r=label.getBoundingClientRect();if(r.width>=own.width&&r.height>=own.height)return r;}}return own;};
+      const smallTargets=[...document.querySelectorAll('button,a[href],input:not([type="hidden"]),select')].filter(visible).filter(el=>{const r=targetRect(el);return r.width<24||r.height<24;}).map(el=>({text:(el.textContent||el.getAttribute('aria-label')||el.tagName).trim().slice(0,50),width:Math.round(targetRect(el).width),height:Math.round(targetRect(el).height)}));
       return {overflow:document.documentElement.scrollWidth>innerWidth,contrast,unlabeled,smallTargets};
     });
     await page.screenshot({path:resolve(dir,`${width}-${theme}.png`),fullPage:true});

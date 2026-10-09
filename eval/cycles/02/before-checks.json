@@ -1,0 +1,146 @@
+{
+  "cycle": "02",
+  "reports": [
+    {
+      "width": 375,
+      "theme": "light",
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "text": "INPUT",
+          "width": 22,
+          "height": 22
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    }
+  ],
+  "note": "Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review."
+}

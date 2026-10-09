@@ -26,3 +26,12 @@ for (const [mode,roles] of Object.entries(tokens.colors)) {
   }
 }
 console.log('Verified normal-text contrast for semantic foreground/background pairs.');
+for (const [mode,roles] of Object.entries(tokens.colors)) {
+  for (const surface of ['background','card','popover','secondary']) {
+    assert(contrast(srgb(roles.input),srgb(roles[surface]))>=3,`${mode} input boundary on ${surface} is below 3:1`);
+  }
+  for (const role of ['success','destructive','warning-text']) {
+    assert(contrast(srgb(roles[role]),srgb(roles.background))>=4.5,`${mode} ${role} page text is below 4.5:1`);
+  }
+}
+console.log('Verified essential input boundaries and page status text contrast.');

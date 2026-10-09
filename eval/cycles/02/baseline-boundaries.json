@@ -1,0 +1,24 @@
+{
+  "light": {
+    "input": {
+      "color": "#e3e1de",
+      "composited": "#e3e1de",
+      "contrast": 1.270499875548592
+    },
+    "warningText": {
+      "color": "#e49e22",
+      "contrast": 2.2190902193146003
+    }
+  },
+  "dark": {
+    "input": {
+      "color": "#ffffff26",
+      "composited": "#2d2e30",
+      "contrast": 1.4649126067855067
+    },
+    "warningText": {
+      "color": "#eba941",
+      "contrast": 9.750515055745291
+    }
+  }
+}
