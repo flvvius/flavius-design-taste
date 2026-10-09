@@ -1,0 +1,92 @@
+{
+  "reports": [
+    {
+      "width": 375,
+      "theme": "light",
+      "textScale": 1,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": false,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "textScale": 2,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": false,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "textScale": 1,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": true,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "textScale": 2,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": true,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "textScale": 1,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": false,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "textScale": 2,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": false,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "textScale": 1,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": true,
+      "errors": [],
+      "keyboardToggle": "pass"
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "textScale": 2,
+      "count": 10,
+      "links": 20,
+      "overflow": false,
+      "dark": true,
+      "errors": [],
+      "keyboardToggle": "pass"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+import SwiftUI
+import AppKit
+
+@main
+struct PreferencesRenderer {
+    @MainActor static func main() throws {
+        guard CommandLine.arguments.count == 3 else {
+            throw NSError(domain: "Renderer", code: 1, userInfo: [NSLocalizedDescriptionKey: "Usage: render OUTPUT_DIRECTORY TOKENS_PATH"])
+        }
+        let output = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
+        let palette = try SemanticPalette(tokensURL: URL(fileURLWithPath: CommandLine.arguments[2]))
+        try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+        for dark in [false, true] {
+            for enlarged in [false, true] {
+                let view = NativeExample(palette: palette, renderDark: dark, renderEnlarged: enlarged)
+                    .frame(width: 760)
+                let renderer = ImageRenderer(content: view)
+                renderer.scale = 2
+                guard let image = renderer.nsImage,
+                      let tiff = image.tiffRepresentation,
+                      let bitmap = NSBitmapImageRep(data: tiff),
+                      let png = bitmap.representation(using: .png, properties: [:]) else {
+                    throw NSError(domain: "Renderer", code: 2, userInfo: [NSLocalizedDescriptionKey: "ImageRenderer failed"])
+                }
+                let name = "\(dark ? "dark" : "light")-\(enlarged ? "enlarged" : "normal").png"
+                try png.write(to: output.appendingPathComponent(name))
+                print(output.appendingPathComponent(name).path)
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "cycle": "10",
+  "findings": [
+    {
+      "id": "native-capture-controls-unrendered",
+      "severity": "medium",
+      "evidence": "Independently inspected native/light-normal.png, dark-normal.png, light-enlarged.png and dark-enlarged.png. All four show yellow rectangles with red prohibition symbols in place of the Appearance and Frequency menu controls and the larger-text, digest and browser-link switches. Renderer.swift constructs ImageRenderer directly from the SwiftUI view.",
+      "rootCause": "The current ImageRenderer capture path does not render the platform-backed picker/switch controls in this fixture. Successful PNG generation does not establish a complete native render.",
+      "recommendation": "Capture the actual view through an NSHostingView/AppKit bitmap path that retains native controls, then inspect all four theme/size variants again. Keep the real controls; do not substitute snapshot-only imitations."
+    }
+  ],
+  "verdict": "issues_found",
+  "verification": {
+    "imagesInspected": [
+      "375-light.png",
+      "375-dark.png",
+      "1280-light.png",
+      "1280-dark.png",
+      "375-light-200pct.png",
+      "375-dark-200pct.png",
+      "native/light-normal.png",
+      "native/dark-normal.png",
+      "native/light-enlarged.png",
+      "native/dark-enlarged.png"
+    ],
+    "sourceRead": [
+      "builder.md",
+      "NativeExample.swift",
+      "Renderer.swift",
+      "render",
+      "index.html",
+      "current editorial-calm mobile and desktop references"
+    ],
+    "browserChecks": [
+      "System appearance follows both dark and light emulated OS changes. Explicit Dark stays dark with a light OS preference. Explicit Light renders light.",
+      "Appearance, larger-text, digest, links and weekly frequency persist after reload.",
+      "Disabling digest hides and disables Frequency, removing it from keyboard traversal. Re-enabling through reset restores it.",
+      "Tab visits appearance, enlarged, digest, links and reset while frequency is disabled. Space toggles the focused larger-text checkbox.",
+      "Reset restores System appearance, normal text, digest on, links off and Daily frequency.",
+      "Blocked localStorage reads/writes retain working in-session preferences and display the storage-unavailable explanation.",
+      "At 375px both themes with 100% and 200% root text have no document overflow. The built-in 135% larger-text preference also persists and fits the narrow layout."
+    ],
+    "runnerChecks": "All six browser reports contain no errors, failed requests, overflow, contrast failures, unlabeled controls or small targets.",
+    "nativeThemeScope": "Source computes effective dark from renderDark override or the saved appearance plus host colorScheme, then passes that resolved scheme to descendants. Parent captures explicitly override theme and manual size. Those captures verify palette variants only; they do not exercise native System preference changes or native interactions. No native System bug is established by these images.",
+    "snapshotReproducibility": "Theme and size are forced by render overrides, but appearance/enlarged control selections, digest, links and edition still bind to AppStorage. The renderer does not seed or isolate those preferences. This is a source-confirmed reproducibility limitation; no rerun with altered native preferences was performed. Seed isolated snapshot preferences when replacing the capture path.",
+    "portabilityAndGuidance": "Semantic sRGB roles and dimensions are read at runtime in SwiftUI; browser uses embedded exported sRGB values and system fonts. Existing guidance calls for native controls, text scaling and actual renders. No additional verified shared-guide defect. A single body-relative scaling curve and manual 1.35 enlargement are documented limits, not iOS Dynamic Type certification.",
+    "limits": "Parent owns native compilation/rendering. Reviewer inspected actual parent-produced macOS PNGs and SwiftUI source, but did not compile or launch an interactive native host. No mobile, VoiceOver, native resizing or native persistence certification.",
+    "edits": "Only eval/cycles/10/review.json written; no fixes."
+  }
+}

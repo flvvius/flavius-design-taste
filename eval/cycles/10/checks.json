@@ -1,0 +1,96 @@
+{
+  "cycle": "10",
+  "reports": [
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    }
+  ],
+  "note": "Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review."
+}

@@ -1,0 +1,88 @@
+{
+  "scope": "Artifact inventory and six-case current browser scan for every cycle; original reviews and rechecks supply independent behavioral evidence. This inventory is not a substitute for inspecting those reviews.",
+  "cycles": [
+    {
+      "cycle": "01",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": null,
+      "initialVerdict": "Pass within the reviewed scope. Independently inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Verified profile validation, successful local save and password validation in Chromium. The checkbox scan is a false positive: its enclosing clickable label measures 183.39 by 44 CSS pixels at 375px, and clicking the label toggles the checkbox. Enlarging body text from 16px to 32px produced no horizontal overflow at 375px, 600px or 1280px. All three baseline defects are resolved: light success/foreground now measures 4.94:1, dark destructive/foreground 6.89:1, and examples/index.html remains 320px wide at a 320px viewport with 32px body text after row/header wrapping was added. scripts/check.mjs passes, including semantic-pair contrast checks. No actionable shared-skill/token or fixture-only defect was verified.",
+      "finalVerdict": "Pass within the reviewed scope. Independently inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Verified profile validation, successful local save and password validation in Chromium. The checkbox scan is a false positive: its enclosing clickable label measures 183.39 by 44 CSS pixels at 375px, and clicking the label toggles the checkbox. Enlarging body text from 16px to 32px produced no horizontal overflow at 375px, 600px or 1280px. All three baseline defects are resolved: light success/foreground now measures 4.94:1, dark destructive/foreground 6.89:1, and examples/index.html remains 320px wide at a 320px viewport with 32px body text after row/header wrapping was added. scripts/check.mjs passes, including semantic-pair contrast checks. No actionable shared-skill/token or fixture-only defect was verified."
+    },
+    {
+      "cycle": "02",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "Cycle02 fixture passes the reviewed scope; one shared-default correction is recommended. Inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Verified clickable checkbox labels measure 335 by 48 CSS pixels and toggle their controls, so the small-checkbox scan is a false positive. Confirmation initially focuses cancel; Escape preserves choices and returns focus to reset. Confirmation restores all stated defaults, removes saved preferences and survives reload. A forced storage removal failure keeps the dialog open and preserves choices. No overflow at 375px with body text increased from 17px to 34px. The warning-text measurement is confirmed at 2.2191:1 on the light page, but is not a standalone shared-token defect: references/review.md:9 explicitly prohibits assuming status colors work as body text, the warning/foreground pair measures 7.9388:1, and cycle02 uses foreground for warning text with a redundant colored glyph. Decorative or redundant warning color is legitimate; ordinary warning-colored text on the light page would be a fixture misuse requiring foreground or a validated warning-text variant. No fixture-only defect was verified.",
+      "finalVerdict": "pass"
+    },
+    {
+      "cycle": "03",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "Corrections required for two verified fixture layout faults. Inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Exercised en-US, de-DE and ar with all/assets/debt filters: row counts were 4/3/1, summary totals remained unchanged, and the negative account retained its sign and written debt label. Net EUR 17,060.60, positive balances EUR 18,901.25 and debt EUR -1,840.65 stayed consistent across locales. Language and direction switched correctly, with isolated Intl-formatted currency strings. Arabic using Latin digits is not itself a defect. No shared-token defect or independently verified bidi-sign corruption was found. Arabic linguistic accuracy is outside these browser checks.",
+      "finalVerdict": "Pass for the requested recheck. Both original findings are resolved, with no remaining issue verified in these checks. Original review.json preserved. Did not run verify.mjs because it rewrites screenshots and localization-checks.json; reproduced its relevant checks through a read-only browser session instead. No unrelated files re-audited."
+    },
+    {
+      "cycle": "04",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "Corrections required for two selection-accessibility faults. Inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. Verified Space selects a focused row, ArrowDown moves to the next checkbox without selecting it, ascending document sorting is correct and selection follows its document ID after sorting. Archive removes the selected document from active view and focuses Undo; restore removes it from archived view; undo restores the previous archived state. Switching views clears selection. Chromium retains table/row/cell/header semantics at the narrow breakpoint. Independently doubled all rendered text at 700, 900 and 1280px: table widths were 636, 836 and 1096px respectively, with no document overflow. The supplied 375px enlargement checks also report no overflow. No shared-token defect or local table-overflow fault was verified.",
+      "finalVerdict": "Pass for the requested fixes. Both original findings are resolved. Original review.json preserved; no other files written or unrelated behavior re-audited."
+    },
+    {
+      "cycle": "05",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "One narrow enlarged-layout correction required. Inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. Required controls have associated labels and errors. Empty submission reports required fields and focuses date. Weekend and out-of-range dates produce errors and disable time choices. Valid weekdays expose 09:00, 10:00, 14:00 and 15:00 while 11:00 and 12:00 remain disabled. Changing dates clears the selected time. Invalid email submission focuses email. A valid submission creates the matching date/time, Europe/Bucharest zone, name, email and discussion preview, safely renders literal markup as text, and focuses preview-title. Edit returns focus to date; changing details hides the stale preview. No other standalone availability, validation or preview fault was verified. No scheduling infrastructure evaluated.",
+      "finalVerdict": "Pass for the original overflow finding in both requested themes. Original review.json preserved. Only this recheck file written; no unrelated checks performed."
+    },
+    {
+      "cycle": "06",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": null,
+      "initialVerdict": "Pass within the reviewed scope. Independently inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. In Chromium, focused navigation links and activated them with Enter through work, decisions and overview. Each transition exposes exactly one matching view, sets exactly one matching aria-current=page link, updates document.title and focuses the matching H1. Back from overview returns to decisions; Forward returns to overview, with matching content, current link and heading focus. Fresh pages loaded directly at #/overview, #/work and #/decisions show the correct view without moving initial focus from BODY. A fresh #/missing hash resolves to #/overview. An unknown hash entered after work resolves to overview, and Back returns directly to work without an extra correction entry. Inactive views' links and summaries have no rendered rectangles. Inspected long navigation labels in desktop, narrow and enlarged screenshots: labels wrap without truncation, navigation retains its ordering, and active state includes underline, weight and a leading rule. Independently doubled every rendered element's computed font size on fresh pages at 375px for all three routes; document scrollWidth remained 375px with a 32px body font. Supplied checks report no overflow, unlabeled controls, small targets or text-contrast failures in both themes, including 375px at 200%. No actionable fixture or shared-skill/token defect was verified. This review establishes Chromium browser behavior and the inspected renders, not native-platform or screen-reader certification.",
+      "finalVerdict": "Pass within the reviewed scope. Independently inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. In Chromium, focused navigation links and activated them with Enter through work, decisions and overview. Each transition exposes exactly one matching view, sets exactly one matching aria-current=page link, updates document.title and focuses the matching H1. Back from overview returns to decisions; Forward returns to overview, with matching content, current link and heading focus. Fresh pages loaded directly at #/overview, #/work and #/decisions show the correct view without moving initial focus from BODY. A fresh #/missing hash resolves to #/overview. An unknown hash entered after work resolves to overview, and Back returns directly to work without an extra correction entry. Inactive views' links and summaries have no rendered rectangles. Inspected long navigation labels in desktop, narrow and enlarged screenshots: labels wrap without truncation, navigation retains its ordering, and active state includes underline, weight and a leading rule. Independently doubled every rendered element's computed font size on fresh pages at 375px for all three routes; document scrollWidth remained 375px with a 32px body font. Supplied checks report no overflow, unlabeled controls, small targets or text-contrast failures in both themes, including 375px at 200%. No actionable fixture or shared-skill/token defect was verified. This review establishes Chromium browser behavior and the inspected renders, not native-platform or screen-reader certification."
+    },
+    {
+      "cycle": "07",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "issues_found",
+      "finalVerdict": "pass"
+    },
+    {
+      "cycle": "08",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "pass",
+      "finalVerdict": "pass"
+    },
+    {
+      "cycle": "09",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": null,
+      "initialVerdict": "pass",
+      "finalVerdict": "pass"
+    },
+    {
+      "cycle": "10",
+      "browserCases": 6,
+      "review": "review.json",
+      "recheck": "recheck.json",
+      "initialVerdict": "issues_found",
+      "finalVerdict": "pass"
+    }
+  ],
+  "browserCases": 60,
+  "nativeEvidence": "cycles/10/native-checks.json",
+  "galleryEvidence": "gallery-checks.json"
+}

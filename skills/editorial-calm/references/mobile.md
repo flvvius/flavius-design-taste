@@ -11,3 +11,7 @@ Lists are editorial rows with separators. Keep the tab bar flat, full width and 
 Use at least 44pt targets on iOS and 48dp on Android. Small icons can sit inside larger unpainted hit areas. Swipes must have a visible or accessibility action alternative. Sheets keep native dismissal, focus and back behaviour.
 
 Press feedback may scale to 0.97 over 140ms, content swaps use 150ms opacity, and sheets or toasts use 200–250ms. Disable optional motion when the accessibility setting requests it. Gesture springs may follow velocity; do not add springs to ordinary content updates.
+
+When checking a native handoff, inspect the actual platform controls in the capture. In the macOS SwiftUI exercise, ImageRenderer compiled successfully but drew unsupported placeholders for AppKit-backed switches and pickers. Capturing an NSHostingView through AppKit preserved those controls. A compiled view or a complete PNG file alone does not prove the screen rendered correctly.
+
+Keep manual enlargement evidence separate from Dynamic Type or platform font-scaling tests. Use semantic font styles or scaled metrics for custom token sizes, and test the target platform's accessibility sizes in its own host before claiming support. A macOS bitmap does not establish iOS interaction or VoiceOver behavior.

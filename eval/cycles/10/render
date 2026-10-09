@@ -1,0 +1,11 @@
+#!/bin/zsh
+set -eu
+source_dir="${0:A:h}"
+if [[ $# -ne 2 ]]; then
+  print -u2 'Usage: render OUTPUT_DIRECTORY TOKENS_PATH'
+  exit 1
+fi
+build_dir=$(mktemp -d /private/tmp/cycle10-render.XXXXXX)
+trap 'rm -rf "$build_dir"' EXIT
+swiftc -parse-as-library "$source_dir/NativeExample.swift" "$source_dir/Renderer.swift" -o "$build_dir/render"
+"$build_dir/render" "$1" "$2"

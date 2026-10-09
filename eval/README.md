@@ -21,3 +21,8 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [07](cycles/07/outcome.md) | Usage analytics | Axes corrected; category labels survive enlargement; chart guidance added. |
 | [08](cycles/08/outcome.md) | Profile review dialogs | Long reviews begin with visible focus; overlay guidance and stable snapshots added. |
 | [09](cycles/09/outcome.md) | Asynchronous search | Latest-request, retry and composition checks passed; tested search guidance added. |
+| [10](cycles/10/outcome.md) | Browser and SwiftUI handoff | Actual native controls captured; isolated snapshot preferences; native verification guidance added. |
+
+Four builder agents and two independent reviewer agents contributed to these ten cycles. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
+
+The final [artifact audit](final-audit.json) covers all ten screens and 60 clean browser layout reports. The [gallery checks](gallery-checks.json) cover ten entries, keyboard theme switching and normal/enlarged text at narrow and wide widths in both themes. [Native checks](cycles/10/native-checks.json) record two compiled macOS capture runs with identical pixels across four variants. These checks do not establish screen-reader or mobile certification.

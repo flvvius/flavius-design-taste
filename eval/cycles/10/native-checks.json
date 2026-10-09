@@ -1,0 +1,39 @@
+{
+  "compileAndRender": "exit 0 for two independent executable invocations",
+  "method": "NSHostingView AppKit bitmap with isolated seeded preferences",
+  "variants": [
+    {
+      "file": "eval/cycles/10/native/dark-enlarged.png",
+      "pixels": [
+        1520,
+        2172
+      ],
+      "repeatPixelsIdentical": true
+    },
+    {
+      "file": "eval/cycles/10/native/dark-normal.png",
+      "pixels": [
+        1520,
+        1978
+      ],
+      "repeatPixelsIdentical": true
+    },
+    {
+      "file": "eval/cycles/10/native/light-enlarged.png",
+      "pixels": [
+        1520,
+        2172
+      ],
+      "repeatPixelsIdentical": true
+    },
+    {
+      "file": "eval/cycles/10/native/light-normal.png",
+      "pixels": [
+        1520,
+        1978
+      ],
+      "repeatPixelsIdentical": true
+    }
+  ],
+  "limits": "760pt macOS static captures; manual enlargement, no iOS runtime or native interaction certification"
+}

@@ -1,0 +1,43 @@
+{
+  "cycle": "10",
+  "resolutions": [
+    {
+      "id": "native-capture-controls-unrendered",
+      "status": "resolved",
+      "evidence": {
+        "imagesInspected": [
+          "native/light-normal.png",
+          "native/dark-normal.png",
+          "native/light-enlarged.png",
+          "native/dark-enlarged.png"
+        ],
+        "visualResult": "All four current captures show actual macOS menu pickers and switch tracks/thumbs without yellow prohibition placeholders. Light captures display Light; dark captures display Dark. Larger text is off in normal captures and on in enlarged captures. Digest is on, browser links are off, and Frequency is Daily in all four. Both sizes retain readable text and complete controls.",
+        "sourceReview": "Renderer.swift initializes NSApplication, creates an NSHostingView with the real NativeExample, assigns Aqua/darkAqua appearance, sizes to fittingSize, lays out the subtree and captures through bitmapImageRepForCachingDisplay/cacheDisplay. SwiftUI native Picker and Toggle implementations remain intact; no snapshot-only substitute controls.",
+        "compileCheck": "swiftc -typecheck -parse-as-library eval/cycles/10/NativeExample.swift eval/cycles/10/Renderer.swift exited 0 with no diagnostics. Parent performed executable compilation and rendering.",
+        "documentation": "Updated handoff records the failed ImageRenderer path and retained baseline evidence. Shared mobile guide now requires actual platform controls in captures and distinguishes manual enlargement from target-platform accessibility-size validation."
+      }
+    }
+  ],
+  "remainingIssues": [],
+  "verdict": "pass",
+  "verification": {
+    "baselinePreserved": "review.json remains unchanged with the original placeholder finding. Renderer-before.swift.txt and native-before retain the original capture path and images.",
+    "browser": "No additional verified browser findings. Original independent checks of persistence, reset, digest visibility/keyboard exclusion, blocked storage, System/explicit themes and enlarged layouts remain valid; capture-path changes do not alter browser behavior.",
+    "nativeLimits": "Final PNGs are actual macOS host bitmap evidence at 760pt width. They do not establish native System-following interactions, iOS Dynamic Type, VoiceOver or mobile certification.",
+    "edits": "Only eval/cycles/10/recheck.json updated. Original review.json remains unchanged.",
+    "snapshotSeedVerification": {
+      "status": "resolved",
+      "source": "Renderer creates a UUID-named UserDefaults suite, applies it with .defaultAppStorage(snapshotDefaults), seeds all five cycle10 AppStorage keys before constructing each case, and removes the suite persistent domain through defer. It does not modify the application standard defaults.",
+      "seeds": {
+        "appearance": "Light or Dark matching the case",
+        "enlarged": "false for normal, true for enlarged",
+        "digest": true,
+        "links": false,
+        "edition": "Daily"
+      },
+      "images": "Re-inspected all four regenerated native PNGs. Light captures show Light and dark captures show Dark. Larger-text switch is off in normal captures and on in enlarged captures. Digest is on, browser links off, and frequency Daily in all four. Actual native controls remain present without prohibition placeholders.",
+      "compile": "Repeated swiftc -typecheck -parse-as-library NativeExample.swift Renderer.swift on current source; exit 0, no diagnostics.",
+      "limits": "Source isolation and captured seed values verified; no separate repeated-run pixel hash comparison performed."
+    }
+  }
+}
