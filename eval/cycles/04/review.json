@@ -1,0 +1,20 @@
+{
+  "cycle": "04",
+  "findings": [
+    {
+      "id": "fixture-clipped-table-header-controls",
+      "severity": "medium",
+      "evidence": "eval/cycles/04/index.html narrow-layout CSS clips the entire thead to a 1px box while leaving #all and four sorting buttons interactive. At 375px, independently tabbed from #direction through Select all visible documents, Document, Owner, Updated and Status before reaching row selection. Their focus indicators are clipped with the header and cannot be seen. 375-light.png and 375-light-200pct.png show no visible select-all control. Chromium's accessibility snapshot still exposes the table, column headers and these controls, so this is a verified invisible-focus problem, not an assumed loss of table semantics.",
+      "rootCause": "fixture-only: visually hiding semantic headers also hides live controls without removing their tab stops or providing a visible select-all replacement. Existing shared guidance requires visible keyboard focus.",
+      "recommendation": "Keep semantic column headers available, but remove hidden sorting controls from keyboard traversal below the breakpoint since the visible mobile sorter replaces them. Provide a visible select-all checkbox with synchronized checked/indeterminate state in the narrow toolbar. Verify every Tab stop has a visible control and focus indicator."
+    },
+    {
+      "id": "fixture-touch-selection-hit-area",
+      "severity": "medium",
+      "evidence": "eval/cycles/04/index.html gives row checkboxes an 18px square, increased to only 24px under pointer:coarse. The render function appends each checkbox directly to a td with an aria-label, without an enclosing clickable label or cell handler. Independently measured a 24 by 24px checkbox in a 375px touch-enabled Chromium context. Its cell measured 44 by 131.38px, but clicking that cell at x=10,y=40 did not select the row. Thus the larger cell is not an expanded target, unlike the label-backed checkboxes in earlier cycles. The checks.json scan alone was not used as proof.",
+      "rootCause": "fixture-only: the coarse-pointer rule enlarges the visual checkbox but does not provide a touch-sized hit area. Shared desktop guidance says touchscreen modes retain touch-sized targets.",
+      "recommendation": "Wrap row and visible select-all checkboxes in associated labels with at least 44 by 44px clickable areas in touch mode, or provide an equivalent larger actual hit target. Keep the painted checkbox compact if desired. Verify taps around the painted checkbox toggle only the intended row."
+    }
+  ],
+  "verdict": "Corrections required for two selection-accessibility faults. Inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. Verified Space selects a focused row, ArrowDown moves to the next checkbox without selecting it, ascending document sorting is correct and selection follows its document ID after sorting. Archive removes the selected document from active view and focuses Undo; restore removes it from archived view; undo restores the previous archived state. Switching views clears selection. Chromium retains table/row/cell/header semantics at the narrow breakpoint. Independently doubled all rendered text at 700, 900 and 1280px: table widths were 636, 836 and 1096px respectively, with no document overflow. The supplied 375px enlargement checks also report no overflow. No shared-token defect or local table-overflow fault was verified."
+}

@@ -1,0 +1,372 @@
+{
+  "cycle": "04",
+  "reports": [
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [
+        {
+          "text": "Select all visible documents",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Autumn release plan",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Customer interview notes",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Search experience specification",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Content migration checklist",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Accessibility review",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Editorial workflow decisions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select Research synthesis and open questions",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "text": "Select September retrospective",
+          "width": 18,
+          "height": 18
+        }
+      ],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    }
+  ],
+  "note": "Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review."
+}

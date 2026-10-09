@@ -1,0 +1,19 @@
+{
+  "cycle": "04",
+  "resolutions": [
+    {
+      "id": "fixture-clipped-table-header-controls",
+      "status": "resolved",
+      "evidence": "At 375px, Tab from the mobile direction button reaches visible #all-mobile and then the first and second document checkboxes, bypassing clipped header controls. All five header controls have tabIndex -1. After resizing to 1280px and waiting for the media-query change, all five return to tabIndex 0 and Tab from #view reaches the visible header select-all. Returning to 375px restores tabIndex -1. The regenerated 375-light-200pct.png visibly includes Select all visible."
+    },
+    {
+      "id": "fixture-touch-selection-hit-area",
+      "status": "resolved",
+      "evidence": "In touch-enabled Chromium at 375px, the first row's enclosing label measures 44 by 44 CSS pixels. Tapping its x=3,y=3 corner outside the painted checkbox selects exactly that row. Tapping the desktop header label at its x=3,y=3 corner selects all eight rows. Tapping the visible mobile select-all label text selects all eight, and a second tap clears them. The labels provide real expanded hit areas rather than only larger cells."
+    }
+  ],
+  "synchronization": "Verified both header and mobile select-all controls are unchecked and indeterminate with one row selected, checked and not indeterminate with all eight selected, and unchecked and not indeterminate after clearing. Switching to the empty archive clears selection and disables both controls.",
+  "overflow": "Independently doubled every rendered element's computed text size in the touch context at 375, 700 and 1280px. Document scrollWidth equals viewport width at each size. Current checks.json reports no overflow in both themes at normal sizes and 375px with 200% text. Viewed regenerated 375-light-200pct.png for the selection layout.",
+  "remainingIssues": [],
+  "verdict": "Pass for the requested fixes. Both original findings are resolved. Original review.json preserved; no other files written or unrelated behavior re-audited."
+}

@@ -66,6 +66,10 @@ shadcn/ui is optional. The skill and tokens also work with other component libra
 
 Run `node scripts/build.mjs` to regenerate CSS and portable sRGB values. Run `node scripts/check.mjs` to verify the package.
 
+## Tested with agents
+
+The [evaluation log](eval/README.md) records build, independent review and fix cycles. It includes working screens, builder notes, findings, browser checks and screenshots. These exercises test how the skill transfers to different app tasks, including enlarged text and both themes.
+
 ## What belongs to this taste
 
 Warm neutral backgrounds, graphite actions, semibold hierarchy, sentence case, readable prose, separated rows, stable navigation and short motion. Settings, forms and statistics belong on the page too.

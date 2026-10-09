@@ -13,3 +13,4 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [01](cycles/01/outcome.md) | Account and security | Semantic-pair contrast fixed; shared specimen wraps enlarged text. |
 | [02](cycles/02/outcome.md) | Notification controls | Essential input boundaries strengthened; status roles clarified. |
 | [03](cycles/03/outcome.md) | Localized finances | Amounts stay intact; localized controls wrap; type dimensions exported. |
+| [04](cycles/04/outcome.md) | Document library | Real selection hit areas and visible narrow-table controls. |
