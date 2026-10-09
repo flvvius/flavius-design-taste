@@ -7,5 +7,5 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs"
   },
-  "license": "0BSD"
+  "license": "MIT"
 }
