@@ -35,4 +35,4 @@ Miez's political spectrum, news taxonomy, translations, analytics and backend ar
 
 Extracted from the live Miez palette, its Editorial calm skill and its web and native design decisions. The older web guide described a blue accent; this package follows the current graphite palette. Section headings use sentence case, superseding the native log's earlier uppercase treatment.
 
-GPL-3.0, matching the source project's licence. See `LICENSE`. Font binaries and third-party UI implementations are not included.
+Licensed under 0BSD. Use, copy, modify and redistribute it for any purpose, including commercial and closed-source projects. Attribution and retention of the licence notice are not required. See `LICENSE`. Font binaries and third-party UI implementations are not included.
