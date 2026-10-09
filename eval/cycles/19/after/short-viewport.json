@@ -1,0 +1,26 @@
+{
+  "sourceHash": "6bdf271163690b7531157e4723910cc2e8741a247a86019e93072b06668ab265",
+  "viewport": {
+    "width": 320,
+    "height": 480
+  },
+  "textScale": 2,
+  "recipient": "reader.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.example.com",
+  "focus": "Close preview",
+  "target": {
+    "x": 45,
+    "y": 313,
+    "width": 230,
+    "height": 122
+  },
+  "audit": {
+    "width": 320,
+    "scrollWidth": 320,
+    "overflow": false,
+    "outsideViewport": [],
+    "clippedText": [],
+    "contrast": [],
+    "unlabeled": [],
+    "smallTargets": []
+  }
+}

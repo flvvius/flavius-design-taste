@@ -25,7 +25,7 @@ for (const name of requestedSurfaces) if (!allSurfaces.some(surface => surface.n
 const surfaces = allSurfaces.filter(surface => !requestedSurfaces.length || requestedSurfaces.includes(surface.name));
 const variants = [
   {width: 320, mode: 'normal'}, {width: 390, mode: 'normal'}, {width: 768, mode: 'normal'}, {width: 1440, mode: 'normal'},
-  {width: 320, mode: 'all-text-200'}, {width: 320, mode: 'spacing'},
+  {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
 const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
@@ -39,7 +39,7 @@ try {
   server = await serve(root, snapshot.files);
   browser = await chromium.launch();
   for (const surface of surfaces) for (const theme of surface.themes) for (const variant of variants) {
-    const page = await browser.newPage({viewport: {width: variant.width, height: 960}, reducedMotion: 'reduce', forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
+    const page = await browser.newPage({viewport: {width: variant.width, height: variant.height ?? 960}, reducedMotion: 'reduce', forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
     const errors = [], requests = [];
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => {if (response.status() >= 400) requests.push({url: response.url(), status: response.status()});});
@@ -49,15 +49,38 @@ try {
     await page.evaluate(() => document.fonts.ready);
     await surface.setTheme(page, theme);
     if (surface.setup) await surface.setup(page);
-    if (variant.mode === 'all-text-200') await enlargeText(page);
+    if (variant.mode.startsWith('all-text-200')) await enlargeText(page);
     if (variant.mode === 'spacing') await applyTextSpacing(page);
     const audit = await inspectPage(page);
     const name = `${surface.name}-${theme}-${variant.width}-${variant.mode}`;
-    reports.push({name, ...audit, errors, requests});
+    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests});
     const issues = audit.overflow || audit.outsideViewport.length || audit.clippedText.length || audit.contrast.length || audit.unlabeled.length || audit.smallTargets.length || errors.length || requests.length;
     if (issues) failures.push({name, audit, errors, requests});
     await page.evaluate(() => scrollTo(0, 0));
     await page.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+    if (surface.name === 'editorial-calm') {
+      const recipient = 'reader.' + 'a'.repeat(48) + '@' + 'b'.repeat(48) + '.example.com';
+      await page.locator('#email').fill(recipient);
+      await page.locator('#form button[type="submit"]').focus();
+      await page.keyboard.press('Enter');
+      assert(await page.locator('#invitation-preview').evaluate(element => element.open));
+      assert.equal(await page.locator('#preview-recipient').textContent(), recipient);
+      assert.equal(await page.locator(':focus').getAttribute('id'), 'preview-title');
+      const previewAudit = await inspectPage(page);
+      const previewName = `${name}-invitation-preview`;
+      reports.push({name: previewName, height: variant.height ?? 960, ...previewAudit, errors, requests});
+      const previewIssues = previewAudit.overflow || previewAudit.outsideViewport.length || previewAudit.clippedText.length || previewAudit.contrast.length || previewAudit.unlabeled.length || previewAudit.smallTargets.length || errors.length || requests.length;
+      if (previewIssues) failures.push({name: previewName, audit: previewAudit, errors, requests});
+      const geometry = await page.locator('#invitation-preview').evaluate(element => ({width: element.clientWidth, scrollWidth: element.scrollWidth}));
+      assert(geometry.scrollWidth <= geometry.width, JSON.stringify(geometry));
+      await page.screenshot({path: resolve(output, `${previewName}.png`), animations: 'disabled'});
+      await page.keyboard.press('Tab');
+      assert.equal(await page.locator(':focus').textContent(), 'Close preview');
+      const target = await page.locator(':focus').boundingBox();
+      assert(target && target.y >= 0 && target.y + target.height <= (variant.height ?? 960), JSON.stringify(target));
+      await page.keyboard.press('Escape');
+      assert(await page.locator('#form button[type="submit"]').evaluate(element => element === document.activeElement));
+    }
     await page.close();
   }
   for (const surface of surfaces) {
@@ -151,6 +174,35 @@ try {
     await page.keyboard.press('Escape');
     assert(!(await page.locator('#dialog').evaluate(element => element.open)));
     assert.equal(await page.locator(':focus').getAttribute('id'), 'review');
+  });
+  await check('editorial invitation validation, current recipient, repeat preview and focus recovery', async () => {
+    await page.goto(`${server.url}/examples/index.html`);
+    const email = page.locator('#email'), trigger = page.locator('#form button[type="submit"]'), preview = page.locator('#invitation-preview');
+    for (const invalid of ['', 'not-an-address']) {
+      await email.fill(invalid); await trigger.click();
+      assert(!(await preview.evaluate(element => element.open)));
+      assert(await email.evaluate(element => !element.validity.valid && element === document.activeElement));
+      assert.equal(await page.locator('#feedback').textContent(), '');
+    }
+    await email.fill('reader@example.com'); await trigger.focus(); await page.keyboard.press('Enter');
+    assert(await preview.evaluate(element => element.open));
+    assert.equal(await page.locator('#preview-recipient').textContent(), 'reader@example.com');
+    assert.equal(await page.locator(':focus').getAttribute('id'), 'preview-title');
+    await email.evaluate(element => element.focus());
+    assert(await preview.evaluate(element => element.contains(document.activeElement)), 'Background input must be inert');
+    await page.keyboard.press('Escape');
+    assert(await trigger.evaluate(element => element === document.activeElement));
+    assert.equal(await email.inputValue(), 'reader@example.com');
+    await page.waitForFunction(() => document.querySelector('#feedback').textContent.includes('Preview closed'));
+    assert.match(await page.locator('#feedback').textContent(), /Preview closed/);
+    await email.fill('another@example.com');
+    assert.equal(await page.locator('#feedback').textContent(), '');
+    await email.press('Enter');
+    assert.equal(await page.locator('#preview-recipient').textContent(), 'another@example.com');
+    await preview.getByRole('button', {name: 'Close preview'}).click();
+    assert(!(await preview.evaluate(element => element.open)));
+    assert(await email.evaluate(element => element === document.activeElement));
+    assert.equal(await email.inputValue(), 'another@example.com');
   });
   }
   if (surfaces.some(surface => surface.name === 'repair-notebook')) {

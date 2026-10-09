@@ -1,0 +1,40 @@
+{
+  "reports": [
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "height": 960,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "height": 480,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": []
+    }
+  ]
+}

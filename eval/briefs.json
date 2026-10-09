@@ -90,5 +90,12 @@
     "kind": "tooling",
     "reviewMode": "self",
     "taste": "both"
+  },
+  {
+    "cycle": "19",
+    "task": "Invitation preview with current recipients, native validation, dismissal and readable enlarged overlays.",
+    "artifact": "../examples/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

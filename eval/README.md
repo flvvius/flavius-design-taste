@@ -29,8 +29,9 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [15](cycles/15/outcome.md) | Native Personal room | iOS Dynamic Type scales handwriting, reading and wrapping actions; live updates pass. Self-review. |
 | [16](cycles/16/outcome.md) | Native navigation | XCTest catches state leaking between notes and an off-screen enlarged destination. Self-review. |
 | [17](cycles/17/outcome.md) | Optional native font | Missing Schoolbell no longer crashes; system type scales and preserves reading actions. Self-review. |
-
 | [18](cycles/18/outcome.md) | Captured inputs | Browser serving and native packaging keep tested bytes and their hashes through edits. Self-review. |
+
+| [19](cycles/19/outcome.md) | Invitation preview | The promised draft appears with its current recipient, validation and repeatable native dismissal. Self-review. |
 
 Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
 
@@ -38,7 +39,7 @@ The final [artifact audit](final-audit.json) covers all ten screens and 60 clean
 
 ## Research and current checks
 
-The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 18. [Repository revisions](research/sources.json) make that comparison repeatable.
+The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 19. [Repository revisions](research/sources.json) make that comparison repeatable.
 
 Run `npm run test:tooling` for conversion and browser-helper fixtures. Run `npm run check:browser -- --output .artifacts/browser` for the maintained specimens and the repair notebook. Optional repeated `--surface` arguments select `personal-room`, `editorial-calm` or `repair-notebook`. The default checks all three. A failed measurement or runner error returns a failing exit code. Reports and captures identify their source hashes and limitations.
 

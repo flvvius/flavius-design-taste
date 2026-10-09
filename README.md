@@ -117,7 +117,7 @@ npm run test:tooling
 npm run check:browser -- --output .artifacts/browser
 ```
 
-The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images and screen readers still require their own review.
+The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It also inspects the invitation preview while open, including a 480px-tall viewport with enlarged text. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images and screen readers still require their own review.
 
 Browser and native runners capture their input bytes before testing. Browsers receive those captured assets, and native builds compile and package the captured files. Report hashes identify those bytes even if the working tree changes during a run. This is a per-file capture, not an atomic Git checkout or a claim that every screenshot or binary is reproducible byte for byte. `python3 -m unittest discover -s scripts/tests -p 'test_*.py'` checks native capture and project packaging without Xcode; these fixtures also run in CI.
 

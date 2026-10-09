@@ -16,6 +16,7 @@ Look at the render before reading automated findings. Check whether the main act
 - Traverse controls by keyboard or platform accessibility navigation. Check names, focus, target sizes and non-colour state cues.
 - Check a 320 CSS pixel layout separately from text enlargement. Apply user text-spacing overrides as well: 1.5 line height, 2em after paragraphs, .12em tracking and .16em word spacing. These are resilience checks, not new defaults.
 - Test important actions twice. Close and reopen overlays, retry failed requests and follow the same destination again. Check where focus lands after activation, not only whether an outline exists.
+- Confirm that the action produces the result its label promises. A success message alone does not establish that a preview, download or saved change exists.
 - Enable reduced motion. Verify that content remains understandable when animation disappears.
 - Compare repeated content across screens. Equivalent content should share anatomy.
 
