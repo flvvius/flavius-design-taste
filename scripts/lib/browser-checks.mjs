@@ -2,7 +2,7 @@ import {createServer} from 'node:http';
 import {readFile, stat} from 'node:fs/promises';
 import {extname, resolve, sep} from 'node:path';
 
-export async function serve(root) {
+export async function serve(root, files) {
   root = resolve(root);
   const mime = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.mjs':'text/javascript', '.json':'application/json', '.woff2':'font/woff2', '.ttf':'font/ttf', '.png':'image/png', '.svg':'image/svg+xml'};
   const server = createServer(async (request, response) => {
@@ -13,9 +13,11 @@ export async function serve(root) {
         response.writeHead(403).end();
         return;
       }
-      const file = (await stat(path)).isDirectory() ? resolve(path, 'index.html') : path;
+      const file = files ? (files.has(path) ? path : resolve(path, 'index.html')) : (await stat(path)).isDirectory() ? resolve(path, 'index.html') : path;
+      const bytes = files ? files.get(file) : await readFile(file);
+      if (bytes === undefined) throw new Error('File is outside the captured inputs');
       response.setHeader('Content-Type', mime[extname(file)] ?? 'application/octet-stream');
-      response.end(await readFile(file));
+      response.end(bytes);
     } catch {
       response.writeHead(404).end();
     }

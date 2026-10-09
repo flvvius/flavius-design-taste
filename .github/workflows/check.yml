@@ -10,6 +10,7 @@ jobs:
           node-version: 22
       - run: node scripts/check.mjs
       - run: node --test scripts/tests/color.test.mjs
+      - run: python3 -m unittest discover -s scripts/tests -p 'test_*.py'
   browser:
     runs-on: ubuntu-latest
     steps:

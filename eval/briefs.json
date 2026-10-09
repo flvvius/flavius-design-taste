@@ -83,5 +83,12 @@
     "task": "Native reading without Schoolbell with scaled fallback and simulator gestures.",
     "reviewMode": "self",
     "taste": "personal-room"
+  },
+  {
+    "cycle": "18",
+    "task": "Evaluation reports identify captured inputs through concurrent edits and deleted assets.",
+    "kind": "tooling",
+    "reviewMode": "self",
+    "taste": "both"
   }
 ]

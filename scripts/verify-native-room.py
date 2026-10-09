@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Compile and inspect the Personal room iOS specimen in an isolated simulator."""
 import argparse
-import hashlib
 import json
 import platform
 import plistlib
-import shutil
 import subprocess
 import tempfile
 import time
+from lib.source_snapshot import SourceSnapshot
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +24,7 @@ reports, failures, live_updates, interactions = [], [], [], []
 device = args.device
 environment = {'platform': platform.system(), 'architecture': platform.machine()}
 created = device is None
+snapshot = None
 
 def run(*command, **kwargs):
     return subprocess.run(command, check=True, text=True, capture_output=True, **kwargs).stdout.strip()
@@ -51,6 +51,8 @@ def audit(report):
     return issues
 
 try:
+    sources = [args.source.resolve(), ROOT / 'scripts/verify-native-room.py', ROOT / 'scripts/lib/source_snapshot.py', ROOT / 'LICENSE', ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', ROOT / 'skills/personal-room/assets/tokens.json', ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
+    snapshot = SourceSnapshot(ROOT, sources)
     if platform.system() != 'Darwin':
         raise RuntimeError('This verification requires macOS, Xcode and an installed iOS simulator runtime.')
     if created:
@@ -70,15 +72,17 @@ try:
         app.mkdir()
         info = {'CFBundleExecutable': 'Room', 'CFBundleIdentifier': BUNDLE, 'CFBundleName': 'Repair notes', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'MinimumOSVersion': '17.0', 'UIDeviceFamily': [1, 2], 'UILaunchScreen': {}, 'UIAppFonts': [] if args.without_font else ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}
         (app / 'Info.plist').write_bytes(plistlib.dumps(info))
-        shutil.copyfile(ROOT / 'skills/personal-room/assets/tokens.json', app / 'tokens.json')
+        snapshot.write_to(ROOT / 'skills/personal-room/assets/tokens.json', app / 'tokens.json')
         if not args.without_font:
-            shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
-        shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', app / 'Schoolbell-LICENSE.txt')
-        shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', app / 'Schoolbell-NOTICE.txt')
-        shutil.copyfile(ROOT / 'LICENSE', app / 'LICENSE.txt')
+            snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
+        snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', app / 'Schoolbell-LICENSE.txt')
+        snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', app / 'Schoolbell-NOTICE.txt')
+        snapshot.write_to(ROOT / 'LICENSE', app / 'LICENSE.txt')
+        source = Path(directory) / 'NativeRoom.swift'
+        snapshot.write_to(args.source, source)
         sdk = run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-path')
         architecture = 'arm64' if platform.machine() == 'arm64' else 'x86_64'
-        run('xcrun', '--sdk', 'iphonesimulator', 'swiftc', '-parse-as-library', '-sdk', sdk, '-target', f'{architecture}-apple-ios17.0-simulator', str(args.source.resolve()), '-o', str(app / 'Room'))
+        run('xcrun', '--sdk', 'iphonesimulator', 'swiftc', '-parse-as-library', '-sdk', sdk, '-target', f'{architecture}-apple-ios17.0-simulator', str(source), '-o', str(app / 'Room'))
         run('xcrun', 'simctl', 'install', device, str(app))
         data = Path(run('xcrun', 'simctl', 'get_app_container', device, BUNDLE, 'data'))
         layout = data / 'Documents/layout.json'
@@ -174,9 +178,7 @@ except Exception as error:
         failures.append({'name': 'app stderr', 'message': (output / 'app-stderr.log').read_text()[-8000:]})
     failures.append({'name': 'native runner', 'message': str(error) + ('\n' + error.stderr if isinstance(error, subprocess.CalledProcessError) and error.stderr else '')})
 finally:
-    sources = [args.source.resolve(), ROOT / 'scripts/verify-native-room.py', ROOT / 'skills/personal-room/assets/tokens.json', ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
-    hashes = {str(path.relative_to(ROOT) if path.is_relative_to(ROOT) else path): hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None for path in sources}
-    (output / 'checks.json').write_text(json.dumps({'environment': environment, 'sources': hashes, 'reports': reports, 'liveUpdates': live_updates, 'interactions': interactions, 'failures': failures, 'limitations': 'iOS simulator layout and captures with animations disabled by the snapshot launch flag. Programmatic scrolling and UIControl event dispatch, not gesture, keyboard or VoiceOver testing. Text sizing checks use actual UILabel and UIButton measurements; they do not certify every glyph or accessibility behavior.'}, indent=2) + '\n')
+    (output / 'checks.json').write_text(json.dumps({'environment': environment, 'sourceMode': 'captured bytes compiled and bundled', 'sources': snapshot.hashes if snapshot else {}, 'reports': reports, 'liveUpdates': live_updates, 'interactions': interactions, 'failures': failures, 'limitations': 'iOS simulator layout and captures with animations disabled by the snapshot launch flag. Programmatic scrolling and UIControl event dispatch, not gesture, keyboard or VoiceOver testing. Text sizing checks use actual UILabel and UIButton measurements; they do not certify every glyph or accessibility behavior.'}, indent=2) + '\n')
     if created and device:
         subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
         subprocess.run(['xcrun', 'simctl', 'delete', device], capture_output=True)

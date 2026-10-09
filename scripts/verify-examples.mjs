@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
-import {mkdir, writeFile, readFile, mkdtemp} from 'node:fs/promises';
-import {createHash} from 'node:crypto';
+import {mkdir, writeFile, mkdtemp} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
+import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage} from './lib/browser-checks.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -28,12 +28,15 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const server = await serve(root);
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+let server, snapshot;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
   catch (error) {failures.push({name, message: error.message}); interactions.push({name, passed: false, message: error.message});}
 }
 try {
+  snapshot = await captureSources(root, sourcePaths);
+  server = await serve(root, snapshot.files);
   browser = await chromium.launch();
   for (const surface of surfaces) for (const theme of surface.themes) for (const variant of variants) {
     const page = await browser.newPage({viewport: {width: variant.width, height: 960}, reducedMotion: 'reduce', forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
@@ -198,11 +201,9 @@ try {
 } catch (error) {
   failures.push({name: 'verification runner', message: error.message});
 } finally {
-  const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
-  const sources = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, createHash('sha256').update(await readFile(resolve(root, path))).digest('hex')])));
-  await writeFile(resolve(output, 'checks.json'), JSON.stringify({generatedAt: new Date().toISOString(), browser: browser?.version(), sources, reports, interactions, failures, limitations: 'Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification.'}, null, 2) + '\n');
+  await writeFile(resolve(output, 'checks.json'), JSON.stringify({generatedAt: new Date().toISOString(), browser: browser?.version(), node: process.version, sourceMode: 'captured bytes served throughout the run', sources: snapshot?.hashes ?? {}, reports, interactions, failures, limitations: 'Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification.'}, null, 2) + '\n');
   if (browser) await browser.close();
-  await server.close();
+  if (server) await server.close();
 }
 console.log(JSON.stringify({output, layouts: reports.length, interactions: interactions.length, failures: failures.length}));
 if (failures.length) process.exitCode = 1;

@@ -1,0 +1,15 @@
+# Cycle 18: Reports identify the inputs that were tested
+
+The evaluation runners hashed working files at completion. Native tests could already have copied an earlier source revision into their temporary project. Browser layouts could also have loaded an earlier revision before another layout received edited files. The resulting hash identified the final working tree, rather than all the content tested during the run.
+
+The [before mutation fixture](before/mutation.json) reproduces this behavior with the browser helper at commit `f69fd94`. It reads the opening page, edits the original file, reads again and applies the old completion-time hash. The recorded hash differs from the first observed page, and the two requests return different revisions. The [after fixture](after/mutation.json) uses the current capture path. Both requests return the original captured bytes, and the recorded hash matches them.
+
+Browser verification now captures the declared input files before launching Chromium. Its server serves those bytes throughout every layout and interaction. An undeclared file returns a failed request instead of silently introducing an unhashed asset. Native runners capture source, tests, tokens, fonts and licence files before preparing the simulator. Compilation and project packaging consume those captured copies. External baseline source paths retain their own identities in the report.
+
+The [mutation tests](after/tooling.json) edit source, remove an original font file and request undeclared browser content. They verify stable served content, native project bytes, ordinary and fallback font packaging, external baseline identity and a written failure report when a baseline source is missing. The Python fixtures require no Xcode and run in the package CI job. Node fixtures run with the existing tooling suite.
+
+The [browser report](after/browser.json) covers all 48 layout variants and 15 interactions. [Native layout checks](after/native-layout.json) pass nine layouts, two live size changes and three control events. [Native XCTest checks](after/native-ui.json) pass four gesture scenarios and twelve unfiltered accessibility audits. Both runners use captured inputs. The [owned XCTest simulator was removed](after/cleanup.json). No display tokens, typography, layout or reading interactions changed. This cycle reviews evaluation integrity and is self-review by the root agent.
+
+Capture happens once per file. It does not provide an atomic multi-file checkout. Source identity is one part of reproducibility; environment, instructions and output stability remain distinct, as described by [Reproducible Builds](https://reproducible-builds.org/docs/definition/). These checks do not claim byte-identical screenshots or binaries, physical-device coverage or screen-reader certification.
+
+Run `npm run test:tooling` and `python3 -m unittest discover -s scripts/tests -p 'test_*.py'` for the mutation fixtures. The ordinary browser and native commands exercise the same capture paths in full evaluations.

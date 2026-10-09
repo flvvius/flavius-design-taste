@@ -1,0 +1,1971 @@
+{
+  "environment": {
+    "platform": "Darwin",
+    "architecture": "arm64",
+    "device": "Design taste native verification",
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+    "animations": "disabled for snapshots",
+    "fontBundled": true,
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "sdkVersion": "26.5"
+  },
+  "sourceMode": "captured bytes compiled and bundled",
+  "sources": {
+    "eval/cycles/15/NativeRoom.swift": "da42abb5d49084c1bf503722ce04b2a4aecdb7bf6cd784805340d33fbf5f65d6",
+    "scripts/verify-native-room.py": "137a5fc8cf25f40abf079f72134587f817d7f26cef3fc16affd02af8d5bb8ecf",
+    "scripts/lib/source_snapshot.py": "0d419eecf27a59702772ca5a6923b301fa9c97ed8658a520a26b9ac3b7ffb4d5",
+    "LICENSE": "e004d9e6b7cddeda8b53cb2b03a92d28ea25de678e98ba1063f49add9fa38374",
+    "skills/personal-room/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/personal-room/assets/fonts/NOTICE.txt": "28387ead3e6dc3109f089adfa6bf95f9cf1c32fddc0214b17eaac13c9b0153cd",
+    "skills/personal-room/assets/tokens.json": "1ef5b7d8a12948c389e3793465025ba00e7837f82bbad37c63bf6194f1128454",
+    "skills/personal-room/assets/fonts/Schoolbell-Regular.ttf": "00ff6655a5eb1eb70d32f2b7351d1bcf3f45f3f9ca40fd5c0d25da79f7f82a50"
+  },
+  "reports": [
+    {
+      "name": "light-large-top",
+      "layout": {
+        "actionsAxis": "horizontal",
+        "category": "UICTContentSizeCategoryL",
+        "contentSize": {
+          "height": 772,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 0,
+              "y": 679.5
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 127.5,
+              "x": 17,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 173.5,
+              "y": 679.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 109.5,
+              "x": 26,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 24,
+            "frame": {
+              "height": 33,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 33,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 48,
+            "frame": {
+              "height": 131.5,
+              "width": 335,
+              "x": 0,
+              "y": 57
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 131.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 64.5,
+              "width": 335,
+              "x": 0,
+              "y": 212.5
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 64.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 32,
+            "frame": {
+              "height": 44,
+              "width": 335,
+              "x": 0,
+              "y": 326
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 44,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 15,
+            "frame": {
+              "height": 18,
+              "width": 335,
+              "x": 0,
+              "y": 394
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 18,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 86.5,
+              "width": 335,
+              "x": 0,
+              "y": 436
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 86.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 546.5
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 613
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": false,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "light-large-bottom",
+      "layout": {
+        "actionsAxis": "horizontal",
+        "category": "UICTContentSizeCategoryL",
+        "contentSize": {
+          "height": 772,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 0,
+              "y": 679.5
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 127.5,
+              "x": 17,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 173.5,
+              "y": 679.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 109.5,
+              "x": 26,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 24,
+            "frame": {
+              "height": 33,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 33,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 48,
+            "frame": {
+              "height": 131.5,
+              "width": 335,
+              "x": 0,
+              "y": 57
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 131.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 64.5,
+              "width": 335,
+              "x": 0,
+              "y": 212.5
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 64.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 32,
+            "frame": {
+              "height": 44,
+              "width": 335,
+              "x": 0,
+              "y": 326
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 44,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 15,
+            "frame": {
+              "height": 18,
+              "width": 335,
+              "x": 0,
+              "y": 394
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 18,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 86.5,
+              "width": 335,
+              "x": 0,
+              "y": 436
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 86.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 546.5
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 613
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": false,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 125
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "light-accessibility-extra-extra-extra-large-top",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3435,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3076
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3237.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 218.5,
+              "x": 58,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 58.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 58.5,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 683.5,
+              "width": 335,
+              "x": 0,
+              "y": 1697.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 683.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2405
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2740.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": false,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "light-accessibility-extra-extra-extra-large-bottom",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3435,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3076
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3237.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 218.5,
+              "x": 58,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 58.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 58.5,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 683.5,
+              "width": 335,
+              "x": 0,
+              "y": 1697.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 683.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2405
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2740.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": false,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 2788
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dark-large-top",
+      "layout": {
+        "actionsAxis": "horizontal",
+        "category": "UICTContentSizeCategoryL",
+        "contentSize": {
+          "height": 772,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 0,
+              "y": 679.5
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 127.5,
+              "x": 17,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 173.5,
+              "y": 679.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 109.5,
+              "x": 26,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 24,
+            "frame": {
+              "height": 33,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 33,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 48,
+            "frame": {
+              "height": 131.5,
+              "width": 335,
+              "x": 0,
+              "y": 57
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 131.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 64.5,
+              "width": 335,
+              "x": 0,
+              "y": 212.5
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 64.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 32,
+            "frame": {
+              "height": 44,
+              "width": 335,
+              "x": 0,
+              "y": 326
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 44,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 15,
+            "frame": {
+              "height": 18,
+              "width": 335,
+              "x": 0,
+              "y": 394
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 18,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 86.5,
+              "width": 335,
+              "x": 0,
+              "y": 436
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 86.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 546.5
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 613
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dark-large-bottom",
+      "layout": {
+        "actionsAxis": "horizontal",
+        "category": "UICTContentSizeCategoryL",
+        "contentSize": {
+          "height": 772,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 0,
+              "y": 679.5
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 127.5,
+              "x": 17,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 173.5,
+              "y": 679.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 109.5,
+              "x": 26,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 24,
+            "frame": {
+              "height": 33,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 33,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 48,
+            "frame": {
+              "height": 131.5,
+              "width": 335,
+              "x": 0,
+              "y": 57
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 131.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 64.5,
+              "width": 335,
+              "x": 0,
+              "y": 212.5
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 64.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 32,
+            "frame": {
+              "height": 44,
+              "width": 335,
+              "x": 0,
+              "y": 326
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 44,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 15,
+            "frame": {
+              "height": 18,
+              "width": 335,
+              "x": 0,
+              "y": 394
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 18,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 86.5,
+              "width": 335,
+              "x": 0,
+              "y": 436
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 86.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 546.5
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 613
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 125
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dark-accessibility-extra-extra-extra-large-top",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3435,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3076
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3237.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 218.5,
+              "x": 58,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 58.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 58.5,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 683.5,
+              "width": 335,
+              "x": 0,
+              "y": 1697.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 683.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2405
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2740.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dark-accessibility-extra-extra-extra-large-bottom",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3435,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3076
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3237.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 218.5,
+              "x": 58,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 58.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 58.5,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 683.5,
+              "width": 335,
+              "x": 0,
+              "y": 1697.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 683.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2405
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2740.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 2788
+        }
+      },
+      "issues": []
+    },
+    {
+      "name": "dark-accessibility-next-note",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3493,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3134
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3295.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 303,
+              "x": 16,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read previous note"
+          }
+        ],
+        "eventChecks": [
+          {
+            "name": "mark repaired",
+            "passed": true
+          },
+          {
+            "name": "unmark repaired",
+            "passed": true
+          },
+          {
+            "name": "next note updates its content",
+            "passed": true
+          }
+        ],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "A loose spine"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 116.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 116.5,
+            "text": "4 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 621.5,
+              "width": 335,
+              "x": 0,
+              "y": 1755.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 621.5,
+            "text": "The sewing still holds, but the cover has come away from the spine. I lifted the old glue and added a narrow strip of linen."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 435.5,
+              "width": 335,
+              "x": 0,
+              "y": 2401
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 435.5,
+            "text": "The book opens more easily now. The pages can lie flat without pulling at the hinge."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 249.5,
+              "width": 335,
+              "x": 0,
+              "y": 2860.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 249.5,
+            "text": "O repara\u021bie mic\u0103. Cartea poate fi citit\u0103 din nou."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 2846
+        }
+      },
+      "issues": []
+    }
+  ],
+  "liveUpdates": [
+    {
+      "category": "large",
+      "layout": {
+        "actionsAxis": "horizontal",
+        "category": "UICTContentSizeCategoryL",
+        "contentSize": {
+          "height": 772,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 0,
+              "y": 679.5
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 127.5,
+              "x": 17,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 17,
+            "frame": {
+              "height": 44.5,
+              "width": 161.5,
+              "x": 173.5,
+              "y": 679.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 20.5,
+              "width": 109.5,
+              "x": 26,
+              "y": 12
+            },
+            "requiredTextHeight": 20.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 24,
+            "frame": {
+              "height": 33,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 33,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 48,
+            "frame": {
+              "height": 131.5,
+              "width": 335,
+              "x": 0,
+              "y": 57
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 131.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 64.5,
+              "width": 335,
+              "x": 0,
+              "y": 212.5
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 64.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 32,
+            "frame": {
+              "height": 44,
+              "width": 335,
+              "x": 0,
+              "y": 326
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 44,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 15,
+            "frame": {
+              "height": 18,
+              "width": 335,
+              "x": 0,
+              "y": 394
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 18,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 86.5,
+              "width": 335,
+              "x": 0,
+              "y": 436
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 86.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 546.5
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 17,
+            "frame": {
+              "height": 42.5,
+              "width": 335,
+              "x": 0,
+              "y": 613
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 42.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 125
+        }
+      },
+      "issues": []
+    },
+    {
+      "category": "accessibility-extra-extra-extra-large",
+      "layout": {
+        "actionsAxis": "vertical",
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "contentSize": {
+          "height": 3435,
+          "width": 375
+        },
+        "controls": [
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3076
+            },
+            "id": "repair",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 187,
+              "x": 74,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "mark as repaired"
+          },
+          {
+            "fontSize": 53,
+            "frame": {
+              "height": 149.5,
+              "width": 335,
+              "x": 0,
+              "y": 3237.5
+            },
+            "id": "next",
+            "isAccessibilityElement": true,
+            "labelFrame": {
+              "height": 125.5,
+              "width": 218.5,
+              "x": 58,
+              "y": 12
+            },
+            "requiredTextHeight": 125.5,
+            "title": "read next note"
+          }
+        ],
+        "eventChecks": [],
+        "labels": [
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 68,
+            "frame": {
+              "height": 279.5,
+              "width": 335,
+              "x": 0,
+              "y": 0
+            },
+            "id": "byline",
+            "isAccessibilityElement": true,
+            "requiredHeight": 279.5,
+            "text": "mara's repair notes"
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 82,
+            "frame": {
+              "height": 449.5,
+              "width": 335,
+              "x": 0,
+              "y": 303.5
+            },
+            "id": "title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 449.5,
+            "text": "some things can be mended."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 559.5,
+              "width": 335,
+              "x": 0,
+              "y": 777
+            },
+            "id": "intro",
+            "isAccessibilityElement": true,
+            "requiredHeight": 559.5,
+            "text": "From a bookbinder's workbench. Notes on old books, stubborn glue, and knowing when to leave a mark alone."
+          },
+          {
+            "fontName": "Schoolbell-Regular",
+            "fontSize": 75,
+            "frame": {
+              "height": 205.5,
+              "width": 335,
+              "x": 0,
+              "y": 1385.5
+            },
+            "id": "note-title",
+            "isAccessibilityElement": true,
+            "requiredHeight": 205.5,
+            "text": "The blue notebook"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 49,
+            "frame": {
+              "height": 58.5,
+              "width": 335,
+              "x": 0,
+              "y": 1615
+            },
+            "id": "date",
+            "isAccessibilityElement": true,
+            "requiredHeight": 58.5,
+            "text": "7 October 2026"
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 683.5,
+              "width": 335,
+              "x": 0,
+              "y": 1697.5
+            },
+            "id": "body",
+            "isAccessibilityElement": true,
+            "requiredHeight": 683.5,
+            "text": "The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2405
+            },
+            "id": "second-paragraph",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "Someone has written a grocery list on the last page. I left it there."
+          },
+          {
+            "fontName": ".SFUI-Regular",
+            "fontSize": 53,
+            "frame": {
+              "height": 311.5,
+              "width": 335,
+              "x": 0,
+              "y": 2740.5
+            },
+            "id": "romanian",
+            "isAccessibilityElement": true,
+            "requiredHeight": 311.5,
+            "text": "\u00cencet, cu r\u0103bdare. P\u0103strez urmele pe care le-a l\u0103sat timpul."
+          }
+        ],
+        "night": true,
+        "viewport": {
+          "height": 647,
+          "width": 375,
+          "x": 0,
+          "y": 125
+        }
+      },
+      "issues": []
+    }
+  ],
+  "interactions": [
+    {
+      "name": "mark repaired",
+      "passed": true
+    },
+    {
+      "name": "unmark repaired",
+      "passed": true
+    },
+    {
+      "name": "next note updates its content",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "limitations": "iOS simulator layout and captures with animations disabled by the snapshot launch flag. Programmatic scrolling and UIControl event dispatch, not gesture, keyboard or VoiceOver testing. Text sizing checks use actual UILabel and UIButton measurements; they do not certify every glyph or accessibility behavior."
+}

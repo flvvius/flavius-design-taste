@@ -1,0 +1,180 @@
+{
+  "fontBundled": true,
+  "sourceMode": "captured bytes copied into the test project",
+  "sources": {
+    "eval/cycles/15/NativeRoom.swift": "da42abb5d49084c1bf503722ce04b2a4aecdb7bf6cd784805340d33fbf5f65d6",
+    "eval/cycles/16/RoomUITests.swift": "48a2d6ec9040f3c27be09821f8fd4391179bf581977542819f14627be5e8af66",
+    "scripts/verify-native-interactions.py": "d44e57022d04fb787378e6c29bc9dcc052a59e014bea7258d3d0d08a1aa110b7",
+    "scripts/lib/native_project.py": "5a67957bcdd033ec046e0b3d6063f7411b8e0ebcaf1de79267c8e2838caf12d2",
+    "scripts/lib/source_snapshot.py": "0d419eecf27a59702772ca5a6923b301fa9c97ed8658a520a26b9ac3b7ffb4d5",
+    "LICENSE": "e004d9e6b7cddeda8b53cb2b03a92d28ea25de678e98ba1063f49add9fa38374",
+    "skills/personal-room/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "skills/personal-room/assets/fonts/NOTICE.txt": "28387ead3e6dc3109f089adfa6bf95f9cf1c32fddc0214b17eaac13c9b0153cd",
+    "skills/personal-room/assets/tokens.json": "1ef5b7d8a12948c389e3793465025ba00e7837f82bbad37c63bf6194f1128454",
+    "skills/personal-room/assets/fonts/Schoolbell-Regular.ttf": "00ff6655a5eb1eb70d32f2b7351d1bcf3f45f3f9ca40fd5c0d25da79f7f82a50"
+  },
+  "reports": [
+    {
+      "name": "light-large",
+      "exitCode": 0,
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "837C2FED-050F-45D2-8D1F-C869D408CDFB",
+              "deviceName": "Design taste UI verification",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "23F77",
+              "osVersion": "26.5",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "Room \u00b7 Built with macOS 26.5.1",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1791583042.146,
+        "passedTests": 1,
+        "result": "Passed",
+        "skippedTests": 0,
+        "startTime": 1791583004.739,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - Room",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    },
+    {
+      "name": "light-accessibility-extra-extra-extra-large",
+      "exitCode": 0,
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "837C2FED-050F-45D2-8D1F-C869D408CDFB",
+              "deviceName": "Design taste UI verification",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "23F77",
+              "osVersion": "26.5",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "Room \u00b7 Built with macOS 26.5.1",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1791583077.827,
+        "passedTests": 1,
+        "result": "Passed",
+        "skippedTests": 0,
+        "startTime": 1791583044.253,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - Room",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    },
+    {
+      "name": "dark-large",
+      "exitCode": 0,
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "837C2FED-050F-45D2-8D1F-C869D408CDFB",
+              "deviceName": "Design taste UI verification",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "23F77",
+              "osVersion": "26.5",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "Room \u00b7 Built with macOS 26.5.1",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1791583093.847,
+        "passedTests": 1,
+        "result": "Passed",
+        "skippedTests": 0,
+        "startTime": 1791583078.998,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - Room",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    },
+    {
+      "name": "dark-accessibility-extra-extra-extra-large",
+      "exitCode": 0,
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "837C2FED-050F-45D2-8D1F-C869D408CDFB",
+              "deviceName": "Design taste UI verification",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "23F77",
+              "osVersion": "26.5",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "Room \u00b7 Built with macOS 26.5.1",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1791583126.769,
+        "passedTests": 1,
+        "result": "Passed",
+        "skippedTests": 0,
+        "startTime": 1791583094.631,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - Room",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": "XCTest simulator swipes and taps with native animations enabled. Each test runs unfiltered Apple accessibility audits at the opening, action area and next-note heading. This is not physical-device or VoiceOver certification."
+}

@@ -1,0 +1,10 @@
+{
+  "baseline": "f69fd94",
+  "mode": "after",
+  "observed": "<p>Revision tested at the opening</p>",
+  "subsequent": "<p>Revision tested at the opening</p>",
+  "observedHash": "58f1f603d9c333228db11bf4ea35847cfed9627f16978f055e265414d7f70891",
+  "reportedHash": "58f1f603d9c333228db11bf4ea35847cfed9627f16978f055e265414d7f70891",
+  "reportMatchesObserved": true,
+  "revisionStable": true
+}
