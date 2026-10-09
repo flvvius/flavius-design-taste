@@ -39,3 +39,7 @@ Press transforms can use `--motion-pressScale`; durations use `--motion-press`, 
 ## Long words and enlarged text
 
 A responsive container does not guarantee its text can fit. Give headings and prose a long-word fallback such as language-aware hyphenation with `overflow-wrap:anywhere` when necessary. Test the longest word at enlarged sizes. Preserve the requested text size and the full content; hiding overflow or clipping the heading is not a correction. Complete monetary values follow the intact-amount pattern instead of arbitrary character wrapping.
+
+## Forced colours
+
+Keep system colour substitution enabled. Test keyboard focus, form boundaries and selected states with forced colours active. A selected state needs a text or shape marker as well as its regular colour. Use a border or outline for essential boundaries; shadows may disappear. Apply system colours inside a `forced-colors` query when the browser's default substitution needs help, rather than freezing the whole interface with `forced-color-adjust: none`.

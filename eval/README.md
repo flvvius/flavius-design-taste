@@ -25,6 +25,7 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [11](cycles/11/outcome.md) | Personal room resilience | All-text overflow and repeated-link failure fixed; reproducible browser checks added. Self-review. |
 | [12](cycles/12/outcome.md) | Repair notebook | Personal room transfers to reading and editing with conventional controls. Self-review. |
 | [13](cycles/13/outcome.md) | Verification tooling | Alpha contrast, colour validation and deliberate-defect fixtures improve the checks. Self-review. |
+| [14](cycles/14/outcome.md) | Forced colours | Selected palettes retain a visible marker; keyboard checks wait for native scrolling. Self-review. |
 
 Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
 
@@ -32,7 +33,7 @@ The final [artifact audit](final-audit.json) covers all ten screens and 60 clean
 
 ## Research and current checks
 
-The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 13. [Repository revisions](research/sources.json) make that comparison repeatable.
+The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 14. [Repository revisions](research/sources.json) make that comparison repeatable.
 
 Run `npm run test:tooling` for conversion and browser-helper fixtures. Run `npm run check:browser -- --output .artifacts/browser` for the maintained specimens and the repair notebook. Optional repeated `--surface` arguments select `personal-room`, `editorial-calm` or `repair-notebook`. The default checks all three. A failed measurement or runner error returns a failing exit code. Reports and captures identify their source hashes and limitations.
 

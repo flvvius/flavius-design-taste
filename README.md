@@ -117,7 +117,7 @@ npm run test:tooling
 npm run check:browser -- --output .artifacts/browser
 ```
 
-The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement and spacing overrides. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images, screen readers and native platforms still require their own review.
+The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images, screen readers and native platforms still require their own review.
 
 ## What belongs to Editorial calm
 

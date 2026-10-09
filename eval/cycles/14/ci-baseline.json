@@ -1,0 +1,11 @@
+{
+  "run": "https://github.com/flvvius/flavius-design-taste/actions/runs/37962946783",
+  "sourceCommit": "fa770a6dfceda7b478ae6fa30860b324800f068a",
+  "browser": "149.0.7827.55",
+  "failures": [
+    {
+      "name": "keyboard project activation focuses visible summary",
+      "message": "The expression evaluated to a falsy value:\n\n  assert(rect && rect.y >= 0 && rect.y + rect.height <= 844)\n"
+    }
+  ]
+}

@@ -42,6 +42,10 @@ Animate transforms or opacity for small feedback. An object can lift 6px and add
 
 With reduced motion, show final marks, stop continuous movement and remove lift, tilt and entrance travel. A soundtrack is optional, has a named play/pause control, and never starts on load. No work or contact action depends on media playback, an external API or a canvas rendering.
 
+## Forced colours
+
+Let the browser replace the palette in forced-colour mode. Keep native links, buttons and field boundaries; avoid `forced-color-adjust: none` on the whole page. A selected option needs a shape or text marker that survives colour replacement. For adjacent palette buttons, a forced-colour underline on `[aria-pressed="true"]` distinguishes selection from the keyboard focus outline. Check the marker after switching options, not only on first load. Shadows and texture may disappear without changing the reading order or hiding an action.
+
 ## Review the result
 
 Open it on a wide and narrow screen, with the font unavailable and with reduced motion. Tab through the interactive objects. Read the content without the illustrations. It should still tell you whose page it is, what they do and where the links go. If removing the handwriting leaves a generic sales page, improve the content and composition before adding more doodles.

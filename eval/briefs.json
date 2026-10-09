@@ -58,5 +58,12 @@
     "kind": "tooling",
     "reviewMode": "self",
     "taste": "both"
+  },
+  {
+    "cycle": "14",
+    "task": "Forced-colour selection, keyboard focus and control boundaries with colour replacement.",
+    "artifact": "../examples/personal-room/index.html",
+    "reviewMode": "self",
+    "taste": "both"
   }
 ]

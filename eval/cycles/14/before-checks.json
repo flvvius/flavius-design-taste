@@ -1,0 +1,113 @@
+{
+  "sourceCommit": "fa770a6",
+  "results": [
+    {
+      "name": "personal-room",
+      "buttons": [
+        {
+          "text": "paper",
+          "pressed": "true",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(255, 255, 255, 0)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "night",
+          "pressed": "false",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(255, 255, 255, 0)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        }
+      ],
+      "focus": {
+        "outline": "rgba(5, 0, 73, 0.8) solid 2px",
+        "visible": true
+      }
+    },
+    {
+      "name": "repair-notebook",
+      "buttons": [
+        {
+          "text": "paper",
+          "pressed": "true",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(255, 255, 255, 0)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "night",
+          "pressed": "false",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(255, 255, 255, 0)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "save note",
+          "pressed": null,
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "cancel edit",
+          "pressed": null,
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(255, 255, 255, 0)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        }
+      ],
+      "focus": {
+        "outline": "rgb(0, 0, 0) none 3px",
+        "visible": false
+      }
+    },
+    {
+      "name": "editorial-calm",
+      "buttons": [
+        {
+          "text": "Dark theme",
+          "pressed": "false",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "Review",
+          "pressed": null,
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        },
+        {
+          "text": "Preview invitation",
+          "pressed": null,
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "border": "rgb(0, 0, 0)",
+          "borderStyle": "solid",
+          "textDecoration": "none"
+        }
+      ],
+      "focus": {
+        "outline": "rgba(5, 0, 73, 0.8) solid 2px",
+        "visible": true
+      }
+    }
+  ]
+}

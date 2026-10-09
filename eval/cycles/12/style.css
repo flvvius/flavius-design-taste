@@ -51,3 +51,4 @@ footer {display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-
 @media(max-width:520px) {nav ul{grid-template-columns:minmax(0,1fr)}.margin-note br{display:none}}
 @media(prefers-reduced-motion:reduce) {button:active{transform:none}}
 @media(forced-colors:active) {button,input,textarea{border-color:ButtonText}:focus-visible{outline-color:Highlight}}
+@media(forced-colors:active) {.palette button[aria-pressed='true']{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}}

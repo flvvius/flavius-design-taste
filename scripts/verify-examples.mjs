@@ -25,7 +25,8 @@ for (const name of requestedSurfaces) if (!allSurfaces.some(surface => surface.n
 const surfaces = allSurfaces.filter(surface => !requestedSurfaces.length || requestedSurfaces.includes(surface.name));
 const variants = [
   {width: 320, mode: 'normal'}, {width: 390, mode: 'normal'}, {width: 768, mode: 'normal'}, {width: 1440, mode: 'normal'},
-  {width: 320, mode: 'all-text-200'}, {width: 320, mode: 'spacing'}
+  {width: 320, mode: 'all-text-200'}, {width: 320, mode: 'spacing'},
+  {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
 const server = await serve(root);
 async function check(name, operation) {
@@ -35,7 +36,7 @@ async function check(name, operation) {
 try {
   browser = await chromium.launch();
   for (const surface of surfaces) for (const theme of surface.themes) for (const variant of variants) {
-    const page = await browser.newPage({viewport: {width: variant.width, height: 960}, reducedMotion: 'reduce'});
+    const page = await browser.newPage({viewport: {width: variant.width, height: 960}, reducedMotion: 'reduce', forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
     const errors = [], requests = [];
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => {if (response.status() >= 400) requests.push({url: response.url(), status: response.status()});});
@@ -56,6 +57,35 @@ try {
     await page.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
     await page.close();
   }
+  for (const surface of surfaces) {
+    await check(`${surface.name} forced-colour keyboard focus and control boundaries`, async () => {
+      const forced = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 844}});
+      try {
+        await forced.goto(`${server.url}/${surface.path}`);
+        assert(await forced.evaluate(() => matchMedia('(forced-colors: active)').matches));
+        await forced.keyboard.press('Tab');
+        const outline = await forced.locator(':focus').evaluate(element => {
+          const style = getComputedStyle(element);
+          return {visible: element.matches(':focus-visible'), style: style.outlineStyle, width: parseFloat(style.outlineWidth)};
+        });
+        assert(outline.visible && outline.style !== 'none' && outline.width >= 2);
+        if (surface.palette) {
+          await forced.locator('[data-palette="night"]').focus();
+          await forced.keyboard.press('Space');
+          assert.equal(await forced.locator('[data-palette="night"]').getAttribute('aria-pressed'), 'true');
+          const markers = await forced.locator('[data-palette]').evaluateAll(elements => elements.map(element => ({pressed: element.getAttribute('aria-pressed'), underline: getComputedStyle(element).textDecorationLine.includes('underline')})));
+          assert(markers.every(marker => marker.underline === (marker.pressed === 'true')), 'Selection must remain distinguishable after colour replacement');
+        }
+        if (surface.setup) await surface.setup(forced);
+        const boundaries = await forced.locator('button, input, textarea, select').evaluateAll(elements => elements.filter(element => element.getClientRects().length).map(element => {
+          const style = getComputedStyle(element);
+          return {name: element.id || element.textContent.trim(), width: parseFloat(style.borderTopWidth), style: style.borderTopStyle, color: style.borderTopColor, background: style.backgroundColor};
+        }));
+        assert(boundaries.length);
+        assert(boundaries.every(boundary => boundary.width >= 1 && boundary.style !== 'none' && boundary.color !== boundary.background), JSON.stringify(boundaries));
+      } finally {await forced.close();}
+    });
+  }
   const page = await browser.newPage({viewport: {width: 390, height: 844}});
   if (surfaces.some(surface => surface.name === 'personal-room')) {
   await page.goto(`${server.url}/examples/personal-room/index.html`);
@@ -68,7 +98,11 @@ try {
   await check('keyboard project activation focuses visible summary', async () => {
     await page.locator('.object-link').nth(1).focus(); await page.keyboard.press('Enter');
     await page.waitForFunction(() => document.activeElement?.matches('#project-notes summary'));
-    const rect = await page.locator(':focus').boundingBox(); assert(rect && rect.y >= 0 && rect.y + rect.height <= 844);
+    await page.waitForFunction(() => {
+      const rect = document.activeElement.getBoundingClientRect();
+      return rect.top >= 0 && rect.bottom <= innerHeight;
+    }, undefined, {timeout: 3000});
+    const rect = await page.locator(':focus').boundingBox(); assert(rect && rect.y >= 0 && rect.y + rect.height <= 844, JSON.stringify(rect));
   });
   await check('skip link reaches main', async () => {
     await page.goto(`${server.url}/examples/personal-room/index.html`); await page.keyboard.press('Tab');

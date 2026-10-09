@@ -99,3 +99,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .object-link:hover svg, .sketch-button:hover, .sketch-button:active { transform: none; }
 }
+
+@media (forced-colors: active) {
+  .palette button[aria-pressed='true'] { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+}
