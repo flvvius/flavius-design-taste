@@ -1,0 +1,162 @@
+[
+  {
+    "name": "chromium",
+    "version": "149.0.7827.55",
+    "snapshot": {
+      "query": "climate",
+      "status": "Waiting for your search…",
+      "busy": "false",
+      "loading": false,
+      "retry": false,
+      "titles": []
+    },
+    "events": [
+      {
+        "type": "input",
+        "data": "slow",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "compositionstart"
+      },
+      {
+        "type": "input",
+        "data": "climate",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      }
+    ]
+  },
+  {
+    "name": "firefox",
+    "version": "151.0",
+    "snapshot": {
+      "query": "climate",
+      "status": "2 results for \"climate\".",
+      "busy": "false",
+      "loading": false,
+      "retry": false,
+      "titles": [
+        "A cooler summer starts with street trees",
+        "Repair cafés keep everyday objects in use"
+      ]
+    },
+    "events": [
+      {
+        "type": "compositionstart",
+        "data": ""
+      },
+      {
+        "type": "compositionend",
+        "data": "slow"
+      },
+      {
+        "type": "input",
+        "data": "slow",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "compositionstart"
+      },
+      {
+        "type": "compositionstart",
+        "data": "slow"
+      },
+      {
+        "type": "compositionend",
+        "data": "climate"
+      },
+      {
+        "type": "input",
+        "data": "climate",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      }
+    ]
+  },
+  {
+    "name": "webkit",
+    "version": "26.5",
+    "snapshot": {
+      "query": "climate",
+      "status": "Waiting for your search…",
+      "busy": "false",
+      "loading": false,
+      "retry": false,
+      "titles": []
+    },
+    "events": [
+      {
+        "type": "input",
+        "data": "slow",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "compositionstart"
+      },
+      {
+        "type": "input",
+        "data": "climate",
+        "isComposing": false
+      },
+      {
+        "type": "keydown",
+        "key": "Enter",
+        "isComposing": false
+      },
+      {
+        "type": "keyup",
+        "key": "Enter",
+        "isComposing": false
+      }
+    ]
+  }
+]

@@ -52,7 +52,7 @@ footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem;
 <header>
 <span class="brand">Margin / Library</span>
 <label for="theme">Appearance
-<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+<select id="theme" disabled><option value="system">System</option><option value="light" selected>Light</option><option value="dark">Dark</option></select>
 </label>
 </header>
 <h1>Search the library</h1>
@@ -60,36 +60,42 @@ footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem;
 <form id="search" role="search">
 <label for="query">Search articles</label>
 <div class="search-controls">
-<input id="query" name="query" type="search" autocomplete="off" maxlength="120" aria-describedby="help" placeholder="Try climate or transport">
-<button class="primary" type="submit">Search</button>
-<button id="clear" type="button">Clear</button>
+<input disabled id="query" name="query" type="search" autocomplete="off" maxlength="120" aria-describedby="help" placeholder="Try climate or transport">
+<button disabled class="primary" type="submit">Search</button>
+<button disabled id="clear" type="button">Clear</button>
 </div>
-<p id="help" class="muted">Sample data only. Search runs as you type. Expand a result to read its sample excerpt.</p>
+<p id="help" class="muted">Sample data only. Expand an article to read its sample excerpt.</p>
 </form>
 <section aria-labelledby="results-title">
 <h2 id="results-title">Results</h2>
-<p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+<p id="status" role="status" aria-live="polite" aria-atomic="true">Six sample articles are available below. Search controls are unavailable in this view.</p>
 <div id="content" aria-busy="false">
 <div id="loading" hidden aria-hidden="true">
 <div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
 <div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
 <div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
 </div>
-<ul id="results"></ul>
+<ul id="results">
+<li class="result" data-author="Mara Bell" data-topic="Climate" data-date="8 October 2026"><details><summary>A cooler summer starts with street trees</summary><p class="excerpt">A sample report on shade, street trees and how cities measure summer heat. Residents compare temperatures along two walking routes.</p></details><p class="meta">Climate · Mara Bell · 8 October 2026</p></li>
+<li class="result" data-author="Leo Chen" data-topic="Transport" data-date="7 October 2026"><details><summary>The night train returns to the timetable</summary><p class="excerpt">A sample transport story about overnight rail. The proposed timetable connects regional stations before the morning commute.</p></details><p class="meta">Transport · Leo Chen · 7 October 2026</p></li>
+<li class="result" data-author="Mara Bell" data-topic="Cities" data-date="6 October 2026"><details><summary>Who gets space on the high street?</summary><p class="excerpt">A sample story about footpaths, deliveries and local shops. A town tests a different allocation of street space.</p></details><p class="meta">Cities · Mara Bell · 6 October 2026</p></li>
+<li class="result" data-author="Nina Patel" data-topic="Climate" data-date="5 October 2026"><details><summary>Repair cafés keep everyday objects in use</summary><p class="excerpt">A sample account of volunteers repairing lamps and kitchen tools. Visitors learn to identify a fault before buying a replacement.</p></details><p class="meta">Climate · Nina Patel · 5 October 2026</p></li>
+<li class="result" data-author="Owen Reed" data-topic="Culture" data-date="4 October 2026"><details><summary>The library opens its doors after dark</summary><p class="excerpt">A sample culture story about evening library access. Readers share what later opening hours would change for them.</p></details><p class="meta">Culture · Owen Reed · 4 October 2026</p></li>
+<li class="result" data-author="Leo Chen" data-topic="Transport" data-date="3 October 2026"><details><summary>A bus route shaped by its passengers</summary><p class="excerpt">A sample transport report about bus stops and shift workers. Passenger feedback informs a revised route.</p></details><p class="meta">Transport · Leo Chen · 3 October 2026</p></li>
+</ul>
 <button id="retry" type="button" hidden>Retry search</button>
 </div>
 </section>
 <footer>Six fictional articles. All searches run locally with simulated delays. No network connection is used.</footer>
 </main>
 <script>
-const articles = [
-  { title: 'A cooler summer starts with street trees', author: 'Mara Bell', topic: 'Climate', date: '8 October 2026', text: 'A sample report on shade, street trees and how cities measure summer heat. Residents compare temperatures along two walking routes.' },
-  { title: 'The night train returns to the timetable', author: 'Leo Chen', topic: 'Transport', date: '7 October 2026', text: 'A sample transport story about overnight rail. The proposed timetable connects regional stations before the morning commute.' },
-  { title: 'Who gets space on the high street?', author: 'Mara Bell', topic: 'Cities', date: '6 October 2026', text: 'A sample story about footpaths, deliveries and local shops. A town tests a different allocation of street space.' },
-  { title: 'Repair cafés keep everyday objects in use', author: 'Nina Patel', topic: 'Climate', date: '5 October 2026', text: 'A sample account of volunteers repairing lamps and kitchen tools. Visitors learn to identify a fault before buying a replacement.' },
-  { title: 'The library opens its doors after dark', author: 'Owen Reed', topic: 'Culture', date: '4 October 2026', text: 'A sample culture story about evening library access. Readers share what later opening hours would change for them.' },
-  { title: 'A bus route shaped by its passengers', author: 'Leo Chen', topic: 'Transport', date: '3 October 2026', text: 'A sample transport report about bus stops and shift workers. Passenger feedback informs a revised route.' }
-];
+const articles = [...document.querySelectorAll('#results > li')].map(row => ({
+  title: row.querySelector('summary').textContent,
+  author: row.dataset.author,
+  topic: row.dataset.topic,
+  date: row.dataset.date,
+  text: row.querySelector('.excerpt').textContent
+}));
 const el = id => document.getElementById(id);
 const attempts = new Map();
 let generation = 0;
@@ -175,8 +181,11 @@ function theme() {
 }
 el('theme').addEventListener('change', theme);
 preference.addEventListener('change', theme);
+el('theme').value = 'system';
 theme();
 invalidate();
+el('help').textContent = 'Sample data only. Search runs as you type. Expand a result to read its sample excerpt.';
+for (const control of document.querySelectorAll('#search input, #search button, #theme')) control.disabled = false;
 </script>
 </body>
 </html>

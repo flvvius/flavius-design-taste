@@ -1,0 +1,87 @@
+[
+  {
+    "name": "replacement remains in debounce",
+    "query": "climate",
+    "status": "Waiting for your search…",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": []
+  },
+  {
+    "name": "late success cannot replace current results",
+    "query": "climate",
+    "status": "2 results for \"climate\".",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": [
+      "A cooler summer starts with street trees",
+      "Repair cafés keep everyday objects in use"
+    ]
+  },
+  {
+    "name": "late failure cannot replace current loading",
+    "query": "climate",
+    "status": "Searching for \"climate\"…",
+    "busy": "true",
+    "loading": true,
+    "retry": false,
+    "titles": []
+  },
+  {
+    "name": "clear invalidates pending work",
+    "query": "",
+    "status": "Enter a topic, title or author to search the sample library.",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": []
+  },
+  {
+    "name": "composition defers searching and invalidates old work",
+    "query": "climate",
+    "status": "Waiting for your search…",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": []
+  },
+  {
+    "name": "retry recovers and preserves query focus",
+    "query": "retry",
+    "status": "6 results for \"retry\".",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": [
+      "A cooler summer starts with street trees",
+      "The night train returns to the timetable",
+      "Who gets space on the high street?",
+      "Repair cafés keep everyday objects in use",
+      "The library opens its doors after dark",
+      "A bus route shaped by its passengers"
+    ]
+  },
+  {
+    "name": "repeated failure offers another retry",
+    "query": "error",
+    "status": "Could not search for \"error\". Retry this search or enter another term.",
+    "busy": "false",
+    "loading": false,
+    "retry": true,
+    "titles": []
+  },
+  {
+    "name": "keyboard opens a readable result",
+    "query": "climate",
+    "status": "2 results for \"climate\".",
+    "busy": "false",
+    "loading": false,
+    "retry": false,
+    "titles": [
+      "A cooler summer starts with street trees",
+      "Repair cafés keep everyday objects in use"
+    ]
+  }
+]

@@ -4,6 +4,7 @@ import {mkdir, writeFile, mkdtemp} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
+import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchState, assertSearchTransitions, articleTitles} from './lib/search-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
@@ -26,6 +27,7 @@ const allSurfaces = [
   {name: 'personal-room', path: 'examples/personal-room/index.html', themes: ['paper', 'night'], palette: '[data-palette]', setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click()},
   {name: 'editorial-calm', path: 'examples/index.html', themes: ['light', 'dark'], setTheme: async (page, theme) => page.evaluate(theme => document.documentElement.classList.toggle('dark', theme === 'dark'), theme)},
   {name: 'usage-chart', path: 'eval/cycles/07/index.html', themes: ['light', 'dark'], states: ['week', 'month'], setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: async (page, state) => {await page.locator('#period').selectOption(state); await page.locator('details summary').click();}},
+  {name: 'article-search', path: 'eval/cycles/09/index.html', themes: ['light', 'dark'], states: ['untouched', 'loading', 'results', 'empty', 'error'], beforeLoad: installSearchClock, setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: setupSearchState},
   {name: 'repair-notebook', path: 'eval/cycles/12/index.html', themes: ['paper', 'night'], setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click(), setup: async page => page.locator('#edit').click()}
 ];
 for (const name of requestedSurfaces) if (!allSurfaces.some(surface => surface.name === name)) throw new Error(`Unknown surface: ${name}`);
@@ -35,7 +37,7 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
 let server, snapshot;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
@@ -52,6 +54,7 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => {if (response.status() >= 400) requests.push({url: response.url(), status: response.status()});});
     page.on('requestfailed', request => requests.push({url: request.url(), error: request.failure()?.errorText}));
+    if (surface.beforeLoad) await surface.beforeLoad(page);
     const response = await page.goto(`${server.url}/${surface.path}`, {waitUntil: 'networkidle'});
     assert(response?.ok(), `${surface.path} failed to load: ${response?.status()}`);
     await waitForFonts(page);
@@ -61,9 +64,10 @@ try {
     if (variant.mode === 'spacing') await applyTextSpacing(page);
     const audit = await inspectPage(page);
     const name = `${surface.name}-${theme}-${variant.width}-${variant.mode}${state ? '-' + state : ''}`;
-    let chart;
+    let chart, search;
+    if (surface.name === 'article-search') await check(`${name} visible search state`, async () => {search = await assertSearchState(page, state);});
     if (surface.name === 'usage-chart') await check(`${name} values, scale and series`, async () => {chart = await assertUsageChart(page, state);});
-    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {})});
+    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {}), ...(search ? {search} : {})});
     const issues = audit.overflow || audit.outsideViewport.length || audit.clippedText.length || audit.contrast.length || audit.unlabeled.length || audit.smallTargets.length || errors.length || requests.length;
     if (issues) failures.push({name, audit, errors, requests});
     await page.evaluate(() => scrollTo(0, 0));
@@ -97,6 +101,7 @@ try {
     await check(`${surface.name} forced-colour media rules and keyboard focus`, async () => {
       const forced = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 844}});
       try {
+        if (surface.beforeLoad) await surface.beforeLoad(forced);
         await forced.goto(`${server.url}/${surface.path}`);
         assert(await forced.evaluate(() => matchMedia('(forced-colors: active)').matches));
         await forced.keyboard.press('Tab');
@@ -119,7 +124,8 @@ try {
       await check(boundaryName, async () => {
         const forced = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 844}});
         try {
-          await forced.goto(`${server.url}/${surface.path}`);
+          if (surface.beforeLoad) await surface.beforeLoad(forced);
+        await forced.goto(`${server.url}/${surface.path}`);
         if (surface.setup) await surface.setup(forced, surface.states?.[0]);
         const boundaries = await forced.locator('button, input, textarea, select').evaluateAll(elements => elements.filter(element => element.getClientRects().length).map(element => {
           const style = getComputedStyle(element);
@@ -134,6 +140,42 @@ try {
     }
   }
   const page = await browser.newPage({viewport: {width: 390, height: 844}});
+  if (surfaces.some(surface => surface.name === 'article-search')) {
+    await check('article-search stale results, debounce, clear, simulated composition, retry and keyboard reading', async () => {
+      const searchPage = await browser.newPage({viewport: {width: 320, height: 960}});
+      try {
+        await installSearchClock(searchPage);
+        await searchPage.goto(`${server.url}/eval/cycles/09/index.html`);
+        await pauseSearchClock(searchPage);
+        const timeline = await assertSearchTransitions(searchPage);
+        await writeFile(resolve(output, 'article-search-transitions.json'), JSON.stringify(timeline, null, 2) + '\n');
+      } finally {await searchPage.close();}
+    });
+    for (const variant of [{width: 320, mode: 'normal'}, {width: 1440, mode: 'normal'}, {width: 320, mode: 'all-text-200-missing-font'}]) {
+      await check(`article-search readable library without scripts, ${variant.width}, ${variant.mode}`, async () => {
+        const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: variant.width, height: 960}});
+        try {
+          if (variant.mode.endsWith('missing-font')) await fallback.route('**/*.woff2', route => route.abort());
+          await fallback.goto(`${server.url}/eval/cycles/09/index.html`); await waitForFonts(fallback);
+          assert.deepEqual(await fallback.locator('#results summary').allTextContents(), articleTitles);
+          assert.equal(await fallback.locator('#search input:enabled, #search button:enabled, #theme:enabled').count(), 0);
+          assert.match(await fallback.locator('#status').textContent(), /Six sample articles are available/);
+          assert.equal(await fallback.locator('#help').textContent(), 'Sample data only. Expand an article to read its sample excerpt.');
+          if (variant.mode.endsWith('missing-font')) {
+            assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
+            await enlargeText(fallback);
+          }
+          await fallback.locator('#results summary').first().focus(); await fallback.keyboard.press('Enter');
+          assert(await fallback.locator('#results .excerpt').first().isVisible());
+          const audit = await inspectPage(fallback);
+          assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length, JSON.stringify(audit));
+          const name = `article-search-no-script-${variant.width}-${variant.mode}`;
+          reports.push({name, height: 960, ...audit});
+          await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+        } finally {await fallback.close();}
+      });
+    }
+  }
   if (surfaces.some(surface => surface.name === 'usage-chart')) {
     for (const variant of [{width: 320, mode: 'normal'}, {width: 1440, mode: 'normal'}, {width: 320, mode: 'all-text-200-missing-font'}, {width: 320, mode: 'spacing'}, {width: 320, mode: 'forced-colors'}]) {
       await check(`usage-chart default week without scripts, ${variant.width}, ${variant.mode}`, async () => {

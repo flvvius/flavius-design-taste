@@ -118,5 +118,12 @@
     "artifact": "cycles/07/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "23",
+    "task": "Asynchronous article search keeps a script-disabled reading path and verifies loading, results, empty, failure and recovery across engines.",
+    "artifact": "cycles/09/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]
