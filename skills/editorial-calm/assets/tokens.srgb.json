@@ -1,0 +1,91 @@
+{
+  "colors": {
+    "light": {
+      "background": "#fcfcfa",
+      "foreground": "#0e0a07",
+      "card": "#ffffff",
+      "card-foreground": "#0e0a07",
+      "popover": "#ffffff",
+      "popover-foreground": "#0e0a07",
+      "primary": "#312a24",
+      "primary-foreground": "#faf8f5",
+      "secondary": "#f4f3f1",
+      "secondary-foreground": "#1a1512",
+      "muted": "#f1f0ed",
+      "muted-foreground": "#68625e",
+      "accent": "#f1f0ed",
+      "accent-foreground": "#1a1512",
+      "destructive": "#e7000b",
+      "destructive-foreground": "#fafafa",
+      "border": "#e3e1de",
+      "input": "#e3e1de",
+      "ring": "#5b544d",
+      "overlay": "#00000080",
+      "overlay-foreground": "#ffffff",
+      "success": "#00884b",
+      "success-foreground": "#fafafa",
+      "warning": "#e49e22",
+      "warning-foreground": "#161616"
+    },
+    "dark": {
+      "background": "#08090c",
+      "foreground": "#eae7e4",
+      "card": "#121417",
+      "card-foreground": "#eae7e4",
+      "popover": "#121417",
+      "popover-foreground": "#eae7e4",
+      "primary": "#e6e4e1",
+      "primary-foreground": "#0c0d11",
+      "secondary": "#1e1f23",
+      "secondary-foreground": "#eae7e4",
+      "muted": "#1e1f23",
+      "muted-foreground": "#928f88",
+      "accent": "#1e1f23",
+      "accent-foreground": "#eae7e4",
+      "destructive": "#ff6467",
+      "destructive-foreground": "#fafafa",
+      "border": "#ffffff1a",
+      "input": "#ffffff26",
+      "ring": "#897e74",
+      "overlay": "#00000099",
+      "overlay-foreground": "#ffffff",
+      "success": "#04ab62",
+      "success-foreground": "#090909",
+      "warning": "#eba941",
+      "warning-foreground": "#090909"
+    }
+  },
+  "spacing": {
+    "unit": 4,
+    "gutterWeb": 16,
+    "gutterMobile": 20,
+    "sectionGap": 40,
+    "sectionInset": 24,
+    "rowGap": 16
+  },
+  "type": {
+    "bodyWeb": 16,
+    "bodyMobile": 17,
+    "section": 16,
+    "rowTitle": 18,
+    "pageTitle": 32,
+    "weightBody": 400,
+    "weightLabel": 500,
+    "weightTitle": 600,
+    "lineHeight": 1.625,
+    "proseMeasure": "65ch",
+    "descriptionMeasure": "55ch"
+  },
+  "radius": {
+    "control": 8,
+    "media": 10,
+    "overlay": 14
+  },
+  "motion": {
+    "press": 140,
+    "swap": 150,
+    "overlay": 250,
+    "max": 300,
+    "pressScale": 0.97
+  }
+}

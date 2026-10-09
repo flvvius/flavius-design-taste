@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  --background: oklch(0.99 0.002 80);
+  --foreground: oklch(0.15 0.01 60);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 60);
+  --primary: oklch(0.29 0.015 65);
+  --primary-foreground: oklch(0.98 0.004 80);
+  --secondary: oklch(0.965 0.003 80);
+  --secondary-foreground: oklch(0.20 0.01 60);
+  --muted: oklch(0.955 0.004 80);
+  --muted-foreground: oklch(0.50 0.01 60);
+  --accent: oklch(0.955 0.004 80);
+  --accent-foreground: oklch(0.20 0.01 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.91 0.004 80);
+  --input: oklch(0.91 0.004 80);
+  --ring: oklch(0.45 0.015 65);
+  --overlay: oklch(0 0 0 / 50%);
+  --overlay-foreground: oklch(1 0 0);
+  --success: oklch(0.55 0.14 155);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.75 0.15 75);
+  --warning-foreground: oklch(0.20 0 0);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.14 0.008 270);
+  --foreground: oklch(0.93 0.005 80);
+  --card: oklch(0.19 0.008 270);
+  --card-foreground: oklch(0.93 0.005 80);
+  --popover: oklch(0.19 0.008 270);
+  --popover-foreground: oklch(0.93 0.005 80);
+  --primary: oklch(0.92 0.005 80);
+  --primary-foreground: oklch(0.16 0.008 270);
+  --secondary: oklch(0.24 0.008 270);
+  --secondary-foreground: oklch(0.93 0.005 80);
+  --muted: oklch(0.24 0.008 270);
+  --muted-foreground: oklch(0.65 0.01 80);
+  --accent: oklch(0.24 0.008 270);
+  --accent-foreground: oklch(0.93 0.005 80);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.60 0.02 65);
+  --overlay: oklch(0 0 0 / 60%);
+  --overlay-foreground: oklch(1 0 0);
+  --success: oklch(0.65 0.16 155);
+  --success-foreground: oklch(0.14 0 0);
+  --warning: oklch(0.78 0.14 75);
+  --warning-foreground: oklch(0.14 0 0);
+}
+
+:root {
+  --space-unit: 4px;
+  --space-gutterWeb: 16px;
+  --space-gutterMobile: 20px;
+  --space-sectionGap: 40px;
+  --space-sectionInset: 24px;
+  --space-rowGap: 16px;
+  --radius-control: 8px;
+  --radius-media: 10px;
+  --radius-overlay: 14px;
+  --motion-press: 140ms;
+  --motion-swap: 150ms;
+  --motion-overlay: 250ms;
+  --motion-max: 300ms;
+}
