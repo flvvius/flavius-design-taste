@@ -10,9 +10,11 @@ export function personalOutputs(){
  return {'tokens.css':palettes+'\n\n:root {\n'+dimensions.join('\n')+'\n}\n'};
 }
 export function srgb(value){
- const match=value.match(/oklch\(([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+)%)?\)/);
+ const match=typeof value === 'string' && value.match(/^oklch\(([\d.]+) ([\d.]+) ([+-]?[\d.]+)(?: \/ ([\d.]+)%)?\)$/);
  if(!match) throw new Error(`Unsupported colour: ${value}`);
- const [,l,c,h,alpha]=match.map(Number); const angle=h*Math.PI/180; const a=c*Math.cos(angle), b=c*Math.sin(angle);
+ const [,l,c,h,alpha]=match.map(Number);
+ if (![l,c,h].every(Number.isFinite) || l<0 || l>1 || c<0 || (match[4]!==undefined && (!Number.isFinite(alpha) || alpha<0 || alpha>100))) throw new Error(`Invalid colour channels: ${value}`);
+ const angle=h*Math.PI/180; const a=c*Math.cos(angle), b=c*Math.sin(angle);
  const ll=(l+0.3963377774*a+0.2158037573*b)**3;
  const mm=(l-0.1055613458*a-0.0638541728*b)**3;
  const ss=(l-0.0894841775*a-1.291485548*b)**3;

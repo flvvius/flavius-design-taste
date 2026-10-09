@@ -39,6 +39,12 @@ for (const [mode,roles] of Object.entries(tokens.colors)) {
 console.log('Verified essential input boundaries and page status text contrast.');
 assert.deepEqual(checkLocalAssetLinks(fileURLToPath(root)),[],'Missing local document, image, stylesheet or font asset');
 console.log('Verified local links and asset paths throughout documentation and examples.');
+for (const name of ['editorial-calm','personal-room']) {
+ const path=fileURLToPath(new URL(`skills/${name}/`,root));
+ assert.deepEqual(checkLocalAssetLinks(path),[],`${name} has a missing installed-folder dependency`);
+ assert.equal(readFileSync(new URL(`skills/${name}/LICENSE`,root),'utf8'),readFileSync(new URL('LICENSE',root),'utf8'));
+}
+console.log('Verified standalone skill links and licences.');
 {
  const base=new URL('skills/personal-room/assets/',root);
  const source=JSON.parse(readFileSync(new URL('tokens.json',base),'utf8'));

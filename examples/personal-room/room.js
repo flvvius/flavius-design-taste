@@ -9,10 +9,18 @@ for (const button of palette.querySelectorAll('button')) {
     }
   });
 }
-function openLinkedStory() {
-  const id = window.location.hash.slice(1);
-  const target = document.getElementById(id);
-  if (target?.tagName === 'DETAILS') target.open = true;
+function openLinkedStory(hash = window.location.hash, focus = false) {
+  const target = document.getElementById(hash.slice(1));
+  if (target?.tagName !== 'DETAILS') return;
+  target.open = true;
+  if (focus) target.querySelector('summary').focus({ preventScroll: true });
 }
-window.addEventListener('hashchange', openLinkedStory);
+for (const link of document.querySelectorAll('.object-link')) {
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+    openLinkedStory(link.hash);
+    requestAnimationFrame(() => openLinkedStory(link.hash, true));
+  });
+}
+window.addEventListener('hashchange', () => openLinkedStory(window.location.hash, true));
 openLinkedStory();

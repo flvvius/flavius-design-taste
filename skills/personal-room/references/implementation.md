@@ -22,9 +22,9 @@ Photography belongs to the subject. On night, a navy wash can quiet a background
 
 ## Objects and controls
 
-An illustrated object is an actual link with a visible title below or beside it. Give it a destination even if a script adds a detail panel. An object used only for atmosphere is decorative and should not accept focus. Keep text labels visible on touch; hover captions may supply extra detail but cannot carry the only name or destination.
+An illustrated object is an actual link with a visible title below or beside it. Give it a destination even if a script adds a detail panel. Repeated activation must reopen the same destination, even when its hash has not changed. Move keyboard focus to a visible heading or disclosure control after navigation. An object used only for atmosphere is decorative and should not accept focus. Keep text labels visible on touch; hover captions may supply extra detail but cannot carry the only name or destination.
 
-Buttons can use the irregular radius token with a 2px border. Their text and hit area stay rectangular and stable. Focus uses a visible ring outside the object, independent of its hover animation. Hover and keyboard focus can share a small lift and tilt; touch activation must work without either.
+Buttons can use the irregular radius token with a 2px border. Their text and hit area stay rectangular and stable. Focus uses a visible ring outside the object, independent of its hover animation. Gate pointer hover lift and tilt with `(hover: hover) and (pointer: fine)`. Keyboard focus can use colour and an outline without movement. Touch activation must work without hover.
 
 Use real headings, lists and form labels. A sequence may use a drawn connecting path on desktop, but its DOM stays an ordered list. Collapse it to a vertical sequence on mobile. Do not turn an ordinary group of projects into numbered steps.
 
@@ -32,7 +32,7 @@ For forms and app screens, keep the expressive title, colour and a useful aside,
 
 ## Responsive and native work
 
-On narrow screens, move text before the supporting object, collapse shelves to labelled lists, and remove decorative overhangs before shrinking type. Preserve every meaningful link. Keep targets at least 44px across, allow navigation to wrap, and check 200% text size and a 320px viewport. Do not hide overflow to disguise a broken layout.
+On narrow screens, move text before the supporting object, collapse shelves to labelled lists, and remove decorative overhangs before shrinking type. Preserve every meaningful link. Keep standalone touch targets at least 44px across and allow navigation to wrap. Check a 320px viewport, then double every computed text size, including explicit labels, before checking again. A doubled root size alone misses pixel-sized text. Also test user overrides of line height, paragraph spacing, tracking and word spacing. Do not hide overflow to disguise a broken layout. Give flexible grid columns `minmax(0, 1fr)` and shrinkable text children `min-width: 0`; allow object names to wrap. Limit tilted notes to slightly less than the available width so rotation cannot clip their text.
 
 Native mobile and desktop apps can use the palette, title voice and illustrations while keeping platform focus, navigation and controls. Use the native font for dense interface text. Respect larger text and screen-reader order. Do not reproduce a desktop diorama on a phone when a short labelled list would carry the same content.
 

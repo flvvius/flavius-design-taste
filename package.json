@@ -6,7 +6,9 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
-    "eval:gallery": "node scripts/gallery.mjs"
+    "eval:gallery": "node scripts/gallery.mjs",
+    "check:browser": "node scripts/verify-examples.mjs",
+    "test:tooling": "node --test scripts/tests/*.test.mjs"
   },
   "license": "MIT",
   "devDependencies": {

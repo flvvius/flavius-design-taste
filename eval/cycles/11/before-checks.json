@@ -1,0 +1,183 @@
+{
+  "reports": [
+    {
+      "palette": "paper",
+      "check": "normal",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": []
+    },
+    {
+      "palette": "paper",
+      "check": "all-text-200",
+      "width": 320,
+      "scrollWidth": 357,
+      "overflow": [
+        {
+          "tag": "DIV",
+          "text": "off the deskA few small projects.Each started with something",
+          "width": 332.265625
+        },
+        {
+          "tag": "H2",
+          "text": "off the desk",
+          "width": 332.265625
+        },
+        {
+          "tag": "P",
+          "text": "A few small projects.Each started with something I wanted to",
+          "width": 332.265625
+        },
+        {
+          "tag": "ASIDE",
+          "text": "still making roomfor the next one",
+          "width": 341.98773193359375
+        },
+        {
+          "tag": "DIV",
+          "text": "the long way home\n        photos from walks with no particul",
+          "width": 332.265625
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "the long way home\n        photos from walks with no particul",
+          "width": 332.265625
+        },
+        {
+          "tag": "A",
+          "text": "the long way home",
+          "width": 332.265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "the long way home",
+          "width": 196.265625
+        },
+        {
+          "tag": "P",
+          "text": "photos from walks with no particular destination",
+          "width": 332.265625
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "a pocket notebook\n        a tiny place to save an idea befor",
+          "width": 332.265625
+        },
+        {
+          "tag": "A",
+          "text": "a pocket notebook",
+          "width": 332.265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "a pocket notebook",
+          "width": 196.265625
+        },
+        {
+          "tag": "P",
+          "text": "a tiny place to save an idea before it disappears",
+          "width": 332.265625
+        }
+      ]
+    },
+    {
+      "palette": "paper",
+      "check": "spacing",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": []
+    },
+    {
+      "palette": "night",
+      "check": "normal",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": []
+    },
+    {
+      "palette": "night",
+      "check": "all-text-200",
+      "width": 320,
+      "scrollWidth": 357,
+      "overflow": [
+        {
+          "tag": "DIV",
+          "text": "off the deskA few small projects.Each started with something",
+          "width": 332.265625
+        },
+        {
+          "tag": "H2",
+          "text": "off the desk",
+          "width": 332.265625
+        },
+        {
+          "tag": "P",
+          "text": "A few small projects.Each started with something I wanted to",
+          "width": 332.265625
+        },
+        {
+          "tag": "ASIDE",
+          "text": "still making roomfor the next one",
+          "width": 341.98773193359375
+        },
+        {
+          "tag": "DIV",
+          "text": "the long way home\n        photos from walks with no particul",
+          "width": 332.265625
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "the long way home\n        photos from walks with no particul",
+          "width": 332.265625
+        },
+        {
+          "tag": "A",
+          "text": "the long way home",
+          "width": 332.265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "the long way home",
+          "width": 196.265625
+        },
+        {
+          "tag": "P",
+          "text": "photos from walks with no particular destination",
+          "width": 332.265625
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "a pocket notebook\n        a tiny place to save an idea befor",
+          "width": 332.265625
+        },
+        {
+          "tag": "A",
+          "text": "a pocket notebook",
+          "width": 332.265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "a pocket notebook",
+          "width": 196.265625
+        },
+        {
+          "tag": "P",
+          "text": "a tiny place to save an idea before it disappears",
+          "width": 332.265625
+        }
+      ]
+    },
+    {
+      "palette": "night",
+      "check": "spacing",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": []
+    },
+    {
+      "check": "repeat-story-link",
+      "open": false,
+      "hash": "#project-walks"
+    }
+  ]
+}

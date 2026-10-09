@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-personal-room="paper">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mara's repair notes | Personal room transfer</title>
+<link rel="stylesheet" href="../../../skills/personal-room/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/personal-room/assets/fonts.css">
+<link rel="stylesheet" href="style.css">
+<script src="notebook.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">skip to notes</a>
+<header class="wrap"><a class="home" href="#main">mara's repair notes</a><div class="palette" hidden role="group" aria-label="Notebook palette"><button data-palette="paper" aria-pressed="true">paper</button><button data-palette="night" aria-pressed="false">night</button></div></header>
+<main id="main" tabindex="-1" class="wrap">
+<section class="intro"><p class="byline">from a bookbinder's workbench</p><h1>some things<br>can be mended.</h1><p class="welcome">Notes on old books, stubborn glue, and knowing when to leave a mark alone.</p><svg class="thread" viewBox="0 0 400 40" fill="none" aria-hidden="true"><path d="M2 27 Q55 13 96 25 T184 22 T268 27 Q320 32 365 18 M365 18 L353 17 M365 18 L357 30"/></svg></section>
+<div class="notebook">
+<nav aria-label="Repair notes"><h2>on the bench</h2><ul><li><a href="#blue-notebook" data-note="blue-notebook">The blue notebook</a><span>7 October</span></li><li><a href="#loose-spine" data-note="loose-spine">A loose spine</a><span>4 October</span></li><li><a href="#alba-cover" data-note="alba-cover">A cover from Alba Iulia</a><span>2 October</span></li></ul><p class="margin-note">keep the old<br>pencil marks.</p></nav>
+<div class="entries">
+<details id="blue-notebook" open><summary>The blue notebook</summary><p class="entry-date">7 October 2026</p><div class="entry-body"><p>The cloth is worn through at the corners. Underneath, the board is still firm. I cut four small patches instead of replacing the cover.</p><p>Someone has written a grocery list on the last page. I left it there.</p></div></details>
+<details id="loose-spine"><summary>A loose spine</summary><p class="entry-date">4 October 2026</p><div class="entry-body"><p>The sewing held. The glue didn't. A little warmth, a patient brush, and the sections came apart without losing a page.</p></div></details>
+<details id="alba-cover"><summary>A cover from Alba Iulia</summary><p class="entry-date">2 October 2026</p><div class="entry-body"><p>Încet, fără grabă. The owner wrote that inside the cover, so I copied it into my notes. Slowly, without rushing.</p><p>I tested the new paper against a scrap first. Too bright. The second sheet looked as though it had always been there.</p></div></details>
+<button id="edit" type="button" hidden>edit this note</button>
+<form id="editor" hidden novalidate>
+<h2 id="editor-heading" tabindex="-1">edit the note</h2>
+<p class="form-help">Changes stay in this browser. Keep a copy elsewhere if you need it.</p>
+<label for="note-title">Note title</label><input id="note-title" name="title" required maxlength="120" autocomplete="off" aria-describedby="title-error"><p class="error" id="title-error"></p>
+<label for="note-body">What happened</label><textarea id="note-body" name="body" required rows="8" aria-describedby="body-error"></textarea><p class="error" id="body-error"></p>
+<div class="actions"><button type="submit" class="primary">save note</button><button id="cancel" type="button">cancel edit</button></div>
+</form>
+<p id="feedback" role="status" aria-live="polite"></p>
+<noscript><p class="form-help">The notes are readable here. Editing needs JavaScript.</p></noscript>
+</div>
+</div>
+</main>
+<footer class="wrap"><span>a fictional notebook, made to try the taste</span><a href="../../index.html">all design experiments</a></footer>
+</body></html>

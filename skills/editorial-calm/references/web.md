@@ -10,7 +10,7 @@ Controls use 8px radius; media 10px; overlays 14px. A flat section does not inhe
 
 Theme switching replaces semantic tokens at the root. Honour system preference unless the user selected a theme. Use `prefers-reduced-motion` to suppress transforms and nonessential animation. Do not animate navigation that users perform dozens of times a day.
 
-The specimen at `../../../examples/index.html` uses these assets directly. It is a starting example, not a required page template.
+The repository's [browser specimen](https://github.com/flvvius/flavius-design-taste/blob/main/examples/index.html) shows one application of these assets. It is optional reference material, not a dependency of the installed skill or a required page template.
 
 ## With shadcn/ui
 

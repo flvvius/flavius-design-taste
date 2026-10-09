@@ -7,6 +7,17 @@ My design taste as two reusable skills for AI agents. Choose a direction for the
 
 Personal room draws on my [portfolio](https://flavius.pro) and [Cluj House](https://clujhouse.com/). It adds warm paper and navy poster directions. The [source notes](skills/personal-room/references/sources.md) explain the extraction and adaptations. Editorial calm keeps its existing guidance and assets.
 
+## Choose the direction
+
+| The job | Starting direction |
+| --- | --- |
+| Repeated task work, settings, dashboards or dense tools | Editorial calm. Keep navigation and controls predictable. |
+| A personal collection, portfolio or small community | Personal room. Choose its objects and voice from the subject. |
+| An article or notes within either project | Keep the chosen palette and title voice, then use a readable prose role. |
+| A practical screen inside a Personal room project | Keep its identity while using upright labels and conventional controls. |
+
+A project's chosen direction and the user's brief take precedence over these starting points. The tastes describe visual decisions, not a mandatory page template. Give one taste responsibility for page typography, colour and layout when combining them.
+
 ## Personal room
 
 ![Personal room paper example](examples/personal-room/screenshots/paper-desktop.png)
@@ -19,7 +30,7 @@ Ask your agent:
 
 > Read `skills/personal-room/SKILL.md` and use Personal room for this project. Choose objects and a voice that belong to its subject, then apply the paper or night direction. Preserve the product behaviour.
 
-Install the whole `skills/personal-room` folder in `~/.codex/skills/personal-room` for Codex or `.claude/skills/personal-room` for Claude Code. Other agents can read the Markdown directly. The folder includes the [portable tokens](skills/personal-room/assets/tokens.json), [generated CSS](skills/personal-room/assets/tokens.css), [optional font stylesheet](skills/personal-room/assets/fonts.css) and [implementation guide](skills/personal-room/references/implementation.md). It does not depend on the Editorial calm folder.
+Install the whole `skills/personal-room` folder in `~/.codex/skills/personal-room` for Codex or `.claude/skills/personal-room` for Claude Code. Other agents can read the Markdown directly. The folder includes the [portable tokens](skills/personal-room/assets/tokens.json), [generated CSS](skills/personal-room/assets/tokens.css), [optional font stylesheet](skills/personal-room/assets/fonts.css) and [implementation guide](skills/personal-room/references/implementation.md). It does not depend on the Editorial calm folder. The [repair notebook](eval/cycles/12/index.html) shows the same taste on a reading and editing screen, without an illustrated room.
 
 Schoolbell is bundled under the [Apache License 2.0](skills/personal-room/assets/fonts/LICENSE.txt). Reference photos, music artwork and logos are not part of this package.
 
@@ -91,9 +102,24 @@ Edit the relevant skill's `assets/tokens.json` first. Run `node scripts/build.mj
 
 ## Tested with agents
 
-The [evaluation log](eval/README.md) records build, independent review and fix cycles. It includes working screens, builder notes, findings, browser checks and screenshots. These exercises test how the skill transfers to different app tasks, including enlarged text and both themes.
+The [evaluation log](eval/README.md) records build, review and fix cycles. The first ten used independent agents; later cycles identify self-review explicitly. It includes working screens, builder notes, findings, browser checks and screenshots. These exercises test how the tastes transfer to different tasks, including enlarged text and both themes. The [research notes](eval/research/2026-10-09.md) compare seven design-skill repositories, published designer methods and primary accessibility guidance. They explain which ideas fit this repo and which were excluded.
 
-## What belongs to this taste
+## Verify a change
+
+The installed skill folders work without repository tooling. Maintainers can run the following checks from this repository:
+
+```sh
+node scripts/build.mjs
+node scripts/check.mjs
+npm ci
+npx playwright install chromium
+npm run test:tooling
+npm run check:browser -- --output .artifacts/browser
+```
+
+The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement and spacing overrides. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images, screen readers and native platforms still require their own review.
+
+## What belongs to Editorial calm
 
 Warm neutral backgrounds, graphite actions, semibold hierarchy, sentence case, readable prose, separated rows, stable navigation and short motion. Settings, forms and statistics belong on the page too.
 

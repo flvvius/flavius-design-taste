@@ -1,0 +1,13 @@
+✔ local server accepts a trailing slash and returns actual error status (25.49ms)
+✔ text stress doubles explicit and inherited sizes once; audit catches clipping and low contrast (437.938583ms)
+✔ opaque contrast anchors and equivalent channels (0.483917ms)
+✔ alpha must be composited instead of counted as opaque (0.23975ms)
+✔ OKLCH conversion rejects invalid sources and preserves anchors (0.224792ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 640.893

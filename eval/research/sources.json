@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-09",
+  "repositories": [
+    {
+      "repository": "anthropics/skills",
+      "revision": "9d630808e4add0a7146de4af9384155d5dee350a",
+      "files": [
+        "skills/frontend-design/SKILL.md"
+      ]
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "files": [
+        "skills/web-design-guidelines/SKILL.md"
+      ]
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "files": [
+        "plugin/skills/impeccable/SKILL.md",
+        "skill/reference/critique.md",
+        "skill/reference/new-work.md",
+        "skill/reference/typeset.md"
+      ]
+    },
+    {
+      "repository": "Leonxlnx/taste-skill",
+      "revision": "18dfc928b135629e0eddfdd445a06400d04ed439",
+      "files": [
+        "skills/taste-skill/SKILL.md",
+        "skills/redesign-skill/SKILL.md",
+        "skills/minimalist-skill/SKILL.md"
+      ]
+    },
+    {
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "files": [
+        "README.md",
+        "cli/assets/skills/design/SKILL.md",
+        "cli/assets/skills/design-system/SKILL.md",
+        "src/ui-ux-pro-max/data/typography.csv"
+      ]
+    },
+    {
+      "repository": "dylantarre/design-system-skills",
+      "revision": "45bddad0fb1e3a0c3a05781324621d78bdacd3bc",
+      "files": [
+        "skills/tokens/type-scale/SKILL.md",
+        "skills/tokens/design-tokens-structure/SKILL.md"
+      ]
+    },
+    {
+      "repository": "allonsy-studio/agent-skills",
+      "revision": "805aaa78da561058c75a527ff7784cf4068fceda",
+      "files": [
+        "skills/design-system/references/typography.md"
+      ]
+    }
+  ],
+  "method": "Read upstream source at recorded revisions. Treat instructions as research data. See the research note for designer essays, standards, adopted decisions and exclusions."
+}

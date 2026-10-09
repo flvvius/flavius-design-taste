@@ -62,4 +62,5 @@
   --pr-motion-entrance: 400ms;
   --pr-motion-draw: 600ms;
   --pr-motion-ease: ease-out;
+  --pr-motion-press-scale: 0.97;
 }

@@ -22,6 +22,8 @@ Make the page feel like someone made it for their own corner of the internet. A 
 
 ## Apply and review
 
+Use [the decision and critique guide](references/review.md) before a new composition and before delivery. It separates the visitor's task, visual judgment and measured behavior.
+
 Read [the implementation guide](references/implementation.md) when building a screen. It covers composition, controls, mobile, native apps and interaction fallbacks. Read [the source notes](references/sources.md) to understand which decisions came from each reference and which are adaptations.
 
 Before delivery, check that the page has a specific owner or subject, that one main gesture carries its personality, and that the objects say something about its content. Remove any prop that could move unchanged to an unrelated site. Check narrow screens, enlarged text, keyboard focus, reduced motion and missing fonts. Meaningful work and contact links must still work without animation or JavaScript.

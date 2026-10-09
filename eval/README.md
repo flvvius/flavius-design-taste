@@ -1,6 +1,6 @@
 # Build, review, fix
 
-Each numbered cycle uses the current skill to build a working screen. A separate agent reviews the artifact and browser evidence. Confirmed defects lead to changes in the shared taste, tokens, examples or tooling, followed by another check and a commit.
+Each numbered cycle applies or checks the current taste. The first ten built working screens with separate builder and reviewer agents. Later cycles explicitly identify self-review; tooling cycles can test verification code rather than add a screen. Confirmed defects lead to changes in the shared taste, tokens, examples or tooling, followed by another check and a commit.
 
 Cycle folders retain the builder's artifact and notes, browser screenshots, checks and an outcome report. The browser scanner checks narrow and wide layouts in both themes, plus 200% text enlargement on narrow screens. Its contrast findings are candidates for review, not a substitute for inspecting the screen.
 
@@ -22,7 +22,18 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [08](cycles/08/outcome.md) | Profile review dialogs | Long reviews begin with visible focus; overlay guidance and stable snapshots added. |
 | [09](cycles/09/outcome.md) | Asynchronous search | Latest-request, retry and composition checks passed; tested search guidance added. |
 | [10](cycles/10/outcome.md) | Browser and SwiftUI handoff | Actual native controls captured; isolated snapshot preferences; native verification guidance added. |
+| [11](cycles/11/outcome.md) | Personal room resilience | All-text overflow and repeated-link failure fixed; reproducible browser checks added. Self-review. |
+| [12](cycles/12/outcome.md) | Repair notebook | Personal room transfers to reading and editing with conventional controls. Self-review. |
+| [13](cycles/13/outcome.md) | Verification tooling | Alpha contrast, colour validation and deliberate-defect fixtures improve the checks. Self-review. |
 
-Four builder agents and two independent reviewer agents contributed to these ten cycles. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
+Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
 
 The final [artifact audit](final-audit.json) covers all ten screens and 60 clean browser layout reports. The [gallery checks](gallery-checks.json) cover ten entries, keyboard theme switching and normal/enlarged text at narrow and wide widths in both themes. [Native checks](cycles/10/native-checks.json) record two compiled macOS capture runs with identical pixels across four variants. These checks do not establish screen-reader or mobile certification.
+
+## Research and current checks
+
+The [research pass](research/2026-10-09.md) records the upstream repositories, designer methods, measurable standards and decisions used for cycles 11 through 13. [Repository revisions](research/sources.json) make that comparison repeatable.
+
+Run `npm run test:tooling` for conversion and browser-helper fixtures. Run `npm run check:browser -- --output .artifacts/browser` for the maintained specimens and the repair notebook. Optional repeated `--surface` arguments select `personal-room`, `editorial-calm` or `repair-notebook`. The default checks all three. A failed measurement or runner error returns a failing exit code. Reports and captures identify their source hashes and limitations.
+
+Historical evidence belongs to its recorded source version. Regenerating the gallery does not revalidate those screens, and the old ten-cycle final audit is not a claim about later experiments. Screen-reader use and additional native Personal room implementations remain unverified.
