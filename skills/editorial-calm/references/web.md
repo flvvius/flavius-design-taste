@@ -35,3 +35,7 @@ Status copy uses `success`, `destructive` or `warning-text` against the page. `w
 The CSS asset exports spacing, radii, motion and typography as custom properties. Use `--type-bodyWeb`, `--type-section`, `--type-rowTitle` and `--type-pageTitle` for the default sizes, with `--type-weightBody`, `--type-weightLabel`, `--type-weightTitle` and `--type-lineHeight` for hierarchy. Prose and descriptions use `--type-proseMeasure` and `--type-descriptionMeasure`. Sizes are rem values so browser text preferences can scale them.
 
 Press transforms can use `--motion-pressScale`; durations use `--motion-press`, `--motion-swap` and `--motion-overlay`. The JSON keeps logical numeric dimensions for native consumers.
+
+## Long words and enlarged text
+
+A responsive container does not guarantee its text can fit. Give headings and prose a long-word fallback such as language-aware hyphenation with `overflow-wrap:anywhere` when necessary. Test the longest word at enlarged sizes. Preserve the requested text size and the full content; hiding overflow or clipping the heading is not a correction. Complete monetary values follow the intact-amount pattern instead of arbitrary character wrapping.

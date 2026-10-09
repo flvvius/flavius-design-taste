@@ -1,0 +1,13 @@
+{
+  "cycle": "05",
+  "findings": [
+    {
+      "id": "fixture-enlarged-page-title-overflow",
+      "severity": "medium",
+      "evidence": "eval/cycles/05/375-light-200pct.png shows the word 'appointment' extending beyond the content column. checks.json flags overflow at 375px with fontScale 2 in both themes. Independently doubled each rendered element's computed font size in Chromium at 375px: document scrollWidth became 383px, and the second h1 text line extended from x=16 to x=382.71875. index.html's h1 rule uses the pageTitle token without a fallback for words wider than the available inline space.",
+      "rootCause": "fixture-only: the enlarged title's longest word cannot wrap within the narrow content width. Shared review guidance already requires all-text enlargement without sideways prose scrolling.",
+      "recommendation": "Add an appropriate long-word wrapping fallback to the page heading, or another layout treatment that retains the enlarged text size and fits the complete title. Recheck both themes at 375px with every element's text enlarged to 200%, without masking overflow or clipping the heading."
+    }
+  ],
+  "verdict": "One narrow enlarged-layout correction required. Inspected index.html, builder.md, checks.json, 375-light.png, 1280-dark.png and 375-light-200pct.png. Required controls have associated labels and errors. Empty submission reports required fields and focuses date. Weekend and out-of-range dates produce errors and disable time choices. Valid weekdays expose 09:00, 10:00, 14:00 and 15:00 while 11:00 and 12:00 remain disabled. Changing dates clears the selected time. Invalid email submission focuses email. A valid submission creates the matching date/time, Europe/Bucharest zone, name, email and discussion preview, safely renders literal markup as text, and focuses preview-title. Edit returns focus to date; changing details hides the stale preview. No other standalone availability, validation or preview fault was verified. No scheduling infrastructure evaluated."
+}

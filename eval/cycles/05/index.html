@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appointment preview · Studio hours</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font:var(--type-weightBody) var(--type-bodyWeb)/var(--type-lineHeight) Inter,system-ui,sans-serif}
+header{padding:16px max(16px,calc((100% - 896px)/2));border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-weight:var(--type-weightTitle)}
+main{max-width:896px;margin:40px auto;padding:0 var(--space-gutterWeb) 40px}
+h1{overflow-wrap:anywhere;hyphens:auto;font-size:var(--type-pageTitle);font-weight:var(--type-weightTitle);letter-spacing:-.035em;line-height:1.2;margin:0 0 16px}
+h2,legend{font-size:var(--type-section);font-weight:var(--type-weightLabel);margin:0 0 16px}
+p{margin:0 0 16px;max-width:var(--type-descriptionMeasure)}
+.quiet,.hint{color:var(--muted-foreground)}
+.layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;margin-top:32px}
+form,aside,.field{min-width:0}
+fieldset{border:0;padding:0;margin:0 0 32px;min-width:0}
+.field{margin-bottom:20px}
+label{display:block;font-weight:var(--type-weightLabel);margin-bottom:6px}
+input,select,textarea,button{font:inherit;color:inherit}
+input,select,textarea{display:block;width:100%;min-width:0;max-width:100%;border:1px solid var(--input);border-radius:var(--radius-control);background:var(--background);padding:10px 12px;min-height:44px}
+textarea{resize:vertical;min-height:96px}
+input[type=date]{min-inline-size:0}
+button{border:1px solid var(--input);border-radius:var(--radius-control);background:var(--background);padding:8px 14px;min-height:44px;cursor:pointer;white-space:normal}
+button:hover{background:var(--accent)}
+.primary{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
+.primary:hover{background:var(--primary);opacity:.9}
+:where(input,select,textarea,button):focus-visible,#preview-title:focus{outline:2px solid var(--ring);outline-offset:3px}
+.hint,.error{font-size:.875rem;line-height:var(--type-lineHeight);margin:6px 0 0;overflow-wrap:anywhere}
+.error{color:var(--destructive)}
+[aria-invalid=true]{border-color:var(--destructive)}
+.warning{color:var(--warning-text)}
+.success{color:var(--success)}
+aside{border-top:1px solid var(--border);padding-top:24px;align-self:start}
+.summary{margin:0 0 24px}
+.summary div{padding:12px 0;border-bottom:1px solid var(--border)}
+dt{font-size:.875rem;color:var(--muted-foreground)}
+dd{margin:4px 0 0;overflow-wrap:anywhere;font-weight:var(--type-weightLabel)}
+#summary-error{margin:0 0 12px}
+#live{margin:12px 0 0;font-size:.875rem}
+[hidden]{display:none!important}
+@media(max-width:48rem){main{margin-top:24px}.layout{grid-template-columns:minmax(0,1fr);gap:32px}aside{margin-top:0}}
+@media(forced-colors:active){[aria-invalid=true]{border-style:dashed}}
+</style>
+</head>
+<body>
+<header><span class="brand">Studio hours</span><button type="button" id="theme" aria-pressed="false">Dark mode</button></header>
+<main>
+<h1>Plan an appointment</h1>
+<p class="quiet">A 30-minute design consultation with Mara Ionescu, by video call.</p>
+<p class="warning">This is a preview. It does not schedule an appointment or send an invitation.</p>
+<div class="layout">
+<form id="booking" novalidate>
+<fieldset>
+<legend>Choose a date and time</legend>
+<div class="field">
+<label for="date">Date <span class="quiet">· required</span></label>
+<input type="date" id="date" name="date" required aria-describedby="date-hint date-error">
+<p id="date-hint" class="hint"></p><p id="date-error" class="error" hidden></p>
+</div>
+<div class="field">
+<label for="time">Start time <span class="quiet">· required</span></label>
+<select id="time" name="time" required disabled aria-describedby="time-hint time-error"><option value="">Choose a date first</option></select>
+<p id="time-hint" class="hint">All times are in Europe/Bucharest. Choose a weekday to see available times.</p>
+<p id="time-error" class="error" hidden></p>
+</div>
+</fieldset>
+<fieldset>
+<legend>Your details</legend>
+<div class="field">
+<label for="name">Full name <span class="quiet">· required</span></label>
+<input id="name" name="name" autocomplete="name" required maxlength="100" aria-describedby="name-error">
+<p id="name-error" class="error" hidden></p>
+</div>
+<div class="field">
+<label for="email">Email <span class="quiet">· required</span></label>
+<input type="email" id="email" name="email" autocomplete="email" required maxlength="254" aria-describedby="email-hint email-error">
+<p id="email-hint" class="hint">Included in your preview. No email will be sent.</p>
+<p id="email-error" class="error" hidden></p>
+</div>
+<div class="field">
+<label for="notes">What would you like to discuss? <span class="quiet">· optional</span></label>
+<textarea id="notes" name="notes" maxlength="500" aria-describedby="notes-hint"></textarea>
+<p id="notes-hint" class="hint">Up to 500 characters.</p>
+</div>
+</fieldset>
+<p id="summary-error" class="error" role="alert" hidden></p>
+<button type="submit" class="primary">Preview appointment</button>
+<p id="live" role="status" aria-live="polite"></p>
+</form>
+<aside aria-labelledby="preview-title">
+<h2 id="preview-title" tabindex="-1">Confirmation preview</h2>
+<div id="placeholder"><p class="quiet">Choose an available time and enter your details to review them here.</p><p class="hint">No appointment has been scheduled.</p></div>
+<div id="preview" hidden>
+<p class="success">Your preview is ready.</p>
+<dl class="summary" id="details"></dl>
+<p class="warning">No appointment has been scheduled. This preview does not reserve the time or send an invitation.</p>
+<button type="button" id="edit">Edit details</button>
+</div>
+</aside>
+</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const zone='Europe/Bucharest';
+const today=new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+const part=type=>today.find(p=>p.type===type).value;
+const base=new Date(`${part('year')}-${part('month')}-${part('day')}T12:00:00Z`);
+const dayAt=offset=>{const day=new Date(base);day.setUTCDate(day.getUTCDate()+offset);return day.toISOString().slice(0,10);};
+const min=dayAt(1),max=dayAt(14);
+$('date').min=min;$('date').max=max;
+const pretty=date=>new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(date+'T12:00:00Z'));
+$('date-hint').textContent=`Choose ${pretty(min)} through ${pretty(max)}. Saturdays and Sundays are unavailable.`;
+function dateError(){const value=$('date').value;if(!value)return 'Choose a date.';if(value<min||value>max)return 'Choose a date within the next two weeks.';const day=new Date(value+'T12:00:00Z').getUTCDay();return day===0||day===6?'Appointments are unavailable on weekends. Choose a weekday.':'';}
+function setError(id,message){const field=$(id),error=$(id+'-error');field.setAttribute('aria-invalid',String(Boolean(message)));error.textContent=message;error.hidden=!message;}
+function invalidate(){if(!$('preview').hidden){$('preview').hidden=true;$('placeholder').hidden=false;$('live').textContent='Details changed. Preview the appointment again.';}}
+function updateTimes(){
+const issue=dateError();$('time').replaceChildren();$('time').disabled=Boolean(issue);
+const first=new Option(issue?'Choose an available date':'Choose a time','');$('time').add(first);
+if(!issue){for(const value of ['09:00','10:00','11:00','12:00','14:00','15:00']){const unavailable=value==='11:00'||value==='12:00';const option=new Option(value+(unavailable?' · unavailable':''),value);option.disabled=unavailable;$('time').add(option);}}
+$('time-hint').textContent=issue?'All times are in Europe/Bucharest. Choose a weekday to see available times.':'All times are in Europe/Bucharest. Each appointment lasts 30 minutes. 11:00 and 12:00 are unavailable.';
+setError('time','');
+}
+$('date').addEventListener('change',()=>{invalidate();updateTimes();setError('date',dateError());});
+$('booking').addEventListener('input',event=>{invalidate();if(['name','email','time'].includes(event.target.id))setError(event.target.id,'');$('summary-error').hidden=true;});
+$('booking').addEventListener('change',invalidate);
+$('booking').addEventListener('submit',event=>{
+event.preventDefault();const time=$('time'),option=time.selectedOptions[0];
+const errors={date:dateError(),time:time.disabled?'Choose an available date first.':!time.value||!option||option.disabled?'Choose an available start time.':'',name:!$('name').value.trim()?'Enter your full name.':'',email:!$('email').value.trim()?'Enter your email.':$('email').validity.typeMismatch?'Enter a valid email address, such as name@example.com.':''};
+for(const [id,message] of Object.entries(errors))setError(id,message);
+const first=Object.keys(errors).find(id=>errors[id]);
+if(first){$('summary-error').textContent='Check the fields marked below and try again.';$('summary-error').hidden=false;$(first).focus();return;}
+$('summary-error').hidden=true;$('details').replaceChildren();
+for(const [label,value] of [['Appointment','Design consultation with Mara Ionescu'],['Date',pretty($('date').value)],['Time',`${time.value} · 30 minutes · Europe/Bucharest`],['Location','Video call'],['Name',$('name').value.trim()],['Email',$('email').value.trim()],['Discussion',$('notes').value.trim()||'No notes added']]){const row=document.createElement('div'),term=document.createElement('dt'),description=document.createElement('dd');term.textContent=label;description.textContent=value;row.append(term,description);$('details').append(row);}
+$('placeholder').hidden=true;$('preview').hidden=false;$('live').textContent='Preview ready. No appointment has been scheduled.';$('preview-title').focus();
+});
+$('edit').addEventListener('click',()=>{$('date').focus();});
+const preference=matchMedia('(prefers-color-scheme: dark)');let chosen=false;
+function theme(dark){document.documentElement.classList.toggle('dark',dark);$('theme').setAttribute('aria-pressed',String(dark));$('theme').textContent=dark?'Light mode':'Dark mode';}
+theme(preference.matches);preference.addEventListener('change',event=>{if(!chosen)theme(event.matches);});
+$('theme').addEventListener('click',()=>{chosen=true;theme(!document.documentElement.classList.contains('dark'));});
+</script>
+</body>
+</html>

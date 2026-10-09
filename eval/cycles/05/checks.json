@@ -1,0 +1,96 @@
+{
+  "cycle": "05",
+  "reports": [
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Dark mode"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "text": "Light mode"
+      }
+    }
+  ],
+  "note": "Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review."
+}

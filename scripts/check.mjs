@@ -2,6 +2,8 @@ import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {outputs,srgb} from './build.mjs';
 import {contrast} from './lib/contrast.mjs';
+import {checkLocalAssetLinks} from './lib/asset-links.mjs';
+import {fileURLToPath} from 'node:url';
 const root=new URL('../',import.meta.url), assets=new URL('skills/editorial-calm/assets/',root);
 const tokens=JSON.parse(readFileSync(new URL('tokens.json',assets)));
 assert.deepEqual(Object.keys(tokens.colors.light).sort(),Object.keys(tokens.colors.dark).sort());
@@ -35,3 +37,5 @@ for (const [mode,roles] of Object.entries(tokens.colors)) {
   }
 }
 console.log('Verified essential input boundaries and page status text contrast.');
+assert.deepEqual(checkLocalAssetLinks(fileURLToPath(root)),[],'Missing local document, image, stylesheet or font asset');
+console.log('Verified local links and asset paths throughout documentation and examples.');

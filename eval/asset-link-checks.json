@@ -1,0 +1,10 @@
+{
+  "missingReferencesDetected": [
+    "guide.md",
+    "preview.png",
+    "/preview.png",
+    "font.woff2"
+  ],
+  "afterRestoringAssets": 0,
+  "externalLinksSkipped": true
+}

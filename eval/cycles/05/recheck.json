@@ -1,0 +1,12 @@
+{
+  "cycle": "05",
+  "resolutions": [
+    {
+      "id": "fixture-enlarged-page-title-overflow",
+      "status": "resolved",
+      "evidence": "Independently tested Chromium at 375px after doubling every rendered element's computed font size in both light and dark themes. Document scrollWidth is now 375px in both themes, down from the original 383px. The title remains 64px, uses overflow-wrap:anywhere and hyphens:auto, and retains overflow:visible. All title text rectangles fit inside the content column, with the furthest right edge at 264.22px. Inspected regenerated 375-light-200pct.png and 375-dark-200pct.png: the complete title wraps with an English hyphenation break, without clipping or size reduction."
+    }
+  ],
+  "remainingIssues": [],
+  "verdict": "Pass for the original overflow finding in both requested themes. Original review.json preserved. Only this recheck file written; no unrelated checks performed."
+}
