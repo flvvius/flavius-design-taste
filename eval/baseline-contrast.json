@@ -1,0 +1,102 @@
+{
+  "light": [
+    {
+      "role": "primary",
+      "background": "#312a24",
+      "foreground": "#faf8f5",
+      "ratio": 13.320031335410473
+    },
+    {
+      "role": "secondary",
+      "background": "#f4f3f1",
+      "foreground": "#1a1512",
+      "ratio": 16.32610926087349
+    },
+    {
+      "role": "card",
+      "background": "#ffffff",
+      "foreground": "#0e0a07",
+      "ratio": 19.71540415994902
+    },
+    {
+      "role": "popover",
+      "background": "#ffffff",
+      "foreground": "#0e0a07",
+      "ratio": 19.71540415994902
+    },
+    {
+      "role": "accent",
+      "background": "#f1f0ed",
+      "foreground": "#1a1512",
+      "ratio": 15.886462663080803
+    },
+    {
+      "role": "destructive",
+      "background": "#e7000b",
+      "foreground": "#fafafa",
+      "ratio": 4.569887857534158
+    },
+    {
+      "role": "success",
+      "background": "#00884b",
+      "foreground": "#fafafa",
+      "ratio": 4.35178872099214
+    },
+    {
+      "role": "warning",
+      "background": "#e49e22",
+      "foreground": "#161616",
+      "ratio": 7.938755331957917
+    }
+  ],
+  "dark": [
+    {
+      "role": "primary",
+      "background": "#e6e4e1",
+      "foreground": "#0c0d11",
+      "ratio": 15.304971659604353
+    },
+    {
+      "role": "secondary",
+      "background": "#1e1f23",
+      "foreground": "#eae7e4",
+      "ratio": 13.366963236410788
+    },
+    {
+      "role": "card",
+      "background": "#121417",
+      "foreground": "#eae7e4",
+      "ratio": 14.979635885777936
+    },
+    {
+      "role": "popover",
+      "background": "#121417",
+      "foreground": "#eae7e4",
+      "ratio": 14.979635885777936
+    },
+    {
+      "role": "accent",
+      "background": "#1e1f23",
+      "foreground": "#eae7e4",
+      "ratio": 13.366963236410788
+    },
+    {
+      "role": "destructive",
+      "background": "#ff6467",
+      "foreground": "#fafafa",
+      "ratio": 2.7671892827487854
+    },
+    {
+      "role": "success",
+      "background": "#04ab62",
+      "foreground": "#090909",
+      "ratio": 6.643716276125765
+    },
+    {
+      "role": "warning",
+      "background": "#eba941",
+      "foreground": "#090909",
+      "ratio": 9.751195915828157
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account & security · Folio</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--foreground);font:400 16px/1.625 system-ui,sans-serif}button,input,select{font:inherit}button,select,input{border-radius:var(--radius-control)}button,select{min-height:44px}button{cursor:pointer;padding:9px 16px;border:1px solid var(--primary);background:var(--primary);color:var(--primary-foreground);font-weight:500}button.secondary{background:transparent;color:var(--foreground);border-color:var(--muted-foreground)}button:disabled{cursor:default;background:var(--muted);color:var(--muted-foreground);border-color:var(--muted-foreground)}:focus-visible{outline:2px solid var(--ring);outline-offset:4px}a{color:var(--foreground);text-underline-offset:5px}.shell{max-width:896px;margin:auto;padding:0 16px}header{padding:24px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:600;font-size:20px;letter-spacing:-.5px}.theme{display:flex;align-items:center;gap:12px;font-size:14px}select{border:1px solid var(--muted-foreground);background:var(--background);color:var(--foreground);padding:8px 12px}main{padding:48px 0 64px}h1{font-size:32px;line-height:1.2;letter-spacing:-.8px;font-weight:600;margin:0 0 12px}h2{font-size:16px;font-weight:600;margin:0 0 24px}h3{font-size:17px;font-weight:600;margin:0}p{margin:4px 0;max-width:55ch}.muted,.hint{color:var(--muted-foreground)}section{border-top:1px solid var(--border);margin-top:40px;padding-top:24px}.row{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:20px 0;border-bottom:1px solid var(--border)}.row:first-of-type{padding-top:0}.row:last-child{border-bottom:0;padding-bottom:0}.row-copy{max-width:55ch}.fields{max-width:480px}label{display:block;font-weight:500;margin-bottom:8px}input[type=text],input[type=email],input[type=password]{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--muted-foreground);background:var(--background);color:var(--foreground)}input[aria-invalid=true]{border-color:var(--destructive)}.field{margin-bottom:20px}.hint,.feedback{font-size:14px;margin-top:8px}.feedback:empty{display:none}.error{color:var(--destructive)}.success{color:var(--foreground)}.success::before{content:'✓ ';color:var(--success)}.warning{color:var(--foreground)}.warning::before{content:'△ ';color:var(--warning)}.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.check{display:flex;align-items:center;gap:12px;min-height:44px;margin:0;cursor:pointer;white-space:nowrap}input[type=checkbox]{width:20px;height:20px;accent-color:var(--primary);margin:0}.meta{font-size:14px;color:var(--muted-foreground);font-variant-numeric:tabular-nums}footer{border-top:1px solid var(--border);padding:24px 0 40px;font-size:14px;color:var(--muted-foreground)}@media(max-width:560px){header{align-items:flex-start}.theme{align-items:flex-start;flex-direction:column;gap:4px}.row{flex-direction:column;gap:12px}main{padding-top:32px}h1{font-size:30px}.check{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><span class="brand">Folio</span><div class="theme"><label for="theme" style="margin:0">Appearance</label><select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></header>
+<main>
+<h1>Account & security</h1>
+<p class="muted">Choose how you appear and how you protect your account.</p>
+<p class="hint">Local preview. Preferences stay in this browser. No account service is connected.</p>
+<section aria-labelledby="profile-title"><h2 id="profile-title">Account details</h2>
+<form id="profile" novalidate class="fields">
+<div class="field"><label for="name">Display name</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="name-hint name-error"><p id="name-hint" class="hint">The name shown beside your notes.</p><p id="name-error" class="feedback error" aria-live="polite"></p></div>
+<div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error"><p id="email-hint" class="hint">Use the address you want associated with this profile.</p><p id="email-error" class="feedback error" aria-live="polite"></p></div>
+<div class="actions"><button id="save" type="submit" disabled>Save details</button><button id="reset" type="button" class="secondary" disabled>Discard changes</button></div>
+<p id="profile-status" class="feedback" role="status"></p>
+</form></section>
+<section aria-labelledby="security-title"><h2 id="security-title">Security preferences</h2>
+<div class="row"><div class="row-copy"><h3>Sign-in alerts</h3><p class="muted">Keep a preference for alerts when a new device signs in.</p><p id="alerts-status" class="feedback" role="status"></p></div><label class="check"><input id="alerts" type="checkbox">Enable sign-in alerts</label></div>
+<div class="row"><div class="row-copy"><h3>Automatic lock</h3><p class="muted">Choose when an inactive session should lock.</p><p id="lock-status" class="feedback" role="status"></p></div><div><label for="lock" class="hint">After inactivity</label><select id="lock"><option value="5">5 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="never">Never</option></select></div></div>
+<div class="row"><div class="row-copy"><h3>Password</h3><p class="muted">Check a new password before using it with your account provider.</p><p class="meta">Passwords are never stored in this preview.</p></div><button id="expand" class="secondary" aria-expanded="false" aria-controls="password-form">Check a password</button></div>
+<form id="password-form" class="fields" novalidate hidden style="margin-top:24px">
+<div class="field"><label for="password">New password</label><input type="password" id="password" autocomplete="new-password" aria-describedby="password-hint password-error"><p id="password-hint" class="hint">Use at least 12 characters. A longer phrase is easier to remember.</p><p id="password-error" class="feedback error" aria-live="polite"></p></div>
+<div class="field"><label for="confirm">Confirm password</label><input type="password" id="confirm" autocomplete="new-password" aria-describedby="confirm-error"><p id="confirm-error" class="feedback error" aria-live="polite"></p></div>
+<label class="check" style="margin-bottom:16px"><input id="show" type="checkbox">Show passwords</label>
+<button type="submit">Check password</button><p id="password-status" class="feedback" role="status"></p>
+</form>
+</section>
+</main><footer>Changes here affect this local preview only.</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const defaults={name:'Alex Morgan',email:'alex@example.com',alerts:true,lock:'15',theme:'system'};
+let state={...defaults},storageAvailable=true;
+try{const saved=JSON.parse(localStorage.getItem('folio-cycle01')||'null');if(saved&&typeof saved==='object')for(const key of Object.keys(defaults))if(typeof saved[key]===typeof defaults[key])state[key]=saved[key]}catch{storageAvailable=false}
+const media=matchMedia('(prefers-color-scheme: dark)');
+function theme(){document.documentElement.classList.toggle('dark',state.theme==='dark'||state.theme==='system'&&media.matches)}
+$('theme').value=state.theme;theme();media.addEventListener('change',theme);
+function persist(){try{localStorage.setItem('folio-cycle01',JSON.stringify(state));storageAvailable=true;return true}catch{storageAvailable=false;return false}}
+function status(id,message,kind='success'){const el=$(id);el.className='feedback '+kind;el.textContent=message}
+$('theme').addEventListener('change',()=>{state.theme=$('theme').value;theme();if(!persist())status('profile-status','Appearance changed for this visit. Browser storage is unavailable.','warning')});
+let busy=false;
+function dirty(){return $('name').value!==state.name||$('email').value!==state.email}
+function buttons(){$('save').disabled=busy||!dirty();$('reset').disabled=busy||!dirty()}
+function hydrate(){$('name').value=state.name;$('email').value=state.email;buttons()}
+hydrate();
+function fieldError(id,message){$(id).setAttribute('aria-invalid',String(Boolean(message)));$(id+'-error').textContent=message}
+for(const id of ['name','email'])$(id).addEventListener('input',()=>{fieldError(id,'');status('profile-status',dirty()?'Unsaved changes.':'','warning');buttons()});
+$('reset').addEventListener('click',()=>{hydrate();fieldError('name','');fieldError('email','');status('profile-status','Changes discarded.');$('name').focus()});
+$('profile').addEventListener('submit',async event=>{event.preventDefault();if(busy)return;const name=$('name').value.trim(),email=$('email').value.trim();fieldError('name',name?'':'Enter a display name.');fieldError('email',email&&$('email').validity.valid?'':'Enter a valid email address.');if(!name||!email||!$('email').validity.valid){status('profile-status','Details were not saved. Check the marked fields.','error');(!name?$('name'):$('email')).focus();return}busy=true;buttons();$('name').readOnly=$('email').readOnly=true;$('profile').setAttribute('aria-busy','true');$('save').textContent='Saving…';status('profile-status','Saving details in this browser.','');await new Promise(resolve=>setTimeout(resolve,550));state.name=name;state.email=email;const saved=persist();busy=false;$('name').readOnly=$('email').readOnly=false;$('profile').removeAttribute('aria-busy');$('save').textContent='Save details';hydrate();status('profile-status',saved?'Details saved in this browser.':'Details kept for this visit. Browser storage is unavailable.',saved?'success':'warning')});
+$('alerts').checked=state.alerts;$('lock').value=state.lock;
+function preference(id,message,warning){const saved=persist();status(id,saved?message:message+' Browser storage is unavailable; this applies for this visit.',warning||!saved?'warning':'success')}
+$('alerts').addEventListener('change',()=>{state.alerts=$('alerts').checked;preference('alerts-status',state.alerts?'Sign-in alerts preference saved.':'Sign-in alerts are off. You may miss an unfamiliar sign-in.',!state.alerts)});
+$('lock').addEventListener('change',()=>{state.lock=$('lock').value;preference('lock-status',state.lock==='never'?'Automatic lock is off. Avoid this setting on a shared device.':'Automatic lock preference saved.',state.lock==='never')});
+if(!state.alerts)status('alerts-status','Sign-in alerts are off. You may miss an unfamiliar sign-in.','warning');if(state.lock==='never')status('lock-status','Automatic lock is off. Avoid this setting on a shared device.','warning');
+$('expand').addEventListener('click',()=>{const open=$('password-form').hidden;$('password-form').hidden=!open;$('expand').setAttribute('aria-expanded',String(open));$('expand').textContent=open?'Close password check':'Check a password';if(open)$('password').focus();else{$('password-form').reset();$('password').type=$('confirm').type='password';for(const id of ['password','confirm'])fieldError(id,'');status('password-status','')}});
+$('show').addEventListener('change',()=>{$('password').type=$('confirm').type=$('show').checked?'text':'password'});
+for(const id of ['password','confirm'])$(id).addEventListener('input',()=>{fieldError(id,'');status('password-status','')});
+$('password-form').addEventListener('submit',event=>{event.preventDefault();const short=$('password').value.length<12,mismatch=!$('confirm').value||$('password').value!==$('confirm').value;fieldError('password',short?'Use at least 12 characters.':'');fieldError('confirm',mismatch?'The passwords must match.':'');if(short||mismatch){status('password-status','Check the marked fields.','error');$(short?'password':'confirm').focus();return}status('password-status','Length and confirmation checked. Your account password has not changed.');$('password').value=$('confirm').value='';$('show').checked=false;$('password').type=$('confirm').type='password'});
+if(!storageAvailable)status('profile-status','Browser storage is unavailable. Changes will last for this visit.','warning');
+</script>
+</body>
+</html>

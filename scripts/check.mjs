@@ -1,6 +1,7 @@
 import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {outputs,srgb} from './build.mjs';
+import {contrast} from './lib/contrast.mjs';
 const root=new URL('../',import.meta.url), assets=new URL('skills/editorial-calm/assets/',root);
 const tokens=JSON.parse(readFileSync(new URL('tokens.json',assets)));
 assert.deepEqual(Object.keys(tokens.colors.light).sort(),Object.keys(tokens.colors.dark).sort());
@@ -18,3 +19,10 @@ const skill=readFileSync(new URL('skills/editorial-calm/SKILL.md',root),'utf8');
 assert.match(skill,/^---\nname: editorial-calm\ndescription: [^\n]+\n---\n/);
 assert(!/TODO|\[INSERT|TBD/.test(skill));
 console.log('Verified skill identity, description and absence of unfinished placeholders.');
+for (const [mode,roles] of Object.entries(tokens.colors)) {
+  for (const role of ['primary','secondary','card','popover','accent','destructive','success','warning']) {
+    const ratio=contrast(srgb(roles[role]),srgb(roles[role+'-foreground']));
+    assert(ratio>=4.5,`${mode} ${role} label contrast ${ratio.toFixed(2)} is below 4.5:1`);
+  }
+}
+console.log('Verified normal-text contrast for semantic foreground/background pairs.');

@@ -1,0 +1,12 @@
+[
+  {"cycle":"01","task":"Account/security preferences with validation, pending, success, warning and error feedback."},
+  {"cycle":"02","task":"Mobile notification settings with checkbox/switch controls, focus boundaries and an irreversible reset action."},
+  {"cycle":"03","task":"Personal finance dashboard with currency figures, negative balances, long translated labels and comparison rows."},
+  {"cycle":"04","task":"Desktop document library with sorting, keyboard selection, bulk actions and a dense table."},
+  {"cycle":"05","task":"Appointment booking with date/time choices, validation, narrow layout and enlarged text."},
+  {"cycle":"06","task":"Project navigation with active views, keyboard routing, long navigation labels and mobile adaptation."},
+  {"cycle":"07","task":"Usage analytics with a chart, a text summary, accessible series labels and light/dark colours."},
+  {"cycle":"08","task":"Profile editor with modal confirmation, focus recovery, Escape, scrolling and reduced motion."},
+  {"cycle":"09","task":"Search results with loading, empty, error, retry and stale-response handling."},
+  {"cycle":"10","task":"Fresh cross-platform handoff: browser screen plus native design recipe using exported token dimensions and semantic roles."}
+]
