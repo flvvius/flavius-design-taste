@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "eval:gallery": "node scripts/gallery.mjs"
   },
   "license": "MIT",
   "devDependencies": {

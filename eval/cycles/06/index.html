@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project overview · Fieldwork</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font:var(--type-weightBody) var(--type-bodyWeb)/var(--type-lineHeight) Inter,system-ui,sans-serif}
+a{color:var(--foreground);text-underline-offset:.2em;overflow-wrap:anywhere}
+button{font:inherit;color:inherit;background:var(--background);border:1px solid var(--input);border-radius:var(--radius-control);min-height:48px;padding:8px 14px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+button:hover{background:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible,h1:focus{outline:2px solid var(--ring);outline-offset:4px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:16px 24px;border-bottom:1px solid var(--border)}
+.brand{font-weight:var(--type-weightTitle);overflow-wrap:anywhere}
+.shell{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr);max-width:1280px;margin:auto}
+aside{padding:32px 24px;border-inline-end:1px solid var(--border);min-width:0}
+.project{font-size:var(--type-rowTitle);font-weight:var(--type-weightTitle);margin:0 0 8px;line-height:1.4;overflow-wrap:anywhere}
+.quiet{color:var(--muted-foreground)}
+nav{margin-top:24px}
+nav h2{font-size:var(--type-section);font-weight:var(--type-weightLabel);margin:0 0 12px}
+nav ul{list-style:none;margin:0;padding:0}
+nav li{border-top:1px solid var(--border)}
+nav li:last-child{border-bottom:1px solid var(--border)}
+nav a{display:block;min-height:48px;padding:12px 10px 12px 14px;border-inline-start:3px solid transparent;text-decoration:none;overflow-wrap:anywhere;hyphens:auto}
+nav a:hover{background:var(--muted)}
+nav a[aria-current=page]{border-inline-start-color:var(--foreground);font-weight:var(--type-weightTitle);text-decoration:underline}
+main{min-width:0;padding:40px clamp(16px,4vw,48px);max-width:960px}
+h1{font-size:var(--type-pageTitle);font-weight:var(--type-weightTitle);letter-spacing:-.035em;line-height:1.2;margin:0 0 16px;overflow-wrap:anywhere;hyphens:auto}
+h2{font-size:var(--type-section);font-weight:var(--type-weightLabel);margin:0 0 16px;overflow-wrap:anywhere}
+h3{font-size:var(--type-rowTitle);font-weight:var(--type-weightTitle);line-height:1.4;margin:0 0 8px;overflow-wrap:anywhere}
+p{margin:0 0 16px;max-width:var(--type-descriptionMeasure);overflow-wrap:anywhere;hyphens:auto}
+section{margin-top:var(--space-sectionGap);padding-top:var(--space-sectionInset);border-top:1px solid var(--border)}
+.meta{font-size:.875rem;color:var(--muted-foreground);font-variant-numeric:tabular-nums}
+.success{color:var(--success)}.warning{color:var(--warning-text)}
+.facts{display:flex;flex-wrap:wrap;gap:24px 40px;margin:24px 0 0}
+.facts div{min-width:0}.facts dt{font-size:.875rem;color:var(--muted-foreground)}.facts dd{font-size:var(--type-rowTitle);font-weight:var(--type-weightTitle);margin:4px 0 0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.rows{list-style:none;padding:0;margin:0}
+.rows>li{padding:16px 0;border-top:1px solid var(--border)}
+.rows>li:first-child{border-top:0;padding-top:0}
+.rows p:last-child{margin-bottom:0}
+.row-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+.row-top h3{flex:1 1 16rem;min-width:0}
+.text-link{display:inline-flex;align-items:center;min-height:48px}
+details{border-top:1px solid var(--border);padding:12px 0}
+details:last-child{border-bottom:1px solid var(--border)}
+summary{cursor:pointer;min-height:48px;padding:8px 0;font-weight:var(--type-weightTitle);overflow-wrap:anywhere}
+details p{margin-top:12px}
+[hidden]{display:none!important}
+@media(max-width:54rem){.shell{grid-template-columns:minmax(0,1fr)}aside{border-inline-end:0;border-bottom:1px solid var(--border);padding:24px var(--space-gutterWeb)}nav{margin-top:16px}main{padding:32px var(--space-gutterWeb)}header{padding:16px}nav a{padding-block:10px}}
+@media(forced-colors:active){nav a[aria-current=page]{border-inline-start-color:CanvasText}}
+</style>
+</head>
+<body>
+<header><span class="brand">Fieldwork / Projects</span><button id="theme" type="button" aria-pressed="false">Dark mode</button></header>
+<div class="shell">
+<aside>
+<p class="project">Neighbourhood research programme</p>
+<p class="meta">Autumn 2026 · Project workspace</p>
+<nav aria-labelledby="nav-title">
+<h2 id="nav-title">Project navigation</h2>
+<ul>
+<li><a href="#/overview" data-route="overview">Project overview and release readiness</a></li>
+<li><a href="#/work" data-route="work">Work plan, responsibilities and upcoming milestones</a></li>
+<li><a href="#/decisions" data-route="decisions">Research decisions and cross-team coordination notes</a></li>
+</ul>
+</nav>
+</aside>
+<main id="main">
+<div data-view="overview">
+<h1 tabindex="-1">Project overview</h1>
+<p class="quiet">Prepare the neighbourhood research archive for public access, with readable summaries and clear consent records.</p>
+<p class="warning">In review · Consent checks remain before publication.</p>
+<dl class="facts"><div><dt>Target release</dt><dd>23 October 2026</dd></div><div><dt>Project lead</dt><dd>Mara Ionescu</dd></div></dl>
+<section aria-labelledby="overview-focus">
+<h2 id="overview-focus">This week's focus</h2>
+<ul class="rows">
+<li><h3>Finish participant consent checks</h3><p>Review the remaining four interviews before sharing their summaries.</p><p class="meta">Alex Chen · Due 14 October</p></li>
+<li><h3>Make the archive usable by keyboard</h3><p>Verify navigation, document reading order and visible focus across the release pages.</p><p class="meta">Sam Rivera · Due 16 October</p></li>
+</ul>
+<a class="text-link" href="#/work">Open the work plan →</a>
+</section>
+<section aria-labelledby="overview-note"><h2 id="overview-note">Latest decision</h2><p>Publish anonymised interview summaries. Keep original recordings private.</p><a class="text-link" href="#/decisions">Read the research decisions →</a></section>
+</div>
+<div data-view="work" hidden>
+<h1 tabindex="-1">Work plan</h1>
+<p class="quiet">Responsibilities and milestones for the first public release.</p>
+<section aria-labelledby="work-next">
+<h2 id="work-next">Upcoming work</h2>
+<ul class="rows">
+<li><div class="row-top"><h3>Complete consent review</h3><span class="warning">In review</span></div><p>Check four remaining interview records and note any publication restrictions.</p><p class="meta">Alex Chen · 14 October 2026</p></li>
+<li><div class="row-top"><h3>Review accessibility across the archive</h3><span>Planned</span></div><p>Test keyboard access, enlarged text and the reading order of research summaries.</p><p class="meta">Sam Rivera · 16 October 2026</p></li>
+<li><div class="row-top"><h3>Approve the release notes</h3><span>Planned</span></div><p>Describe what is available, what remains private and how participants can request a correction.</p><p class="meta">Mara Ionescu · 20 October 2026</p></li>
+</ul>
+</section>
+<section aria-labelledby="work-done"><h2 id="work-done">Completed</h2><h3>Agree on the publication scope</h3><p class="success">Complete · 8 October 2026</p><a class="text-link" href="#/decisions">Read the publication decision →</a></section>
+</div>
+<div data-view="decisions" hidden>
+<h1 tabindex="-1">Research decisions</h1>
+<p class="quiet">The agreed publication scope and the questions that still need a decision.</p>
+<section aria-labelledby="decision-list">
+<h2 id="decision-list">Decision record</h2>
+<details open><summary>Publish summaries, keep recordings private</summary><p class="meta">Agreed · Mara Ionescu · 8 October 2026</p><p>Only anonymised summaries will appear in the public archive. Audio recordings and direct participant identifiers remain private.</p><p>Each summary needs a completed consent review before publication.</p></details>
+<details><summary>Give participants a correction route</summary><p class="meta">Agreed · Alex Chen · 7 October 2026</p><p>The release notes will explain how participants can request a correction or withdraw a summary. Mara will review each request before the archive changes.</p></details>
+<details><summary>Set the next translation priority</summary><p class="warning">Open question · Discuss on 19 October 2026</p><p>Choose the next language after reviewing participant requests. No translation deadline has been agreed.</p></details>
+</section>
+<a class="text-link" href="#/work">Return to responsibilities and milestones →</a>
+</div>
+<noscript><p class="warning">Enable JavaScript to switch between project views. The project overview is shown above.</p></noscript>
+</main>
+</div>
+<script>
+const titles={overview:'Project overview',work:'Work plan',decisions:'Research decisions'};
+const links=[...document.querySelectorAll('[data-route]')];
+const views=[...document.querySelectorAll('[data-view]')];
+function route(moveFocus=false){
+let key=location.hash.slice(2);
+if(!location.hash.startsWith('#/')||!Object.hasOwn(titles,key)){
+key='overview';history.replaceState(null,'',location.pathname+location.search+'#/overview');
+}
+for(const link of links){if(link.dataset.route===key)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
+for(const view of views)view.hidden=view.dataset.view!==key;
+document.title=titles[key]+' · Fieldwork';
+if(moveFocus)views.find(view=>view.dataset.view===key).querySelector('h1').focus();
+}
+window.addEventListener('hashchange',()=>route(true));
+route();
+const preference=matchMedia('(prefers-color-scheme: dark)');let chosen=false;
+function setTheme(dark){document.documentElement.classList.toggle('dark',dark);const button=document.getElementById('theme');button.setAttribute('aria-pressed',String(dark));button.textContent=dark?'Light mode':'Dark mode';}
+setTheme(preference.matches);
+preference.addEventListener('change',event=>{if(!chosen)setTheme(event.matches);});
+document.getElementById('theme').addEventListener('click',()=>{chosen=true;setTheme(!document.documentElement.classList.contains('dark'));});
+</script>
+</body>
+</html>
