@@ -1,0 +1,74 @@
+{
+  "cycle": "08",
+  "verdict": "issues_found",
+  "findings": [
+    {
+      "id": "initial-dialog-focus-offscreen",
+      "severity": "medium",
+      "evidence": "At 375\u00d7812, opening save or discard review with an 80-character name and 600-character bio focuses #cancel while dialog.scrollTop remains 0. Its visible height is 0px immediately after opening and after the entrance animation finishes, at both 100% and 200% root text. No manual scrolling occurred before measurement.",
+      "rootCause": "openConfirmation() resets dialog.scrollTop to 0 after showModal(), then focuses the bottom Keep editing action with preventScroll:true. Long review content places that active action outside the clipped dialog viewport.",
+      "recommendation": "For long reviews, focus a visible heading or introductory element with tabindex=-1 while retaining the top reading position, or allow the chosen action to scroll into view. Verify initial focus visibility before manual scrolling."
+    }
+  ],
+  "verification": {
+    "method": "Independent headless Chromium geometry measurements before any scrolling, immediately after opener click and again after 300ms. Visible height is the intersection of the focused element with the dialog inner clipping bounds and browser viewport.",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "input": {
+      "name": "80 repeated N characters",
+      "bio": "600 characters of repeated Long review text."
+    },
+    "geometryAfterAnimation": [
+      {
+        "textScale": 1,
+        "action": "save",
+        "focus": "cancel",
+        "dialogTop": 16,
+        "dialogBottom": 796,
+        "focusTop": 911,
+        "focusBottom": 959,
+        "visibleHeight": 0,
+        "scrollTop": 0
+      },
+      {
+        "textScale": 1,
+        "action": "discard",
+        "focus": "cancel",
+        "dialogTop": 16,
+        "dialogBottom": 796,
+        "focusTop": 881,
+        "focusBottom": 929,
+        "visibleHeight": 0,
+        "scrollTop": 0
+      },
+      {
+        "textScale": 2,
+        "action": "save",
+        "focus": "cancel",
+        "dialogTop": 32,
+        "dialogBottom": 780,
+        "focusTop": 4071,
+        "focusBottom": 4217,
+        "visibleHeight": 0,
+        "scrollTop": 0
+      },
+      {
+        "textScale": 2,
+        "action": "discard",
+        "focus": "cancel",
+        "dialogTop": 32,
+        "dialogBottom": 780,
+        "focusTop": 4063,
+        "focusBottom": 4209,
+        "visibleHeight": 0,
+        "scrollTop": 0
+      }
+    ],
+    "immediateMeasurements": "All four immediate measurements likewise had visibleHeight 0 and scrollTop 0. Animation shifts were only 6px at normal text and 12px at enlarged text; completing animation does not resolve the hidden focus.",
+    "guidance": "Current references/overlays.md explicitly requires visible initial focus and allows a focusable heading for long reading dialogs.",
+    "correctionToInitialReview": "Initial review verified action reachability after scrolling but omitted initial focused-element visibility. This follow-up confirms that omission concealed a real defect.",
+    "preserved": "Initial review.json remains unchanged."
+  }
+}

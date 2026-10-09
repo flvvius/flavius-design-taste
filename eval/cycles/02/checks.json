@@ -4,6 +4,7 @@
     {
       "width": 375,
       "theme": "light",
+      "fontScale": 1,
       "errors": [],
       "failedRequests": [],
       "overflow": false,
@@ -18,6 +19,7 @@
     {
       "width": 375,
       "theme": "dark",
+      "fontScale": 1,
       "errors": [],
       "failedRequests": [],
       "overflow": false,
@@ -32,6 +34,7 @@
     {
       "width": 1280,
       "theme": "light",
+      "fontScale": 1,
       "errors": [],
       "failedRequests": [],
       "overflow": false,
@@ -46,6 +49,37 @@
     {
       "width": 1280,
       "theme": "dark",
+      "fontScale": 1,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "fontScale": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflow": false,
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "keyboardFocus": {
+        "tag": "SELECT",
+        "text": "SystemLightDark"
+      }
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "fontScale": 2,
       "errors": [],
       "failedRequests": [],
       "overflow": false,

@@ -1,0 +1,69 @@
+{
+  "cycle": "08",
+  "resolutions": [
+    {
+      "id": "initial-dialog-focus-offscreen",
+      "status": "resolved",
+      "evidence": {
+        "method": "Independent Chromium tests at 375\u00d7812 with 100% and 200% root text, save and discard, long and short changed values. Initial geometry measured before scrolling immediately after click and again after the entrance animation.",
+        "longInitialFocus": "All four long reviews focus dialog-title at scrollTop 0, fully visible immediately and after animation. Long inputs were an 80-character unbroken name and a 600-character bio.",
+        "settledGeometry": [
+          {
+            "scale": 1,
+            "action": "save",
+            "dialogBounds": [
+              16,
+              796
+            ],
+            "focusBounds": [
+              33,
+              93
+            ]
+          },
+          {
+            "scale": 1,
+            "action": "discard",
+            "dialogBounds": [
+              16,
+              796
+            ],
+            "focusBounds": [
+              33,
+              63
+            ]
+          },
+          {
+            "scale": 2,
+            "action": "save",
+            "dialogBounds": [
+              32,
+              780
+            ],
+            "focusBounds": [
+              65,
+              305
+            ]
+          },
+          {
+            "scale": 2,
+            "action": "discard",
+            "dialogBounds": [
+              32,
+              780
+            ],
+            "focusBounds": [
+              65,
+              245
+            ]
+          }
+        ],
+        "shortSafeFocus": "At normal text both short reviews fit and focus visible cancel. Save button bounds 499.5\u2013547.5 within dialog 187.5\u2013624.5; discard button bounds 484.5\u2013532.5 within dialog 202.5\u2013609.5. At enlarged text these short reviews overflow, correctly selecting the fully visible title instead.",
+        "tabReachability": "From the long-review title, first Tab reaches cancel and second reaches confirm. Both become fully visible through automatic dialog scrolling in all four cases; no manual scrolling is needed. Background form controls never receive focus during checked traversal. Chromium includes a browser-focus transition represented by BODY before returning to dialog controls.",
+        "escapeRecovery": "All eight short/long, normal/enlarged save/discard cases close on Escape, preserve drafts, release the page scroll lock and restore focus to the corresponding save or discard opener.",
+        "preservation": "Initial review.json and followup-review.json were not modified."
+      }
+    }
+  ],
+  "remainingIssues": [],
+  "verdict": "pass"
+}

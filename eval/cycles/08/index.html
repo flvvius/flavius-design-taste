@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit profile · Margin</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground); font: var(--type-bodyWeb)/var(--type-lineHeight) Inter, system-ui, sans-serif; }
+body.modal-open { overflow: hidden; }
+main { max-width: 896px; margin: auto; padding: 2rem var(--space-gutterWeb) 4rem; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.brand { font-weight: 600; letter-spacing: -.03em; }
+h1 { font-size: var(--type-pageTitle); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; margin: 2rem 0 .5rem; }
+h2 { font-size: var(--type-section); font-weight: 500; margin: 0 0 1.5rem; }
+p { max-width: var(--type-descriptionMeasure); margin: .5rem 0; }
+h1, h2, p, label, dt, dd, button { overflow-wrap: anywhere; }
+.muted, .hint { color: var(--muted-foreground); }
+label { display: block; font-weight: 500; }
+input, textarea, select, button { font: inherit; color: var(--foreground); }
+input, textarea, select { background: var(--background); border: 1px solid var(--input); border-radius: var(--radius-control); padding: .625rem .75rem; min-height: 44px; max-width: 100%; }
+input, textarea { display: block; width: 100%; margin-top: .5rem; }
+textarea { resize: vertical; min-height: 8rem; }
+select { margin-top: .375rem; padding-right: 2rem; }
+button { cursor: pointer; min-height: 44px; padding: .625rem 1rem; border: 1px solid var(--input); border-radius: var(--radius-control); background: var(--background); font-weight: 500; }
+button.primary { color: var(--primary-foreground); background: var(--primary); border-color: var(--primary); }
+button.danger { color: var(--destructive-foreground); background: var(--destructive); border-color: var(--destructive); }
+button.discard, .error { color: var(--destructive); }
+button:hover { filter: brightness(.95); }
+input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, #dialog-title:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+form { max-width: 40rem; }
+section { margin-top: var(--space-sectionGap); padding-top: var(--space-sectionInset); border-top: 1px solid var(--border); }
+.field { margin-bottom: 1.5rem; }
+.hint { font-size: .875rem; margin-top: .375rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+#status { min-height: 1.625em; margin-top: 1rem; }
+footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem; }
+dialog { width: min(36rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.5rem; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--input); border-radius: var(--radius-overlay); background: var(--popover); color: var(--popover-foreground); }
+dialog::backdrop { background: var(--overlay); }
+dialog[open] { animation: arrive var(--motion-overlay) ease-out; }
+dialog h2 { font-size: 1.5rem; font-weight: 600; line-height: 1.25; margin-bottom: .75rem; }
+dialog dl { margin: 1.5rem 0; }
+.review-row { padding: 1rem 0; border-top: 1px solid var(--border); }
+dt { color: var(--muted-foreground); font-weight: 500; }
+dd { margin: .25rem 0 0; white-space: pre-wrap; }
+@keyframes arrive { from { opacity: 0; transform: translateY(.375rem); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { dialog[open] { animation: none; } }
+@media (max-width: 420px) { main { padding-top: 1rem; } header { align-items: start; } .actions { flex-direction: column; } .actions button { width: 100%; } dialog { padding: 1rem; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<span class="brand">Margin / Account</span>
+<label for="theme">Appearance
+<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+</label>
+</header>
+<h1>Edit profile</h1>
+<p class="muted">Choose how you appear to other readers.</p>
+<form id="profile">
+<section aria-labelledby="details-title">
+<h2 id="details-title">Profile details</h2>
+<div class="field">
+<label for="name">Display name</label>
+<input id="name" name="name" value="Alex Morgan" required maxlength="80" autocomplete="name" aria-describedby="name-hint">
+<p id="name-hint" class="hint">Required. Up to 80 characters.</p>
+</div>
+<div class="field">
+<label for="email">Email address</label>
+<input id="email" name="email" type="email" value="alex@example.com" required maxlength="254" autocomplete="email" aria-describedby="email-hint">
+<p id="email-hint" class="hint">Private. This demo does not send email.</p>
+</div>
+<div class="field">
+<label for="bio">About you</label>
+<textarea id="bio" name="bio" maxlength="600" aria-describedby="bio-hint">Reader, writer and weekend cyclist.</textarea>
+<p id="bio-hint" class="hint">Optional. Up to 600 characters. Visible with your profile.</p>
+</div>
+</section>
+<div class="actions">
+<button class="primary" id="save" type="submit">Review changes</button>
+<button class="discard" id="discard" type="button">Discard changes</button>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+</form>
+<footer>Local demo. Confirmed edits last until you reload this page.</footer>
+</main>
+<dialog id="confirmation" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+<h2 id="dialog-title" tabindex="-1"></h2>
+<p id="dialog-description"></p>
+<dl id="review"></dl>
+<div class="actions">
+<button id="cancel" type="button" autofocus>Keep editing</button>
+<button id="confirm" type="button"></button>
+</div>
+</dialog>
+<script>
+const el = id => document.getElementById(id);
+const fields = ['name', 'email', 'bio'];
+const labels = { name: 'Display name', email: 'Email address', bio: 'About you' };
+const read = () => Object.fromEntries(fields.map(id => [id, el(id).value.trim()]));
+let saved = read();
+let pending;
+let action;
+let opener;
+const dialog = el('confirmation');
+const status = message => { el('status').textContent = message; };
+function openConfirmation(kind, trigger) {
+  action = kind;
+  opener = trigger;
+  pending = read();
+  const changed = fields.filter(id => pending[id] !== saved[id]);
+  if (!changed.length) {
+    status('No changes to review. Your profile matches the saved version.');
+    return;
+  }
+  const saving = kind === 'save';
+  el('dialog-title').textContent = saving ? 'Save these profile changes?' : 'Discard your edits?';
+  el('dialog-description').textContent = saving
+    ? 'Review the updated values below. Confirm to save them for this page session.'
+    : 'These edited values will be replaced by the last confirmed profile. You can keep editing instead.';
+  el('review').replaceChildren();
+  changed.forEach(id => {
+    const row = document.createElement('div');
+    row.className = 'review-row';
+    const term = document.createElement('dt');
+    term.textContent = labels[id];
+    const value = document.createElement('dd');
+    value.textContent = pending[id] || 'No bio';
+    row.append(term, value);
+    el('review').append(row);
+  });
+  el('confirm').textContent = saving ? 'Confirm save' : 'Discard edits';
+  el('confirm').className = saving ? 'primary' : 'danger';
+  document.body.classList.add('modal-open');
+  dialog.showModal();
+  dialog.scrollTop = 0;
+  const initial = dialog.scrollHeight > dialog.clientHeight + 1 ? el('dialog-title') : el('cancel');
+  initial.focus({ preventScroll: true });
+}
+el('profile').addEventListener('submit', event => {
+  event.preventDefault();
+  openConfirmation('save', el('save'));
+});
+el('name').addEventListener('input', () => {
+  el('name').setCustomValidity(el('name').value.trim() ? '' : 'Enter a display name.');
+});
+el('profile').addEventListener('input', () => status('Unsaved edits. Review changes when you are ready.'));
+el('discard').addEventListener('click', () => openConfirmation('discard', el('discard')));
+el('cancel').addEventListener('click', () => dialog.close('cancel'));
+dialog.addEventListener('cancel', event => {
+  event.preventDefault();
+  dialog.close('cancel');
+});
+el('confirm').addEventListener('click', () => {
+  if (action === 'save') saved = { ...pending };
+  fields.forEach(id => { el(id).value = saved[id]; });
+  el('name').setCustomValidity('');
+  dialog.close('confirmed');
+  status(action === 'save' ? 'Profile saved for this page session.' : 'Edits discarded. Your last confirmed profile is restored.');
+});
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('modal-open');
+  if (dialog.returnValue === 'cancel') status('Confirmation cancelled. Your edits are still here.');
+  opener?.focus({ preventScroll: true });
+});
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+function applyTheme() {
+  const choice = el('theme').value;
+  document.documentElement.classList.toggle('dark', choice === 'dark' || (choice === 'system' && systemTheme.matches));
+}
+el('theme').addEventListener('change', applyTheme);
+systemTheme.addEventListener('change', applyTheme);
+applyTheme();
+</script>
+</body>
+</html>

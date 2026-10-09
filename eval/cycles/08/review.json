@@ -1,0 +1,29 @@
+{
+  "cycle": "08",
+  "findings": [],
+  "verdict": "pass",
+  "verification": {
+    "imagesInspected": [
+      "1280-light.png",
+      "1280-dark.png",
+      "375-light.png",
+      "375-dark.png",
+      "375-light-200pct.png",
+      "375-dark-200pct.png"
+    ],
+    "runnerChecks": "All six supplied reports have no errors, failed requests, overflow, contrast failures, unlabeled controls or small targets. These screenshots show the editor with the dialog closed.",
+    "behavior": [
+      "Unchanged submission reports no changes and does not open a dialog.",
+      "Empty and whitespace-only names and malformed email block save review and focus the invalid field.",
+      "Save review focuses Keep editing. Confirm save updates the session profile and restores focus to Review changes.",
+      "Escape from save preserves the draft, unlocks page scrolling and restores focus to Review changes.",
+      "Keep editing from discard preserves the draft and restores focus to Discard changes. Confirm discard restores the last confirmed profile and restores focus to Discard changes.",
+      "Escape from discard preserves the 600-character draft, closes the dialog and restores focus to Discard changes.",
+      "Tab traversal cycles between dialog actions and browser focus without reaching background form controls. Native modal background inertness remains intact."
+    ],
+    "longReviewAndScroll": "Tested 80-character unbroken name and long bio at 375\u00d7812 in both themes with 100% and 200% root text. No page or dialog horizontal overflow. Dialog height remains within the viewport and content scrolls internally. Wheel outside dialog leaves page position unchanged while open. Wheel inside dialog advances its scroll position. Confirmation actions remain reachable by scrolling.",
+    "dialogVisualInspection": "Inspected two additional in-memory browser screenshots of the enlarged light dialog, at the top and at the confirmation actions. Text wraps within the dialog and buttons remain readable. No screenshot files were written.",
+    "reducedMotion": "Computed dialog animation is arrive under normal motion and none with prefers-reduced-motion: reduce, checked in both themes and text sizes.",
+    "limits": "Behavior tests used headless Chromium. Supplied screenshots cover light/dark editor layouts at 375px and 1280px and enlarged 375px layouts. Long-dialog geometry was checked in both themes; additional open-dialog visual inspection used enlarged light mode."
+  }
+}

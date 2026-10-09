@@ -19,3 +19,4 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [05](cycles/05/outcome.md) | Appointment booking | Long enlarged titles wrap; local asset checks cover the artifact collection. |
 | [06](cycles/06/outcome.md) | Project navigation | Routing/history/focus passed; reviewed screens have a local gallery. |
 | [07](cycles/07/outcome.md) | Usage analytics | Axes corrected; category labels survive enlargement; chart guidance added. |
+| [08](cycles/08/outcome.md) | Profile review dialogs | Long reviews begin with visible focus; overlay guidance and stable snapshots added. |

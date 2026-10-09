@@ -1,0 +1,33 @@
+{
+  "cycle": "02",
+  "resolutions": [
+    {
+      "id": "core-input-boundary-contrast",
+      "status": "resolved",
+      "evidence": {
+        "scope": "Current core input boundary contrast only. Read the original finding by ID; no Cycle02 behavioral retests or other reviews.",
+        "tokens": "Light input is oklch(0.62 0.008 80), independently rendered by Chromium canvas to #898681. Dark input is oklch(0.56 0.008 270), rendered to #727479. Both are opaque.",
+        "method": "Rendered current OKLCH colours through Chromium canvas and independently calculated relative luminance and contrast from sampled sRGB pixels, without using scripts/lib/contrast.mjs for the measurements.",
+        "contrastRatios": {
+          "light": {
+            "background": 3.5304,
+            "card": 3.6265,
+            "popover": 3.6265,
+            "secondary": 3.2702
+          },
+          "dark": {
+            "background": 4.2568,
+            "card": 3.9447,
+            "popover": 3.9447,
+            "secondary": 3.5201
+          }
+        },
+        "result": "All eight input/background combinations exceed 3:1. Lowest measured ratio is 3.2702:1 on light secondary.",
+        "generator": "Current tokens.css and tokens.srgb.json exactly match outputs() from scripts/build.mjs; generator was imported without executing its write path.",
+        "regressionCheck": "scripts/check.mjs explicitly asserts input contrast >=3 against background, card, popover and secondary in both themes. Its contrast helper computes sRGB relative luminance. It does not composite alpha; current input and tested backgrounds are opaque, so this does not affect this resolution."
+      }
+    }
+  ],
+  "remainingIssues": [],
+  "verdict": "pass"
+}

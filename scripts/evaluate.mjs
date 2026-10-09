@@ -55,7 +55,7 @@ try {
       const smallTargets=[...document.querySelectorAll('button,a[href],input:not([type="hidden"]),select')].filter(visible).filter(el=>{const r=targetRect(el);return r.width<24||r.height<24;}).map(el=>({text:(el.textContent||el.getAttribute('aria-label')||el.tagName).trim().slice(0,50),width:Math.round(targetRect(el).width),height:Math.round(targetRect(el).height)}));
       return {overflow:document.documentElement.scrollWidth>innerWidth,contrast,unlabeled,smallTargets};
     });
-    await page.screenshot({path:resolve(dir,`${width}-${theme}${fontScale===1?'':'-200pct'}.png`),fullPage:true});
+    await page.screenshot({path:resolve(dir,`${width}-${theme}${fontScale===1?'':'-200pct'}.png`),fullPage:true,animations:'disabled'});
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.keyboard.press('Tab');
     const keyboardFocus=await page.evaluate(()=>({tag:document.activeElement.tagName,text:(document.activeElement.textContent||document.activeElement.getAttribute('aria-label')||'').trim().slice(0,80)}));
