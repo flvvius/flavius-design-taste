@@ -104,5 +104,12 @@
     "kind": "tooling",
     "reviewMode": "self",
     "taste": "both"
+  },
+  {
+    "cycle": "21",
+    "task": "Usage chart series remain visible under forced colours, with exact values and a common scale in both periods.",
+    "artifact": "cycles/07/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

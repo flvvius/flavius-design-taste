@@ -1,0 +1,881 @@
+{
+  "generatedAt": "2026-10-09T22:33:05.709Z",
+  "engine": "chromium",
+  "browser": "149.0.7827.55",
+  "node": "v24.8.0",
+  "sourceMode": "captured bytes served throughout the run",
+  "sources": {
+    "scripts/verify-examples.mjs": "0a78a8a538e0a2a301519afa48735e291a0f385582667e30429cd81d9f3dabfe",
+    "scripts/lib/browser-checks.mjs": "51c4e532d5dbe29129e272037a4ce3034ece9ecd6d8841b05d9c60731af129bb",
+    "scripts/lib/source-snapshot.mjs": "43bb54e6c90853aa5aabdbf2f62406b8b448e57ba0df96f51886b9f893933631",
+    "scripts/lib/usage-chart-checks.mjs": "834bcb1f9b37606b5be3b83477bbde220e660503a470fb00cce4c2e8d5a484c2",
+    "eval/cycles/07/index.html": "e5242ed406012133f201311cb7f0a98f0ff6791c6ea71c5a78272302b27b329a",
+    "package-lock.json": "6211282ba3e8d3a827397c852215d9e7142a683114d5f155dec74a7225af9341",
+    "examples/index.html": "6bdf271163690b7531157e4723910cc2e8741a247a86019e93072b06668ab265",
+    "examples/personal-room/index.html": "de0477b35e3bb974d41984ab4660c365d110c95bd343c6a1857c3189a82dc508",
+    "examples/personal-room/style.css": "a1b40f9537a486d36bf80102aab7d02ef7eb5de0b2473e097973e9dcf10920a6",
+    "examples/personal-room/room.js": "de968a1d639987af3c9369a877a42f2ec0c4a3956e759e4ae4e2f5640073111c",
+    "eval/cycles/12/index.html": "f5b9fbb712e3aceb3298e237427b7d33c35a41998e2dbab1c3ae883c13462a76",
+    "eval/cycles/12/style.css": "a556a36d1a37c963d286295a54f0716e57e810110940f686dc15f3f971ea54a0",
+    "eval/cycles/12/notebook.js": "03eb2523e9ac84d5199774dfa1e9ae88753c4250bc7fb6bce269e96d8862cb70",
+    "skills/personal-room/assets/tokens.json": "1ef5b7d8a12948c389e3793465025ba00e7837f82bbad37c63bf6194f1128454",
+    "skills/personal-room/assets/tokens.css": "04ac3c468cadd88403e15e52a10f9b06981acfef45cd358a331945585aa64880",
+    "skills/personal-room/assets/fonts.css": "d4db3a18e21727a6550d16e1f70d0ea3fcacfdd53666e12fc6d86b88c9d2209e",
+    "skills/personal-room/assets/fonts/Schoolbell-Regular.ttf": "00ff6655a5eb1eb70d32f2b7351d1bcf3f45f3f9ca40fd5c0d25da79f7f82a50",
+    "skills/editorial-calm/assets/tokens.json": "f3760e32c2376b649d3c9f23c4dccfd30366292d692cbc296e26b0c996c5d5a0",
+    "skills/editorial-calm/assets/tokens.css": "3fe87391f6256c4c04c32e60d756d2eae533cb70515782687b8e85c6a140c238",
+    "skills/editorial-calm/assets/fonts.css": "f0b1c1230f68631698795cbacb3d040981772290f677fea9a175a8a9163ceb29",
+    "skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+  },
+  "capabilities": {
+    "forcedColors": {
+      "media": true,
+      "colorSubstitution": true
+    }
+  },
+  "reports": [
+    {
+      "name": "usage-chart-light-320-normal-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-normal-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-390-normal-week",
+      "height": 960,
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-390-normal-month",
+      "height": 960,
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-768-normal-week",
+      "height": 960,
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-768-normal-month",
+      "height": 960,
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-1440-normal-week",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-1440-normal-month",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-week",
+      "height": 480,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-month",
+      "height": 480,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-spacing-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-spacing-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-week",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-month",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-normal-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-normal-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-390-normal-week",
+      "height": 960,
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-390-normal-month",
+      "height": 960,
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-768-normal-week",
+      "height": 960,
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-768-normal-month",
+      "height": 960,
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-week",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-month",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-week",
+      "height": 480,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-month",
+      "height": 480,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-week",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-month",
+      "height": 960,
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-week",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-month",
+      "height": 960,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "errors": [],
+      "requests": []
+    }
+  ],
+  "interactions": [
+    {
+      "name": "usage-chart-light-320-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-390-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-390-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-768-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-768-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-1440-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-1440-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-spacing-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-spacing-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-320-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-390-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-390-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-768-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-768-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-week values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-month values, scale and series",
+      "passed": false,
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart forced-colour media rules and keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "usage-chart forced-colour substitution and control boundaries",
+      "passed": true
+    }
+  ],
+  "unverified": [],
+  "failures": [
+    {
+      "name": "usage-chart-light-320-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-390-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-390-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-768-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-768-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-1440-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-1440-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-all-text-200-short-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-spacing-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-spacing-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.29 0.015 65) 4px, oklch(0.29 0.015 65) 6px)\",\"contrast\":13.745918503363399}]"
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-320-forced-colors-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-light-1440-forced-colors-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-320-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-390-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-390-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-768-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-768-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-normal-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-all-text-200-short-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-spacing-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, oklch(0.92 0.005 80) 4px, oklch(0.92 0.005 80) 6px)\",\"contrast\":15.690788887123402}]"
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-320-forced-colors-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-week values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    },
+    {
+      "name": "usage-chart-dark-1440-forced-colors-month values, scale and series",
+      "message": "[{\"class\":\"key current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"key previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21},{\"class\":\"bar current\",\"image\":\"none\",\"contrast\":1},{\"class\":\"bar previous\",\"image\":\"repeating-linear-gradient(135deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 4px, rgb(0, 0, 0) 4px, rgb(0, 0, 0) 6px)\",\"contrast\":21}]"
+    }
+  ],
+  "limitations": "Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification."
+}
