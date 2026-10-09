@@ -72,4 +72,16 @@
   --motion-swap: 150ms;
   --motion-overlay: 250ms;
   --motion-max: 300ms;
+  --motion-pressScale: 0.97;
+  --type-bodyWeb: 1rem;
+  --type-bodyMobile: 1.0625rem;
+  --type-section: 1rem;
+  --type-rowTitle: 1.125rem;
+  --type-pageTitle: 2rem;
+  --type-weightBody: 400;
+  --type-weightLabel: 500;
+  --type-weightTitle: 600;
+  --type-lineHeight: 1.625;
+  --type-proseMeasure: 65ch;
+  --type-descriptionMeasure: 55ch;
 }

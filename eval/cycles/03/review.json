@@ -1,0 +1,20 @@
+{
+  "cycle": "03",
+  "findings": [
+    {
+      "id": "fixture-filter-selected-label-clipped",
+      "severity": "medium",
+      "evidence": "eval/cycles/03/375-light.png visibly truncates the account filter selection to 'All ac…'. Independently measured #filter at 65.109375 CSS pixels for en-US and 62.546875 for de-DE at a 375px viewport. Positive and negative filter selections inherit the same narrow width. index.html:16 permits the control to shrink with min-width:0, and :41 applies flex:1 to every .control, including the filter inside .section-head at :55. The adjacent heading consumes most of the row, so flex wrapping does not give the filter adequate width. checks.json reports no page overflow, which does not detect this internal clipping.",
+      "rootCause": "fixture-only: the header control sizing rule also affects the account filter. Shared web guidance already says responsive rows should wrap rather than hide useful content.",
+      "recommendation": "Scope flex:1 to header controls. Give the account filter enough inline space for its longest localized selection and move it to a full-width row on narrow screens when necessary. Verify all three selections in English and German at 375px."
+    },
+    {
+      "id": "fixture-enlarged-currency-fragments",
+      "severity": "medium",
+      "evidence": "At 375px, independently doubled each element's computed font size to exercise enlargement beyond changing body size alone. Summary bdi ranges then occupied multiple vertical lines in all three locales. For en-US, the negative total '-€1,840.65' occupied three lines with widths 21.33, 165.13 and 72.94px, separating the minus sign onto its own line. German summary amounts also split over two lines. Arabic document scrollWidth increased to 450px against a 375px viewport. index.html:29 applies overflow-wrap:anywhere to summary figures, while :41 keeps each summary label and figure side by side at narrow sizes. Bidi isolation at :70 preserves text direction but does not prevent these fragments.",
+      "rootCause": "fixture-only: numeric strings inherit arbitrary character wrapping and compete with labels in a horizontal summary row. The shared skill requires enlarged text and localization to work, but offers no concrete guidance for keeping monetary signs, digits and currency together.",
+      "recommendation": "Keep each formatted amount together and let the summary label and amount stack when available inline space is insufficient. Avoid overflow-wrap:anywhere on monetary figures. Retest all text at 200% in en-US, de-DE and ar with no detached sign or horizontal scrolling. Add a short shared pattern explaining that tabular digits and bidi isolation do not replace responsive sizing of complete formatted amounts."
+    }
+  ],
+  "verdict": "Corrections required for two verified fixture layout faults. Inspected index.html, builder.md, checks.json, 375-light.png and 1280-dark.png. Exercised en-US, de-DE and ar with all/assets/debt filters: row counts were 4/3/1, summary totals remained unchanged, and the negative account retained its sign and written debt label. Net EUR 17,060.60, positive balances EUR 18,901.25 and debt EUR -1,840.65 stayed consistent across locales. Language and direction switched correctly, with isolated Intl-formatted currency strings. Arabic using Latin digits is not itself a defect. No shared-token defect or independently verified bidi-sign corruption was found. Arabic linguistic accuracy is outside these browser checks."
+}

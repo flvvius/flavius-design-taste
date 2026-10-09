@@ -1,0 +1,32 @@
+[
+  {
+    "locale": "en-US",
+    "overflow": false,
+    "filterWidth": 343,
+    "summaryLines": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "locale": "de-DE",
+    "overflow": false,
+    "filterWidth": 343,
+    "summaryLines": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "locale": "ar",
+    "overflow": false,
+    "filterWidth": 343,
+    "summaryLines": [
+      1,
+      1,
+      1
+    ]
+  }
+]

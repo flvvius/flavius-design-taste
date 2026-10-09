@@ -1,0 +1,6 @@
+{
+  "original": "16px",
+  "scaled": "20px",
+  "root": "20px",
+  "result": "Default body typography follows browser root font size."
+}

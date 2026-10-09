@@ -23,3 +23,9 @@ Say what is empty and offer a relevant next step. Avoid dashed containers and ic
 ## Exceptions
 
 A selectable option earns a boundary because that boundary describes a hit target. A dialog earns elevation because it covers the page. A media frame earns clipping because it contains an image. These reasons do not transfer to the section around them.
+
+## Numbers and translated layouts
+
+Keep the sign, digits, decimal separator and currency of a formatted amount together. Tabular figures prevent width changes; they do not prevent a number from wrapping into misleading fragments. Stack a figure below its label when space is short. Do not apply arbitrary character wrapping to amounts. If even a stacked value cannot fit, use an explicitly labelled compact presentation with the full value available.
+
+Use locale-aware number formatting and bidi isolation for amounts in RTL prose. Switching locale changes presentation, not currency or underlying values. Use logical spacing and alignment. Give selects room for their longest translated choice, including at enlarged text sizes; a page without overflow can still hide its selected label.

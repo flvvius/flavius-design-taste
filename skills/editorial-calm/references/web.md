@@ -29,3 +29,9 @@ For Sidebar or Chart components, define their additional semantic roles using th
 Use `input` for the boundary that makes an input, select or unchecked option recognisable. `border` is intentionally quieter and belongs to separators, not essential control identification. `ring` identifies keyboard focus.
 
 Status copy uses `success`, `destructive` or `warning-text` against the page. `warning` is an accent/fill and is not suitable for ordinary light-theme text. For a filled status control, use its paired `-foreground`; a foreground token is not the status colour for plain page text.
+
+## Shared dimensions
+
+The CSS asset exports spacing, radii, motion and typography as custom properties. Use `--type-bodyWeb`, `--type-section`, `--type-rowTitle` and `--type-pageTitle` for the default sizes, with `--type-weightBody`, `--type-weightLabel`, `--type-weightTitle` and `--type-lineHeight` for hierarchy. Prose and descriptions use `--type-proseMeasure` and `--type-descriptionMeasure`. Sizes are rem values so browser text preferences can scale them.
+
+Press transforms can use `--motion-pressScale`; durations use `--motion-press`, `--motion-swap` and `--motion-overlay`. The JSON keeps logical numeric dimensions for native consumers.

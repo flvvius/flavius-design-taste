@@ -21,7 +21,7 @@ await new Promise(done => server.listen(0,'127.0.0.1',done));
 const browser = await chromium.launch({headless:true});
 const reports = [];
 try {
-  for (const width of [375,1280]) for (const theme of ['light','dark']) {
+  for (const {width,fontScale} of [{width:375,fontScale:1},{width:1280,fontScale:1},{width:375,fontScale:2}]) for (const theme of ['light','dark']) {
     const context = await browser.newContext({viewport:{width,height:960},colorScheme:theme});
     const page = await context.newPage();
     const errors = []; const failedRequests = [];
@@ -31,6 +31,7 @@ try {
     if (!response?.ok()) throw new Error(`Cycle ${cycle} did not load: ${response?.status()}`);
     await page.evaluate(t=>{document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.style.colorScheme=t;},theme);
     await page.evaluate(()=>document.fonts.ready);
+    if(fontScale!==1)await page.evaluate(scale=>{const sizes=[...document.querySelectorAll('body,body *')].filter(el=>el instanceof HTMLElement&&!['SCRIPT','STYLE'].includes(el.tagName)).map(el=>[el,parseFloat(getComputedStyle(el).fontSize)]);for(const [el,size] of sizes)el.style.fontSize=size*scale+'px';},fontScale);
     const audit = await page.evaluate(() => {
       const canvas=document.createElement('canvas');canvas.width=canvas.height=1;
       const ctx=canvas.getContext('2d',{willReadFrequently:true});
@@ -54,13 +55,13 @@ try {
       const smallTargets=[...document.querySelectorAll('button,a[href],input:not([type="hidden"]),select')].filter(visible).filter(el=>{const r=targetRect(el);return r.width<24||r.height<24;}).map(el=>({text:(el.textContent||el.getAttribute('aria-label')||el.tagName).trim().slice(0,50),width:Math.round(targetRect(el).width),height:Math.round(targetRect(el).height)}));
       return {overflow:document.documentElement.scrollWidth>innerWidth,contrast,unlabeled,smallTargets};
     });
-    await page.screenshot({path:resolve(dir,`${width}-${theme}.png`),fullPage:true});
+    await page.screenshot({path:resolve(dir,`${width}-${theme}${fontScale===1?'':'-200pct'}.png`),fullPage:true});
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.keyboard.press('Tab');
     const keyboardFocus=await page.evaluate(()=>({tag:document.activeElement.tagName,text:(document.activeElement.textContent||document.activeElement.getAttribute('aria-label')||'').trim().slice(0,80)}));
-    reports.push({width,theme,errors,failedRequests,...audit,keyboardFocus});
+    reports.push({width,theme,fontScale,errors,failedRequests,...audit,keyboardFocus});
     await context.close();
   }
   await writeFile(resolve(dir,'checks.json'),JSON.stringify({cycle,reports,note:'Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review.'},null,2)+'\n');
-  console.log(JSON.stringify({cycle,reports:reports.map(({width,theme,errors,failedRequests,overflow,contrast,unlabeled,smallTargets})=>({width,theme,errors,failedRequests,overflow,contrastIssues:contrast.length,unlabeled,smallTargets}))}));
+  console.log(JSON.stringify({cycle,reports:reports.map(({width,theme,fontScale,errors,failedRequests,overflow,contrast,unlabeled,smallTargets})=>({width,theme,fontScale,errors,failedRequests,overflow,contrastIssues:contrast.length,unlabeled,smallTargets}))}));
 } finally {await browser.close();server.close();}

@@ -1,0 +1,17 @@
+{
+  "cycle": "03",
+  "resolutions": [
+    {
+      "id": "fixture-filter-selected-label-clipped",
+      "status": "resolved",
+      "evidence": "Current index.html scopes header flex sizing to .controls .control and makes .section-head controls/selects full width below 600px. Independently measured #filter at 343px in a 375px viewport for en-US, de-DE and ar, including after doubling every rendered element's computed font size. Inspected all three localized enlarged screenshots, which show the filter on its own full-width row. Exercised all/assets/debt selections in each locale; row counts remain 4/3/1. The original 62-65px squeezed filter is eliminated."
+    },
+    {
+      "id": "fixture-enlarged-currency-fragments",
+      "status": "resolved",
+      "evidence": "Current index.html uses white-space:nowrap on dd and bdi and stacks narrow-layout summary labels above their amounts. Independently repeated all-element 200% text enlargement at 375px for en-US, de-DE and ar. Each of the three summary amounts occupies one vertical line in every locale, and document scrollWidth remains 375px for all three filter selections. The supplied localization-checks.json agrees. Viewed 375-en-US-enlarged.png, 375-de-DE-enlarged.png and 375-ar-enlarged.png; signs and complete currency amounts remain together, with Arabic content aligned in RTL. Negative debt retains its original value in each locale."
+    }
+  ],
+  "remainingIssues": [],
+  "verdict": "Pass for the requested recheck. Both original findings are resolved, with no remaining issue verified in these checks. Original review.json preserved. Did not run verify.mjs because it rewrites screenshots and localization-checks.json; reproduced its relevant checks through a read-only browser session instead. No unrelated files re-audited."
+}
