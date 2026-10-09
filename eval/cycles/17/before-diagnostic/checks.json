@@ -1,0 +1,33 @@
+{
+  "environment": {
+    "platform": "Darwin",
+    "architecture": "arm64",
+    "device": "Design taste native verification",
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+    "animations": "disabled for snapshots",
+    "fontBundled": false,
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "sdkVersion": "26.5"
+  },
+  "sources": {
+    "eval/cycles/17/before/NativeRoom.swift": "38cf7858c80702c4decdd340452a050ffea59411b72a49c4942a6d2e305db7ca",
+    "scripts/verify-native-room.py": "b2c58350162c0f48d95198c7b6e1510fe689484a1aa6d14880040290a6424d08",
+    "skills/personal-room/assets/tokens.json": "1ef5b7d8a12948c389e3793465025ba00e7837f82bbad37c63bf6194f1128454",
+    "skills/personal-room/assets/fonts/Schoolbell-Regular.ttf": "00ff6655a5eb1eb70d32f2b7351d1bcf3f45f3f9ca40fd5c0d25da79f7f82a50"
+  },
+  "reports": [],
+  "liveUpdates": [],
+  "interactions": [],
+  "failures": [
+    {
+      "name": "app stderr",
+      "message": "Room/NativeRoom.swift:41: Fatal error: Unexpectedly found nil while unwrapping an Optional value\n"
+    },
+    {
+      "name": "native runner",
+      "message": "No matching layout report for light/large/top"
+    }
+  ],
+  "limitations": "iOS simulator layout and captures with animations disabled by the snapshot launch flag. Programmatic scrolling and UIControl event dispatch, not gesture, keyboard or VoiceOver testing. Text sizing checks use actual UILabel and UIButton measurements; they do not certify every glyph or accessibility behavior."
+}

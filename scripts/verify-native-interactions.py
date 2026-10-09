@@ -12,6 +12,7 @@ from lib.native_project import create_project
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, default=ROOT / '.artifacts/native-interactions')
+parser.add_argument('--without-font', action='store_true', help='Build without Schoolbell and test the native fallback.')
 parser.add_argument('--device', help='Use a dedicated test simulator. Its appearance and text size will change.')
 args = parser.parse_args()
 output = args.output.resolve()
@@ -35,7 +36,7 @@ try:
         run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=180)
     with tempfile.TemporaryDirectory(prefix='taste-xctest-') as directory:
         base = Path(directory)
-        project = create_project(ROOT, base)
+        project = create_project(ROOT, base, without_font=args.without_font)
         for appearance in ['light', 'dark']:
             run('xcrun', 'simctl', 'ui', device, 'appearance', appearance)
             for category in ['large', 'accessibility-extra-extra-extra-large']:
@@ -59,7 +60,7 @@ except Exception as error:
 finally:
     paths = ['eval/cycles/15/NativeRoom.swift', 'eval/cycles/16/RoomUITests.swift', 'scripts/verify-native-interactions.py', 'scripts/lib/native_project.py', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
     hashes = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in paths}
-    (output / 'checks.json').write_text(json.dumps({'sources': hashes, 'reports': reports, 'failures': failures, 'limitations': 'XCTest simulator swipes and taps with native animations enabled. Each test runs unfiltered Apple accessibility audits at the opening, action area and next-note heading. This is not physical-device or VoiceOver certification.'}, indent=2) + '\n')
+    (output / 'checks.json').write_text(json.dumps({'fontBundled': not args.without_font, 'sources': hashes, 'reports': reports, 'failures': failures, 'limitations': 'XCTest simulator swipes and taps with native animations enabled. Each test runs unfiltered Apple accessibility audits at the opening, action area and next-note heading. This is not physical-device or VoiceOver certification.'}, indent=2) + '\n')
     if created and device:
         subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
         subprocess.run(['xcrun', 'simctl', 'delete', device], capture_output=True)

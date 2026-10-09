@@ -77,5 +77,11 @@
     "task": "Native reading navigation and per-item state with XCTest swipes, taps and accessibility audits.",
     "reviewMode": "self",
     "taste": "both"
+  },
+  {
+    "cycle": "17",
+    "task": "Native reading without Schoolbell with scaled fallback and simulator gestures.",
+    "reviewMode": "self",
+    "taste": "personal-room"
   }
 ]

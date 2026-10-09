@@ -3,13 +3,14 @@ import plistlib
 import shutil
 
 
-def create_project(root: Path, base: Path):
+def create_project(root: Path, base: Path, without_font: bool = False):
     base.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(root / 'eval/cycles/15/NativeRoom.swift', base / 'NativeRoom.swift')
     shutil.copyfile(root / 'eval/cycles/16/RoomUITests.swift', base / 'RoomUITests.swift')
     for name, source in [('tokens.json', 'skills/personal-room/assets/tokens.json'), ('Schoolbell-Regular.ttf', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf'), ('Schoolbell-LICENSE.txt', 'skills/personal-room/assets/fonts/LICENSE.txt'), ('Schoolbell-NOTICE.txt', 'skills/personal-room/assets/fonts/NOTICE.txt'), ('LICENSE.txt', 'LICENSE')]:
-        shutil.copyfile(root / source, base / name)
-    (base / 'Info.plist').write_bytes(plistlib.dumps({'CFBundleExecutable': '$(EXECUTABLE_NAME)', 'CFBundleIdentifier': '$(PRODUCT_BUNDLE_IDENTIFIER)', 'CFBundleName': '$(PRODUCT_NAME)', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'UILaunchScreen': {}, 'UIAppFonts': ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}))
+        if name != 'Schoolbell-Regular.ttf' or not without_font:
+            shutil.copyfile(root / source, base / name)
+    (base / 'Info.plist').write_bytes(plistlib.dumps({'CFBundleExecutable': '$(EXECUTABLE_NAME)', 'CFBundleIdentifier': '$(PRODUCT_BUNDLE_IDENTIFIER)', 'CFBundleName': '$(PRODUCT_NAME)', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'UILaunchScreen': {}, 'UIAppFonts': [] if without_font else ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}))
     objects={};counter=0
     def obj(isa,**values):
      nonlocal counter
@@ -24,7 +25,7 @@ def create_project(root: Path, base: Path):
      cs=[obj('XCBuildConfiguration',name=n,buildSettings=settings) for n in ['Debug','Release']]
      return obj('XCConfigurationList',buildConfigurations=cs,defaultConfigurationIsVisible=0,defaultConfigurationName='Debug')
     settings={'SDKROOT':'iphoneos','IPHONEOS_DEPLOYMENT_TARGET':'17.0','SWIFT_VERSION':'5.0','CODE_SIGNING_ALLOWED':'NO','TARGETED_DEVICE_FAMILY':'1,2','PRODUCT_NAME':'$(TARGET_NAME)','SWIFT_OPTIMIZATION_LEVEL':'-Onone','DEBUG_INFORMATION_FORMAT':'dwarf','ALWAYS_SEARCH_USER_PATHS':'NO'}
-    app=obj('PBXNativeTarget',name='Room',productName='Room',productReference=appref,productType='com.apple.product-type.application',buildConfigurationList=configlist({**settings,'PRODUCT_BUNDLE_IDENTIFIER':'dev.flavius.taste.cycle15','INFOPLIST_FILE':'Info.plist','GENERATE_INFOPLIST_FILE':'NO'}),buildPhases=[phase('PBXSourcesBuildPhase',[appsource]),phase('PBXResourcesBuildPhase',[tokens,font,*licenses]),phase('PBXFrameworksBuildPhase',[])],buildRules=[],dependencies=[])
+    app=obj('PBXNativeTarget',name='Room',productName='Room',productReference=appref,productType='com.apple.product-type.application',buildConfigurationList=configlist({**settings,'PRODUCT_BUNDLE_IDENTIFIER':'dev.flavius.taste.cycle15','INFOPLIST_FILE':'Info.plist','GENERATE_INFOPLIST_FILE':'NO'}),buildPhases=[phase('PBXSourcesBuildPhase',[appsource]),phase('PBXResourcesBuildPhase',[tokens,*([] if without_font else [font]),*licenses]),phase('PBXFrameworksBuildPhase',[])],buildRules=[],dependencies=[])
     project_id=obj('PBXProject')
     proxy=obj('PBXContainerItemProxy',containerPortal=project_id,proxyType=1,remoteGlobalIDString=app,remoteInfo='Room')
     dep=obj('PBXTargetDependency',target=app,targetProxy=proxy)

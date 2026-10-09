@@ -38,10 +38,7 @@ final class RoomController: UIViewController {
         label.accessibilityIdentifier = id
         label.numberOfLines = 0
         label.isAccessibilityElement = true
-        label.font = handSize.map { size in
-            let face = UIFont(name: "Schoolbell", size: size) ?? UIFont.systemFont(ofSize: size)
-            return UIFontMetrics(forTextStyle: style).scaledFont(for: face)
-        } ?? UIFont.preferredFont(forTextStyle: style)
+        label.font = handSize.map { UIFontMetrics(forTextStyle: style).scaledFont(for: UIFont(name: "Schoolbell", size: $0)!) } ?? UIFont.preferredFont(forTextStyle: style)
         label.adjustsFontForContentSizeCategory = true
         label.textColor = ink(id == "byline" ? "muted-foreground" : "foreground")
         labels.append(label)

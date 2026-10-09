@@ -16,6 +16,7 @@ BUNDLE = 'dev.flavius.taste.cycle15'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, default=ROOT / '.artifacts/native-room')
 parser.add_argument('--source', type=Path, default=ROOT / 'eval/cycles/15/NativeRoom.swift')
+parser.add_argument('--without-font', action='store_true', help='Omit Schoolbell from the app bundle and verify the native fallback.')
 parser.add_argument('--device', help='Use a dedicated test simulator instead of creating one.')
 args = parser.parse_args()
 output = args.output.resolve()
@@ -63,14 +64,15 @@ try:
         run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=180)
     devices = json.loads(run('xcrun', 'simctl', 'list', 'devices', '--json'))['devices']
     runtime_id, device_info = next((runtime, item) for runtime, items in devices.items() for item in items if item['udid'] == device)
-    environment.update({'device': device_info['name'], 'deviceType': device_info.get('deviceTypeIdentifier'), 'animations': 'disabled for snapshots', 'runtime': runtime_id, 'xcode': run('xcodebuild', '-version'), 'sdkVersion': run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-version')})
+    environment.update({'device': device_info['name'], 'deviceType': device_info.get('deviceTypeIdentifier'), 'animations': 'disabled for snapshots', 'fontBundled': not args.without_font, 'runtime': runtime_id, 'xcode': run('xcodebuild', '-version'), 'sdkVersion': run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-version')})
     with tempfile.TemporaryDirectory(prefix='taste-native-room-') as directory:
         app = Path(directory) / 'Room.app'
         app.mkdir()
-        info = {'CFBundleExecutable': 'Room', 'CFBundleIdentifier': BUNDLE, 'CFBundleName': 'Repair notes', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'MinimumOSVersion': '17.0', 'UIDeviceFamily': [1, 2], 'UILaunchScreen': {}, 'UIAppFonts': ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}
+        info = {'CFBundleExecutable': 'Room', 'CFBundleIdentifier': BUNDLE, 'CFBundleName': 'Repair notes', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'MinimumOSVersion': '17.0', 'UIDeviceFamily': [1, 2], 'UILaunchScreen': {}, 'UIAppFonts': [] if args.without_font else ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}
         (app / 'Info.plist').write_bytes(plistlib.dumps(info))
         shutil.copyfile(ROOT / 'skills/personal-room/assets/tokens.json', app / 'tokens.json')
-        shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
+        if not args.without_font:
+            shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
         shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', app / 'Schoolbell-LICENSE.txt')
         shutil.copyfile(ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', app / 'Schoolbell-NOTICE.txt')
         shutil.copyfile(ROOT / 'LICENSE', app / 'LICENSE.txt')
@@ -88,7 +90,7 @@ try:
                     subprocess.run(['xcrun', 'simctl', 'terminate', device, BUNDLE], capture_output=True)
                     layout.unlink(missing_ok=True)
                     arguments = ['--snapshot', '--bottom'] if position == 'bottom' else ['--snapshot']
-                    run('xcrun', 'simctl', 'launch', device, BUNDLE, *arguments)
+                    run('xcrun', 'simctl', 'launch', '--stderr=' + str(output / 'app-stderr.log'), device, BUNDLE, *arguments)
                     deadline = time.monotonic() + 20
                     report = None
                     while time.monotonic() < deadline:
@@ -138,7 +140,7 @@ try:
                 failures.extend({'name': f'live {category}', 'message': issue} for issue in issues)
         subprocess.run(['xcrun', 'simctl', 'terminate', device, BUNDLE], capture_output=True)
         layout.unlink(missing_ok=True)
-        run('xcrun', 'simctl', 'launch', device, BUNDLE, '--snapshot', '--exercise-controls', '--bottom')
+        run('xcrun', 'simctl', 'launch', '--stderr=' + str(output / 'app-stderr.log'), device, BUNDLE, '--snapshot', '--exercise-controls', '--bottom')
         deadline = time.monotonic() + 10
         while time.monotonic() < deadline:
             try:
@@ -163,9 +165,13 @@ try:
                 failures.append({'name': 'Dynamic Type scaling', 'message': f'{identifier} did not grow'})
         for report in reports:
             for label in report['layout']['labels']:
-                if label['id'] in ['title', 'note-title'] and label['fontName'] != 'Schoolbell-Regular':
-                    failures.append({'name': report['name'], 'message': 'Custom title font did not load'})
+                if label['id'] in ['title', 'note-title']:
+                    custom = label['fontName'] == 'Schoolbell-Regular'
+                    if custom == args.without_font:
+                        failures.append({'name': report['name'], 'message': 'Unexpected title font for bundle mode'})
 except Exception as error:
+    if (output / 'app-stderr.log').exists():
+        failures.append({'name': 'app stderr', 'message': (output / 'app-stderr.log').read_text()[-8000:]})
     failures.append({'name': 'native runner', 'message': str(error) + ('\n' + error.stderr if isinstance(error, subprocess.CalledProcessError) and error.stderr else '')})
 finally:
     sources = [args.source.resolve(), ROOT / 'scripts/verify-native-room.py', ROOT / 'skills/personal-room/assets/tokens.json', ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
