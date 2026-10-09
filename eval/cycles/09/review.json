@@ -1,0 +1,35 @@
+{
+  "cycle": "09",
+  "findings": [],
+  "verdict": "pass",
+  "verification": {
+    "skill": "Read current editorial-calm/SKILL.md and review reference; retained previously read web/pattern guidance and applied unslop.",
+    "imagesInspected": [
+      "375-light.png",
+      "375-dark.png",
+      "1280-light.png",
+      "1280-dark.png",
+      "375-light-200pct.png",
+      "375-dark-200pct.png"
+    ],
+    "additionalVisualChecks": "Inspected in-memory full-page screenshots of expanded climate results and persistent error with Retry at 375px, dark theme, 200% root text. No screenshot files were written.",
+    "states": [
+      "Initial prompt has no results and is not busy.",
+      "Immediate Enter submission shows query-specific loading text and aria-busy=true, clearing on completion.",
+      "Climate and transport each return two results. zzq returns zero with explanatory text.",
+      "error exposes Retry and preserves query focus. retry fails initially, then Retry succeeds with six results and focuses query before removing Retry.",
+      "Native result summary opens with Enter."
+    ],
+    "latestRequest": [
+      "slow followed by climate remains at two climate results after the slow request completes.",
+      "error followed by transport remains at two transport results without stale error or Retry.",
+      "Editing error to climate 300ms into the error request leaves Waiting status and Retry hidden when the old rejection arrives during the new debounce; climate subsequently returns two results.",
+      "Clear during slow and error leaves the initial prompt, zero results, busy=false and Retry hidden after the original request settles. Clear restores query focus."
+    ],
+    "ime": "Dispatched compositionstart during an active slow request, edited query to climate, and waited beyond the old request. No search or stale result appeared during composition. Enter during composition did not submit. compositionend triggered debounce and yielded two climate results.",
+    "themeAndText": "At 375\u00d7812, both light/dark themes and 100%/200% root text support six slow-query results and an expanded excerpt with no document overflow. All six supplied initial-state layouts were visually inspected.",
+    "reducedMotion": "With reduced motion enabled, loading remains understandable and all nine skeleton elements have computed animation-name none.",
+    "runnerChecks": "All six supplied reports have no errors, failed requests, overflow, contrast failures, unlabeled controls or small targets.",
+    "limits": "Independent behavior tests used headless Chromium. IME checks simulate composition events rather than using an operating-system input method. Supplied screenshots cover initial state; additional visual checks cover enlarged dark result/error states."
+  }
+}

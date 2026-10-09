@@ -1,0 +1,15 @@
+# Cycle09 builder
+
+Built a local search screen over six fictional articles. The page explicitly identifies sample data and simulated delays. Results expand through native details controls to expose usable excerpts. Initial, waiting, loading, results, empty and error states have text explanations. Errors provide Retry search.
+
+Read current AGENTS.md, editorial-calm/SKILL.md, references/web.md, patterns.md, review.md and overlays.md, plus assets/tokens.css and fonts.css. Applied /Users/flavizilla/.agents/skills/unslop/SKILL.md to copy. No previous artifacts or reviews were read. No overlay was needed; expanded excerpts preserve the search context.
+
+Queries debounce for 300ms; Enter searches immediately. Each edit invalidates the request generation before debounce begins. Both successful and failed responses check that generation before changing the screen. Clearing and composition start also invalidate pending responses. IME composition defers searches until composition ends. Old timers may finish, but their results cannot replace a newer query or a cleared screen.
+
+Deterministic checks: climate returns two results; transport returns two; an unmatched term such as zzq produces empty results. Exact query error always fails after 450ms. Exact query retry fails on its first source request after page load, then succeeds with all six articles on Retry search. Exact query slow returns all six after 1800ms. Submit slow, then submit climate before it completes to exercise stale success handling. Submit error, then transport before the error completes to exercise stale failure handling. Clear during either request to check invalidation. Reserved queries are case-insensitive and trimmed. Reload resets attempt counts.
+
+Typing and completion leave focus where the user put it. Retry focuses the search field before its button disappears; Clear also returns focus there. Native form submission and result disclosures support keyboard use. Status announcements sit outside the busy result region. Skeletons follow row geometry without animation, so reduced-motion users receive the same static loading state. Root themes use semantic roles, input boundaries and visible focus rings; responsive controls wrap and all text scales with rem or inherited sizes.
+
+Actual ambiguity: the brief does not define the searchable domain or whether results should navigate. I chose a fictional article library with inline excerpts, keeping the screen local. Retry succeeds only for the reserved retry scenario; the persistent error scenario demonstrates repeat failure. No previous results remain visible while a changed query loads, avoiding ambiguity about which query produced them.
+
+Checks performed: source review of success/error generation guards, debounce invalidation, blank-query behavior, IME handling, focus before Retry removal, safe textContent rendering and local assets. Parent rendering and independent browser tests remain pending; no visual or measured-contrast verification is claimed.

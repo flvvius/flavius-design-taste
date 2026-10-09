@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search · Margin</title>
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/tokens.css">
+<link rel="stylesheet" href="../../../skills/editorial-calm/assets/fonts.css">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground); font: var(--type-bodyWeb)/var(--type-lineHeight) Inter, system-ui, sans-serif; }
+main { max-width: 896px; margin: auto; padding: 2rem var(--space-gutterWeb) 4rem; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.brand { font-weight: 600; letter-spacing: -.03em; }
+h1 { margin: 2rem 0 .5rem; font-size: var(--type-pageTitle); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+h2 { font-size: var(--type-section); font-weight: 500; margin: 0 0 .75rem; }
+p { max-width: var(--type-descriptionMeasure); margin: .5rem 0; }
+h1, h2, p, label, summary { overflow-wrap: anywhere; }
+.muted, .meta { color: var(--muted-foreground); }
+label { display: block; font-weight: 500; }
+input, select, button { font: inherit; color: var(--foreground); min-height: 44px; border: 1px solid var(--input); border-radius: var(--radius-control); background: var(--background); padding: .625rem .75rem; }
+select { max-width: 100%; margin-top: .375rem; padding-right: 2rem; }
+button { cursor: pointer; font-weight: 500; overflow-wrap: anywhere; }
+button.primary { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+form { margin-top: 2rem; }
+.search-controls { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
+input { flex: 1 1 16rem; width: 100%; min-width: 0; }
+#help { font-size: .875rem; margin-top: .75rem; }
+section { margin-top: var(--space-sectionGap); padding-top: var(--space-sectionInset); border-top: 1px solid var(--border); }
+#status { margin-bottom: 1.5rem; min-height: 1.625em; }
+#status.error { color: var(--destructive); }
+#results { list-style: none; padding: 0; margin: 0; }
+.result { border-top: 1px solid var(--border); padding: 1.25rem 0; }
+.result:first-child { border-top: 0; }
+summary { cursor: pointer; font-size: var(--type-rowTitle); font-weight: 600; min-height: 44px; padding-block: .25rem; }
+.meta { font-size: .875rem; margin-top: .5rem; }
+.excerpt { margin-top: .75rem; max-width: 65ch; }
+.placeholder { padding: 1.25rem 0; border-top: 1px solid var(--border); }
+.placeholder:first-child { border-top: 0; }
+.skeleton { background: var(--muted); height: 1rem; width: 85%; margin: .75rem 0; }
+.skeleton.title { height: 1.5rem; width: 65%; }
+.skeleton.meta { width: 35%; }
+#retry { margin-top: .5rem; }
+[hidden] { display: none !important; }
+footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem; }
+@media (max-width: 420px) { main { padding-top: 1rem; } .search-controls button { flex: 1 1 auto; } header { align-items: start; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<span class="brand">Margin / Library</span>
+<label for="theme">Appearance
+<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+</label>
+</header>
+<h1>Search the library</h1>
+<p class="muted">Find an article by title, topic or author.</p>
+<form id="search" role="search">
+<label for="query">Search articles</label>
+<div class="search-controls">
+<input id="query" name="query" type="search" autocomplete="off" maxlength="120" aria-describedby="help" placeholder="Try climate or transport">
+<button class="primary" type="submit">Search</button>
+<button id="clear" type="button">Clear</button>
+</div>
+<p id="help" class="muted">Sample data only. Search runs as you type. Expand a result to read its sample excerpt.</p>
+</form>
+<section aria-labelledby="results-title">
+<h2 id="results-title">Results</h2>
+<p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="content" aria-busy="false">
+<div id="loading" hidden aria-hidden="true">
+<div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
+<div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
+<div class="placeholder"><div class="skeleton title"></div><div class="skeleton meta"></div><div class="skeleton"></div></div>
+</div>
+<ul id="results"></ul>
+<button id="retry" type="button" hidden>Retry search</button>
+</div>
+</section>
+<footer>Six fictional articles. All searches run locally with simulated delays. No network connection is used.</footer>
+</main>
+<script>
+const articles = [
+  { title: 'A cooler summer starts with street trees', author: 'Mara Bell', topic: 'Climate', date: '8 October 2026', text: 'A sample report on shade, street trees and how cities measure summer heat. Residents compare temperatures along two walking routes.' },
+  { title: 'The night train returns to the timetable', author: 'Leo Chen', topic: 'Transport', date: '7 October 2026', text: 'A sample transport story about overnight rail. The proposed timetable connects regional stations before the morning commute.' },
+  { title: 'Who gets space on the high street?', author: 'Mara Bell', topic: 'Cities', date: '6 October 2026', text: 'A sample story about footpaths, deliveries and local shops. A town tests a different allocation of street space.' },
+  { title: 'Repair cafés keep everyday objects in use', author: 'Nina Patel', topic: 'Climate', date: '5 October 2026', text: 'A sample account of volunteers repairing lamps and kitchen tools. Visitors learn to identify a fault before buying a replacement.' },
+  { title: 'The library opens its doors after dark', author: 'Owen Reed', topic: 'Culture', date: '4 October 2026', text: 'A sample culture story about evening library access. Readers share what later opening hours would change for them.' },
+  { title: 'A bus route shaped by its passengers', author: 'Leo Chen', topic: 'Transport', date: '3 October 2026', text: 'A sample transport report about bus stops and shift workers. Passenger feedback informs a revised route.' }
+];
+const el = id => document.getElementById(id);
+const attempts = new Map();
+let generation = 0;
+let debounce;
+let composing = false;
+function fakeSearch(query) {
+  const key = query.toLowerCase();
+  const count = (attempts.get(key) || 0) + 1;
+  attempts.set(key, count);
+  const delay = key === 'slow' ? 1800 : 450;
+  return new Promise((resolve, reject) => setTimeout(() => {
+    if (key === 'error' || (key === 'retry' && count === 1)) {
+      reject(new Error('Sample search is temporarily unavailable.'));
+      return;
+    }
+    const all = ['slow', 'retry'].includes(key);
+    resolve(articles.filter(article => all || Object.values(article).join(' ').toLowerCase().includes(key)));
+  }, delay));
+}
+function state(message, busy = false, error = false) {
+  el('status').textContent = message;
+  el('status').className = error ? 'error' : 'muted';
+  el('content').setAttribute('aria-busy', String(busy));
+  el('loading').hidden = !busy;
+  el('retry').hidden = !error;
+}
+function invalidate() {
+  clearTimeout(debounce);
+  generation += 1;
+  el('results').replaceChildren();
+  state(el('query').value.trim() ? 'Waiting for your search…' : 'Enter a topic, title or author to search the sample library.');
+  return generation;
+}
+function renderResults(items) {
+  const fragment = document.createDocumentFragment();
+  items.forEach(article => {
+    const row = document.createElement('li');
+    row.className = 'result';
+    const details = document.createElement('details');
+    const title = document.createElement('summary');
+    title.textContent = article.title;
+    const excerpt = document.createElement('p');
+    excerpt.className = 'excerpt';
+    excerpt.textContent = article.text;
+    details.append(title, excerpt);
+    const metadata = document.createElement('p');
+    metadata.className = 'meta';
+    metadata.textContent = `${article.topic} · ${article.author} · ${article.date}`;
+    row.append(details, metadata);
+    fragment.append(row);
+  });
+  el('results').replaceChildren(fragment);
+}
+async function run(id, query) {
+  if (id !== generation || !query) return;
+  state(`Searching for "${query}"…`, true);
+  try {
+    const items = await fakeSearch(query);
+    if (id !== generation) return;
+    renderResults(items);
+    state(items.length ? `${items.length} ${items.length === 1 ? 'result' : 'results'} for "${query}".` : `No results for "${query}". Try a broader term such as climate or transport.`);
+  } catch {
+    if (id !== generation) return;
+    state(`Could not search for "${query}". Retry this search or enter another term.`, false, true);
+  }
+}
+function schedule(immediate = false) {
+  const id = invalidate();
+  const query = el('query').value.trim();
+  if (!query || composing) return;
+  if (immediate) run(id, query);
+  else debounce = setTimeout(() => run(id, query), 300);
+}
+el('query').addEventListener('input', () => schedule());
+el('query').addEventListener('compositionstart', () => { composing = true; invalidate(); });
+el('query').addEventListener('compositionend', () => { composing = false; schedule(); });
+el('search').addEventListener('submit', event => { event.preventDefault(); if (!composing) schedule(true); });
+el('clear').addEventListener('click', () => { el('query').value = ''; invalidate(); el('query').focus(); });
+el('retry').addEventListener('click', () => { el('query').focus(); schedule(true); });
+const preference = matchMedia('(prefers-color-scheme: dark)');
+function theme() {
+  document.documentElement.classList.toggle('dark', el('theme').value === 'dark' || (el('theme').value === 'system' && preference.matches));
+}
+el('theme').addEventListener('change', theme);
+preference.addEventListener('change', theme);
+theme();
+invalidate();
+</script>
+</body>
+</html>

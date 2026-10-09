@@ -29,3 +29,11 @@ A selectable option earns a boundary because that boundary describes a hit targe
 Keep the sign, digits, decimal separator and currency of a formatted amount together. Tabular figures prevent width changes; they do not prevent a number from wrapping into misleading fragments. Stack a figure below its label when space is short. Do not apply arbitrary character wrapping to amounts. If even a stacked value cannot fit, use an explicitly labelled compact presentation with the full value available.
 
 Use locale-aware number formatting and bidi isolation for amounts in RTL prose. Switching locale changes presentation, not currency or underlying values. Use logical spacing and alignment. Give selects room for their longest translated choice, including at enlarged text sizes; a page without overflow can still hide its selected label.
+
+## Search and asynchronous results
+
+Keep the query, results and status together on the page. Distinguish an untouched search from an empty result and a failed request. State which query produced the result count. Errors offer retry when the request can be repeated. Skeletons match result rows and need no continuous animation.
+
+Invalidate pending results as soon as the query changes, including during a debounce delay or composition. A slow success or failure must not replace the latest query's state. Clearing the query also invalidates pending work. Preserve input focus while results arrive. If retry removes its own button, move focus to a stable control before removing it.
+
+Announce status outside a region marked busy so the loading announcement is available while results update. Test success, empty, repeated failure, recovery and out-of-order responses with a deterministic local source. Check composition before treating every input event as a completed query.
