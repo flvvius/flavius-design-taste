@@ -2,6 +2,13 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 const base=new URL('../skills/editorial-calm/assets/',import.meta.url);
 const tokens=JSON.parse(readFileSync(new URL('tokens.json',base),'utf8'));
+const personalBase=new URL('../skills/personal-room/assets/',import.meta.url);
+export function personalOutputs(){
+ const source=JSON.parse(readFileSync(new URL('tokens.json',personalBase),'utf8'));
+ const palettes=Object.entries(source.colors).map(([name,roles])=>`${name==='paper'?':root, [data-personal-room="paper"]':'[data-personal-room="night"]'} {\n  color-scheme: ${name==='paper'?'light':'dark'};\n${Object.entries(roles).map(([key,value])=>`  --pr-${key}: ${value};`).join('\n')}\n}`).join('\n\n');
+ const dimensions=Object.entries(source).filter(([key])=>key!=='colors').flatMap(([group,values])=>Object.entries(values).map(([key,value])=>`  --pr-${group}-${key}: ${value};`));
+ return {'tokens.css':palettes+'\n\n:root {\n'+dimensions.join('\n')+'\n}\n'};
+}
 export function srgb(value){
  const match=value.match(/oklch\(([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+)%)?\)/);
  if(!match) throw new Error(`Unsupported colour: ${value}`);
@@ -21,4 +28,7 @@ export function outputs(){
  const dimensions=Object.entries(tokens.spacing).map(([k,v])=>`  --space-${k}: ${v}px;`).concat(Object.entries(tokens.radius).map(([k,v])=>`  --radius-${k}: ${v}px;`),Object.entries(tokens.motion).map(([k,v])=>`  --motion-${k}: ${k==='pressScale'?v:`${v}ms`};`),typeDimensions);
  return {'tokens.css':blocks+'\n\n:root {\n'+dimensions.join('\n')+'\n}\n','tokens.srgb.json':JSON.stringify({...tokens,colors},null,2)+'\n'};
 }
-if(process.argv[1]===fileURLToPath(import.meta.url))for(const [name,value] of Object.entries(outputs()))writeFileSync(new URL(name,base),value);
+if(process.argv[1]===fileURLToPath(import.meta.url)){
+ for(const [name,value] of Object.entries(outputs()))writeFileSync(new URL(name,base),value);
+ for(const [name,value] of Object.entries(personalOutputs()))writeFileSync(new URL(name,personalBase),value);
+}

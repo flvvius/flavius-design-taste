@@ -1,0 +1,65 @@
+:root, [data-personal-room="paper"] {
+  color-scheme: light;
+  --pr-background: #f4efe6;
+  --pr-foreground: #2b211a;
+  --pr-muted-foreground: #5c4f43;
+  --pr-material: #ede5d6;
+  --pr-shadow: #e0d5c2;
+  --pr-primary: #2b211a;
+  --pr-primary-foreground: #f4efe6;
+  --pr-accent: #d96b2b;
+  --pr-accent-text: #a44415;
+  --pr-on-accent: #2b211a;
+  --pr-border: #c6baaa;
+  --pr-input: #877767;
+  --pr-ring: #a44415;
+}
+
+[data-personal-room="night"] {
+  color-scheme: dark;
+  --pr-background: #0b2851;
+  --pr-foreground: #f5f2ec;
+  --pr-muted-foreground: #bdc7d4;
+  --pr-material: #113c7a;
+  --pr-shadow: #071d3b;
+  --pr-primary: #f5f2ec;
+  --pr-primary-foreground: #0b2851;
+  --pr-accent: #ffa194;
+  --pr-accent-text: #ffa194;
+  --pr-on-accent: #0b2851;
+  --pr-border: #446086;
+  --pr-input: #8a9db7;
+  --pr-ring: #ffa194;
+}
+
+:root {
+  --pr-type-hand: 'Schoolbell', 'Comic Sans MS', cursive;
+  --pr-type-reading: system-ui, sans-serif;
+  --pr-type-body: 1.5rem;
+  --pr-type-label: 1.25rem;
+  --pr-type-hero: clamp(3rem, 8vw, 7rem);
+  --pr-type-section: clamp(2.5rem, 6vw, 5rem);
+  --pr-type-weight: 400;
+  --pr-type-line-height: 1.55;
+  --pr-type-display-line-height: 1.08;
+  --pr-type-measure: 52ch;
+  --pr-layout-page-width: 1180px;
+  --pr-layout-poster-width: 640px;
+  --pr-layout-gutter: clamp(20px, 4vw, 32px);
+  --pr-layout-section-gap: clamp(96px, 12vw, 160px);
+  --pr-layout-column-gap: 32px;
+  --pr-layout-touch-target: 44px;
+  --pr-material-stroke: 1.7px;
+  --pr-material-control-stroke: 2px;
+  --pr-material-grain-opacity: 0.05;
+  --pr-material-rest-tilt: 2deg;
+  --pr-material-hover-tilt: 1.5deg;
+  --pr-material-lift: 6px;
+  --pr-material-shadow-x: 2px;
+  --pr-material-shadow-y: 3px;
+  --pr-material-sketch-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --pr-motion-feedback: 180ms;
+  --pr-motion-entrance: 400ms;
+  --pr-motion-draw: 600ms;
+  --pr-motion-ease: ease-out;
+}

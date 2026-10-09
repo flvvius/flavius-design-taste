@@ -1,6 +1,29 @@
 # Flavius design taste
 
-My design taste as a reusable skill for AI agents. For web, mobile and desktop apps, in any framework.
+My design taste as two reusable skills for AI agents. Choose a direction for the project; each works without a framework or model API.
+
+- [Editorial calm](skills/editorial-calm/SKILL.md) is for app interfaces with restrained typography, warm neutrals and separated rows.
+- [Personal room](skills/personal-room/SKILL.md) is for personal sites, portfolios, communities and expressive screens. Handwriting, meaningful objects, imperfect outlines and a conversational voice give it character.
+
+Personal room draws on my [portfolio](https://flavius.pro) and [Cluj House](https://clujhouse.com/). It adds warm paper and navy poster directions. The [source notes](skills/personal-room/references/sources.md) explain the extraction and adaptations. Editorial calm keeps its existing guidance and assets.
+
+## Personal room
+
+![Personal room paper example](examples/personal-room/screenshots/paper-desktop.png)
+
+![Personal room night example](examples/personal-room/screenshots/night-desktop.png)
+
+Open the [interactive example](examples/personal-room/index.html) locally to try both palettes and the project stories. The example uses original drawings and fictional content. Its palette switch is for comparison; a finished site can choose one direction.
+
+Ask your agent:
+
+> Read `skills/personal-room/SKILL.md` and use Personal room for this project. Choose objects and a voice that belong to its subject, then apply the paper or night direction. Preserve the product behaviour.
+
+Install the whole `skills/personal-room` folder in `~/.codex/skills/personal-room` for Codex or `.claude/skills/personal-room` for Claude Code. Other agents can read the Markdown directly. The folder includes the [portable tokens](skills/personal-room/assets/tokens.json), [generated CSS](skills/personal-room/assets/tokens.css), [optional font stylesheet](skills/personal-room/assets/fonts.css) and [implementation guide](skills/personal-room/references/implementation.md). It does not depend on the Editorial calm folder.
+
+Schoolbell is bundled under the [Apache License 2.0](skills/personal-room/assets/fonts/LICENSE.txt). Reference photos, music artwork and logos are not part of this package.
+
+## Editorial calm
 
 Content sits on the page. Typography, whitespace and hairlines establish hierarchy. Warm neutrals and graphite actions give the interface its character. Colour carries meaning. Boxes need a reason to exist.
 
@@ -64,7 +87,7 @@ shadcn/ui is optional. The skill and tokens also work with other component libra
 - [Mobile guide](skills/editorial-calm/references/mobile.md) covers React Native, SwiftUI and Compose.
 - [Desktop guide](skills/editorial-calm/references/desktop.md) covers desktop layouts and interaction.
 
-Run `node scripts/build.mjs` to regenerate CSS and portable sRGB values. Run `node scripts/check.mjs` to verify the package.
+Edit the relevant skill's `assets/tokens.json` first. Run `node scripts/build.mjs` to regenerate both skills' CSS and Editorial calm's portable sRGB values. Run `node scripts/check.mjs` to verify generated assets, links, palette contrast and font packaging.
 
 ## Tested with agents
 

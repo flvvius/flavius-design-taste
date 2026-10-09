@@ -1,6 +1,6 @@
 import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
-import {outputs,srgb} from './build.mjs';
+import {outputs,srgb,personalOutputs} from './build.mjs';
 import {contrast} from './lib/contrast.mjs';
 import {checkLocalAssetLinks} from './lib/asset-links.mjs';
 import {fileURLToPath} from 'node:url';
@@ -39,3 +39,24 @@ for (const [mode,roles] of Object.entries(tokens.colors)) {
 console.log('Verified essential input boundaries and page status text contrast.');
 assert.deepEqual(checkLocalAssetLinks(fileURLToPath(root)),[],'Missing local document, image, stylesheet or font asset');
 console.log('Verified local links and asset paths throughout documentation and examples.');
+{
+ const base=new URL('skills/personal-room/assets/',root);
+ const source=JSON.parse(readFileSync(new URL('tokens.json',base),'utf8'));
+ assert.deepEqual(Object.keys(source.colors.paper).sort(),Object.keys(source.colors.night).sort());
+ for(const [name,expected] of Object.entries(personalOutputs()))assert.equal(readFileSync(new URL(name,base),'utf8'),expected,`Personal room ${name} needs regeneration`);
+ for(const [name,roles] of Object.entries(source.colors)){
+  for(const surface of ['background','material']){
+   for(const role of ['foreground','muted-foreground','accent-text'])assert(contrast(roles[role],roles[surface])>=4.5,`${name} ${role} on ${surface} contrast is below 4.5:1`);
+   for(const role of ['input','ring'])assert(contrast(roles[role],roles[surface])>=3,`${name} ${role} on ${surface} contrast is below 3:1`);
+  }
+  assert(contrast(roles.primary,roles['primary-foreground'])>=4.5);
+  assert(contrast(roles.accent,roles['on-accent'])>=4.5);
+ }
+ const entry=readFileSync(new URL('skills/personal-room/SKILL.md',root),'utf8');
+ assert.match(entry,/^---\nname: personal-room\ndescription: [^\n]+\n---\n/);
+ assert(!/TODO|\[INSERT|TBD/.test(entry));
+ const font=readFileSync(new URL('fonts/Schoolbell-Regular.ttf',base));
+ assert.equal(font.readUInt32BE(0),0x00010000,'Schoolbell file must be a TrueType font');
+ assert.match(readFileSync(new URL('fonts/LICENSE.txt',base),'utf8'),/Apache License/);
+ console.log('Verified Personal room palettes, generated CSS, text and control contrast, skill identity and bundled font licence.');
+}
