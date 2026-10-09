@@ -117,7 +117,9 @@ npm run test:tooling
 npm run check:browser -- --output .artifacts/browser
 ```
 
-The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images, screen readers and native platforms still require their own review.
+The browser runner checks both specimens and the repair notebook at 320px, 390px, 768px and 1440px, then applies all-text enlargement, spacing overrides and forced-colour substitution. It tests interactions and writes screenshots plus a report with source hashes. CI retains those artifacts. Visual composition, images and screen readers still require their own review.
+
+On macOS with Xcode and an available iOS simulator runtime, `npm run check:native -- --output .artifacts/native-room` compiles the [native Personal room specimen](eval/cycles/15/index.html). It creates and removes an isolated simulator, checks ordinary and largest accessibility text, tests live size changes, and captures the results. The skill folders do not depend on this tooling. Simulator layout and programmatic control events do not establish physical-device gestures or VoiceOver behavior.
 
 ## What belongs to Editorial calm
 

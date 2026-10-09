@@ -65,5 +65,11 @@
     "artifact": "../examples/personal-room/index.html",
     "reviewMode": "self",
     "taste": "both"
+  },
+  {
+    "cycle": "15",
+    "task": "Native Personal room reading with iOS Dynamic Type, wrapping controls and live size changes.",
+    "reviewMode": "self",
+    "taste": "personal-room"
   }
 ]

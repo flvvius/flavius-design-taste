@@ -1,0 +1,76 @@
+{
+  "reports": [
+    {
+      "width": 320,
+      "mode": "normal",
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    },
+    {
+      "width": 320,
+      "mode": "all-text-200",
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    },
+    {
+      "width": 320,
+      "mode": "spacing",
+      "scrollWidth": 320,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    },
+    {
+      "width": 1440,
+      "mode": "normal",
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    },
+    {
+      "width": 1440,
+      "mode": "all-text-200",
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    },
+    {
+      "width": 1440,
+      "mode": "spacing",
+      "scrollWidth": 1440,
+      "overflow": false,
+      "outsideViewport": [],
+      "clippedText": [],
+      "contrast": [],
+      "unlabeled": [],
+      "smallTargets": [],
+      "linksPassed": true
+    }
+  ]
+}

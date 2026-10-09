@@ -8,7 +8,8 @@
     "check": "node scripts/check.mjs",
     "eval:gallery": "node scripts/gallery.mjs",
     "check:browser": "node scripts/verify-examples.mjs",
-    "test:tooling": "node --test scripts/tests/*.test.mjs"
+    "test:tooling": "node --test scripts/tests/*.test.mjs",
+    "check:native": "python3 scripts/verify-native-room.py"
   },
   "license": "MIT",
   "devDependencies": {

@@ -34,7 +34,7 @@ For forms and app screens, keep the expressive title, colour and a useful aside,
 
 On narrow screens, move text before the supporting object, collapse shelves to labelled lists, and remove decorative overhangs before shrinking type. Preserve every meaningful link. Keep standalone touch targets at least 44px across and allow navigation to wrap. Check a 320px viewport, then double every computed text size, including explicit labels, before checking again. A doubled root size alone misses pixel-sized text. Also test user overrides of line height, paragraph spacing, tracking and word spacing. Do not hide overflow to disguise a broken layout. Give flexible grid columns `minmax(0, 1fr)` and shrinkable text children `min-width: 0`; allow object names to wrap. Limit tilted notes to slightly less than the available width so rotation cannot clip their text.
 
-Native mobile and desktop apps can use the palette, title voice and illustrations while keeping platform focus, navigation and controls. Use the native font for dense interface text. Respect larger text and screen-reader order. Do not reproduce a desktop diorama on a phone when a short labelled list would carry the same content.
+Native mobile and desktop apps can use the palette, title voice and illustrations while keeping platform focus, navigation and controls. Read [the native guide](native.md) for token mapping and target-platform checks. Use the native font for dense interface text. Respect larger text and screen-reader order. Do not reproduce a desktop diorama on a phone when a short labelled list would carry the same content.
 
 ## Motion and fallbacks
 
