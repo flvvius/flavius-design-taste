@@ -30,4 +30,4 @@ Read the platform reference needed for the work:
 
 Use the portable tokens as defaults, not as an excuse to ignore accessibility or platform conventions. Larger text, localisation, keyboard use and touch targets must work. If a brand requires another accent, change the semantic primary pair and validate contrast; preserve hierarchy and restraint.
 
-Do not import Miez's political colours, domain objects or product navigation. Do not require Tailwind, React or Inter to apply this taste. Use the platform's system font when Inter is unavailable. The same decisions should remain recognisable across different frameworks.
+Keep domain colours, objects and navigation specific to the app being built. Do not require Tailwind, React or Inter to apply this taste. Use the platform's system font when Inter is unavailable. The same decisions should remain recognisable across different frameworks.
