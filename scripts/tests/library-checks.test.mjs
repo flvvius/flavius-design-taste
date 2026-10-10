@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {chromium, firefox, webkit} from '@playwright/test';
-import {readFile} from 'node:fs/promises';
+import {readFile, mkdir, writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {serve} from '../lib/browser-checks.mjs';
 import {assertLibraryFocus, assertLibraryActions} from '../lib/library-checks.mjs';
@@ -42,7 +42,18 @@ test('library states reflow and native pointer padding activates each document',
       await page.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(page);
       await setupLibraryState(page, state); await enlargeText(page); await assertLibraryState(page, state);
       const audit = await inspectPage(page);
-      assert.equal(audit.overflow, false); assert.deepEqual(audit.smallTargets, []); assert.deepEqual(audit.clippedTabStops, []);
+      let diagnostic;
+      if (audit.overflow) {
+        diagnostic = await page.evaluate(() => ({
+          fonts: {status: document.fonts.status, faces: [...document.fonts].map(face => ({family: face.family, status: face.status}))},
+          viewport: {inner: innerWidth, client: document.documentElement.clientWidth},
+          boxes: ['header', '.brand', '#theme', 'h1', '#view', '#bulk'].map(selector => {const element = document.querySelector(selector), style = getComputedStyle(element); return {selector, rect: element.getBoundingClientRect().toJSON(), font: style.font, whiteSpace: style.whiteSpace};})
+        }));
+        await mkdir('.artifacts/browser', {recursive: true});
+        await writeFile(`.artifacts/browser/library-overflow-${state}.json`, JSON.stringify({state, audit, diagnostic}, null, 2));
+        await page.screenshot({path: `.artifacts/browser/library-overflow-${state}.png`, fullPage: true});
+      }
+      assert.equal(audit.overflow, false, JSON.stringify({state, audit, diagnostic})); assert.deepEqual(audit.smallTargets, []); assert.deepEqual(audit.clippedTabStops, []);
       await page.close();
     }
     for (const [width, touch] of [[1440, false], [320, false], [320, true]]) {

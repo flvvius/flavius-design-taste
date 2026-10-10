@@ -1,0 +1,22 @@
+2026-10-10T08:31:38.8638255Z # Subtest: library states reflow and native pointer padding activates each document
+2026-10-10T08:31:38.8639595Z not ok 11 - library states reflow and native pointer padding activates each document
+2026-10-10T08:31:38.8640297Z   ---
+2026-10-10T08:31:38.8640797Z   duration_ms: 533.162423
+2026-10-10T08:31:38.8641262Z   type: 'test'
+2026-10-10T08:31:38.8642235Z   location: '/home/runner/work/flavius-design-taste/flavius-design-taste/scripts/tests/library-checks.test.mjs:35:1'
+2026-10-10T08:31:38.8643309Z   failureType: 'testCodeFailure'
+2026-10-10T08:31:38.8643889Z   error: |-
+2026-10-10T08:31:38.8644440Z     Expected values to be strictly equal:
+2026-10-10T08:31:38.8644941Z     
+2026-10-10T08:31:38.8645337Z     true !== false
+2026-10-10T08:31:38.8645814Z     
+2026-10-10T08:31:38.8646219Z   code: 'ERR_ASSERTION'
+2026-10-10T08:31:38.8646713Z   name: 'AssertionError'
+2026-10-10T08:31:38.8647211Z   expected: false
+2026-10-10T08:31:38.8647653Z   actual: true
+2026-10-10T08:31:38.8648076Z   operator: 'strictEqual'
+2026-10-10T08:31:38.8648616Z   stack: |-
+2026-10-10T08:31:38.8649692Z     TestContext.<anonymous> (file:///home/runner/work/flavius-design-taste/flavius-design-taste/scripts/tests/library-checks.test.mjs:45:14)
+2026-10-10T08:31:38.8650825Z     async Test.run (node:internal/test_runner/test:1054:7)
+2026-10-10T08:31:38.8651715Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+2026-10-10T08:31:38.8652412Z   ...
