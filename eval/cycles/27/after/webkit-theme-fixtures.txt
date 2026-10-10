@@ -1,0 +1,11 @@
+✔ portable palettes follow automatic media and retain legacy manual modes (3675.778375ms)
+✔ library system changes and explicit choices produce the actual palette (1069.539ms)
+✔ maintained Editorial calm consumers honour automatic and explicit preferences (3306.099ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8334.420375

@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-10T10:15:20.475Z",
+  "engine": "firefox",
+  "browser": "151.0",
+  "javaScriptEnabled": false,
+  "sourceMode": "Captured source bytes, with only the stated in-memory button mutation",
+  "sources": {
+    "examples/index.html": "159340a8aba16a49e4a0856f3bbdbb9771892c6494c1a22f550f3f2954dc8ca7",
+    "skills/editorial-calm/assets/tokens.css": "82fdffed2510f641422d053ac22678082281d820992db7ed943ec43f6d612759",
+    "skills/editorial-calm/assets/fonts.css": "f0b1c1230f68631698795cbacb3d040981772290f677fea9a175a8a9163ceb29",
+    "skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+  },
+  "mutation": "Review gains commandfor=dialog and command=show-modal.",
+  "timeline": [
+    {
+      "key": "Enter",
+      "open": true,
+      "focus": "Close",
+      "closed": true,
+      "returnedFocus": "Review",
+      "dismissal": "Escape"
+    },
+    {
+      "key": "Space",
+      "open": true,
+      "focus": "Close",
+      "closed": true,
+      "returnedFocus": "Review",
+      "dismissal": "Close via Enter"
+    },
+    {
+      "key": "Enter",
+      "open": true,
+      "focus": "Close",
+      "closed": true,
+      "returnedFocus": "Review",
+      "dismissal": "Escape"
+    }
+  ],
+  "limitations": "Installed browser engines only. Older browsers, assistive technology and physical keyboards remain unverified."
+}
