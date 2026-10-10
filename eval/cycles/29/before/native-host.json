@@ -1,0 +1,98 @@
+{
+  "sources": {
+    "eval/cycles/10/NativeExample.swift": "83d2c7255a361e9fe74804b00c6ed9c500bc9ef6966372e525606ce03b6467ee",
+    "skills/editorial-calm/assets/tokens.srgb.json": "848a5bf83e2b067f04bcf259dc87e7daf397fc4a20a460ae719207fdb2ee9b7f"
+  },
+  "sourceMode": "Captured original NativeExample and sRGB tokens, compiled with the retained ScrollView probe wrapper",
+  "wrapperSha256": "88e788d3b90f85cdde073b105ec8f95b0afaf95e9a9cf5fccc3ff711340a67d8",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+  "sdk": "26.5",
+  "xcode": "Xcode 26.6\nBuild version 17F113",
+  "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "limitations": "Simulator captures and host category observations. No control interaction, assistive technology or physical-device verification.",
+  "reports": [
+    {
+      "name": "light-large-top",
+      "host": {
+        "bodyFontSize": 17,
+        "category": "UICTContentSizeCategoryL",
+        "position": "top",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "light-large-bottom",
+      "host": {
+        "bodyFontSize": 17,
+        "category": "UICTContentSizeCategoryL",
+        "position": "bottom",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "light-accessibility-extra-extra-extra-large-top",
+      "host": {
+        "bodyFontSize": 53,
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "position": "top",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "light-accessibility-extra-extra-extra-large-bottom",
+      "host": {
+        "bodyFontSize": 53,
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "position": "bottom",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "dark-large-top",
+      "host": {
+        "bodyFontSize": 17,
+        "category": "UICTContentSizeCategoryL",
+        "position": "top",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "dark-large-bottom",
+      "host": {
+        "bodyFontSize": 17,
+        "category": "UICTContentSizeCategoryL",
+        "position": "bottom",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "dark-accessibility-extra-extra-extra-large-top",
+      "host": {
+        "bodyFontSize": 53,
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "position": "top",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    },
+    {
+      "name": "dark-accessibility-extra-extra-extra-large-bottom",
+      "host": {
+        "bodyFontSize": 53,
+        "category": "UICTContentSizeCategoryAccessibilityXXXL",
+        "position": "bottom",
+        "viewportHeight": 647,
+        "viewportWidth": 375
+      }
+    }
+  ],
+  "deviceDeleted": true,
+  "recordedAt": "2026-10-10T10:32:38Z",
+  "cleanupVerification": "Dedicated probe device is absent from the simulator device list"
+}

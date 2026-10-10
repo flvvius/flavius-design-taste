@@ -1,0 +1,33 @@
+
+> flavius-design-taste@0.1.0 test:tooling
+> node --test scripts/tests/*.test.mjs
+
+✔ local server accepts a trailing slash and returns actual error status (177.35525ms)
+✔ text stress doubles explicit and inherited sizes once; audit catches clipping and low contrast (1416.44525ms)
+✔ settled missing-font state returns with scripts disabled and content remains readable (709.614083ms)
+✔ coarse-pointer motion check activates hover and detects an ungated lift (794.780541ms)
+✔ text spacing installs and measures correctly with page scripts disabled (599.416791ms)
+✔ visual audit excludes fully clipped semantic text but rejects clipped tab stops (331.959083ms)
+✔ opaque contrast anchors and equivalent channels (1.273209ms)
+✔ alpha must be composited instead of counted as opaque (0.613834ms)
+✔ OKLCH conversion rejects invalid sources and preserves anchors (0.551583ms)
+✔ library preserves responsive focus and archive history, and rejects focus loss (4302.221125ms)
+✔ library states reflow and native pointer padding activates each document (7713.953667ms)
+✔ library retains reading without scripts or after initialization failure (1217.577959ms)
+✔ search covers query fields and rejects an obsolete response (3132.014333ms)
+✔ browser evidence keeps the captured revision after edits and deleted assets (64.108666ms)
+✔ native Review survives unavailable scripts while dynamic preview stays unavailable (4213.612ms)
+✔ Review JavaScript fallback and initialized invitation preserve native dismissal (836.029417ms)
+✔ reading checks reject enabled preview controls, missing explanation and inert Review (1317.1215ms)
+✔ portable palettes follow automatic media and retain legacy manual modes (3203.550125ms)
+✔ library system changes and explicit choices produce the actual palette (1142.241583ms)
+✔ maintained Editorial calm consumers honour automatic and explicit preferences (3186.226791ms)
+✔ chart audit detects erased patterns, fragmented value labels and a misleading scale (2384.075625ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14009.034375

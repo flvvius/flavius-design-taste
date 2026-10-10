@@ -1,0 +1,35 @@
+import SwiftUI
+import UIKit
+struct PreferencesProbeRoot: View {
+    let palette: SemanticPalette
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    func record(_ size: CGSize) {
+        let object: [String: Any] = ["category": UIApplication.shared.preferredContentSizeCategory.rawValue,
+            "bodyFontSize": UIFont.preferredFont(forTextStyle: .body).pointSize,
+            "viewportWidth": size.width, "viewportHeight": size.height,
+            "position": CommandLine.arguments.contains("--bottom") ? "bottom" : "top"]
+        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("probe.json")
+        try! JSONSerialization.data(withJSONObject: object, options: [.sortedKeys]).write(to: file, options: .atomic)
+    }
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollViewReader { reader in
+                ScrollView {
+                    NativeExample(palette: palette)
+                    Color.clear.frame(height: 1).id("bottom")
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if CommandLine.arguments.contains("--bottom") { reader.scrollTo("bottom", anchor: .bottom) }
+                        record(geometry.size)
+                    }
+                }
+                .onChange(of: dynamicTypeSize) { _, _ in record(geometry.size) }
+            }
+        }
+    }
+}
+@main struct PreferencesProbe: App {
+    let palette = try! SemanticPalette(tokensURL: Bundle.main.url(forResource: "tokens", withExtension: "json")!)
+    var body: some Scene { WindowGroup { PreferencesProbeRoot(palette: palette) } }
+}

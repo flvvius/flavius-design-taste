@@ -1,0 +1,74 @@
+{
+  "capability": {
+    "associatedTarget": "dialog",
+    "command": "show-modal"
+  },
+  "timeline": [
+    {
+      "activation": "Enter",
+      "opened": true,
+      "initialFocus": "Close",
+      "backgroundInert": true,
+      "traversal": [
+        {
+          "key": "Tab",
+          "inReview": false,
+          "hasDocumentFocus": false,
+          "activeTag": "BODY"
+        },
+        {
+          "key": "Shift+Tab",
+          "inReview": true,
+          "hasDocumentFocus": true,
+          "activeTag": "BUTTON"
+        }
+      ],
+      "dismissal": "Escape",
+      "returnedFocus": "Review"
+    },
+    {
+      "activation": "Space",
+      "opened": true,
+      "initialFocus": "Close",
+      "backgroundInert": true,
+      "traversal": [
+        {
+          "key": "Tab",
+          "inReview": false,
+          "hasDocumentFocus": false,
+          "activeTag": "BODY"
+        },
+        {
+          "key": "Shift+Tab",
+          "inReview": true,
+          "hasDocumentFocus": true,
+          "activeTag": "BUTTON"
+        }
+      ],
+      "dismissal": "Close via Enter",
+      "returnedFocus": "Review"
+    },
+    {
+      "activation": "Enter",
+      "opened": true,
+      "initialFocus": "Close",
+      "backgroundInert": true,
+      "traversal": [
+        {
+          "key": "Tab",
+          "inReview": false,
+          "hasDocumentFocus": false,
+          "activeTag": "BODY"
+        },
+        {
+          "key": "Shift+Tab",
+          "inReview": true,
+          "hasDocumentFocus": true,
+          "activeTag": "BUTTON"
+        }
+      ],
+      "dismissal": "Close via click",
+      "returnedFocus": "Review"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "recordedAt": "2026-10-10T10:57:47.343200+00:00",
+  "runtimeCommit": "17ea0bacf8f5c0cc8cd0cff940847a280e5adecf",
+  "ciRun": "https://github.com/flvvius/flavius-design-taste/actions/runs/38046139397",
+  "ciConclusion": "success",
+  "ciJobs": {
+    "package": "success",
+    "chromium": "success",
+    "firefox": "success",
+    "webkit": "success"
+  },
+  "reports": [
+    {
+      "report": "local-chromium.json",
+      "environment": "Darwin 25.5.0",
+      "engine": "chromium",
+      "browser": "149.0.7827.55",
+      "node": "v24.8.0",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 370,
+      "unverifiedConditions": 0,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    },
+    {
+      "report": "local-firefox.json",
+      "environment": "Darwin 25.5.0",
+      "engine": "firefox",
+      "browser": "151.0",
+      "node": "v24.8.0",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 370,
+      "unverifiedConditions": 0,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    },
+    {
+      "report": "local-webkit.json",
+      "environment": "Darwin 25.5.0",
+      "engine": "webkit",
+      "browser": "26.5",
+      "node": "v24.8.0",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 364,
+      "unverifiedConditions": 6,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    },
+    {
+      "report": "ci-chromium.json",
+      "environment": "GitHub Actions ubuntu-latest runner",
+      "engine": "chromium",
+      "browser": "149.0.7827.55",
+      "node": "v22.23.3",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 370,
+      "unverifiedConditions": 0,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    },
+    {
+      "report": "ci-firefox.json",
+      "environment": "GitHub Actions ubuntu-latest runner",
+      "engine": "firefox",
+      "browser": "151.0",
+      "node": "v22.23.3",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 370,
+      "unverifiedConditions": 0,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    },
+    {
+      "report": "ci-webkit.json",
+      "environment": "GitHub Actions ubuntu-latest runner",
+      "engine": "webkit",
+      "browser": "26.5",
+      "node": "v22.23.3",
+      "sourceMode": "captured bytes served throughout the run",
+      "layoutChecks": 432,
+      "stateAndInteractionChecks": 364,
+      "unverifiedConditions": 6,
+      "failures": 0,
+      "sourceHashesMatchCurrentRuntime": true
+    }
+  ],
+  "captureProvenance": "Unprefixed engine captures are local. ci-engine captures come from the matching successful Linux job artifact. Each report records the source hashes served throughout its run.",
+  "limitations": "Browser captures and synthetic text/media conditions. WebKit does not emulate full forced-colour substitution. Older browsers, physical devices and assistive technology remain unverified."
+}
