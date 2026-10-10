@@ -22,13 +22,15 @@ export function srgb(value){
  const channels=linear.map(v=>Math.round(Math.max(0,Math.min(1,v<=0.0031308?12.92*v:1.055*v**(1/2.4)-0.055))*255));
  return '#'+channels.map(v=>v.toString(16).padStart(2,'0')).join('')+(Number.isFinite(alpha)?Math.round(alpha/100*255).toString(16).padStart(2,'0'):'');
 }
-export function outputs(){
- const colors=Object.fromEntries(Object.entries(tokens.colors).map(([mode,roles])=>[mode,Object.fromEntries(Object.entries(roles).map(([key,value])=>[key,srgb(value)]))]));
- const blocks=Object.entries(tokens.colors).map(([mode,roles])=>`${mode==='light'?':root':'.dark'} {\n  color-scheme: ${mode};\n${Object.entries(roles).map(([k,v])=>`  --${k}: ${v};`).join('\n')}\n}`).join('\n\n');
+export function outputs(source=tokens){
+ const colors=Object.fromEntries(Object.entries(source.colors).map(([mode,roles])=>[mode,Object.fromEntries(Object.entries(roles).map(([key,value])=>[key,srgb(value)]))]));
+ const palette=(selector,mode,roles)=>`${selector} {\n  color-scheme: ${mode};\n${Object.entries(roles).map(([key,value])=>`  --${key}: ${value};`).join('\n')}\n}`;
+ const blocks=Object.entries(source.colors).map(([mode,roles])=>palette(source.webTheme[mode],mode,roles)).join('\n\n');
+ const automatic=Object.entries(source.colors).map(([mode,roles])=>`@media (prefers-color-scheme: ${mode}) {\n${palette(source.webTheme.automatic,mode,roles).split('\n').map(line=>'  '+line).join('\n')}\n}`).join('\n\n');
  const typeSizes=new Set(['bodyWeb','bodyMobile','section','rowTitle','pageTitle']);
- const typeDimensions=Object.entries(tokens.type).map(([k,v])=>`  --type-${k}: ${typeSizes.has(k)?`${v/16}rem`:v};`);
- const dimensions=Object.entries(tokens.spacing).map(([k,v])=>`  --space-${k}: ${v}px;`).concat(Object.entries(tokens.radius).map(([k,v])=>`  --radius-${k}: ${v}px;`),Object.entries(tokens.motion).map(([k,v])=>`  --motion-${k}: ${k==='pressScale'?v:`${v}ms`};`),typeDimensions);
- return {'tokens.css':blocks+'\n\n:root {\n'+dimensions.join('\n')+'\n}\n','tokens.srgb.json':JSON.stringify({...tokens,colors},null,2)+'\n'};
+ const typeDimensions=Object.entries(source.type).map(([k,v])=>`  --type-${k}: ${typeSizes.has(k)?`${v/16}rem`:v};`);
+ const dimensions=Object.entries(source.spacing).map(([k,v])=>`  --space-${k}: ${v}px;`).concat(Object.entries(source.radius).map(([k,v])=>`  --radius-${k}: ${v}px;`),Object.entries(source.motion).map(([k,v])=>`  --motion-${k}: ${k==='pressScale'?v:`${v}ms`};`),typeDimensions);
+ return {'tokens.css':blocks+'\n\n'+automatic+'\n\n:root {\n'+dimensions.join('\n')+'\n}\n','tokens.srgb.json':JSON.stringify({...source,colors},null,2)+'\n'};
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  for(const [name,value] of Object.entries(outputs()))writeFileSync(new URL(name,base),value);

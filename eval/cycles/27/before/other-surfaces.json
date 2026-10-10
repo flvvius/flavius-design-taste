@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-10-10T09:45:09.187Z",
+  "sourceMode": "captured bytes served throughout the run",
+  "sources": {
+    "examples/index.html": "6bdf271163690b7531157e4723910cc2e8741a247a86019e93072b06668ab265",
+    "eval/cycles/07/index.html": "d785e53e13bf0742065891e01f556dcb1f83241668e95a166e655ddb569108fc",
+    "eval/cycles/09/index.html": "202bac7f274354b6f9293572f0cad7bcc71bd4baeb1e0acf184758dc36e8a4a2",
+    "eval/index.html": "b83adfc8c4aa8c12e0a9b644f00d68430f8dd4c16f9b9f6fc175d915e89d41ad",
+    "skills/editorial-calm/assets/tokens.css": "82fdffed2510f641422d053ac22678082281d820992db7ed943ec43f6d612759",
+    "skills/editorial-calm/assets/fonts.css": "f0b1c1230f68631698795cbacb3d040981772290f677fea9a175a8a9163ceb29",
+    "skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+  },
+  "note": "New automatic CSS is present; these consumers have not yet opted in.",
+  "observations": [
+    {
+      "path": "examples/index.html",
+      "systemDark": true,
+      "mode": null,
+      "background": "oklch(0.99 0.002 80)",
+      "themeControl": "Dark theme",
+      "disabled": false
+    },
+    {
+      "path": "eval/cycles/07/index.html",
+      "systemDark": true,
+      "mode": null,
+      "background": "oklch(0.99 0.002 80)",
+      "themeControl": "SystemLightDark",
+      "disabled": true
+    },
+    {
+      "path": "eval/cycles/09/index.html",
+      "systemDark": true,
+      "mode": null,
+      "background": "oklch(0.99 0.002 80)",
+      "themeControl": "SystemLightDark",
+      "disabled": true
+    },
+    {
+      "path": "eval/index.html",
+      "systemDark": true,
+      "mode": null,
+      "background": "oklch(0.99 0.002 80)",
+      "themeControl": "Dark theme",
+      "disabled": false
+    }
+  ]
+}

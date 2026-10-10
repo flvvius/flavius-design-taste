@@ -7,6 +7,7 @@ import {fileURLToPath} from 'node:url';
 import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchState, assertSearchTransitions, articleTitles} from './lib/search-checks.mjs';
 import {assertLibraryFocus, assertLibraryActions, libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets, assertLibraryReading} from './lib/library-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
+import {assertPalette, assertLibraryThemeTransitions, assertButtonThemeTransitions, assertSelectThemeTransitions} from './lib/theme-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
 
@@ -39,14 +40,15 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
-let server, snapshot;
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/theme-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'eval/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+let server, snapshot, editorialColors;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
   catch (error) {failures.push({name, message: error.message}); interactions.push({name, passed: false, message: error.message});}
 }
 try {
   snapshot = await captureSources(root, sourcePaths);
+  editorialColors = JSON.parse(snapshot.files.get(resolve(root, 'skills/editorial-calm/assets/tokens.json')).toString()).colors;
   server = await serve(root, snapshot.files);
   browser = await engines[browserName].launch();
   capabilities.forcedColors = await forcedColorSupport(browser);
@@ -400,10 +402,10 @@ try {
       media: {script: "window.matchMedia=()=>{throw new Error('Injected media initialization failure')};", error: 'Injected media initialization failure'},
       date: {script: "const Format=Intl.DateTimeFormat;let calls=0;Intl.DateTimeFormat=function(...args){if(++calls===2)throw new Error('Injected date formatter failure');return new Format(...args)};", error: 'Injected date formatter failure'}
     };
-    for (const mode of ['disabled', 'media', 'date']) for (const variant of readingVariants) {
-      const name = `document-library-reading-${mode}-${variant.width}-${variant.setting}`;
+    for (const mode of ['disabled', 'media', 'date']) for (const scheme of ['light', 'dark']) for (const variant of readingVariants) {
+      const name = `document-library-reading-${mode}-${scheme}-${variant.width}-${variant.setting}`;
       await check(name, async () => {
-        const fallback = await browser.newPage({javaScriptEnabled: mode !== 'disabled', colorScheme: 'light', viewport: {width: variant.width, height: 960}});
+        const fallback = await browser.newPage({javaScriptEnabled: mode !== 'disabled', colorScheme: scheme, viewport: {width: variant.width, height: 960}});
         const errors = []; fallback.on('pageerror', error => errors.push(error.message));
         try {
           if (initializationFaults[mode]) await fallback.addInitScript(initializationFaults[mode].script);
@@ -419,10 +421,36 @@ try {
           await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
           assert.deepEqual(errors, initializationFaults[mode] ? [initializationFaults[mode].error] : []);
           report.reading = await assertLibraryReading(fallback);
+          report.palette = await assertPalette(fallback, editorialColors[scheme], scheme);
           assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
         } finally {await fallback.close();}
       });
     }
+    for (const mode of ['disabled', 'media', 'date']) await check(`document library ${mode} live reading preference`, async () => {
+      const fallback = await browser.newPage({javaScriptEnabled: mode !== 'disabled', colorScheme: 'light', viewport: {width: 320, height: 960}});
+      const errors = []; fallback.on('pageerror', error => errors.push(error.message));
+      try {
+        if (initializationFaults[mode]) await fallback.addInitScript(initializationFaults[mode].script);
+        await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+        const timeline = [];
+        for (const scheme of ['light', 'dark', 'light']) {
+          await fallback.emulateMedia({colorScheme: scheme});
+          const palette = await assertPalette(fallback, editorialColors[scheme], scheme);
+          const reading = await assertLibraryReading(fallback);
+          timeline.push({systemPreference: scheme, palette, reading});
+        }
+        assert.deepEqual(errors, initializationFaults[mode] ? [initializationFaults[mode].error] : []);
+        await writeFile(resolve(output, `document-library-reading-${mode}-preferences.json`), JSON.stringify(timeline, null, 2) + '\n');
+      } finally {await fallback.close();}
+    });
+    await check('document library automatic and explicit themes', async () => {
+      const themed = await browser.newPage({colorScheme: 'light', viewport: {width: 320, height: 960}});
+      try {
+        await themed.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(themed);
+        const timeline = await assertLibraryThemeTransitions(themed, editorialColors);
+        await writeFile(resolve(output, 'document-library-theme-transitions.json'), JSON.stringify(timeline, null, 2) + '\n');
+      } finally {await themed.close();}
+    });
     await check('document library coarse-pointer padding and row navigation', async () => {
       const touch = await browser.newPage({viewport: {width: 320, height: 960}, hasTouch: true});
       try {
@@ -452,6 +480,38 @@ try {
         await assertLibraryActions(library);
         assert.deepEqual(errors, []);
       } finally {await library.close();}
+    });
+  }
+  const editorialConsumers = [
+    {name: 'editorial-calm', path: 'examples/index.html', control: 'button'},
+    {name: 'usage-chart', path: 'eval/cycles/07/index.html', control: 'select'},
+    {name: 'article-search', path: 'eval/cycles/09/index.html', control: 'select'},
+    {name: 'evaluation-gallery', path: 'eval/index.html', control: 'button'}
+  ].filter(consumer => consumer.name === 'evaluation-gallery' ? !requestedSurfaces.length : surfaces.some(surface => surface.name === consumer.name));
+  for (const consumer of editorialConsumers) {
+    for (const scheme of ['light', 'dark']) await check(`${consumer.name} ${scheme} automatic reading palette`, async () => {
+      const reading = await browser.newPage({javaScriptEnabled: false, colorScheme: scheme, viewport: {width: 320, height: 960}});
+      try {
+        await reading.goto(`${server.url}/${consumer.path}`); await waitForFonts(reading);
+        const name = `${consumer.name}-reading-${scheme}-320`, audit = await inspectPage(reading);
+        const report = {name, height: 960, ...audit, javaScriptEnabled: false}; reports.push(report);
+        await reading.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+        report.palette = await assertPalette(reading, editorialColors[scheme], scheme);
+        assert(await reading.locator('#theme').isDisabled());
+        assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
+      } finally {await reading.close();}
+    });
+    await check(`${consumer.name} automatic and explicit theme transitions`, async () => {
+      const themed = await browser.newPage({colorScheme: 'light', viewport: {width: 320, height: 960}}), errors = [];
+      themed.on('pageerror', error => errors.push(error.message));
+      try {
+        await themed.goto(`${server.url}/${consumer.path}`); await waitForFonts(themed);
+        const timeline = consumer.control === 'select'
+          ? await assertSelectThemeTransitions(themed, editorialColors)
+          : await assertButtonThemeTransitions(themed, editorialColors, {light: 'Dark theme', dark: 'Light theme'});
+        assert.deepEqual(errors, []);
+        await writeFile(resolve(output, `${consumer.name}-theme-transitions.json`), JSON.stringify(timeline, null, 2) + '\n');
+      } finally {await themed.close();}
     });
   }
   await page.close();

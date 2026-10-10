@@ -146,5 +146,12 @@
     "artifact": "cycles/04/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "27",
+    "task": "Editorial calm palettes follow system preference before initialization and preserve explicit choices across maintained examples and the gallery.",
+    "artifact": "cycles/04/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@ table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}capt
 </style>
 </head>
 <body>
-<header><span class="brand">Fieldwork / Documents</span><button id="theme" aria-pressed="false" disabled>Dark mode</button></header>
+<header><span class="brand">Fieldwork / Documents</span><button id="theme" disabled>Theme</button></header>
 <main>
 <h1>Document library</h1>
 <p class="quiet">Project notes, decisions and working drafts for the autumn release.</p>
@@ -87,7 +87,7 @@ headerFocus();narrow.addEventListener('change',headerFocus);
 $('view').addEventListener('change',()=>{selected.clear();render();});
 $('bulk').addEventListener('click',()=>{const archive=$('view').value==='active';lastAction=documents.filter(d=>selected.has(d.id)).map(d=>({id:d.id,archived:Boolean(d.archived)}));documents.forEach(d=>{if(selected.has(d.id))d.archived=archive;});$('message').textContent=`${selected.size} document${selected.size===1?'':'s'} ${archive?'archived':'restored'}.`;selected.clear();$('undo').hidden=false;render();$('undo').focus();});
 $('undo').addEventListener('click',()=>{if(!lastAction)return;for(const previous of lastAction)documents.find(d=>d.id===previous.id).archived=previous.archived;lastAction=null;$('message').textContent='Action undone.';$('undo').hidden=true;render();$('view').focus();});
-const preference=matchMedia('(prefers-color-scheme: dark)');function theme(dark){document.documentElement.classList.toggle('dark',dark);$('theme').setAttribute('aria-pressed',String(dark));$('theme').textContent=dark?'Light mode':'Dark mode';}theme(preference.matches);let chosen=false;preference.addEventListener('change',event=>{if(!chosen)theme(event.matches);});$('theme').addEventListener('click',()=>{chosen=true;theme(!document.documentElement.classList.contains('dark'));});render();ready=true;document.querySelectorAll('button,select,input').forEach(control=>control.disabled=false);updateSelection();$('help').textContent='Tab to a checkbox and press Space to select. Use ↑ and ↓ to move between document checkboxes.';
+const preference=matchMedia('(prefers-color-scheme: dark)');let chosen=false;function theme(dark){document.documentElement.classList.toggle('dark',dark);if(chosen)document.documentElement.dataset.theme=dark?'dark':'light';$('theme').setAttribute('aria-pressed',String(dark));$('theme').textContent=dark?'Light mode':'Dark mode';}theme(preference.matches);preference.addEventListener('change',event=>{if(!chosen)theme(event.matches);});$('theme').addEventListener('click',()=>{chosen=true;theme(!document.documentElement.classList.contains('dark'));});render();ready=true;document.querySelectorAll('button,select,input').forEach(control=>control.disabled=false);updateSelection();$('help').textContent='Tab to a checkbox and press Space to select. Use ↑ and ↓ to move between document checkboxes.';
 </script>
 </body>
 </html>

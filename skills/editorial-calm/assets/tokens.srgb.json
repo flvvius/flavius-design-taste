@@ -89,5 +89,10 @@
     "overlay": 250,
     "max": 300,
     "pressScale": 0.97
+  },
+  "webTheme": {
+    "light": ":root, :root[data-theme=\"light\"]",
+    "dark": ".dark, :root[data-theme=\"dark\"]",
+    "automatic": ":root[data-theme=\"auto\"]"
   }
 }

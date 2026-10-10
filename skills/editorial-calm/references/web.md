@@ -12,7 +12,7 @@ A compact checkbox can keep a small painted mark inside a larger native input. M
 
 When a breakpoint replaces a focused control, transfer focus to its visible equivalent and preserve the current value or selection. Removing a hidden control from the tab sequence does not move existing focus. Test both resizing directions and leave focus elsewhere on the page alone.
 
-Theme switching replaces semantic tokens at the root. Honour system preference unless the user selected a theme. Use `prefers-reduced-motion` to suppress transforms and nonessential animation. Do not animate navigation that users perform dozens of times a day.
+Theme switching replaces semantic tokens at the root. Honour system preference unless the user selected a theme. Set `data-theme="auto"` on `html` to follow the preference in CSS before scripts run. An explicit choice sets `data-theme="light"` or `data-theme="dark"`. The generated CSS also supports the existing `.dark` class for manual themes. `webTheme` in the token JSON records these browser selectors. Test the painted palette and native control scheme, then change the preference and exercise the user override. Use `prefers-reduced-motion` to suppress transforms and nonessential animation. Do not animate navigation that users perform dozens of times a day.
 
 The repository's [browser specimen](https://github.com/flvvius/flavius-design-taste/blob/main/examples/index.html) shows one application of these assets. It is optional reference material, not a dependency of the installed skill or a required page template.
 

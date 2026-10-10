@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +52,7 @@ footer { margin-top: 2.5rem; color: var(--muted-foreground); font-size: .875rem;
 <header>
 <span class="brand">Margin / Library</span>
 <label for="theme">Appearance
-<select id="theme" disabled><option value="system">System</option><option value="light" selected>Light</option><option value="dark">Dark</option></select>
+<select id="theme" disabled><option value="system" selected>System</option><option value="light">Light</option><option value="dark">Dark</option></select>
 </label>
 </header>
 <h1>Search the library</h1>
@@ -177,6 +177,7 @@ el('clear').addEventListener('click', () => { el('query').value = ''; invalidate
 el('retry').addEventListener('click', () => { el('query').focus(); schedule(true); });
 const preference = matchMedia('(prefers-color-scheme: dark)');
 function theme() {
+  document.documentElement.dataset.theme = el('theme').value === 'system' ? 'auto' : el('theme').value;
   document.documentElement.classList.toggle('dark', el('theme').value === 'dark' || (el('theme').value === 'system' && preference.matches));
 }
 el('theme').addEventListener('change', theme);
