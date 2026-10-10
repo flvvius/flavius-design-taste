@@ -1,0 +1,30 @@
+{
+  "commit": "776f3de00e68c19cb1712b1846109a2a22ad6c4f",
+  "local": {
+    "environment": "macOS",
+    "scope": "document-library only",
+    "reports": [
+      "local-chromium.json",
+      "local-firefox.json",
+      "local-webkit.json"
+    ],
+    "captures": "Engine-prefixed PNGs are from these focused runs."
+  },
+  "ci": {
+    "environment": "GitHub Actions Linux",
+    "scope": "all six maintained surfaces",
+    "url": "https://github.com/flvvius/flavius-design-taste/actions/runs/38040946876",
+    "conclusion": "success",
+    "jobs": [
+      "package",
+      "browser (chromium)",
+      "browser (firefox)",
+      "browser (webkit)"
+    ],
+    "reports": [
+      "ci-chromium.json",
+      "ci-firefox.json",
+      "ci-webkit.json"
+    ]
+  }
+}

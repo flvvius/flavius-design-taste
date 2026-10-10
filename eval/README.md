@@ -37,6 +37,7 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [23](cycles/23/outcome.md) | Search states and reading | The bundled library remains readable without scripts; five states and asynchronous transitions join the maintained checks. Self-review. |
 | [24](cycles/24/outcome.md) | Responsive library controls | Focus transfers in both directions; sorting, selection and archive history join the maintained interaction checks. Self-review. |
 | [25](cycles/25/outcome.md) | Library states and targets | Complete choices fit enlarged text; native targets and empty-row width receive maintained checks across seven states. Self-review. |
+| [26](cycles/26/outcome.md) | Library reading fallback | Initial records survive unavailable scripts and two setup failures; controls enable after initialization. Self-review. |
 
 Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
 
