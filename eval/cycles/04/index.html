@@ -62,7 +62,24 @@ function sortBy(next){if(key===next)ascending=!ascending;else{key=next;ascending
 document.querySelectorAll('[data-sort]').forEach(button=>button.addEventListener('click',()=>sortBy(button.dataset.sort)));
 $('sort').addEventListener('change',()=>sortBy($('sort').value));$('direction').addEventListener('click',()=>{ascending=!ascending;render();});
 for(const id of ['all','all-mobile'])$(id).addEventListener('change',event=>{visible().forEach(d=>event.target.checked?selected.add(d.id):selected.delete(d.id));updateSelection();});
-const narrow=matchMedia('(max-width:680px)');function headerFocus(){document.querySelectorAll('thead input,thead button').forEach(el=>el.tabIndex=narrow.matches?-1:0);}headerFocus();narrow.addEventListener('change',headerFocus);
+const narrow=matchMedia('(max-width:680px)');
+let mobileFocus=null;
+for(const id of ['sort','direction','all-mobile']){
+const control=$(id);
+control.addEventListener('focus',()=>{mobileFocus=control;});
+control.addEventListener('blur',()=>{if(control.getClientRects().length)mobileFocus=null;});
+}
+function headerFocus(){
+const active=document.activeElement, previous=active===document.body?mobileFocus:active;
+document.querySelectorAll('thead input,thead button').forEach(el=>el.tabIndex=narrow.matches?-1:0);
+let next=null;
+if(narrow.matches&&previous?.closest('thead'))next=previous.id==='all'?$('all-mobile'):$('sort');
+if(!narrow.matches&&previous?.id==='all-mobile')next=$('all');
+if(!narrow.matches&&['sort','direction'].includes(previous?.id))next=document.querySelector(`[data-sort="${key}"]`);
+if(next&&!next.disabled)next.focus();
+if(!narrow.matches)mobileFocus=null;
+}
+headerFocus();narrow.addEventListener('change',headerFocus);
 $('view').addEventListener('change',()=>{selected.clear();render();});
 $('bulk').addEventListener('click',()=>{const archive=$('view').value==='active';lastAction=documents.filter(d=>selected.has(d.id)).map(d=>({id:d.id,archived:Boolean(d.archived)}));documents.forEach(d=>{if(selected.has(d.id))d.archived=archive;});$('message').textContent=`${selected.size} document${selected.size===1?'':'s'} ${archive?'archived':'restored'}.`;selected.clear();$('undo').hidden=false;render();$('undo').focus();});
 $('undo').addEventListener('click',()=>{if(!lastAction)return;for(const previous of lastAction)documents.find(d=>d.id===previous.id).archived=previous.archived;lastAction=null;$('message').textContent='Action undone.';$('undo').hidden=true;render();$('view').focus();});

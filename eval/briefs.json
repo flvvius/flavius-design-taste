@@ -125,5 +125,12 @@
     "artifact": "cycles/09/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "24",
+    "task": "Responsive document controls retain visible keyboard focus, current sorting and selection, with repeatable archive, restore and undo checks.",
+    "artifact": "cycles/04/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

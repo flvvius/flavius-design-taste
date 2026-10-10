@@ -1,0 +1,35 @@
+{
+  "commit": "7e184b4a847576906e2cb36e8bf2e90680aaa349",
+  "rows": [
+    {
+      "source": "[data-sort=\"name\"]",
+      "active": "<button data-sort=\"name\" tabindex=\"-1\">Document <span></span></button>",
+      "visible": true,
+      "headerClip": "inset(50%)"
+    },
+    {
+      "source": "#all",
+      "active": "all",
+      "visible": true,
+      "headerClip": "inset(50%)"
+    },
+    {
+      "source": "#sort",
+      "active": "<body>\n<header><span class=\"brand\">Fieldwork / Documents</span><button id=\"theme\" aria-pressed=\"fals",
+      "visible": true,
+      "headerClip": "none"
+    },
+    {
+      "source": "#direction",
+      "active": "<body>\n<header><span class=\"brand\">Fieldwork / Documents</span><button id=\"theme\" aria-pressed=\"fals",
+      "visible": true,
+      "headerClip": "none"
+    },
+    {
+      "source": "#all-mobile",
+      "active": "<body>\n<header><span class=\"brand\">Fieldwork / Documents</span><button id=\"theme\" aria-pressed=\"fals",
+      "visible": true,
+      "headerClip": "none"
+    }
+  ]
+}

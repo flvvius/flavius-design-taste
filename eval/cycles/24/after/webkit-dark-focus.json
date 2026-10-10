@@ -1,0 +1,122 @@
+[
+  {
+    "source": "[data-sort=\"name\"]",
+    "from": 1440,
+    "target": "#sort",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "[data-sort=\"owner\"]",
+    "from": 1440,
+    "target": "#sort",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "[data-sort=\"date\"]",
+    "from": 1440,
+    "target": "#sort",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "[data-sort=\"status\"]",
+    "from": 1440,
+    "target": "#sort",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#all",
+    "from": 1440,
+    "target": "#all-mobile",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#sort",
+    "from": 320,
+    "target": "[data-sort=\"name\"]",
+    "to": 1440,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#direction",
+    "from": 320,
+    "target": "[data-sort=\"name\"]",
+    "to": 1440,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#all-mobile",
+    "from": 320,
+    "target": "#all",
+    "to": 1440,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "[data-id=\"1\"] input",
+    "from": 1440,
+    "target": "[data-id=\"1\"] input",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "[data-id=\"1\"] input",
+    "from": 320,
+    "target": "[data-id=\"1\"] input",
+    "to": 1440,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#view",
+    "from": 1440,
+    "target": "#view",
+    "to": 320,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  },
+  {
+    "source": "#view",
+    "from": 320,
+    "target": "#view",
+    "to": 1440,
+    "focused": true,
+    "outline": 2,
+    "visible": true,
+    "withinViewport": true
+  }
+]

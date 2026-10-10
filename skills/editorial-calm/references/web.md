@@ -6,7 +6,7 @@ Use a system sans stack, optionally headed by locally bundled Inter. The optiona
 
 Default content width is 896px with 16px gutters. Separate sections with 32–40px above a top hairline and 24px below it. Rows share a stable title, description, metadata and trailing-action anatomy. Responsive rows wrap instead of hiding useful content.
 
-Controls use 8px radius; media 10px; overlays 14px. A flat section does not inherit these radii. Input boundaries must remain visible. Use a visible focus outline, associated labels, native button/link semantics and keyboard-operable dialogs. Provide labels for icon-only actions.
+Controls use 8px radius; media 10px; overlays 14px. A flat section does not inherit these radii. Input boundaries must remain visible. Use a visible focus outline, associated labels, native button/link semantics and keyboard-operable dialogs. Provide labels for icon-only actions. When a breakpoint replaces a focused control, transfer focus to its visible equivalent and preserve the current value or selection. Removing a hidden control from the tab sequence does not move existing focus. Test both resizing directions and leave focus elsewhere on the page alone.
 
 Theme switching replaces semantic tokens at the root. Honour system preference unless the user selected a theme. Use `prefers-reduced-motion` to suppress transforms and nonessential animation. Do not animate navigation that users perform dozens of times a day.
 

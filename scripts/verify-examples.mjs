@@ -5,6 +5,7 @@ import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
 import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchState, assertSearchTransitions, articleTitles} from './lib/search-checks.mjs';
+import {assertLibraryFocus, assertLibraryActions} from './lib/library-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
@@ -37,7 +38,7 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
 let server, snapshot;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
@@ -368,6 +369,26 @@ try {
       assert(!(await fallback.locator('#edit').isVisible()));
     } finally {await fallback.close();}
   });
+  }
+  if (!requestedSurfaces.length) {
+    for (const theme of ['light', 'dark']) await check(`document library ${theme} responsive focus and archive history`, async () => {
+      const library = await browser.newPage({viewport: {width: 1440, height: 960}, reducedMotion: 'reduce'});
+      try {
+        const errors = []; library.on('pageerror', error => errors.push(error.message));
+        await library.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(library);
+        if (await library.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await library.locator('#theme').click();
+        const focus = await assertLibraryFocus(library);
+        await writeFile(resolve(output, `document-library-${theme}-focus.json`), JSON.stringify(focus, null, 2) + '\n');
+        await library.setViewportSize({width: 320, height: 960}); await library.locator('#sort').focus();
+        await library.keyboard.press('Shift');
+        assert(await library.locator('#sort').evaluate(element => element === document.activeElement && parseFloat(getComputedStyle(element).outlineWidth) >= 2));
+        await library.screenshot({path: resolve(output, `document-library-${theme}-narrow-focus.png`), animations: 'disabled'});
+        await library.setViewportSize({width: 1440, height: 960});
+        await library.waitForFunction(() => document.querySelector('#all').tabIndex === 0);
+        await assertLibraryActions(library);
+        assert.deepEqual(errors, []);
+      } finally {await library.close();}
+    });
   }
   await page.close();
 } catch (error) {
