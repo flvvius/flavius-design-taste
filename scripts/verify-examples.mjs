@@ -337,10 +337,13 @@ try {
         if (variant.setting === 'spacing') await applyTextSpacing(reading);
         const audit = await inspectPage(reading), palette = await assertPalette(reading, editorialColors[scheme], scheme);
         const report = {name, ...audit, palette, errors}; reports.push(report);
+        if (variant.setting.startsWith('missing-font')) {
+          report.fonts = await reading.evaluate(() => [...document.fonts].map(face => ({family: face.family.replace(/["']/g, ''), status: face.status})));
+          assert(report.fonts.some(face => face.family === 'Inter' && face.status === 'error'), JSON.stringify(report.fonts));
+        }
         await reading.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
         report.reading = await assertSpecimenReading(reading);
         report.review = await assertReviewActions(reading);
-        if (variant.setting.startsWith('missing-font')) assert(await reading.evaluate(() => [...document.fonts].some(face => face.family.replace(/["']/g, '') === 'Inter' && face.status === 'error')));
         assert.deepEqual(errors, mode === 'disabled' ? [] : [`Injected specimen ${mode} failure`]);
         assert.equal(documents.length, 1, 'Unavailable preview and Review must not reload the document');
         const issues = value => value.overflow || value.outsideViewport.length || value.clippedText.length || value.contrast.length || value.unlabeled.length || value.smallTargets.length || value.clippedTabStops.length;

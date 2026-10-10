@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-10T10:31:36.634Z",
+  "engine": "webkit",
+  "browser": "26.5",
+  "node": "v24.8.0",
+  "sourceMode": "captured bytes served throughout the run",
+  "sources": {
+    "scripts/verify-examples.mjs": "c62ce2f66d07937436356f16f24f47c38920dc9857badfb945dba8f81f79d200",
+    "scripts/lib/browser-checks.mjs": "3829841ec3d2beeba5a0a958e3a3265c2e5324ff7e6ce1fc6c55f5152636b86c",
+    "scripts/lib/theme-checks.mjs": "fab13cab2900b8d2a148ac381f549afc9683c04c1147149c3c6755fb4d15634e",
+    "scripts/lib/specimen-checks.mjs": "9d2fa03f2c49379923b8739cbbb6f3a2e6bcfc6b4243318e8356d33f6475b39f",
+    "scripts/lib/source-snapshot.mjs": "43bb54e6c90853aa5aabdbf2f62406b8b448e57ba0df96f51886b9f893933631",
+    "scripts/lib/usage-chart-checks.mjs": "59a4050820f2604df1baf0cd1ebb247eb20519c123d365add434b67af151d508",
+    "scripts/lib/search-checks.mjs": "cb876f62582b21e643dd6899e10f67500118b8dbfd1513bda7fde9c7c6c80509",
+    "scripts/lib/library-checks.mjs": "1c54b88243d9e8e6b822455397ed17a02fd20327988a4f1294f91e3f77df31fe",
+    "eval/cycles/04/index.html": "2769afd03638c0fe48560e49e2a86f8963b701e03526f769756c4f9f60124b4c",
+    "eval/cycles/09/index.html": "64d9e535239bfafafd7ecbbd16fc19c9e6cf61ac8480c8b42ff63a9945c8975e",
+    "eval/cycles/07/index.html": "fbae9661c349051bcc0b786a7d14c47bfe9295eef05c93d286e07f61740686b8",
+    "package-lock.json": "6211282ba3e8d3a827397c852215d9e7142a683114d5f155dec74a7225af9341",
+    "examples/index.html": "2d4de48e18d1a65397b02a7835c1f1c4d8af57447cbc4225653703fd305ab3f2",
+    "eval/index.html": "5391beb8212e8025e7e3803bcd4884b1127b135a0cebbb63cc5eaac80ba231d5",
+    "examples/personal-room/index.html": "de0477b35e3bb974d41984ab4660c365d110c95bd343c6a1857c3189a82dc508",
+    "examples/personal-room/style.css": "a1b40f9537a486d36bf80102aab7d02ef7eb5de0b2473e097973e9dcf10920a6",
+    "examples/personal-room/room.js": "de968a1d639987af3c9369a877a42f2ec0c4a3956e759e4ae4e2f5640073111c",
+    "eval/cycles/12/index.html": "f5b9fbb712e3aceb3298e237427b7d33c35a41998e2dbab1c3ae883c13462a76",
+    "eval/cycles/12/style.css": "a556a36d1a37c963d286295a54f0716e57e810110940f686dc15f3f971ea54a0",
+    "eval/cycles/12/notebook.js": "03eb2523e9ac84d5199774dfa1e9ae88753c4250bc7fb6bce269e96d8862cb70",
+    "skills/personal-room/assets/tokens.json": "1ef5b7d8a12948c389e3793465025ba00e7837f82bbad37c63bf6194f1128454",
+    "skills/personal-room/assets/tokens.css": "04ac3c468cadd88403e15e52a10f9b06981acfef45cd358a331945585aa64880",
+    "skills/personal-room/assets/fonts.css": "d4db3a18e21727a6550d16e1f70d0ea3fcacfdd53666e12fc6d86b88c9d2209e",
+    "skills/personal-room/assets/fonts/Schoolbell-Regular.ttf": "00ff6655a5eb1eb70d32f2b7351d1bcf3f45f3f9ca40fd5c0d25da79f7f82a50",
+    "skills/editorial-calm/assets/tokens.json": "74f455c2ad92dbf533181f482c5e3ce97f45a1d95b7e087fb16fbe0c31bbe5b9",
+    "skills/editorial-calm/assets/tokens.css": "82fdffed2510f641422d053ac22678082281d820992db7ed943ec43f6d612759",
+    "skills/editorial-calm/assets/fonts.css": "f0b1c1230f68631698795cbacb3d040981772290f677fea9a175a8a9163ceb29",
+    "skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+  },
+  "capabilities": {
+    "forcedColors": {
+      "media": true,
+      "colorSubstitution": false
+    }
+  },
+  "unverified": [
+    {
+      "name": "personal-room forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    },
+    {
+      "name": "editorial-calm forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    },
+    {
+      "name": "usage-chart forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    },
+    {
+      "name": "article-search forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    },
+    {
+      "name": "document-library forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    },
+    {
+      "name": "repair-notebook forced-colour substitution and control boundaries",
+      "reason": "The engine matched the media query but did not substitute colours. Media rules and focus were checked separately."
+    }
+  ],
+  "failures": [
+    {
+      "name": "editorial-calm-reading-disabled-light-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    },
+    {
+      "name": "editorial-calm-reading-disabled-dark-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    },
+    {
+      "name": "editorial-calm-reading-media-light-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    },
+    {
+      "name": "editorial-calm-reading-media-dark-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    },
+    {
+      "name": "editorial-calm-reading-preview-light-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    },
+    {
+      "name": "editorial-calm-reading-preview-dark-320-missing-font-all-text-200 availability and repeated native Review",
+      "message": "false == true"
+    }
+  ],
+  "limitations": "Solid-background direct-text contrast only. Images, texture, opacity blending, SVG marks, screen-reader behavior, visual composition and native platforms need separate review. Text enlargement is a synthetic stress test, not full WCAG certification.",
+  "layoutChecks": 426,
+  "stateAndInteractionChecks": 364,
+  "note": "First complete local run at dc2fcef, before adding font diagnostics for the six WebKit missing-font failures."
+}

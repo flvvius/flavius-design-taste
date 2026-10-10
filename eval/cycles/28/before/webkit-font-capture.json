@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-10T10:47:33.215519+00:00",
+  "engine": "webkit",
+  "browser": "26.5",
+  "node": "v24.8.0",
+  "sourceMode": "Hashes recorded immediately after the live-source focused probe; UI and CSS were unchanged between probing and recording",
+  "sources": {
+    "examples/index.html": "2d4de48e18d1a65397b02a7835c1f1c4d8af57447cbc4225653703fd305ab3f2",
+    "skills/editorial-calm/assets/fonts.css": "f0b1c1230f68631698795cbacb3d040981772290f677fea9a175a8a9163ceb29",
+    "skills/editorial-calm/assets/tokens.css": "82fdffed2510f641422d053ac22678082281d820992db7ed943ec43f6d612759"
+  },
+  "conditions": {
+    "javaScriptEnabled": false,
+    "width": 320,
+    "height": 960,
+    "textScale": 2,
+    "reducedMotion": "reduce",
+    "fontRequests": "All woff2 requests aborted",
+    "capture": {
+      "fullPage": true,
+      "animations": "disabled"
+    }
+  },
+  "beforeCapture": [
+    {
+      "family": "Inter",
+      "status": "error"
+    },
+    {
+      "family": "Inter",
+      "status": "unloaded"
+    }
+  ],
+  "afterCapture": [
+    {
+      "family": "Inter",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "status": "unloaded"
+    }
+  ],
+  "failedFont": "inter-latin-wght-normal.woff2",
+  "requestFailure": "Blocked by Web Inspector",
+  "conclusion": "The missing-font assertion must inspect the failure before capture changes the reported font-face status."
+}
