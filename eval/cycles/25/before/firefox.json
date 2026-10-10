@@ -1,0 +1,153 @@
+{
+  "commit": "b8add1aca68d2ae6d438da618571dc7b810e6c3f",
+  "browser": "151.0",
+  "audit": {
+    "width": 320,
+    "scrollWidth": 372,
+    "overflow": true,
+    "outsideViewport": [
+      {
+        "text": "Active documentsArchived documents",
+        "tag": "SELECT",
+        "left": 16,
+        "right": 371.7833251953125
+      },
+      {
+        "text": "Document \nOwner \nUpdated ↓\nStatus",
+        "tag": "TR",
+        "left": 16,
+        "right": 580.0499877929688
+      },
+      {
+        "text": "Owner",
+        "tag": "TH",
+        "left": 231.8333282470703,
+        "right": 340.6499938964844
+      },
+      {
+        "text": "Owner",
+        "tag": "BUTTON",
+        "left": 241.8333282470703,
+        "right": 330.6499938964844
+      },
+      {
+        "text": "SPAN",
+        "tag": "SPAN",
+        "left": 330.6499938964844,
+        "right": 330.6499938964844
+      },
+      {
+        "text": "Updated ↓",
+        "tag": "TH",
+        "left": 340.6499938964844,
+        "right": 474.93333435058594
+      },
+      {
+        "text": "Updated ↓",
+        "tag": "BUTTON",
+        "left": 350.6499938964844,
+        "right": 464.93333435058594
+      },
+      {
+        "text": "↓",
+        "tag": "SPAN",
+        "left": 350.6499938964844,
+        "right": 374.6666717529297
+      },
+      {
+        "text": "Status",
+        "tag": "TH",
+        "left": 474.933349609375,
+        "right": 580.0500183105469
+      },
+      {
+        "text": "Status",
+        "tag": "BUTTON",
+        "left": 484.933349609375,
+        "right": 570.0500183105469
+      },
+      {
+        "text": "SPAN",
+        "tag": "SPAN",
+        "left": 570.0499877929688,
+        "right": 570.0499877929688
+      }
+    ],
+    "clippedText": [
+      {
+        "text": "Document",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Owner",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Updated ↓",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "↓",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Status",
+        "clippedBy": "THEAD"
+      }
+    ],
+    "contrast": [],
+    "unlabeled": [],
+    "smallTargets": [
+      {
+        "text": "INPUT",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select all visible documents",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Autumn release plan",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Customer interview notes",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Search experience specification",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Content migration checklist",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Accessibility review",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Editorial workflow decisions",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Research synthesis and open questions",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select September retrospective",
+        "width": 18,
+        "height": 18
+      }
+    ]
+  }
+}

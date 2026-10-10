@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
 import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchState, assertSearchTransitions, articleTitles} from './lib/search-checks.mjs';
-import {assertLibraryFocus, assertLibraryActions} from './lib/library-checks.mjs';
+import {assertLibraryFocus, assertLibraryActions, libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets} from './lib/library-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
@@ -29,6 +29,7 @@ const allSurfaces = [
   {name: 'editorial-calm', path: 'examples/index.html', themes: ['light', 'dark'], setTheme: async (page, theme) => page.evaluate(theme => document.documentElement.classList.toggle('dark', theme === 'dark'), theme)},
   {name: 'usage-chart', path: 'eval/cycles/07/index.html', themes: ['light', 'dark'], states: ['week', 'month'], setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: async (page, state) => {await page.locator('#period').selectOption(state); await page.locator('details summary').click();}},
   {name: 'article-search', path: 'eval/cycles/09/index.html', themes: ['light', 'dark'], states: ['untouched', 'loading', 'results', 'empty', 'error'], beforeLoad: installSearchClock, setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: setupSearchState},
+  {name: 'document-library', path: 'eval/cycles/04/index.html', themes: ['light', 'dark'], states: libraryStates, setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}, setup: setupLibraryState},
   {name: 'repair-notebook', path: 'eval/cycles/12/index.html', themes: ['paper', 'night'], setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click(), setup: async page => page.locator('#edit').click()}
 ];
 for (const name of requestedSurfaces) if (!allSurfaces.some(surface => surface.name === name)) throw new Error(`Unknown surface: ${name}`);
@@ -65,11 +66,12 @@ try {
     if (variant.mode === 'spacing') await applyTextSpacing(page);
     const audit = await inspectPage(page);
     const name = `${surface.name}-${theme}-${variant.width}-${variant.mode}${state ? '-' + state : ''}`;
-    let chart, search;
+    let chart, search, library;
     if (surface.name === 'article-search') await check(`${name} visible search state`, async () => {search = await assertSearchState(page, state);});
     if (surface.name === 'usage-chart') await check(`${name} values, scale and series`, async () => {chart = await assertUsageChart(page, state);});
-    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {}), ...(search ? {search} : {})});
-    const issues = audit.overflow || audit.outsideViewport.length || audit.clippedText.length || audit.contrast.length || audit.unlabeled.length || audit.smallTargets.length || errors.length || requests.length;
+    if (surface.name === 'document-library') await check(`${name} documents, selection and action state`, async () => {library = await assertLibraryState(page, state);});
+    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {}), ...(search ? {search} : {}), ...(library ? {library} : {})});
+    const issues = audit.overflow || audit.outsideViewport.length || audit.clippedText.length || audit.contrast.length || audit.unlabeled.length || audit.smallTargets.length || audit.clippedTabStops.length || errors.length || requests.length;
     if (issues) failures.push({name, audit, errors, requests});
     await page.evaluate(() => scrollTo(0, 0));
     await page.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
@@ -84,7 +86,7 @@ try {
       const previewAudit = await inspectPage(page);
       const previewName = `${name}-invitation-preview`;
       reports.push({name: previewName, height: variant.height ?? 960, ...previewAudit, errors, requests});
-      const previewIssues = previewAudit.overflow || previewAudit.outsideViewport.length || previewAudit.clippedText.length || previewAudit.contrast.length || previewAudit.unlabeled.length || previewAudit.smallTargets.length || errors.length || requests.length;
+      const previewIssues = previewAudit.overflow || previewAudit.outsideViewport.length || previewAudit.clippedText.length || previewAudit.contrast.length || previewAudit.unlabeled.length || previewAudit.smallTargets.length || previewAudit.clippedTabStops.length || errors.length || requests.length;
       if (previewIssues) failures.push({name: previewName, audit: previewAudit, errors, requests});
       const geometry = await page.locator('#invitation-preview').evaluate(element => ({width: element.clientWidth, scrollWidth: element.scrollWidth}));
       assert(geometry.scrollWidth <= geometry.width, JSON.stringify(geometry));
@@ -128,8 +130,12 @@ try {
           if (surface.beforeLoad) await surface.beforeLoad(forced);
         await forced.goto(`${server.url}/${surface.path}`);
         if (surface.setup) await surface.setup(forced, surface.states?.[0]);
-        const boundaries = await forced.locator('button, input, textarea, select').evaluateAll(elements => elements.filter(element => element.getClientRects().length).map(element => {
-          const style = getComputedStyle(element);
+        const boundaries = await forced.locator('button, input, textarea, select').evaluateAll(elements => elements.filter(element => {
+          if (!element.getClientRects().length) return false;
+          for (let parent = element; parent; parent = parent.parentElement) if (getComputedStyle(parent).clipPath === 'inset(50%)') return false;
+          return true;
+        }).map(element => {
+          const style = getComputedStyle(element, element.matches('input[type="checkbox"]') && getComputedStyle(element, '::before').content !== 'none' ? '::before' : null);
           return {name: element.id || element.textContent.trim(), width: parseFloat(style.borderTopWidth), style: style.borderTopStyle, color: style.borderTopColor, background: style.backgroundColor};
         }));
         assert(boundaries.length);
@@ -370,7 +376,31 @@ try {
     } finally {await fallback.close();}
   });
   }
-  if (!requestedSurfaces.length) {
+  if (surfaces.some(surface => surface.name === 'document-library')) {
+    for (const theme of ['light', 'dark']) await check(`document library ${theme} missing font at enlarged text`, async () => {
+      const fallback = await browser.newPage({viewport: {width: 320, height: 960}});
+      try {
+        await fallback.route('**/*.woff2', route => route.abort());
+        await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+        assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
+        if (await fallback.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await fallback.locator('#theme').click();
+        await enlargeText(fallback); const library = await assertLibraryState(fallback, 'active');
+        const audit = await inspectPage(fallback), name = `document-library-${theme}-missing-font-320-all-text-200`;
+        reports.push({name, height: 960, ...audit, library, expectedFontFailure: true});
+        assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
+        await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+      } finally {await fallback.close();}
+    });
+    await check('document library coarse-pointer padding and row navigation', async () => {
+      const touch = await browser.newPage({viewport: {width: 320, height: 960}, hasTouch: true});
+      try {
+        await touch.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(touch);
+        assert(await touch.evaluate(() => matchMedia('(pointer:coarse)').matches));
+        const targets = await assertLibraryPointerTargets(touch, {touch: true});
+        await assertLibraryState(touch, 'active');
+        await writeFile(resolve(output, 'document-library-touch.json'), JSON.stringify(targets, null, 2) + '\n');
+      } finally {await touch.close();}
+    });
     for (const theme of ['light', 'dark']) await check(`document library ${theme} responsive focus and archive history`, async () => {
       const library = await browser.newPage({viewport: {width: 1440, height: 960}, reducedMotion: 'reduce'});
       try {
@@ -385,6 +415,8 @@ try {
         await library.screenshot({path: resolve(output, `document-library-${theme}-narrow-focus.png`), animations: 'disabled'});
         await library.setViewportSize({width: 1440, height: 960});
         await library.waitForFunction(() => document.querySelector('#all').tabIndex === 0);
+        const targets = await assertLibraryPointerTargets(library);
+        await writeFile(resolve(output, `document-library-${theme}-pointer.json`), JSON.stringify(targets, null, 2) + '\n');
         await assertLibraryActions(library);
         assert.deepEqual(errors, []);
       } finally {await library.close();}

@@ -31,3 +31,35 @@ test('library preserves responsive focus and archive history, and rejects focus 
     await assert.rejects(assertLibraryFocus(reverse), error => error instanceof assert.AssertionError && /Responsive focus #sort/.test(error.message) && error.message.includes('"focused":false'));
   } finally {await browser.close(); await server.close();}
 });
+
+test('library states reflow and native pointer padding activates each document', async () => {
+  const {libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets} = await import('../lib/library-checks.mjs');
+  const {enlargeText, inspectPage, waitForFonts} = await import('../lib/browser-checks.mjs');
+  const server = await serve(root), browser = await engine.launch();
+  try {
+    for (const state of libraryStates) {
+      const page = await browser.newPage({viewport: {width: 320, height: 960}});
+      await page.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(page);
+      await setupLibraryState(page, state); await enlargeText(page); await assertLibraryState(page, state);
+      const audit = await inspectPage(page);
+      assert.equal(audit.overflow, false); assert.deepEqual(audit.smallTargets, []); assert.deepEqual(audit.clippedTabStops, []);
+      await page.close();
+    }
+    for (const [width, touch] of [[1440, false], [320, false], [320, true]]) {
+      const page = await browser.newPage({viewport: {width, height: 960}, hasTouch: touch});
+      await page.goto(server.url + '/eval/cycles/04/index.html');
+      await assertLibraryPointerTargets(page, {touch}); await assertLibraryState(page, 'active'); await page.close();
+    }
+    const empty = await browser.newPage({viewport: {width: 320, height: 960}});
+    await empty.goto(server.url + '/eval/cycles/04/index.html'); await setupLibraryState(empty, 'empty');
+    await empty.addStyleTag({content: 'td.empty {grid-column:1}'});
+    await assert.rejects(assertLibraryState(empty, 'empty'), error => error instanceof assert.AssertionError && error.message.includes('Empty state must span the row'));
+    await empty.close();
+    const page = await browser.newPage({viewport: {width: 320, height: 960}});
+    await page.goto(server.url + '/eval/cycles/04/index.html');
+    await page.locator('[data-id="1"] [data-label="Owner"]').evaluate(element => element.textContent = 'Wrong owner');
+    await assert.rejects(assertLibraryState(page, 'active'), error => error instanceof assert.AssertionError && error.actual?.[0] === 'Wrong owner' && error.expected?.[0] === 'Mara Ionescu');
+    await page.addStyleTag({content: '.selection-target, .selection-target input {pointer-events:none}'});
+    await assert.rejects(assertLibraryPointerTargets(page), error => error instanceof assert.AssertionError && error.expected === 'INPUT' && error.actual === 'TD');
+  } finally {await browser.close(); await server.close();}
+});

@@ -1,0 +1,11 @@
+{
+  "checker": "8112ab59aea9159187133023c42be10897d69f413eae5d2010ed6dfc70a1d896",
+  "focus": {
+    "outline": "2px",
+    "inputFocused": true,
+    "inputOpacity": "0"
+  },
+  "hiddenFocusTargets": [
+    "<input type=\"checkbox\" id=\"skin\">"
+  ]
+}

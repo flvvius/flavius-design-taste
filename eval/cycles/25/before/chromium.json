@@ -1,0 +1,153 @@
+{
+  "commit": "b8add1aca68d2ae6d438da618571dc7b810e6c3f",
+  "browser": "149.0.7827.55",
+  "audit": {
+    "width": 320,
+    "scrollWidth": 374,
+    "overflow": true,
+    "outsideViewport": [
+      {
+        "text": "Active documentsArchived documents",
+        "tag": "SELECT",
+        "left": 16,
+        "right": 374
+      },
+      {
+        "text": "Document \nOwner \nUpdated ↓\nStatus",
+        "tag": "TR",
+        "left": 16,
+        "right": 579.984375
+      },
+      {
+        "text": "Owner",
+        "tag": "TH",
+        "left": 231.8125,
+        "right": 340.609375
+      },
+      {
+        "text": "Owner",
+        "tag": "BUTTON",
+        "left": 241.8125,
+        "right": 330.609375
+      },
+      {
+        "text": "SPAN",
+        "tag": "SPAN",
+        "left": 330.609375,
+        "right": 330.609375
+      },
+      {
+        "text": "Updated ↓",
+        "tag": "TH",
+        "left": 340.609375,
+        "right": 474.875
+      },
+      {
+        "text": "Updated ↓",
+        "tag": "BUTTON",
+        "left": 350.609375,
+        "right": 464.875
+      },
+      {
+        "text": "↓",
+        "tag": "SPAN",
+        "left": 350.609375,
+        "right": 374.640625
+      },
+      {
+        "text": "Status",
+        "tag": "TH",
+        "left": 474.875,
+        "right": 579.984375
+      },
+      {
+        "text": "Status",
+        "tag": "BUTTON",
+        "left": 484.875,
+        "right": 569.984375
+      },
+      {
+        "text": "SPAN",
+        "tag": "SPAN",
+        "left": 569.984375,
+        "right": 569.984375
+      }
+    ],
+    "clippedText": [
+      {
+        "text": "Document",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Owner",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Updated ↓",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "↓",
+        "clippedBy": "THEAD"
+      },
+      {
+        "text": "Status",
+        "clippedBy": "THEAD"
+      }
+    ],
+    "contrast": [],
+    "unlabeled": [],
+    "smallTargets": [
+      {
+        "text": "INPUT",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select all visible documents",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Autumn release plan",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Customer interview notes",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Search experience specification",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Content migration checklist",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Accessibility review",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Editorial workflow decisions",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select Research synthesis and open questions",
+        "width": 18,
+        "height": 18
+      },
+      {
+        "text": "Select September retrospective",
+        "width": 18,
+        "height": 18
+      }
+    ]
+  }
+}

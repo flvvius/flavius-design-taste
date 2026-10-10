@@ -55,9 +55,20 @@ export async function inspectPage(page) {
       for (let ancestor = element; ancestor; ancestor = ancestor.parentElement) {
         const style = getComputedStyle(ancestor);
         if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) return false;
+        if (style.clipPath === 'inset(50%)' || style.clip === 'rect(0px, 0px, 0px, 0px)') return false;
       }
       return true;
     };
+    const clippedTabStops = [...document.querySelectorAll('button, a[href], input:not([type="hidden"]), select, textarea, [tabindex]')].filter(element => {
+      if (element.tabIndex < 0 || element.disabled || !element.getClientRects().length || visible(element)) return false;
+      let clipped = false;
+      for (let ancestor = element; ancestor; ancestor = ancestor.parentElement) {
+        const style = getComputedStyle(ancestor);
+        if (style.display === 'none' || style.visibility === 'hidden') return false;
+        if (style.clipPath === 'inset(50%)' || style.clip === 'rect(0px, 0px, 0px, 0px)') clipped = true;
+      }
+      return clipped;
+    }).map(element => element.outerHTML.slice(0, 160));
     const label = element => (element.textContent || element.getAttribute('aria-label') || element.tagName).trim().slice(0, 90);
     const canvas = document.createElement('canvas');
     canvas.width = canvas.height = 1;
@@ -105,7 +116,7 @@ export async function inspectPage(page) {
       const rect = element.getBoundingClientRect();
       return rect.width < 24 || rect.height < 24;
     }).map(element => ({text: label(element), width: element.getBoundingClientRect().width, height: element.getBoundingClientRect().height}));
-    return {width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: document.documentElement.scrollWidth > innerWidth, outsideViewport, clippedText, contrast, unlabeled, smallTargets};
+    return {width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: document.documentElement.scrollWidth > innerWidth, outsideViewport, clippedText, contrast, unlabeled, smallTargets, clippedTabStops};
   });
 }
 

@@ -84,3 +84,24 @@ test('text spacing installs and measures correctly with page scripts disabled', 
     assert.deepEqual(actual, {line: '30px', letter: '2.4px', word: '3.2px', paragraph: '40px'});
   } finally {await browser.close();}
 });
+
+test('visual audit excludes fully clipped semantic text but rejects clipped tab stops', async () => {
+  const browser = await engine.launch();
+  try {
+    const page = await browser.newPage();
+    await page.setContent('<style>.semantic{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.broken{height:10px;overflow:hidden}</style><div class="semantic"><span>Semantic header</span><button tabindex="-1">Hidden sort</button></div><p class="broken">Accidentally clipped paragraph</p>');
+    const healthy = await inspectPage(page);
+    assert(!healthy.clippedText.some(item => item.text.includes('Semantic header')));
+    assert(healthy.clippedText.some(item => item.text.includes('Accidentally clipped paragraph')));
+    assert.deepEqual(healthy.clippedTabStops, []);
+    await page.locator('button').evaluate(element => element.tabIndex = 0);
+    const defective = await inspectPage(page);
+    assert.equal(defective.clippedTabStops.length, 1);
+    assert(defective.clippedTabStops[0].includes('Hidden sort'));
+    await page.setContent('<style>input{opacity:0;width:44px;height:44px}input:focus-visible+label{outline:2px solid black}label{display:inline-block;padding:12px}</style><input type="checkbox" id="skin"><label for="skin">Visible checkbox label</label>');
+    await page.locator('input').focus(); await page.keyboard.press('Shift');
+    assert.equal(await page.locator('label').evaluate(element => getComputedStyle(element).outlineWidth), '2px');
+    assert.deepEqual((await inspectPage(page)).clippedTabStops, []);
+
+  } finally {await browser.close();}
+});

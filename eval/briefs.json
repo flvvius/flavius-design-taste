@@ -132,5 +132,12 @@
     "artifact": "cycles/04/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "25",
+    "task": "Document-library states reflow with complete view choices, native checkbox targets and empty rows that span the available width.",
+    "artifact": "cycles/04/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

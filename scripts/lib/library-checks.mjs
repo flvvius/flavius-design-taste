@@ -90,3 +90,103 @@ export async function assertLibraryActions(page) {
   await page.locator('#view').selectOption('active');
   assert.deepEqual((await ids(page)).sort((a, b) => a - b), [2, 3, 5, 6, 7, 8]);
 }
+
+const records = [
+  [1, 'Autumn release plan', 'Document · 8 pages', 'Mara Ionescu', '9 Oct 2026', 'Ready'],
+  [2, 'Customer interview notes', 'Document · 12 pages', 'Alex Chen', '8 Oct 2026', 'In review'],
+  [3, 'Search experience specification', 'Document · 6 pages', 'Flavius Cojocaru', '7 Oct 2026', 'Draft'],
+  [4, 'Content migration checklist', 'Document · 3 pages', 'Mara Ionescu', '6 Oct 2026', 'Ready'],
+  [5, 'Accessibility review', 'Document · 5 pages', 'Sam Rivera', '5 Oct 2026', 'In review'],
+  [6, 'Editorial workflow decisions', 'Document · 4 pages', 'Alex Chen', '3 Oct 2026', 'Ready'],
+  [7, 'Research synthesis and open questions', 'Document · 9 pages', 'Sam Rivera', '2 Oct 2026', 'Draft'],
+  [8, 'September retrospective', 'Document · 2 pages', 'Flavius Cojocaru', '30 Sept 2026', 'Ready']
+];
+export const libraryStates = ['active', 'selected', 'archived', 'archived-selected', 'empty', 'all-archived', 'restored'];
+export async function setupLibraryState(page, state) {
+  assert(libraryStates.includes(state));
+  if (['selected', 'archived', 'archived-selected', 'restored'].includes(state)) {
+    for (const id of [1, 4]) await page.locator(`[data-id="${id}"] input`).check();
+  }
+  if (['archived', 'archived-selected', 'restored'].includes(state)) {
+    await page.locator('#bulk').click(); await page.locator('#view').selectOption('archived');
+  }
+  if (['archived-selected', 'restored'].includes(state)) {
+    for (const id of [1, 4]) await page.locator(`[data-id="${id}"] input`).check();
+  }
+  if (state === 'restored') {await page.locator('#bulk').click(); await page.locator('#view').selectOption('active');}
+  if (state === 'empty') await page.locator('#view').selectOption('archived');
+  if (state === 'all-archived') {for (const id of records.map(row => row[0])) await page.locator(`[data-id="${id}"] input`).check(); await page.locator('#bulk').click();}
+}
+
+export async function assertLibraryState(page, state) {
+  const archived = ['archived', 'archived-selected', 'empty'].includes(state);
+  const expectedRecords = ['empty', 'all-archived'].includes(state) ? [] : archived ? records.filter(row => [1, 4].includes(row[0])) : records;
+  const selectedIds = ['selected', 'archived-selected'].includes(state) ? [1, 4] : [];
+  assert.deepEqual(await ids(page), expectedRecords.map(row => row[0]));
+  assert.deepEqual(await selection(page), selectedIds);
+  for (const [id, title, format, owner, date, status] of expectedRecords) {
+    const row = page.locator(`[data-id="${id}"]`);
+    assert.equal(await row.locator('.title').textContent(), title);
+    assert.equal(await row.locator('.format').textContent(), format);
+    const values = await row.locator('[data-label]').allTextContents();
+    values[1] = values[1].replace(/\bSept\b/, 'Sep');
+    assert.deepEqual(values, [owner, date.replace(/\bSept\b/, 'Sep'), status]);
+    assert.deepEqual(await row.locator('[data-label]').evaluateAll(cells => cells.map(cell => cell.dataset.label)), ['Owner', 'Updated', 'Status']);
+    assert.equal(await row.locator('input').isChecked(), selectedIds.includes(id));
+    const target = await row.locator('input').evaluate(element => {
+      const rect = element.getBoundingClientRect(), paint = getComputedStyle(element, '::before'), mark = getComputedStyle(element, '::after');
+      return {width: rect.width, height: rect.height, paintWidth: parseFloat(paint.width), border: parseFloat(paint.borderTopWidth), mark: mark.content};
+    });
+    assert(target.width >= 44 && target.height >= 44 && target.paintWidth >= 18 && target.border >= 1, `Checkbox target: ${JSON.stringify(target)}`);
+    if (selectedIds.includes(id)) assert(target.mark.includes('✓'));
+  }
+  assert.deepEqual(await page.locator('#view option').allTextContents(), ['Active', 'Archived']);
+  assert.equal(await page.locator('label[for="view"]').textContent(), 'Show documents');
+  assert.equal(await page.locator('#view').inputValue(), archived ? 'archived' : 'active');
+  assert.equal(await page.locator('#count').textContent(), `${expectedRecords.length} ${archived ? 'archived' : 'active'} documents`);
+  assert.equal(await page.locator('#selected').textContent(), `${selectedIds.length} selected`);
+  assert.equal(await page.locator('#bulk').textContent(), archived ? 'Restore selected' : 'Archive selected');
+  assert.equal(await page.locator('#bulk').isDisabled(), !selectedIds.length);
+  for (const selector of ['#all', '#all-mobile']) {
+    const control = page.locator(selector);
+    assert.equal(await control.isDisabled(), !expectedRecords.length);
+    assert.equal(await control.isChecked(), !!selectedIds.length && selectedIds.length === expectedRecords.length);
+    assert.equal(await control.evaluate(element => element.indeterminate), !!selectedIds.length && selectedIds.length < expectedRecords.length);
+  }
+  assert.equal(await page.locator('#undo').isVisible(), ['archived', 'archived-selected', 'all-archived', 'restored'].includes(state));
+  assert.equal(await page.locator('#message').textContent(), state === 'all-archived' ? '8 documents archived.' : state === 'restored' ? '2 documents restored.' : ['archived', 'archived-selected'].includes(state) ? '2 documents archived.' : '');
+  assert.equal(await page.locator('[data-sort="date"]').locator('..').getAttribute('aria-sort'), 'descending');
+  assert.equal(await page.locator('table').getAttribute('aria-label'), 'Documents');
+  if (!expectedRecords.length) {
+    assert.equal(await page.locator('#rows').textContent(), archived ? 'No archived documents.' : 'No active documents. Restore documents from the archive.');
+    const geometry = await page.locator('td.empty').evaluate(element => ({cell: element.getBoundingClientRect().width, rows: element.closest('tbody').getBoundingClientRect().width}));
+    assert(geometry.cell >= geometry.rows - 1, `Empty state must span the row: ${JSON.stringify(geometry)}`);
+  }
+  return {state, ids: expectedRecords.map(row => row[0]), selected: selectedIds, view: archived ? 'archived' : 'active'};
+}
+
+export async function assertLibraryPointerTargets(page, {touch = false} = {}) {
+  const activate = (x, y) => touch ? page.touchscreen.tap(x, y) : page.mouse.click(x, y);
+  const observations = [];
+  for (const id of records.map(row => row[0])) {
+    const control = page.locator(`[data-id="${id}"] input`);
+    await control.scrollIntoViewIfNeeded();
+    const rect = await control.boundingBox(); assert(rect && rect.width >= 44 && rect.height >= 44);
+    const point = {x: rect.x + 3, y: rect.y + 3};
+    const hit = await page.evaluate(({x, y}) => document.elementFromPoint(x, y)?.tagName, point);
+    assert.equal(hit, 'INPUT');
+    await activate(point.x, point.y);
+    assert(await control.isChecked(), `Pointer padding must select document ${id}`);
+    assert.deepEqual(await selection(page), [id]);
+    await activate(point.x, point.y); assert(!(await control.isChecked()));
+    assert.deepEqual(await selection(page), []);
+    observations.push({id, width: rect.width, height: rect.height, paddingHit: hit, pointer: touch ? 'touch' : 'mouse'});
+  }
+  const order = await ids(page);
+  await page.locator(`[data-id="${order[0]}"] input`).focus(); await page.keyboard.press('ArrowDown');
+  assert(await page.locator(`[data-id="${order[1]}"] input`).evaluate(element => element === document.activeElement));
+  await page.keyboard.press('Space'); assert.deepEqual(await selection(page), [order[1]]);
+  await page.keyboard.press('ArrowUp'); assert(await page.locator(`[data-id="${order[0]}"] input`).evaluate(element => element === document.activeElement));
+  await page.locator(`[data-id="${order[1]}"] input`).uncheck();
+  return observations;
+}

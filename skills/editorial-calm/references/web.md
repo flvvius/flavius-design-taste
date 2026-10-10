@@ -6,7 +6,11 @@ Use a system sans stack, optionally headed by locally bundled Inter. The optiona
 
 Default content width is 896px with 16px gutters. Separate sections with 32–40px above a top hairline and 24px below it. Rows share a stable title, description, metadata and trailing-action anatomy. Responsive rows wrap instead of hiding useful content.
 
-Controls use 8px radius; media 10px; overlays 14px. A flat section does not inherit these radii. Input boundaries must remain visible. Use a visible focus outline, associated labels, native button/link semantics and keyboard-operable dialogs. Provide labels for icon-only actions. When a breakpoint replaces a focused control, transfer focus to its visible equivalent and preserve the current value or selection. Removing a hidden control from the tab sequence does not move existing focus. Test both resizing directions and leave focus elsewhere on the page alone.
+Controls use 8px radius; media 10px; overlays 14px. A flat section does not inherit these radii. Input boundaries must remain visible. Use a visible focus outline, associated labels, native button/link semantics and keyboard-operable dialogs. Provide labels for icon-only actions.
+
+A compact checkbox can keep a small painted mark inside a larger native input. Make the activation area meet the platform target size, retain visible keyboard focus and test clicks or taps outside the painted square.
+
+When a breakpoint replaces a focused control, transfer focus to its visible equivalent and preserve the current value or selection. Removing a hidden control from the tab sequence does not move existing focus. Test both resizing directions and leave focus elsewhere on the page alone.
 
 Theme switching replaces semantic tokens at the root. Honour system preference unless the user selected a theme. Use `prefers-reduced-motion` to suppress transforms and nonessential animation. Do not animate navigation that users perform dozens of times a day.
 
@@ -39,6 +43,8 @@ Press transforms can use `--motion-pressScale`; durations use `--motion-press`, 
 ## Long words and enlarged text
 
 A responsive container does not guarantee its text can fit. Give headings and prose a long-word fallback such as language-aware hyphenation with `overflow-wrap:anywhere` when necessary. Test the longest word at enlarged sizes. Preserve the requested text size and the full content; hiding overflow or clipping the heading is not a correction. Complete monetary values follow the intact-amount pattern instead of arbitrary character wrapping.
+
+Check the selected value of a choice control as well as its open menu. Concise options can use context from their visible label; preserve the full meaning. Keeping the box within the viewport can still truncate its value. Use a control that supports wrapping when the necessary wording cannot fit.
 
 ## Forced colours
 

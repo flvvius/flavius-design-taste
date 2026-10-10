@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 2,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 3,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 4,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 5,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 6,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 7,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  },
+  {
+    "id": 8,
+    "width": 44,
+    "height": 44,
+    "paddingHit": "INPUT",
+    "pointer": "mouse"
+  }
+]
