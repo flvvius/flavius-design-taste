@@ -92,15 +92,51 @@ export async function assertLibraryActions(page) {
 }
 
 const records = [
-  [1, 'Autumn release plan', 'Document · 8 pages', 'Mara Ionescu', '9 Oct 2026', 'Ready'],
-  [2, 'Customer interview notes', 'Document · 12 pages', 'Alex Chen', '8 Oct 2026', 'In review'],
-  [3, 'Search experience specification', 'Document · 6 pages', 'Flavius Cojocaru', '7 Oct 2026', 'Draft'],
-  [4, 'Content migration checklist', 'Document · 3 pages', 'Mara Ionescu', '6 Oct 2026', 'Ready'],
-  [5, 'Accessibility review', 'Document · 5 pages', 'Sam Rivera', '5 Oct 2026', 'In review'],
-  [6, 'Editorial workflow decisions', 'Document · 4 pages', 'Alex Chen', '3 Oct 2026', 'Ready'],
-  [7, 'Research synthesis and open questions', 'Document · 9 pages', 'Sam Rivera', '2 Oct 2026', 'Draft'],
-  [8, 'September retrospective', 'Document · 2 pages', 'Flavius Cojocaru', '30 Sept 2026', 'Ready']
+  [1, 'Autumn release plan', 'Document · 8 pages', 'Mara Ionescu', '9 Oct 2026', 'Ready', '2026-10-09'],
+  [2, 'Customer interview notes', 'Document · 12 pages', 'Alex Chen', '8 Oct 2026', 'In review', '2026-10-08'],
+  [3, 'Search experience specification', 'Document · 6 pages', 'Flavius Cojocaru', '7 Oct 2026', 'Draft', '2026-10-07'],
+  [4, 'Content migration checklist', 'Document · 3 pages', 'Mara Ionescu', '6 Oct 2026', 'Ready', '2026-10-06'],
+  [5, 'Accessibility review', 'Document · 5 pages', 'Sam Rivera', '5 Oct 2026', 'In review', '2026-10-05'],
+  [6, 'Editorial workflow decisions', 'Document · 4 pages', 'Alex Chen', '3 Oct 2026', 'Ready', '2026-10-03'],
+  [7, 'Research synthesis and open questions', 'Document · 9 pages', 'Sam Rivera', '2 Oct 2026', 'Draft', '2026-10-02'],
+  [8, 'September retrospective', 'Document · 2 pages', 'Flavius Cojocaru', '30 Sept 2026', 'Ready', '2026-09-30']
 ];
+async function assertLibraryRecords(page, expectedRecords) {
+  assert.deepEqual(await ids(page), expectedRecords.map(row => row[0]));
+  for (const [id, title, format, owner, date, status, isoDate] of expectedRecords) {
+    const row = page.locator(`[data-id="${id}"]`);
+    assert.equal(await row.locator('.title').textContent(), title);
+    assert.equal(await row.locator('.format').textContent(), format);
+    const values = await row.locator('[data-label]').allTextContents();
+    values[1] = values[1].replace(/\bSept\b/, 'Sep');
+    assert.deepEqual(values, [owner, date.replace(/\bSept\b/, 'Sep'), status]);
+    assert.deepEqual(await row.locator('[data-label]').evaluateAll(cells => cells.map(cell => cell.dataset.label)), ['Owner', 'Updated', 'Status']);
+    assert.equal(await row.locator('time').getAttribute('datetime'), isoDate);
+    assert(await row.locator('.title').isVisible());
+  }
+}
+
+export async function assertLibraryReading(page) {
+  await assertLibraryRecords(page, records);
+  const headings = await page.locator('thead button').evaluateAll(buttons => buttons.map(button => {
+    let opacity = 1; for (let element = button; element; element = element.parentElement) opacity *= Number(getComputedStyle(element).opacity);
+    return {label: button.textContent.trim(), opacity};
+  }));
+  assert(headings.every(heading => heading.opacity === 1), `Reading column labels must retain full opacity: ${JSON.stringify(headings)}`);
+  assert.equal(await page.locator('#count').textContent(), '8 active documents');
+  assert.equal(await page.locator('#view').inputValue(), 'active');
+  const available = await page.locator('button,select,input').evaluateAll(controls => controls.filter(control => !control.disabled).map(control => control.id || control.dataset.sort || control.getAttribute('aria-label')));
+  assert.deepEqual(available, [], 'Unavailable controls must remain disabled');
+  assert.equal(await page.locator('#rows input:checked').count(), 0);
+  assert.equal(await page.locator('#rows tr.selected').count(), 0);
+  assert.equal(await page.locator('#help').textContent(), 'Reading view. Sorting, selection and archive actions are unavailable.');
+  assert.equal(await page.locator('[data-sort="date"]').locator('..').getAttribute('aria-sort'), 'descending');
+  assert.equal(await page.locator('table').getAttribute('aria-label'), 'Documents');
+  await page.keyboard.press('Tab');
+  assert(await page.locator('body').evaluate(element => document.activeElement === element), 'Disabled controls must not enter the tab sequence');
+  return {ids: records.map(row => row[0]), count: '8 active documents', unavailableControls: true, readingOnly: true};
+}
+
 export const libraryStates = ['active', 'selected', 'archived', 'archived-selected', 'empty', 'all-archived', 'restored'];
 export async function setupLibraryState(page, state) {
   assert(libraryStates.includes(state));
@@ -124,14 +160,9 @@ export async function assertLibraryState(page, state) {
   const selectedIds = ['selected', 'archived-selected'].includes(state) ? [1, 4] : [];
   assert.deepEqual(await ids(page), expectedRecords.map(row => row[0]));
   assert.deepEqual(await selection(page), selectedIds);
-  for (const [id, title, format, owner, date, status] of expectedRecords) {
+  await assertLibraryRecords(page, expectedRecords);
+  for (const [id] of expectedRecords) {
     const row = page.locator(`[data-id="${id}"]`);
-    assert.equal(await row.locator('.title').textContent(), title);
-    assert.equal(await row.locator('.format').textContent(), format);
-    const values = await row.locator('[data-label]').allTextContents();
-    values[1] = values[1].replace(/\bSept\b/, 'Sep');
-    assert.deepEqual(values, [owner, date.replace(/\bSept\b/, 'Sep'), status]);
-    assert.deepEqual(await row.locator('[data-label]').evaluateAll(cells => cells.map(cell => cell.dataset.label)), ['Owner', 'Updated', 'Status']);
     assert.equal(await row.locator('input').isChecked(), selectedIds.includes(id));
     const target = await row.locator('input').evaluate(element => {
       const rect = element.getBoundingClientRect(), paint = getComputedStyle(element, '::before'), mark = getComputedStyle(element, '::after');

@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
 import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchState, assertSearchTransitions, articleTitles} from './lib/search-checks.mjs';
-import {assertLibraryFocus, assertLibraryActions, libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets} from './lib/library-checks.mjs';
+import {assertLibraryFocus, assertLibraryActions, libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets, assertLibraryReading} from './lib/library-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
@@ -391,6 +391,38 @@ try {
         assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
       } finally {await fallback.close();}
     });
+    const readingVariants = [
+      {width: 320, setting: 'normal'}, {width: 1440, setting: 'normal'},
+      {width: 320, setting: 'all-text-200'}, {width: 320, setting: 'spacing'},
+      {width: 320, setting: 'missing-font-all-text-200'}
+    ];
+    const initializationFaults = {
+      media: {script: "window.matchMedia=()=>{throw new Error('Injected media initialization failure')};", error: 'Injected media initialization failure'},
+      date: {script: "const Format=Intl.DateTimeFormat;let calls=0;Intl.DateTimeFormat=function(...args){if(++calls===2)throw new Error('Injected date formatter failure');return new Format(...args)};", error: 'Injected date formatter failure'}
+    };
+    for (const mode of ['disabled', 'media', 'date']) for (const variant of readingVariants) {
+      const name = `document-library-reading-${mode}-${variant.width}-${variant.setting}`;
+      await check(name, async () => {
+        const fallback = await browser.newPage({javaScriptEnabled: mode !== 'disabled', colorScheme: 'light', viewport: {width: variant.width, height: 960}});
+        const errors = []; fallback.on('pageerror', error => errors.push(error.message));
+        try {
+          if (initializationFaults[mode]) await fallback.addInitScript(initializationFaults[mode].script);
+          const missingFont = variant.setting.startsWith('missing-font');
+          if (missingFont) await fallback.route('**/*.woff2', route => route.abort());
+          await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+          if (missingFont) assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
+          if (variant.setting.endsWith('all-text-200')) await enlargeText(fallback);
+          if (variant.setting === 'spacing') await applyTextSpacing(fallback);
+          const audit = await inspectPage(fallback);
+          const report = {name, height: 960, ...audit, javaScriptEnabled: mode !== 'disabled', pageErrors: errors, expectedInitializationFailure: initializationFaults[mode]?.error ?? null, expectedFontFailure: missingFont};
+          reports.push(report);
+          await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+          assert.deepEqual(errors, initializationFaults[mode] ? [initializationFaults[mode].error] : []);
+          report.reading = await assertLibraryReading(fallback);
+          assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
+        } finally {await fallback.close();}
+      });
+    }
     await check('document library coarse-pointer padding and row navigation', async () => {
       const touch = await browser.newPage({viewport: {width: 320, height: 960}, hasTouch: true});
       try {

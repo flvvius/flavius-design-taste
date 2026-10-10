@@ -139,5 +139,12 @@
     "artifact": "cycles/04/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "26",
+    "task": "Document-library reading survives disabled scripts and interrupted initialization, while enhanced controls use the initial HTML records.",
+    "artifact": "cycles/04/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

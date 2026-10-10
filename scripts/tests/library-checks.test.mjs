@@ -90,3 +90,49 @@ test('library states reflow and native pointer padding activates each document',
     await assert.rejects(assertLibraryPointerTargets(page), error => error instanceof assert.AssertionError && error.expected === 'INPUT' && error.actual === 'TD');
   } finally {await browser.close(); await server.close();}
 });
+
+test('library retains reading without scripts or after initialization failure', async () => {
+  const {assertLibraryReading} = await import('../lib/library-checks.mjs');
+  const {inspectPage, waitForFonts, enlargeText} = await import('../lib/browser-checks.mjs');
+  const server = await serve(root), browser = await engine.launch();
+  const source = await readFile(new URL('../../eval/cycles/04/index.html', import.meta.url), 'utf8');
+  const faults = {
+    media: "window.matchMedia=()=>{throw new Error('Injected media initialization failure')};",
+    date: "const Format=Intl.DateTimeFormat;let calls=0;Intl.DateTimeFormat=function(...args){if(++calls===2)throw new Error('Injected date formatter failure');return new Format(...args)};"
+  };
+  try {
+    for (const mode of ['disabled', 'media', 'date']) {
+      const page = await browser.newPage({javaScriptEnabled: mode !== 'disabled', viewport: {width: 320, height: 960}});
+      const errors = []; page.on('pageerror', error => errors.push(error.message));
+      if (faults[mode]) await page.addInitScript(faults[mode]);
+      await page.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(page); await enlargeText(page);
+      await assertLibraryReading(page);
+      assert.deepEqual(errors, mode === 'disabled' ? [] : [mode === 'media' ? 'Injected media initialization failure' : 'Injected date formatter failure']);
+      const audit = await inspectPage(page); assert.equal(audit.overflow, false); assert.deepEqual(audit.clippedTabStops, []); assert.deepEqual(audit.clippedText, []);
+      if (mode === 'disabled') {
+        await page.evaluate(() => {const style = document.createElement('style'); style.id = 'dimmed-reading-labels'; style.textContent = 'th button:disabled{opacity:.5}'; document.head.append(style);});
+        await assert.rejects(assertLibraryReading(page), error => error instanceof assert.AssertionError && /Reading column labels must retain full opacity/.test(error.message));
+        await page.evaluate(() => document.getElementById('dimmed-reading-labels').remove());
+        await page.locator('#view').evaluate(control => control.disabled = false);
+        await assert.rejects(assertLibraryReading(page), error => error instanceof assert.AssertionError && /Unavailable controls/.test(error.message));
+      }
+      await page.close();
+    }
+    const discarded = await browser.newPage({viewport: {width: 320, height: 960}});
+    const build = 'const list=visible(),fragment=document.createDocumentFragment();';
+    assert.equal(source.split(build).length - 1, 1);
+    await discarded.route('**/eval/cycles/04/index.html', route => route.fulfill({contentType: 'text/html', body: source.replace(build, "$('rows').replaceChildren();" + build)}));
+    await discarded.addInitScript(faults.date);
+    await discarded.goto(server.url + '/eval/cycles/04/index.html');
+    await assert.rejects(assertLibraryReading(discarded), error => error instanceof assert.AssertionError && error.actual?.length === 0 && error.expected?.length === 8);
+    await discarded.close();
+    const derived = await browser.newPage({viewport: {width: 1440, height: 960}});
+    const modified = source.replace('data-label="Owner">Mara Ionescu', 'data-label="Owner">Casey Taylor').replace('datetime="2026-10-09"', 'datetime="2026-10-01"');
+    assert.notEqual(modified, source);
+    await derived.route('**/eval/cycles/04/index.html', route => route.fulfill({contentType: 'text/html', body: modified}));
+    await derived.goto(server.url + '/eval/cycles/04/index.html');
+    assert.equal(await derived.locator('[data-id="1"] [data-label="Owner"]').textContent(), 'Casey Taylor');
+    assert.equal(await derived.locator('[data-id="1"] time').textContent(), '1 Oct 2026');
+    assert.deepEqual(await derived.locator('#rows tr[data-id]').evaluateAll(rows => rows.map(row => Number(row.dataset.id))), [2, 3, 4, 5, 6, 7, 1, 8]);
+  } finally {await browser.close(); await server.close();}
+});

@@ -46,6 +46,10 @@ A responsive container does not guarantee its text can fit. Give headings and pr
 
 Check the selected value of a choice control as well as its open menu. Concise options can use context from their visible label; preserve the full meaning. Keeping the box within the viewport can still truncate its value. Use a control that supports wrapping when the necessary wording cannot fit.
 
+## Reading before enhancement
+
+Render known reading content in the initial HTML when the task allows it. Keep controls that depend on initialization unavailable until their handlers are ready. Build replacements before removing the existing content, so an interrupted render preserves the reading view. Test with scripting disabled and with an initialization error; an empty shell and enabled controls that do nothing are failures. Keep this decision proportional to the application's core task.
+
 ## Forced colours
 
 Keep system colour substitution enabled. Test keyboard focus, form boundaries and selected states with forced colours active. A selected state needs a text or shape marker as well as its regular colour. Use a border or outline for essential boundaries; shadows may disappear. Apply system colours inside a `forced-colors` query when the browser's default substitution needs help, rather than freezing the whole interface with `forced-color-adjust: none`.
