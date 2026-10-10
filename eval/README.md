@@ -35,7 +35,6 @@ Install development dependencies with `npm ci`, install Chromium with `npx playw
 | [21](cycles/21/outcome.md) | Chart series | Both periods retain solid and striped marks under forced colours; exact values and bar geometry join the maintained checks. Self-review. |
 | [22](cycles/22/outcome.md) | Readable chart values | Labelled pairs replace cramped narrow columns; the default week remains readable without scripts or the bundled font. Self-review. |
 | [23](cycles/23/outcome.md) | Search states and reading | The bundled library remains readable without scripts; five states and asynchronous transitions join the maintained checks. Self-review. |
-
 | [24](cycles/24/outcome.md) | Responsive library controls | Focus transfers in both directions; sorting, selection and archive history join the maintained interaction checks. Self-review. |
 
 Four builder agents and two independent reviewer agents contributed to cycles 01 through 10. Fresh builders read the revised skill as the loop progressed. Passing reviews remain passing; confirmed findings have retained resolution evidence.
