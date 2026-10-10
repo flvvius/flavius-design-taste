@@ -1,0 +1,29 @@
+{
+  "commit": "bc78760f1a7e3dc9e99ca06323166c787ecd6a3a",
+  "ci": {
+    "url": "https://github.com/flvvius/flavius-design-taste/actions/runs/38039708802",
+    "environment": "GitHub Actions Linux",
+    "conclusion": "success",
+    "jobs": [
+      "package",
+      "browser (chromium)",
+      "browser (firefox)",
+      "browser (webkit)"
+    ],
+    "reports": [
+      "chromium.json",
+      "firefox.json",
+      "webkit.json"
+    ]
+  },
+  "local": {
+    "environment": "macOS",
+    "scope": "document-library only",
+    "reports": [
+      "local-chromium.json",
+      "local-firefox.json",
+      "local-webkit.json"
+    ]
+  },
+  "captures": "Engine-prefixed enhanced captures and target records come from the successful Linux CI artifacts. no-script-review is the separate macOS script-disabled baseline."
+}

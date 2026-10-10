@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-10T09:03:12.260Z",
-  "engine": "chromium",
-  "browser": "149.0.7827.55",
+  "generatedAt": "2026-10-10T09:03:14.040Z",
+  "engine": "webkit",
+  "browser": "26.5",
   "javaScriptEnabled": false,
   "sourceMode": "captured bytes served throughout the run",
   "sources": {

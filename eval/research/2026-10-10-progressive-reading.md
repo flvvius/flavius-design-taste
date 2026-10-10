@@ -1,0 +1,9 @@
+# Progressive reading before controls
+
+Reviewed on 10 October 2026 for the document-library specimen.
+
+[GOV.UK’s progressive enhancement guidance](https://www.gov.uk/service-manual/technology/using-progressive-enhancement) starts with semantic HTML content and adds behavior afterward. It explains that a script error can interrupt initialization, and recommends keeping core content usable when that happens. Its government-service mandate belongs to that context. This small bundled library can preserve reading without adding a backend or pretending local archive actions work without JavaScript.
+
+The [GOV.UK accessibility strategy](https://design-system.service.gov.uk/accessibility/accessibility-strategy/) includes JavaScript-independent experiences in its design principles. The pinned accordion provides a concrete implementation at `dacc29dd045c8c3e2d7245616215da6515b8b5ab`: [template.njk](https://github.com/alphagov/govuk-frontend/blob/dacc29dd045c8c3e2d7245616215da6515b8b5ab/packages/govuk-frontend/src/govuk/components/accordion/template.njk) renders heading spans and content first; [accordion.mjs](https://github.com/alphagov/govuk-frontend/blob/dacc29dd045c8c3e2d7245616215da6515b8b5ab/packages/govuk-frontend/src/govuk/components/accordion/accordion.mjs) creates the interactive buttons. Both files were read directly. This is another review of the repository already studied in cycle 25, not a new repository count.
+
+Apply the underlying decision to the library: put the eight records and their count in initial HTML, derive enhanced data from those records, and keep unavailable controls disabled until initialization succeeds. Check reading with JavaScript disabled and with initialization interrupted. Preserve the existing selection, sorting, responsive focus and undo behavior after enhancement. A static reading view does not establish that archive operations persist across reloads.

@@ -1,0 +1,138 @@
+{
+  "state": "active",
+  "audit": {
+    "width": 320,
+    "scrollWidth": 322,
+    "overflow": true,
+    "outsideViewport": [
+      {
+        "text": "Dark mode",
+        "tag": "BUTTON",
+        "left": 210,
+        "right": 322
+      }
+    ],
+    "clippedText": [],
+    "contrast": [],
+    "unlabeled": [],
+    "smallTargets": [],
+    "clippedTabStops": []
+  },
+  "diagnostic": {
+    "fonts": {
+      "status": "loaded",
+      "faces": [
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        }
+      ]
+    },
+    "viewport": {
+      "inner": 320,
+      "client": 320
+    },
+    "boxes": [
+      {
+        "selector": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 151,
+          "top": 0,
+          "right": 320,
+          "bottom": 151,
+          "left": 0
+        },
+        "font": "32px / 52px Inter, system-ui, sans-serif",
+        "whiteSpace": "normal"
+      },
+      {
+        "selector": ".brand",
+        "rect": {
+          "x": 16,
+          "y": 23,
+          "width": 178,
+          "height": 104,
+          "top": 23,
+          "right": 194,
+          "bottom": 127,
+          "left": 16
+        },
+        "font": "600 32px / 52px Inter, system-ui, sans-serif",
+        "whiteSpace": "normal"
+      },
+      {
+        "selector": "#theme",
+        "rect": {
+          "x": 210,
+          "y": 16,
+          "width": 112,
+          "height": 118,
+          "top": 16,
+          "right": 322,
+          "bottom": 134,
+          "left": 210
+        },
+        "font": "32px / 52px Inter, system-ui, sans-serif",
+        "whiteSpace": "normal"
+      },
+      {
+        "selector": "h1",
+        "rect": {
+          "x": 16,
+          "y": 175,
+          "width": 288,
+          "height": 208,
+          "top": 175,
+          "right": 304,
+          "bottom": 383,
+          "left": 16
+        },
+        "font": "600 64px / 104px Inter, system-ui, sans-serif",
+        "whiteSpace": "normal"
+      },
+      {
+        "selector": "#view",
+        "rect": {
+          "x": 16,
+          "y": 739,
+          "width": 180,
+          "height": 55,
+          "top": 739,
+          "right": 196,
+          "bottom": 794,
+          "left": 16
+        },
+        "font": "32px Inter, system-ui, sans-serif",
+        "whiteSpace": "pre"
+      },
+      {
+        "selector": "#bulk",
+        "rect": {
+          "x": 16,
+          "y": 1124,
+          "width": 279,
+          "height": 66,
+          "top": 1124,
+          "right": 295,
+          "bottom": 1190,
+          "left": 16
+        },
+        "font": "32px / 52px Inter, system-ui, sans-serif",
+        "whiteSpace": "normal"
+      }
+    ]
+  },
+  "provenance": {
+    "commit": "8b71c57c7938fa0727b265677bde25f4f4233973",
+    "run": "https://github.com/flvvius/flavius-design-taste/actions/runs/38038521174",
+    "artifact": "browser-evidence-chromium",
+    "environment": "GitHub Actions Linux"
+  }
+}
