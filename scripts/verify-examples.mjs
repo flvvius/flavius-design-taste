@@ -27,7 +27,7 @@ const capabilities = {};
 const requestedSurfaces = argumentsList.flatMap((value, index) => value === '--surface' ? [argumentsList[index + 1]] : []);
 const allSurfaces = [
   {name: 'personal-room', path: 'examples/personal-room/index.html', themes: ['paper', 'night'], palette: '[data-palette]', setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click()},
-  {name: 'editorial-calm', path: 'examples/index.html', themes: ['light', 'dark'], setTheme: async (page, theme) => page.evaluate(theme => document.documentElement.classList.toggle('dark', theme === 'dark'), theme)},
+  {name: 'editorial-calm', path: 'examples/index.html', themes: ['light', 'dark'], setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}},
   {name: 'usage-chart', path: 'eval/cycles/07/index.html', themes: ['light', 'dark'], states: ['week', 'month'], setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: async (page, state) => {await page.locator('#period').selectOption(state); await page.locator('details summary').click();}},
   {name: 'article-search', path: 'eval/cycles/09/index.html', themes: ['light', 'dark'], states: ['untouched', 'loading', 'results', 'empty', 'error'], beforeLoad: installSearchClock, setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: setupSearchState},
   {name: 'document-library', path: 'eval/cycles/04/index.html', themes: ['light', 'dark'], states: libraryStates, setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}, setup: setupLibraryState},
@@ -63,6 +63,7 @@ try {
     assert(response?.ok(), `${surface.path} failed to load: ${response?.status()}`);
     await waitForFonts(page);
     await surface.setTheme(page, theme);
+    const palette = ['light', 'dark'].includes(theme) ? await assertPalette(page, editorialColors[theme], theme, {forcedColors: variant.mode === 'forced-colors'}) : null;
     if (surface.setup) await surface.setup(page, state);
     if (variant.mode.startsWith('all-text-200')) await enlargeText(page);
     if (variant.mode === 'spacing') await applyTextSpacing(page);
@@ -72,7 +73,7 @@ try {
     if (surface.name === 'article-search') await check(`${name} visible search state`, async () => {search = await assertSearchState(page, state);});
     if (surface.name === 'usage-chart') await check(`${name} values, scale and series`, async () => {chart = await assertUsageChart(page, state);});
     if (surface.name === 'document-library') await check(`${name} documents, selection and action state`, async () => {library = await assertLibraryState(page, state);});
-    reports.push({name, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {}), ...(search ? {search} : {}), ...(library ? {library} : {})});
+    reports.push({name, palette, height: variant.height ?? 960, ...audit, errors, requests, ...(chart ? {chart} : {}), ...(search ? {search} : {}), ...(library ? {library} : {})});
     const issues = audit.overflow || audit.outsideViewport.length || audit.clippedText.length || audit.contrast.length || audit.unlabeled.length || audit.smallTargets.length || audit.clippedTabStops.length || errors.length || requests.length;
     if (issues) failures.push({name, audit, errors, requests});
     await page.evaluate(() => scrollTo(0, 0));
@@ -195,7 +196,8 @@ try {
           await waitForFonts(fallback);
           assert(await fallback.locator('#period').isDisabled());
           assert(await fallback.locator('#theme').isDisabled());
-          assert.equal(await fallback.locator('#theme').inputValue(), 'light');
+          assert.equal(await fallback.locator('#theme').inputValue(), 'system');
+          assert.equal(await fallback.locator('html').getAttribute('data-theme'), 'auto');
           if (variant.mode.endsWith('missing-font')) {
             assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
             await enlargeText(fallback);

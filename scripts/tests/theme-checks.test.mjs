@@ -23,6 +23,8 @@ test('portable palettes follow automatic media and retain legacy manual modes', 
       await page.setContent(markup(attributes)); await assertPalette(page, tokens.colors[expected], expected); await page.close();
     }
     const page = await browser.newPage({javaScriptEnabled: false, colorScheme: 'light'});
+    await page.setContent(markup('data-theme="auto" class="dark"'));
+    await assert.rejects(assertPalette(page, tokens.colors.dark, 'dark'), error => error instanceof assert.AssertionError && error.actual?.background === tokens.colors.light.background);
     await page.setContent(markup('data-theme="auto"'));
     await page.emulateMedia({colorScheme: 'dark'}); await assertPalette(page, tokens.colors.dark, 'dark');
     await page.emulateMedia({colorScheme: 'light'}); await assertPalette(page, tokens.colors.light, 'light');

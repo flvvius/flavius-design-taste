@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 
-export async function assertPalette(page, roles, scheme) {
+export async function assertPalette(page, roles, scheme, {forcedColors = false} = {}) {
   const observation = await page.evaluate(roles => {
     const rootStyle = getComputedStyle(document.documentElement), bodyStyle = getComputedStyle(document.body);
     const probe = document.createElement('span');
@@ -19,9 +19,11 @@ export async function assertPalette(page, roles, scheme) {
   }, roles);
   assert(observation.supported, 'Palette colours must be supported before comparing their paint');
   assert.deepEqual(observation.roles, roles, 'Palette role values');
-  assert.equal(observation.colorScheme, scheme, 'Native color scheme');
-  assert.deepEqual(observation.painted, observation.expectedPaint, 'Painted palette');
-  return {scheme, roles: observation.roles, painted: observation.painted};
+  if (!forcedColors) {
+    assert.equal(observation.colorScheme, scheme, 'Native color scheme');
+    assert.deepEqual(observation.painted, observation.expectedPaint, 'Painted palette');
+  }
+  return {scheme, roles: observation.roles, painted: observation.painted, checks: {roles: true, pageColoursAndNativeScheme: !forcedColors}};
 }
 
 export async function assertButtonThemeTransitions(page, colors, labels = {light: 'Dark mode', dark: 'Light mode'}) {
