@@ -153,5 +153,12 @@
     "artifact": "cycles/04/index.html",
     "reviewMode": "self",
     "taste": "editorial-calm"
+  },
+  {
+    "cycle": "28",
+    "task": "Native Review works with unavailable scripts; invitation preview controls enable only after initialization and retain validation, recipient and cancellation behavior.",
+    "artifact": "../examples/index.html",
+    "reviewMode": "self",
+    "taste": "editorial-calm"
   }
 ]

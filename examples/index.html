@@ -8,9 +8,9 @@
 <header><span>Editorial calm</span><button id="theme" disabled>Theme</button></header>
 <h1>Room for the work.</h1><p class="muted">A shared workspace, with decisions and progress on the page. No tiles required.</p>
 <section aria-labelledby="progress"><h2 id="progress">This week</h2><div class="figures"><div><div class="number">12</div><small>Tasks completed</small></div><div><div class="number">3</div><small>Decisions waiting</small></div><div><div class="number">84%</div><small>Milestone progress</small></div></div></section>
-<section aria-labelledby="recent"><h2 id="recent">Recent work</h2><article class="row"><div><h3>Release notes</h3><p class="muted">Changes readers can understand at a glance.</p><small>Updated today · Ready for review</small></div><button id="review">Review</button></article><article class="row"><div><h3>Account settings</h3><p class="muted">Clear labels and fewer steps.</p><small>Updated yesterday · In progress</small></div></article></section>
+<section aria-labelledby="recent"><h2 id="recent">Recent work</h2><article class="row"><div><h3>Release notes</h3><p class="muted">Changes readers can understand at a glance.</p><small>Updated today · Ready for review</small></div><button id="review" type="button" commandfor="dialog" command="show-modal">Review</button></article><article class="row"><div><h3>Account settings</h3><p class="muted">Clear labels and fewer steps.</p><small>Updated yesterday · In progress</small></div></article></section>
 <section aria-labelledby="settings"><h2 id="settings">Preferences</h2><div class="row"><div><label for="digest">Weekly digest</label><small>A brief update every Friday.</small></div><select id="digest"><option>Enabled</option><option>Disabled</option></select></div></section>
-<section aria-labelledby="invite"><h2 id="invite">Invite a collaborator</h2><form id="form"><label for="email">Email address</label><input id="email" type="email" required autocomplete="email" placeholder="name@example.com"><div class="actions"><button class="primary" type="submit">Preview invitation</button><span id="feedback" role="status" class="muted"></span></div></form></section>
+<section aria-labelledby="invite"><h2 id="invite">Invite a collaborator</h2><form id="form"><label for="email">Email address</label><input id="email" type="email" disabled aria-describedby="feedback" required autocomplete="email" placeholder="name@example.com"><div class="actions"><button class="primary" type="submit" disabled aria-describedby="feedback">Preview invitation</button><span id="feedback" role="status" class="muted">Invitation preview is unavailable in this reading view.</span></div></form></section>
 <section aria-labelledby="saved"><h2 id="saved">Saved items</h2><p class="muted">You haven't saved anything yet.</p></section>
 </main><dialog id="dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Release notes</h2><p>The new account settings are ready for review.</p><form method="dialog"><button>Close</button></form></dialog>
 <dialog id="invitation-preview" aria-labelledby="preview-title">
@@ -22,7 +22,9 @@
 <form method="dialog"><button>Close preview</button></form>
 </dialog>
 <script>
-const theme=document.querySelector('#theme'),preference=matchMedia('(prefers-color-scheme: dark)');let dark=preference.matches,chosen=false;function render(){document.documentElement.classList.toggle('dark',dark);document.documentElement.dataset.theme=chosen?(dark?'dark':'light'):'auto';theme.textContent=dark?'Light theme':'Dark theme';theme.setAttribute('aria-pressed',String(dark))}render();preference.addEventListener('change',event=>{if(!chosen){dark=event.matches;render();}});theme.addEventListener('click',()=>{chosen=true;dark=!dark;render()});theme.disabled=false;document.querySelector('#review').addEventListener('click',()=>document.querySelector('#dialog').showModal());
+const theme=document.querySelector('#theme'),preference=matchMedia('(prefers-color-scheme: dark)');let dark=preference.matches,chosen=false;function render(){document.documentElement.classList.toggle('dark',dark);document.documentElement.dataset.theme=chosen?(dark?'dark':'light'):'auto';theme.textContent=dark?'Light theme':'Dark theme';theme.setAttribute('aria-pressed',String(dark))}render();preference.addEventListener('change',event=>{if(!chosen){dark=event.matches;render();}});theme.addEventListener('click',()=>{chosen=true;dark=!dark;render()});theme.disabled=false;
+const review=document.querySelector('#review'),reviewDialog=document.querySelector('#dialog');
+if(review.commandForElement!==reviewDialog || review.command!=='show-modal')review.addEventListener('click',()=>reviewDialog.showModal());
 const invitation=document.querySelector('#invitation-preview');
 const email=document.querySelector('#email');
 const feedback=document.querySelector('#feedback');
@@ -34,4 +36,7 @@ document.querySelector('#form').addEventListener('submit',event=>{
 });
 invitation.addEventListener('close',()=>{feedback.textContent='Preview closed. No invitation sent.'});
 email.addEventListener('input',()=>{feedback.textContent=''});
+feedback.textContent='';
+email.disabled=false;
+document.querySelector('#form button[type="submit"]').disabled=false;
 </script></body></html>

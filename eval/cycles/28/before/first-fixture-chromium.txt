@@ -1,0 +1,43 @@
+✖ native Review survives unavailable scripts while dynamic preview stays unavailable (535.923917ms)
+✖ Review JavaScript fallback and initialized invitation preserve native dismissal (166.837875ms)
+✔ reading checks reject enabled preview controls, missing explanation and inert Review (340.707875ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1242.613916
+
+✖ failing tests:
+
+test at scripts/tests/specimen-checks.test.mjs:16:1
+✖ native Review survives unavailable scripts while dynamic preview stays unavailable (535.923917ms)
+  AssertionError [ERR_ASSERTION]: Tab must remain inside Review
+      at assertReviewActions (file:///Users/flavizilla/Projects/flavius-design-taste/scripts/lib/specimen-checks.mjs:62:5)
+      at async TestContext.<anonymous> (file:///Users/flavizilla/Projects/flavius-design-taste/scripts/tests/specimen-checks.test.mjs:26:22)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/tests/specimen-checks.test.mjs:36:1
+✖ Review JavaScript fallback and initialized invitation preserve native dismissal (166.837875ms)
+  AssertionError [ERR_ASSERTION]: Tab must remain inside Review
+      at assertReviewActions (file:///Users/flavizilla/Projects/flavius-design-taste/scripts/lib/specimen-checks.mjs:62:5)
+      at async TestContext.<anonymous> (file:///Users/flavizilla/Projects/flavius-design-taste/scripts/tests/specimen-checks.test.mjs:44:20)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

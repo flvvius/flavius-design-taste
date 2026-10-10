@@ -8,6 +8,7 @@ import {installSearchClock, pauseSearchClock, setupSearchState, assertSearchStat
 import {assertLibraryFocus, assertLibraryActions, libraryStates, setupLibraryState, assertLibraryState, assertLibraryPointerTargets, assertLibraryReading} from './lib/library-checks.mjs';
 import {assertUsageChart} from './lib/usage-chart-checks.mjs';
 import {assertPalette, assertLibraryThemeTransitions, assertButtonThemeTransitions, assertSelectThemeTransitions} from './lib/theme-checks.mjs';
+import {assertSpecimenReading, assertReviewActions, installSpecimenFailure} from './lib/specimen-checks.mjs';
 import {captureSources} from './lib/source-snapshot.mjs';
 import {serve, enlargeText, applyTextSpacing, inspectPage, waitForFonts, forcedColorSupport, measureHoverTransforms} from './lib/browser-checks.mjs';
 
@@ -40,7 +41,7 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/theme-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'eval/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/theme-checks.mjs', 'scripts/lib/specimen-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'eval/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
 let server, snapshot, editorialColors;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
@@ -299,13 +300,67 @@ try {
   if (surfaces.some(surface => surface.name === 'editorial-calm')) {
   await check('editorial dialog recovers keyboard focus', async () => {
     await page.goto(`${server.url}/examples/index.html`);
-    await page.locator('#review').focus(); await page.keyboard.press('Enter');
-    assert(await page.locator('#dialog').evaluate(element => element.open));
-    assert(await page.locator('#dialog').evaluate(element => element.contains(document.activeElement)));
-    await page.keyboard.press('Escape');
-    assert(!(await page.locator('#dialog').evaluate(element => element.open)));
-    assert.equal(await page.locator(':focus').getAttribute('id'), 'review');
+    const review = await assertReviewActions(page);
+    await writeFile(resolve(output, 'editorial-calm-review-transitions.json'), JSON.stringify(review, null, 2) + '\n');
   });
+  await check('editorial Review JavaScript fallback without native command attributes', async () => {
+    const fallback = await browser.newPage(), errors = [], documents = [];
+    fallback.on('pageerror', error => errors.push(error.message));
+    fallback.on('request', request => {if (request.resourceType() === 'document') documents.push(request.url());});
+    const html = snapshot.files.get(resolve(root, 'examples/index.html')).toString(), commands = ' commandfor="dialog" command="show-modal"';
+    assert.equal(html.split(commands).length, 2);
+    try {
+      await fallback.route('**/examples/index.html', route => route.fulfill({contentType: 'text/html', body: html.replace(commands, '')}));
+      await fallback.goto(`${server.url}/examples/index.html`);
+      const review = await assertReviewActions(fallback);
+      assert.equal(review.capability.associatedTarget, null);
+      assert.deepEqual(errors, []); assert.equal(documents.length, 1);
+      await writeFile(resolve(output, 'editorial-calm-review-fallback.json'), JSON.stringify({mutation: 'Captured HTML with only native command attributes removed', ...review}, null, 2) + '\n');
+    } finally {await fallback.close();}
+  });
+  const readingVariants = [
+    {width: 320, setting: 'normal'}, {width: 1440, setting: 'normal'},
+    {width: 320, setting: 'all-text-200'}, {width: 320, setting: 'spacing'},
+    {width: 320, setting: 'missing-font-all-text-200'}
+  ];
+  for (const mode of ['disabled', 'media', 'preview']) for (const scheme of ['light', 'dark']) for (const variant of readingVariants) {
+    const name = `editorial-calm-reading-${mode}-${scheme}-${variant.width}-${variant.setting}`;
+    await check(`${name} availability and repeated native Review`, async () => {
+      const reading = await browser.newPage({javaScriptEnabled: mode !== 'disabled', colorScheme: scheme, reducedMotion: 'reduce', viewport: {width: variant.width, height: 960}}), errors = [], documents = [];
+      reading.on('pageerror', error => errors.push(error.message));
+      reading.on('request', request => {if (request.resourceType() === 'document') documents.push(request.url());});
+      try {
+        if (mode !== 'disabled') await installSpecimenFailure(reading, mode);
+        if (variant.setting.startsWith('missing-font')) await reading.route('**/*.woff2', route => route.abort());
+        await reading.goto(`${server.url}/examples/index.html`); await waitForFonts(reading);
+        if (variant.setting.includes('all-text-200')) await enlargeText(reading);
+        if (variant.setting === 'spacing') await applyTextSpacing(reading);
+        const audit = await inspectPage(reading), palette = await assertPalette(reading, editorialColors[scheme], scheme);
+        const report = {name, ...audit, palette, errors}; reports.push(report);
+        await reading.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+        report.reading = await assertSpecimenReading(reading);
+        report.review = await assertReviewActions(reading);
+        if (variant.setting.startsWith('missing-font')) assert(await reading.evaluate(() => [...document.fonts].some(face => face.family.replace(/["']/g, '') === 'Inter' && face.status === 'error')));
+        assert.deepEqual(errors, mode === 'disabled' ? [] : [`Injected specimen ${mode} failure`]);
+        assert.equal(documents.length, 1, 'Unavailable preview and Review must not reload the document');
+        const issues = value => value.overflow || value.outsideViewport.length || value.clippedText.length || value.contrast.length || value.unlabeled.length || value.smallTargets.length || value.clippedTabStops.length;
+        assert(!issues(audit), JSON.stringify(audit));
+        await reading.locator('#review').focus(); await reading.keyboard.press('Enter');
+        assert(await reading.locator('#dialog').evaluate(element => element.open));
+        const reviewAudit = await inspectPage(reading), reviewName = `${name}-review`;
+        reports.push({name: reviewName, ...reviewAudit, palette, errors});
+        await reading.screenshot({path: resolve(output, `${reviewName}.png`), animations: 'disabled'});
+        assert(!issues(reviewAudit), JSON.stringify(reviewAudit));
+        const close = await reading.locator('#dialog button').boundingBox();
+        assert(close && close.y >= 0 && close.y + close.height <= 960, JSON.stringify(close));
+        await reading.keyboard.press('Escape');
+        await reading.waitForFunction(() => !document.querySelector('#dialog').open);
+        assert(await reading.locator('#review').evaluate(element => element === document.activeElement));
+        assert.deepEqual(errors, mode === 'disabled' ? [] : [`Injected specimen ${mode} failure`]);
+        assert.equal(documents.length, 1);
+      } finally {await reading.close();}
+    });
+  }
   await check('editorial invitation validation, current recipient, repeat preview and focus recovery', async () => {
     await page.goto(`${server.url}/examples/index.html`);
     const email = page.locator('#email'), trigger = page.locator('#form button[type="submit"]'), preview = page.locator('#invitation-preview');

@@ -1,0 +1,8 @@
+{
+  "note": "Hashes recorded after the focused fixture failure, before correcting its native Tab expectation. These are intermediate cycle 28 inputs, not the initial cycle 27 baseline.",
+  "sources": {
+    "examples/index.html": "2d4de48e18d1a65397b02a7835c1f1c4d8af57447cbc4225653703fd305ab3f2",
+    "scripts/lib/specimen-checks.mjs": "a470ade17b7f5b750e3ab92e3f2979aa1b04576006b166c343e67d4e50748a00",
+    "scripts/tests/specimen-checks.test.mjs": "2289f49a20c8f856db267c72bcbef092940bda1a73b41d0fbc4dbe564a9b0061"
+  }
+}

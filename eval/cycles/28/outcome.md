@@ -1,0 +1,3 @@
+# Cycle 28: Actions before enhancement
+
+The main specimen's Review action now opens its existing dialog through a native command. Its JavaScript fallback remains available when command attributes are absent or unsupported. The dynamic invitation preview starts unavailable, with associated visible help, and enables its email field and button only after all handlers attach. Three-engine fixtures cover disabled scripting, early and late setup failures, repeated native dismissal and deliberate defects. Chromium's focused 98-layout run passes, and self-review of the narrow dark reading view and enlarged missing-font Review dialog is complete. Full browser verification and the evidence record are in progress.
