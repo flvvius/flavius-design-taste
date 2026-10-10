@@ -42,7 +42,7 @@ Press transforms can use `--motion-pressScale`; durations use `--motion-press`, 
 
 ## Long words and enlarged text
 
-A responsive container does not guarantee its text can fit. Give headings and prose a long-word fallback such as language-aware hyphenation with `overflow-wrap:anywhere` when necessary. Test the longest word at enlarged sizes. Preserve the requested text size and the full content; hiding overflow or clipping the heading is not a correction. Complete monetary values follow the intact-amount pattern instead of arbitrary character wrapping.
+A responsive container does not guarantee its text can fit. Give headings and prose a long-word fallback such as language-aware hyphenation with `overflow-wrap:anywhere` when necessary. Test the longest word at enlarged sizes. Test header actions with the fallback font too; allow groups to wrap when their minimum widths no longer fit. Preserve the requested text size and the full content; hiding overflow or clipping the heading is not a correction. Complete monetary values follow the intact-amount pattern instead of arbitrary character wrapping.
 
 Check the selected value of a choice control as well as its open menu. Concise options can use context from their visible label; preserve the full meaning. Keeping the box within the viewport can still truncate its value. Use a control that supports wrapping when the necessary wording cannot fit.
 

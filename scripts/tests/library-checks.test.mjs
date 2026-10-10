@@ -61,6 +61,22 @@ test('library states reflow and native pointer padding activates each document',
       await page.goto(server.url + '/eval/cycles/04/index.html');
       await assertLibraryPointerTargets(page, {touch}); await assertLibraryState(page, 'active'); await page.close();
     }
+    const header = await browser.newPage({viewport: {width: 320, height: 960}});
+    await header.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(header);
+    await header.addStyleTag({content: '.brand{min-width:178px}#theme{min-width:112px}'});
+    assert.equal((await inspectPage(header)).overflow, false);
+    await header.addStyleTag({content: 'header{flex-wrap:nowrap}'});
+    assert.equal((await inspectPage(header)).overflow, true);
+    await header.close();
+    const heading = await browser.newPage({viewport: {width: 320, height: 960}});
+    await heading.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(heading);
+    await heading.locator('h1').evaluate(element => element.textContent = 'Documentenbibliotheek'); await enlargeText(heading);
+    const wrapped = await inspectPage(heading);
+    assert.equal(wrapped.overflow, false); assert.deepEqual(wrapped.clippedText, []);
+    assert.equal(await heading.locator('h1').textContent(), 'Documentenbibliotheek');
+    await heading.addStyleTag({content: 'h1{overflow-wrap:normal}'});
+    assert.equal((await inspectPage(heading)).overflow, true);
+    await heading.close();
     const empty = await browser.newPage({viewport: {width: 320, height: 960}});
     await empty.goto(server.url + '/eval/cycles/04/index.html'); await setupLibraryState(empty, 'empty');
     await empty.addStyleTag({content: 'td.empty {grid-column:1}'});

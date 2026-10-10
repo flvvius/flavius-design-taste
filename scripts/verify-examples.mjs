@@ -387,8 +387,8 @@ try {
         await enlargeText(fallback); const library = await assertLibraryState(fallback, 'active');
         const audit = await inspectPage(fallback), name = `document-library-${theme}-missing-font-320-all-text-200`;
         reports.push({name, height: 960, ...audit, library, expectedFontFailure: true});
-        assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
         await fallback.screenshot({path: resolve(output, `${name}.png`), fullPage: true, animations: 'disabled'});
+        assert(!audit.overflow && !audit.outsideViewport.length && !audit.clippedText.length && !audit.contrast.length && !audit.unlabeled.length && !audit.smallTargets.length && !audit.clippedTabStops.length, JSON.stringify(audit));
       } finally {await fallback.close();}
     });
     await check('document library coarse-pointer padding and row navigation', async () => {
