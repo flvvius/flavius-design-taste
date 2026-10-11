@@ -1,0 +1,1459 @@
+{
+  "capturedAt": "2026-10-11T08:44:30.138Z",
+  "browser": "149.0.7827.55",
+  "reports": [
+    {
+      "project": "portofolio",
+      "route": "/",
+      "width": 375,
+      "theme": "light",
+      "file": "references/own-work/captures/portofolio-home-375-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "skip to the contentflaviusstudiothe barthe shelfthe record player",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what's where",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "28px",
+          "weight": "400",
+          "leading": "28px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "or find me at",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24.8px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H1",
+          "text": "i build software that matters ",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "48px",
+          "weight": "400",
+          "leading": "50.4px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "full-stack, mostly typescript, too invested in the details.buchar",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "Starless",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "27.72px",
+          "color": "rgb(217, 107, 43)"
+        },
+        {
+          "tag": "P",
+          "text": "King Crimson",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "side a · track 01",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgba(92, 79, 67, 0.8)"
+        },
+        {
+          "tag": "H2",
+          "text": "the shelf",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "40px",
+          "weight": "400",
+          "leading": "42px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "a few things i've made.",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "reads the news all day so you don't have to scroll it",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "miez is the core of a thing, what's left once you take the crust ",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "31.248px",
+          "color": "rgb(43, 33, 26)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(244, 239, 230)"
+      }
+    },
+    {
+      "project": "portofolio",
+      "route": "/",
+      "width": 1280,
+      "theme": "light",
+      "file": "references/own-work/captures/portofolio-home-1280-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "skip to the contentflaviusstudiothe barthe shelfthe record player",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what's where",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "28px",
+          "weight": "400",
+          "leading": "28px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "or find me at",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24.8px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H1",
+          "text": "i build software that matters ",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "102.4px",
+          "weight": "400",
+          "leading": "107.52px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "full-stack, mostly typescript, too invested in the details.buchar",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "Starless",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "27.72px",
+          "color": "rgb(217, 107, 43)"
+        },
+        {
+          "tag": "P",
+          "text": "King Crimson",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "side a · track 01",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgba(92, 79, 67, 0.8)"
+        },
+        {
+          "tag": "H2",
+          "text": "the shelf",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "76.8px",
+          "weight": "400",
+          "leading": "80.64px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "a few things i've made.",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "reads the news all day so you don't have to scroll it",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "miez is the core of a thing, what's left once you take the crust ",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "31.248px",
+          "color": "rgb(43, 33, 26)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(244, 239, 230)"
+      }
+    },
+    {
+      "project": "portofolio",
+      "route": "/blog",
+      "width": 375,
+      "theme": "light",
+      "file": "references/own-work/captures/portofolio-blog-375-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "skip to the content{\"@context\":\"https://schema.org\",\"@type\":\"Blog",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what's where",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "28px",
+          "weight": "400",
+          "leading": "28px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "or find me at",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24.8px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H1",
+          "text": "the notes",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "40px",
+          "weight": "400",
+          "leading": "42px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "written for me, left out where anyone can read them.",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "06 Dec 2025 · 2 min read · reflective",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "15.04px",
+          "weight": "400",
+          "leading": "23.312px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H2",
+          "text": "exploring something new",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "21.6px",
+          "weight": "400",
+          "leading": "27px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what if I start a blog that does nothing for my career? a journal",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.76px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "read it →",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "← back to the bar",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(244, 239, 230)"
+      }
+    },
+    {
+      "project": "portofolio",
+      "route": "/blog",
+      "width": 1280,
+      "theme": "light",
+      "file": "references/own-work/captures/portofolio-blog-1280-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "skip to the content{\"@context\":\"https://schema.org\",\"@type\":\"Blog",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what's where",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "28px",
+          "weight": "400",
+          "leading": "28px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "or find me at",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24.8px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H1",
+          "text": "the notes",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "76.8px",
+          "weight": "400",
+          "leading": "80.64px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "written for me, left out where anyone can read them.",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "06 Dec 2025 · 2 min read · reflective",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "15.04px",
+          "weight": "400",
+          "leading": "23.312px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "H2",
+          "text": "exploring something new",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "21.6px",
+          "weight": "400",
+          "leading": "27px",
+          "color": "rgb(43, 33, 26)"
+        },
+        {
+          "tag": "P",
+          "text": "what if I start a blog that does nothing for my career? a journal",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.76px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "read it →",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "20.16px",
+          "weight": "400",
+          "leading": "32.256px",
+          "color": "rgb(92, 79, 67)"
+        },
+        {
+          "tag": "P",
+          "text": "← back to the bar",
+          "font": "Schoolbell, \"Schoolbell Fallback\", \"Comic Sans MS\", cursive",
+          "size": "25px",
+          "weight": "400",
+          "leading": "38.75px",
+          "color": "rgb(43, 33, 26)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(244, 239, 230)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/",
+      "width": 375,
+      "theme": "light",
+      "file": "references/own-work/captures/pricele-home-375-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "H1",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "28.125px",
+          "weight": "400",
+          "leading": "25.875px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Today's lot",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, monospace",
+          "size": "11px",
+          "weight": "500",
+          "leading": "11px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "H2",
+          "text": "A day's healthy diet in Hungary 🇭🇺",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "19px",
+          "weight": "400",
+          "leading": "17.48px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "For scale, the median healthy diet across all countries is €2.24.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "leading": "19.5px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "5 guesses left · win within 5%",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, SFMono-Regular, monospace",
+          "size": "11px",
+          "weight": "400",
+          "leading": "16.5px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "H2",
+          "text": "How to play",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "30px",
+          "weight": "400",
+          "leading": "27.6px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess what today's item costs in the featured country. You get fi",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess in dollars or euros: the pair of buttons inside the guess b",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is higher than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is lower than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "The bar behind each guess fills with its temperature. It never te",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(107, 96, 85)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(242, 237, 225)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/",
+      "width": 375,
+      "theme": "dark",
+      "file": "references/own-work/captures/pricele-home-375-dark.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "H1",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "28.125px",
+          "weight": "400",
+          "leading": "25.875px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Today's lot",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, monospace",
+          "size": "11px",
+          "weight": "500",
+          "leading": "11px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "H2",
+          "text": "A day's healthy diet in Hungary 🇭🇺",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "19px",
+          "weight": "400",
+          "leading": "17.48px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "For scale, the median healthy diet across all countries is €2.24.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "leading": "19.5px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "5 guesses left · win within 5%",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, SFMono-Regular, monospace",
+          "size": "11px",
+          "weight": "400",
+          "leading": "16.5px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "H2",
+          "text": "How to play",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "30px",
+          "weight": "400",
+          "leading": "27.6px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess what today's item costs in the featured country. You get fi",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess in dollars or euros: the pair of buttons inside the guess b",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is higher than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is lower than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "The bar behind each guess fills with its temperature. It never te",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(156, 146, 132)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(18, 16, 13)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/",
+      "width": 1280,
+      "theme": "light",
+      "file": "references/own-work/captures/pricele-home-1280-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "H1",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "44px",
+          "weight": "400",
+          "leading": "40.48px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Today's lot",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, monospace",
+          "size": "11px",
+          "weight": "500",
+          "leading": "11px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "H2",
+          "text": "A day's healthy diet in Hungary 🇭🇺",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "26px",
+          "weight": "400",
+          "leading": "23.92px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "For scale, the median healthy diet across all countries is €2.24.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "leading": "19.5px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "5 guesses left · win within 5%",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, SFMono-Regular, monospace",
+          "size": "11px",
+          "weight": "400",
+          "leading": "16.5px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "H2",
+          "text": "How to play",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "30px",
+          "weight": "400",
+          "leading": "27.6px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess what today's item costs in the featured country. You get fi",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess in dollars or euros: the pair of buttons inside the guess b",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is higher than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is lower than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "P",
+          "text": "The bar behind each guess fills with its temperature. It never te",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(107, 96, 85)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(242, 237, 225)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/",
+      "width": 1280,
+      "theme": "dark",
+      "file": "references/own-work/captures/pricele-home-1280-dark.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "H1",
+          "text": "Pricele — guess the price of everyday things around the world. A ",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "44px",
+          "weight": "400",
+          "leading": "40.48px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Today's lot",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, monospace",
+          "size": "11px",
+          "weight": "500",
+          "leading": "11px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "H2",
+          "text": "A day's healthy diet in Hungary 🇭🇺",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "26px",
+          "weight": "400",
+          "leading": "23.92px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "For scale, the median healthy diet across all countries is €2.24.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "leading": "19.5px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "5 guesses left · win within 5%",
+          "font": "__IBM_Plex_Mono_aa62b7, __IBM_Plex_Mono_Fallback_aa62b7, ui-monospace, SFMono-Regular, monospace",
+          "size": "11px",
+          "weight": "400",
+          "leading": "16.5px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "H2",
+          "text": "How to play",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "30px",
+          "weight": "400",
+          "leading": "27.6px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess what today's item costs in the featured country. You get fi",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "Guess in dollars or euros: the pair of buttons inside the guess b",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is higher than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "The real price is lower than you guessed.",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "P",
+          "text": "The bar behind each guess fills with its temperature. It never te",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "22.75px",
+          "color": "rgb(156, 146, 132)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(18, 16, 13)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/methodology",
+      "width": 375,
+      "theme": "light",
+      "file": "references/own-work/captures/pricele-methodology-375-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "PricelePlayPricesItemsArchiveHigher or lowerWhere in the worldCla",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "H1",
+          "text": "Methodology",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "44px",
+          "weight": "400",
+          "leading": "40.48px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Pricele is a game, but the numbers in it are real, and this page ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "Short version: Big Mac prices are published by The Economist. Gro",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "Every price carries its source and its collection date on screen,",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "H2",
+          "text": "Sources, item by item",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "32px",
+          "weight": "400",
+          "leading": "29.44px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "45 countries · quoted per one burger",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "The Economist's Big Mac Index, January 2026 edition, which collec",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "33 countries · quoted per a 330ml can",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "A curated table of everyday retail prices assembled from publishe",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "32 countries · quoted per one regular cup, sit-down café",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "Numbeo's country price rankings for 'Cappuccino (regular)' in the",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(242, 237, 225)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/methodology",
+      "width": 375,
+      "theme": "dark",
+      "file": "references/own-work/captures/pricele-methodology-375-dark.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "PricelePlayPricesItemsArchiveHigher or lowerWhere in the worldCla",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "H1",
+          "text": "Methodology",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "44px",
+          "weight": "400",
+          "leading": "40.48px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Pricele is a game, but the numbers in it are real, and this page ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "Short version: Big Mac prices are published by The Economist. Gro",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "Every price carries its source and its collection date on screen,",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "H2",
+          "text": "Sources, item by item",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "32px",
+          "weight": "400",
+          "leading": "29.44px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "45 countries · quoted per one burger",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "The Economist's Big Mac Index, January 2026 edition, which collec",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "33 countries · quoted per a 330ml can",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "A curated table of everyday retail prices assembled from publishe",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "32 countries · quoted per one regular cup, sit-down café",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "Numbeo's country price rankings for 'Cappuccino (regular)' in the",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        }
+      ],
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "background": "rgb(18, 16, 13)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/methodology",
+      "width": 1280,
+      "theme": "light",
+      "file": "references/own-work/captures/pricele-methodology-1280-light.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "PricelePlayPricesItemsArchiveHigher or lowerWhere in the worldCla",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(61, 53, 44)"
+        },
+        {
+          "tag": "H1",
+          "text": "Methodology",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "56px",
+          "weight": "400",
+          "leading": "51.52px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "Pricele is a game, but the numbers in it are real, and this page ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "Short version: Big Mac prices are published by The Economist. Gro",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "Every price carries its source and its collection date on screen,",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "H2",
+          "text": "Sources, item by item",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "32px",
+          "weight": "400",
+          "leading": "29.44px",
+          "color": "rgb(26, 22, 19)"
+        },
+        {
+          "tag": "P",
+          "text": "45 countries · quoted per one burger",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "The Economist's Big Mac Index, January 2026 edition, which collec",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "33 countries · quoted per a 330ml can",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "A curated table of everyday retail prices assembled from publishe",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        },
+        {
+          "tag": "P",
+          "text": "32 countries · quoted per one regular cup, sit-down café",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(140, 129, 117)"
+        },
+        {
+          "tag": "P",
+          "text": "Numbeo's country price rankings for 'Cappuccino (regular)' in the",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(107, 96, 85)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(242, 237, 225)"
+      }
+    },
+    {
+      "project": "pricele",
+      "route": "/methodology",
+      "width": 1280,
+      "theme": "dark",
+      "file": "references/own-work/captures/pricele-methodology-1280-dark.png",
+      "status": 200,
+      "errors": [],
+      "typography": [
+        {
+          "tag": "BODY",
+          "text": "PricelePlayPricesItemsArchiveHigher or lowerWhere in the worldCla",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "24px",
+          "color": "rgb(214, 206, 191)"
+        },
+        {
+          "tag": "H1",
+          "text": "Methodology",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "56px",
+          "weight": "400",
+          "leading": "51.52px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "Pricele is a game, but the numbers in it are real, and this page ",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "Short version: Big Mac prices are published by The Economist. Gro",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "Every price carries its source and its collection date on screen,",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "H2",
+          "text": "Sources, item by item",
+          "font": "__Instrument_Serif_ae301a, __Instrument_Serif_Fallback_ae301a, Georgia, \"Times New Roman\", serif",
+          "size": "32px",
+          "weight": "400",
+          "leading": "29.44px",
+          "color": "rgb(246, 241, 230)"
+        },
+        {
+          "tag": "P",
+          "text": "45 countries · quoted per one burger",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "The Economist's Big Mac Index, January 2026 edition, which collec",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "33 countries · quoted per a 330ml can",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "A curated table of everyday retail prices assembled from publishe",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        },
+        {
+          "tag": "P",
+          "text": "32 countries · quoted per one regular cup, sit-down café",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "leading": "20px",
+          "color": "rgb(124, 115, 101)"
+        },
+        {
+          "tag": "P",
+          "text": "Numbeo's country price rankings for 'Cappuccino (regular)' in the",
+          "font": "__Archivo_fab2aa, __Archivo_Fallback_fab2aa, ui-sans-serif, system-ui, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "leading": "26px",
+          "color": "rgb(156, 146, 132)"
+        }
+      ],
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "background": "rgb(18, 16, 13)"
+      }
+    }
+  ],
+  "notes": "Local runtime copies of public source. Original clones are unchanged. Portfolio has no dark palette; only its supported paper appearance is captured."
+}

@@ -17,8 +17,12 @@ Make the page feel like someone made it for their own corner of the internet. A 
 - Most content lives directly on the background. A note, ticket, label or photograph can earn a material surface. For paper objects, choose an ink edge or a small hard offset shadow. Use tape only where something appears attached. Keep ordinary sections and every repeated item out of decorative boxes.
 - Spend marks selectively. An underline can emphasise a thought; an arrow can point to its subject. A couple of accent marks in a content group is a useful starting limit, not a quota. Rotate individual objects or short notes a few degrees. Leave paragraphs, input fields and essential labels upright.
 - Use colour for both personality and meaning. `accent` is decorative ink; `accent-text` is the readable text variant. Orange from the portfolio needs this darker text variant on cream. Use `input` for essential control boundaries and `ring` for focus. Identify status with words as well as colour.
-- Write in a person's voice. Specific work, interests and place names beat promotional claims. Lowercase can suit the voice, but preserve proper names, acronyms and the user's wording. Playful labels still need to explain their destination. Errors and destructive actions should be plain.
+- Lowercase can suit this personal voice. Preserve proper names, acronyms and the user's wording. Use the shared voice guide for functional states.
 - Let an object lift or straighten for a fine pointer. Keyboard focus uses a visible outline without travel. Keep feedback near 180ms. Longer drawing or entrance motion is optional and should happen once. Content is visible before JavaScript runs; reduced motion leaves all words and marks visible. Sound requires an explicit play action.
+
+## Shared practice
+
+Read the shared [principles](../../core/principles.md), [voice](../../core/voice.md) and [DNA](../../core/dna.md) when applying this direction across a project. The direction's type, palette and motion choices remain specific. Use the [anti-patterns](../../core/anti-patterns.md) to question defaults without overriding deliberate choices.
 
 ## Apply and review
 

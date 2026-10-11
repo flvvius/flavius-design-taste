@@ -9,7 +9,6 @@ Typography, whitespace and hairlines carry the design. Content sits on the page 
 
 ## Decisions that matter
 
-- Start with the content hierarchy. Establish a page title, quieter section headings, row titles, body and metadata before adding decoration.
 - A section is not a surface. Settings, forms, summaries, figures and empty states live directly on the page.
 - Surfaces are earned by overlays, media frames and interactive controls. Dense operator tools may need grouped surfaces; explain the function they serve. Ask what breaks if a box disappears.
 - Repeated items are hairline-separated rows. Use grids when comparison or media browsing requires them, without wrapping every item in chrome.
@@ -17,6 +16,10 @@ Typography, whitespace and hairlines carry the design. Content sits on the page 
 - Use semantic colour roles from `assets/tokens.json`. Graphite is the default action colour. Status is text plus a label or glyph, not a decorative tinted pill. Use `warning-text` for warning copy; `warning` is an accent or fill. Use `input` for essential control boundaries and `border` for decorative separators. Charts may introduce labelled domain colours.
 - Figures use tabular digits and a muted label. Empty states use a short explanation and at most one useful action. Loading placeholders mirror the final content geometry.
 - Navigation remains stable on frequent screens. No floating blurred docks or decorative scroll motion. Motion communicates a state change and ends within 300ms. Springs are for gestures.
+
+## Shared practice
+
+Read the shared [principles](../../core/principles.md), [voice](../../core/voice.md) and [DNA](../../core/dna.md) when applying this direction across a project. The direction's type, palette and motion choices remain specific. Use the [anti-patterns](../../core/anti-patterns.md) to question defaults without overriding deliberate choices.
 
 ## Apply it
 
