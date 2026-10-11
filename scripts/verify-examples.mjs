@@ -260,8 +260,12 @@ try {
   await check('font loads', async () => {await waitForFonts(page); assert(await page.evaluate(() => [...document.fonts].some(face => face.family.replace(/["']/g, '') === 'Schoolbell' && face.status === 'loaded')));});
   await check('repeat project activation reopens story', async () => {
     const link = page.locator('.object-link').first(), summary = page.locator('#project-walks summary');
-    await link.click(); await summary.click(); assert(!(await page.locator('#project-walks').evaluate(element => element.open)));
-    await link.click(); assert(await page.locator('#project-walks').evaluate(element => element.open));
+    await link.click();
+    await page.waitForFunction(() => document.activeElement?.matches('#project-walks summary'));
+    await summary.click(); assert(!(await page.locator('#project-walks').evaluate(element => element.open)));
+    await link.click();
+    await page.waitForFunction(() => document.activeElement?.matches('#project-walks summary'));
+    assert(await page.locator('#project-walks').evaluate(element => element.open));
   });
   await check('keyboard project activation focuses visible summary', async () => {
     await page.locator('.object-link').nth(1).focus(); await page.keyboard.press('Enter');
