@@ -1,0 +1,985 @@
+diff --git a/app/globals.css b/app/globals.css
+index b7931f8..e4e8485 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -4,53 +4,53 @@
+ 
+ @layer base {
+   :root {
+-    --background: 0 0% 100%;
+-    --foreground: 240 10% 3.9%;
+-    --card: 0 0% 100%;
+-    --card-foreground: 240 10% 3.9%;
+-    --popover: 0 0% 100%;
+-    --popover-foreground: 240 10% 3.9%;
+-    --primary: 240 5.9% 10%;
+-    --primary-foreground: 0 0% 98%;
++    --background: 40 20% 98%;
++    --foreground: 30 8% 14%;
++    --card: 40 20% 98%;
++    --card-foreground: 30 8% 14%;
++    --popover: 40 20% 99%;
++    --popover-foreground: 30 8% 14%;
++    --primary: 30 8% 18%;
++    --primary-foreground: 40 20% 98%;
+     --secondary: 240 4.8% 95.9%;
+     --secondary-foreground: 240 5.9% 10%;
+-    --muted: 240 4.8% 95.9%;
+-    --muted-foreground: 240 3.8% 46.1%;
++    --muted: 40 8% 94%;
++    --muted-foreground: 30 5% 37%;
+     --accent: 240 4.8% 95.9%;
+     --accent-foreground: 240 5.9% 10%;
+     --destructive: 0 84.2% 60.2%;
+     --destructive-foreground: 0 0% 98%;
+-    --border: 240 5.9% 90%;
+-    --input: 240 5.9% 90%;
+-    --ring: 240 10% 3.9%;
++    --border: 40 6% 85%;
++    --input: 30 4% 48%;
++    --ring: 263 40% 43%;
+     --chart-1: 12 76% 61%;
+     --chart-2: 173 58% 39%;
+     --chart-3: 197 37% 24%;
+     --chart-4: 43 74% 66%;
+     --chart-5: 27 87% 67%;
+-    --radius: 0.5rem;
++    --radius: 0.375rem;
+   }
+ 
+   .dark {
+-    --background: 240 10% 3.9%;
+-    --foreground: 0 0% 98%;
+-    --card: 240 10% 3.9%;
+-    --card-foreground: 0 0% 98%;
+-    --popover: 240 10% 3.9%;
+-    --popover-foreground: 0 0% 98%;
+-    --primary: 0 0% 98%;
+-    --primary-foreground: 240 5.9% 10%;
++    --background: 240 9% 9%;
++    --foreground: 40 8% 94%;
++    --card: 240 9% 9%;
++    --card-foreground: 40 8% 94%;
++    --popover: 240 8% 13%;
++    --popover-foreground: 40 8% 94%;
++    --primary: 40 8% 94%;
++    --primary-foreground: 240 9% 9%;
+     --secondary: 240 3.7% 15.9%;
+     --secondary-foreground: 0 0% 98%;
+-    --muted: 240 3.7% 15.9%;
+-    --muted-foreground: 240 5% 64.9%;
++    --muted: 240 6% 15%;
++    --muted-foreground: 40 5% 72%;
+     --accent: 240 3.7% 15.9%;
+     --accent-foreground: 0 0% 98%;
+     --destructive: 0 62.8% 30.6%;
+     --destructive-foreground: 0 0% 98%;
+-    --border: 240 3.7% 15.9%;
+-    --input: 240 3.7% 15.9%;
+-    --ring: 240 4.9% 83.9%;
++    --border: 240 5% 24%;
++    --input: 240 5% 57%;
++    --ring: 263 52% 74%;
+     --chart-1: 220 70% 50%;
+     --chart-2: 160 60% 45%;
+     --chart-3: 30 80% 55%;
+@@ -386,3 +386,35 @@
+ .hljs-strong {
+   @apply font-bold;
+ }
++
++@layer base {
++  body { font-size: 1rem; line-height: 1.6; }
++  h1, h2, h3 { font-weight: 600; letter-spacing: -0.025em; }
++  :focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 4px; }
++  @media (prefers-reduced-motion: reduce) {
++    *, *::before, *::after { animation: none !important; transition-duration: 0ms !important; scroll-behavior: auto !important; }
++  }
++}
++
++@layer base {
++  button, a[role="button"] { white-space: normal; height: auto; min-height: 2.75rem; }
++  header button { min-height: 2.5rem; }
++  header > .container { min-height: 4rem; height: auto; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem; }
++  header a { white-space: normal; overflow-wrap: anywhere; }
++  main h1, main h2, main h3, main p { overflow-wrap: anywhere; }
++  [role="radio"] { width: 1.25rem; height: 1.25rem; min-height: 1.25rem; flex-shrink: 0; border-color: hsl(var(--input)); }
++  .container { min-width: 0; }
++  @media (max-width: 639px) {
++    header a:first-child { margin-right: 0; }
++  }
++}
++
++footer a, footer h3 { overflow-wrap: anywhere; }
++main a.inline-flex { white-space: normal; max-width: 100%; height: auto; min-height: 2.75rem; }
++main form .flex > div { min-width: 0; }
++main form [role="radiogroup"] > .grid { grid-template-columns: minmax(0, 1fr); }
++main form h3, main form .font-semibold { overflow-wrap: anywhere; }
++main h1[class], main h2[class], main h3[class], main .font-semibold { line-height: 1.15; }
++main p[class], main label[class], main dd[class], main dt[class], footer p[class], footer li[class], footer h3[class] { line-height: 1.5; }
++main button[class], main a.inline-flex { white-space: normal; min-width: 0; max-width: 100%; height: auto; line-height: 1.4; overflow-wrap: anywhere; }
++main .text-sm[class], main .text-xs[class], footer .text-sm[class], footer .text-xs[class] { line-height: 1.5; }
+diff --git a/app/guides/page.tsx b/app/guides/page.tsx
+index 62fb158..496dd30 100644
+--- a/app/guides/page.tsx
++++ b/app/guides/page.tsx
+@@ -1,288 +1,23 @@
+ "use client"
+-
+ import Link from "next/link"
+-import { motion } from "framer-motion"
+-import { ArrowRight, Code, FileText, Lightbulb, Sparkles, ArrowRightLeft, BookOpen } from "lucide-react"
+-import { GlassCard } from "@/components/ui/glass-card"
+-import { GradientButton } from "@/components/ui/gradient-button"
+-import { AnimatedBackground } from "@/components/animated-background"
++import { ArrowRight } from "lucide-react"
+ import { Button } from "@/components/ui/button"
+ 
++const guides = [
++  {title:"AI Development Guide", description:"Learn how to effectively use AI tools to accelerate your development workflow and build better projects.", href:"/guides/ai-development", action:"Explore guide"},
++  {title:"Requirements Template", description:"A structured approach to defining project requirements before implementation for better AI results.", href:"/guides/requirements-template", action:"View template"},
++  {title:"From v0 to Cursor", description:"Learn how to transition your AI-generated prototype to a professional local development environment using GitHub.", href:"/guides/from-v0-to-cursor", action:"View Workflow"},
++  {title:"GitHub Basics", description:"Learn how to save, manage, and share your AI-generated code with GitHub, the connecting tissue between v0 and Cursor.", href:"/guides/github-basics", action:"Explore guide"},
++  {title:"Cursor Rules & Prompt Templates", description:"Write prompts and configure Cursor rules for AI coding tools.", href:"/guides/cursor-rules-templates", action:"Read Guide"},
++  {title:"Tool Deep Dives", description:"In-depth guides on getting the most out of specific AI tools, with a focus on Cursor and other popular development assistants.", action:"Coming soon"},
++  {title:"Resources & Tips", description:"Checklists, prompt samples, expert tips, and curated links to help you go further with VibeCodex and AI development.", href:"/resources", action:"Browse resources"}
++]
+ export default function GuidesPage() {
+-  return (
+-    <div className="flex flex-col min-h-screen">
+-      {/* Hero section */}
+-      <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden relative">
+-        <AnimatedBackground />
+-
+-        <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+-          <div className="flex flex-col items-center justify-center space-y-8 text-center">
+-            <div className="space-y-2">
+-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+-                Learning Guides
+-              </h1>
+-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+-                Comprehensive guides to help you master AI-assisted development and build better projects.
+-              </p>
+-            </div>
+-          </div>
+-        </div>
+-      </section>
+-
+-      {/* Guide categories */}
+-      <section className="w-full py-12 md:py-24">
+-        <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+-          <div className="space-y-4 text-center mb-12">
+-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Guide Categories</h2>
+-            <p className="mx-auto max-w-[700px] text-muted-foreground">
+-              Explore our collection of guides covering various aspects of AI-assisted development.
+-            </p>
+-          </div>
+-
+-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <Link href="/guides/ai-development" className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+-                    <Lightbulb className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">AI Development Guide</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    Learn how to effectively leverage AI tools to accelerate your development workflow and build better
+-                    projects.
+-                  </p>
+-                  <div className="flex items-center text-primary mt-auto whitespace-nowrap">
+-                    <span>Explore guide</span>
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </div>
+-                </Link>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <Link href="/guides/requirements-template" className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+-                    <FileText className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">Requirements Template</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    A structured approach to defining project requirements before implementation for better AI results.
+-                  </p>
+-                  <div className="flex items-center text-primary mt-auto whitespace-nowrap">
+-                    <span>View template</span>
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </div>
+-                </Link>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <Link href="/guides/from-v0-to-cursor" className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+-                    <ArrowRightLeft className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">From v0 to Cursor</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    Learn how to transition your AI-generated prototype to a professional local development environment
+-                    using GitHub.
+-                  </p>
+-                  <div className="flex items-center text-primary mt-auto whitespace-nowrap">
+-                    <span>View Workflow</span>
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </div>
+-                </Link>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <Link href="/guides/github-basics" className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+-                    <Code className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">GitHub Basics</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    Learn how to save, manage, and share your AI-generated code with GitHub, the connecting tissue
+-                    between v0 and Cursor.
+-                  </p>
+-                  <div className="flex items-center text-primary mt-auto whitespace-nowrap">
+-                    <span>Explore guide</span>
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </div>
+-                </Link>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <div className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400 mb-4">
+-                    <Code className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">Cursor Rules & Prompt Templates</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    Master the art of communicating with AI coding tools through effective prompts and Cursor rules configuration.
+-                  </p>
+-                  <Button asChild variant="outline" size="sm" className="mt-auto">
+-                    <Link href="/guides/cursor-rules-templates" className="inline-flex items-center">
+-                      Read Guide
+-                      <ArrowRight className="ml-2 h-4 w-4" />
+-                    </Link>
+-                  </Button>
+-                </div>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+-              <GlassCard className="h-full flex flex-col" hoverEffect="lift">
+-                <div className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-violet-100 flex items-center justify-center text-violet-600 dark:bg-violet-900/30 dark:text-violet-400 mb-4">
+-                    <Sparkles className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2">Tool Deep Dives</h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    In-depth guides on getting the most out of specific AI tools, with a focus on Cursor and other
+-                    popular development assistants.
+-                  </p>
+-                  <div className="flex items-center text-muted-foreground mt-auto">
+-                    <span>Coming soon</span>
+-                  </div>
+-                </div>
+-              </GlassCard>
+-            </motion.div>
+-
+-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+-              <GlassCard className="h-full flex flex-col border-2 border-cyan-400/40" hoverEffect="lift">
+-                <Link href="/resources" className="p-6 flex flex-col h-full">
+-                  <div className="h-12 w-12 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400 mb-4">
+-                    <BookOpen className="h-6 w-6" />
+-                  </div>
+-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+-                    Resources & Tips
+-                    <span className="inline-block bg-cyan-200 text-cyan-800 text-xs font-semibold px-2 py-0.5 rounded ml-2">New</span>
+-                  </h3>
+-                  <p className="text-muted-foreground mb-6 flex-grow">
+-                    Checklists, prompt samples, expert tips, and curated links to help you go further with VibeCodex and AI development.
+-                  </p>
+-                  <div className="flex items-center text-cyan-600 mt-auto whitespace-nowrap font-medium">
+-                    <span>Browse resources</span>
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </div>
+-                </Link>
+-              </GlassCard>
+-            </motion.div>
+-          </div>
+-        </div>
+-      </section>
+-
+-      {/* Featured guide */}
+-      <section className="w-full py-12 md:py-24 bg-gradient-to-br from-violet-50 to-cyan-50 dark:from-violet-950/20 dark:to-cyan-950/20">
+-        <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+-            <div className="space-y-4">
+-              <div className="inline-block rounded-lg bg-violet-100 px-3 py-1 text-sm text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 mb-2">
+-                Featured Guide
+-              </div>
+-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">AI Development Guide</h2>
+-              <p className="text-muted-foreground md:text-lg">
+-                Our comprehensive guide to AI-assisted development covers everything from planning to best practices.
+-                Learn how to effectively use AI tools to accelerate your development workflow.
+-              </p>
+-              <ul className="space-y-2">
+-                <li className="flex items-start">
+-                  <div className="mr-2 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 dark:bg-green-900/30 dark:text-green-400 mt-0.5">
+-                    <svg
+-                      xmlns="http://www.w3.org/2000/svg"
+-                      viewBox="0 0 24 24"
+-                      fill="none"
+-                      stroke="currentColor"
+-                      strokeWidth="2"
+-                      strokeLinecap="round"
+-                      strokeLinejoin="round"
+-                      className="h-3 w-3"
+-                    >
+-                      <polyline points="20 6 9 17 4 12" />
+-                    </svg>
+-                  </div>
+-                  <span>Planning with AI</span>
+-                </li>
+-                <li className="flex items-start">
+-                  <div className="mr-2 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 dark:bg-green-900/30 dark:text-green-400 mt-0.5">
+-                    <svg
+-                      xmlns="http://www.w3.org/2000/svg"
+-                      viewBox="0 0 24 24"
+-                      fill="none"
+-                      stroke="currentColor"
+-                      strokeWidth="2"
+-                      strokeLinecap="round"
+-                      strokeLinejoin="round"
+-                      className="h-3 w-3"
+-                    >
+-                      <polyline points="20 6 9 17 4 12" />
+-                    </svg>
+-                  </div>
+-                  <span>AI Tools Comparison</span>
+-                </li>
+-                <li className="flex items-start">
+-                  <div className="mr-2 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 dark:bg-green-900/30 dark:text-green-400 mt-0.5">
+-                    <svg
+-                      xmlns="http://www.w3.org/2000/svg"
+-                      viewBox="0 0 24 24"
+-                      fill="none"
+-                      stroke="currentColor"
+-                      strokeWidth="2"
+-                      strokeLinecap="round"
+-                      strokeLinejoin="round"
+-                      className="h-3 w-3"
+-                    >
+-                      <polyline points="20 6 9 17 4 12" />
+-                    </svg>
+-                  </div>
+-                  <span>Development Workflow</span>
+-                </li>
+-                <li className="flex items-start">
+-                  <div className="mr-2 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 dark:bg-green-900/30 dark:text-green-400 mt-0.5">
+-                    <svg
+-                      xmlns="http://www.w3.org/2000/svg"
+-                      viewBox="0 0 24 24"
+-                      fill="none"
+-                      stroke="currentColor"
+-                      strokeWidth="2"
+-                      strokeLinecap="round"
+-                      strokeLinejoin="round"
+-                      className="h-3 w-3"
+-                    >
+-                      <polyline points="20 6 9 17 4 12" />
+-                    </svg>
+-                  </div>
+-                  <span>Best Practices</span>
+-                </li>
+-              </ul>
+-              <div className="flex flex-col sm:flex-row gap-4 min-[400px]:flex-row">
+-                <GradientButton asChild>
+-                  <Link href="/guides/ai-development" className="flex items-center whitespace-nowrap">
+-                    Explore Guide
+-                    <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+-                  </Link>
+-                </GradientButton>
+-              </div>
+-            </div>
+-            <div className="flex items-center justify-center">
+-              <div className="rounded-lg overflow-hidden border shadow-lg">
+-                <img
+-                  src="/abstract-v0.png"
+-                  alt="AI Development Guide"
+-                  className="aspect-video object-cover"
+-                  width={600}
+-                  height={400}
+-                />
+-              </div>
+-            </div>
+-          </div>
+-        </div>
+-      </section>
+-    </div>
+-  )
++  return <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
++    <header className="mb-12 max-w-2xl"><p className="mb-3 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Learning library</p><h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Learning Guides</h1><p className="mt-4 text-muted-foreground">Comprehensive guides to help you master AI-assisted development and build better projects.</p></header>
++    <section aria-labelledby="guide-categories"><h2 id="guide-categories" className="mb-4 text-lg font-semibold">Guide Categories</h2>
++      {guides.map((guide,index)=><article key={guide.title} className="grid gap-4 border-t py-7 md:grid-cols-[3rem_minmax(0,1fr)_12rem] md:gap-8"><span aria-hidden="true" className="text-sm tabular-nums text-muted-foreground">{String(index+1).padStart(2,"0")}</span><div className="min-w-0"><h3 className="text-xl font-semibold">{guide.title}</h3><p className="mt-2 max-w-prose text-sm text-muted-foreground">{guide.description}</p></div><div className="flex items-start md:justify-end">{guide.href?<Button asChild variant="outline" className="min-h-11"><Link href={guide.href}>{guide.action}<ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></Button>:<span className="text-sm text-muted-foreground">{guide.action}</span>}</div></article>)}
++    </section>
++    <section className="mt-10 grid gap-8 border-t pt-10 md:grid-cols-[1fr_18rem]"><div><p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Featured Guide</p><h2 className="mt-3 text-2xl font-semibold">AI Development Guide</h2><p className="mt-3 max-w-prose text-muted-foreground">Our comprehensive guide to AI-assisted development covers everything from planning to best practices. Learn how to effectively use AI tools to accelerate your development workflow.</p><ul className="mt-4 space-y-2 text-sm"><li>Planning with AI</li><li>AI Tools Comparison</li><li>Development Workflow</li><li>Best Practices</li></ul><Button asChild className="mt-6 min-h-11"><Link href="/guides/ai-development">Explore Guide<ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></Button></div><img src="/abstract-v0.png" alt="AI Development Guide" className="aspect-video w-full object-cover" width={600} height={400}/></section>
++  </div>
+ }
+diff --git a/app/learning-path/page.tsx b/app/learning-path/page.tsx
+index 7ae1cf7..e2462dd 100644
+--- a/app/learning-path/page.tsx
++++ b/app/learning-path/page.tsx
+@@ -18,16 +18,16 @@ export default function LearningPathPage() {
+   return (
+     <div className="flex flex-col min-h-screen">
+       {/* Hero section */}
+-      <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden relative">
+-        <AnimatedBackground />
++      <section className="w-full py-12 md:py-16 overflow-hidden relative">
++
+ 
+         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+-          <div className="flex flex-col items-center justify-center space-y-8 text-center">
++          <div className="flex flex-col items-start justify-center space-y-6 text-left">
+             <div className="space-y-2">
+-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
++              <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+                 Your AI Development Journey
+               </h1>
+-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
++              <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                 A structured learning path to take you from beginner to confident AI-assisted developer
+               </p>
+             </div>
+@@ -48,11 +48,11 @@ export default function LearningPathPage() {
+       </section>
+ 
+       {/* Learning paths section */}
+-      <section id="learning-paths" className="w-full py-12 md:py-24">
++      <section id="learning-paths" className="w-full py-8 md:py-12">
+         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+-          <div className="space-y-4 text-center mb-12">
++          <div className="space-y-3 text-left mb-8">
+             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Choose Your Path</h2>
+-            <p className="mx-auto max-w-[700px] text-muted-foreground">
++            <p className="max-w-[700px] text-muted-foreground">
+               Select the learning path that matches your current experience level and goals
+             </p>
+           </div>
+@@ -60,7 +60,7 @@ export default function LearningPathPage() {
+           <Tabs defaultValue="beginner" value={activeTab} onValueChange={setActiveTab} className="w-full">
+             {/* Custom styled tabs to match the design in the image */}
+             <div className="mb-8">
+-              <div className="grid w-full grid-cols-3 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-950 p-1">
++              <div className="grid w-full grid-cols-1 gap-2 border-b pb-4 sm:grid-cols-3">
+                 <TabButton
+                   id="beginner"
+                   active={activeTab === "beginner"}
+@@ -91,7 +91,7 @@ export default function LearningPathPage() {
+             <TabsContent value="beginner" className="space-y-8">
+               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+                 <div className="space-y-4">
+-                  <div className="inline-block rounded-lg bg-violet-100 px-3 py-1 text-sm text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 mb-2">
++                  <div className="inline-block text-sm font-medium text-muted-foreground mb-2">
+                     Beginner Path
+                   </div>
+                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Start Your AI Development Journey</h2>
+@@ -109,7 +109,7 @@ export default function LearningPathPage() {
+                   </div>
+                 </div>
+                 <div className="flex items-center justify-center">
+-                  <div className="rounded-lg overflow-hidden border shadow-lg">
++                  <div className="overflow-hidden">
+                     <img
+                       src="/step1-ideation-sketch.png"
+                       alt="Beginner learning path"
+@@ -256,7 +256,7 @@ export default function LearningPathPage() {
+               {/* Intermediate path content - simplified for brevity */}
+               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+                 <div className="space-y-4">
+-                  <div className="inline-block rounded-lg bg-cyan-100 px-3 py-1 text-sm text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 mb-2">
++                  <div className="inline-block text-sm font-medium text-muted-foreground mb-2">
+                     Intermediate Path
+                   </div>
+                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+@@ -271,7 +271,7 @@ export default function LearningPathPage() {
+                   </div>
+                 </div>
+                 <div className="flex items-center justify-center">
+-                  <div className="rounded-lg overflow-hidden border shadow-lg">
++                  <div className="overflow-hidden">
+                     <img
+                       src="/step2-ai-prompt.png"
+                       alt="Intermediate learning path"
+@@ -301,7 +301,7 @@ export default function LearningPathPage() {
+                   </div>
+                 </div>
+                 <div className="flex items-center justify-center">
+-                  <div className="rounded-lg overflow-hidden border shadow-lg">
++                  <div className="overflow-hidden">
+                     <img
+                       src="/step3-final-app.png"
+                       alt="Advanced learning path"
+@@ -331,18 +331,19 @@ interface TabButtonProps {
+ 
+ function TabButton({ id, active, onClick, icon, label, description }: TabButtonProps) {
+   return (
+-    <div className={`relative col-span-1 ${active ? "text-white" : "text-muted-foreground"}`}>
++    <div className={`relative col-span-1 ${active ? "text-foreground" : "text-muted-foreground"}`}>
+       <button
+         onClick={onClick}
+-        className="relative z-20 flex w-full flex-col items-center gap-1 rounded-lg py-3 text-center"
++        aria-pressed={active}
++        className="relative z-20 flex w-full flex-col items-start gap-1 py-3 text-left"
+       >
+         <span className="flex items-center justify-center">{icon}</span>
+         <div>
+           <p className="font-medium">{label}</p>
+-          <p className="text-xs text-muted-foreground dark:text-slate-400">{description}</p>
++          <p className="text-xs text-muted-foreground">{description}</p>
+         </div>
+       </button>
+-      {active && <div className="absolute inset-0 z-10 rounded-lg bg-violet-600 dark:bg-violet-600 shadow-md"></div>}
++      {active && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></div>}
+     </div>
+   )
+ }
+@@ -391,7 +392,7 @@ function LearningPathMilestone({
+   const [expanded, setExpanded] = useState(false)
+ 
+   return (
+-    <Card className="overflow-hidden">
++    <Card className="overflow-hidden rounded-none border-0 border-b bg-transparent shadow-none">
+       <div className="p-6">
+         <div className="flex items-start gap-4">
+           <div
+@@ -406,11 +407,11 @@ function LearningPathMilestone({
+           </div>
+           <div className="space-y-1 flex-1">
+             <div className="flex flex-wrap items-center gap-2 mb-1">
+-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
++              <Badge variant="outline" className="border-0 bg-transparent p-0 text-foreground">
+                 <Zap className="mr-1 h-3.5 w-3.5" />
+                 {estimatedTime}
+               </Badge>
+-              <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200 dark:text-amber-400">
++              <Badge variant="outline" className="border-0 bg-transparent p-0 text-muted-foreground">
+                 {projectType}
+               </Badge>
+             </div>
+@@ -420,9 +421,9 @@ function LearningPathMilestone({
+         </div>
+ 
+         <div className="mt-4 flex flex-wrap gap-2">
+-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
++          <div className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
+             <span className="font-medium">Tools:</span>
+-            <div className="flex items-center gap-2">
++            <div className="flex flex-wrap items-center gap-2">
+               {tools.map((tool) => (
+                 <ToolIcon key={tool} toolId={tool} />
+               ))}
+diff --git a/app/projects/page.tsx b/app/projects/page.tsx
+index f1461c3..fea9adf 100644
+--- a/app/projects/page.tsx
++++ b/app/projects/page.tsx
+@@ -2,145 +2,42 @@
+ 
+ import { useState, useEffect } from "react"
+ import Link from "next/link"
+-import { motion } from "framer-motion"
+-import { Search, Clock, ArrowRight, Star } from "lucide-react"
+-
++import { ArrowRight, Search } from "lucide-react"
+ import { Button } from "@/components/ui/button"
+-import { Badge } from "@/components/ui/badge"
+ import { Input } from "@/components/ui/input"
+-import { AnimatedTabs } from "@/components/ui/animated-tabs"
+-import { GlassCard } from "@/components/ui/glass-card"
+-import { AnimatedCounter } from "@/components/ui/animated-counter"
+ import { projectsMockData } from "@/lib/mock-data"
+ 
+ export default function ProjectsPage() {
+   const [activeTab, setActiveTab] = useState("all")
+   const [searchQuery, setSearchQuery] = useState("")
+   const [mounted, setMounted] = useState(false)
+-
+-  // Prevent hydration mismatch
+-  useEffect(() => {
+-    setMounted(true)
+-  }, [])
+-
+-  const tabs = [
+-    { id: "all", label: "All Projects" },
+-    { id: "web", label: "Web Apps" },
+-    { id: "mobile", label: "Mobile Apps" },
+-    { id: "data", label: "Data Projects" },
+-  ]
+-
+-  // Filter projects based on active tab and search query
++  useEffect(() => { setMounted(true) }, [])
++  const tabs = [{ id: "all", label: "All Projects" }, { id: "web", label: "Web Apps" }, { id: "mobile", label: "Mobile Apps" }, { id: "data", label: "Data Projects" }]
+   const filteredProjects = projectsMockData
+-    .filter((project) => activeTab === "all" || project.id.includes(activeTab))
+-    .filter(
+-      (project) =>
+-        searchQuery === "" ||
+-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+-        project.description.toLowerCase().includes(searchQuery.toLowerCase()),
+-    )
+-
+-  // Animation variants
+-  const containerVariants = {
+-    hidden: { opacity: 0 },
+-    show: {
+-      opacity: 1,
+-      transition: {
+-        staggerChildren: 0.1,
+-      },
+-    },
+-  }
+-
+-  const itemVariants = {
+-    hidden: { opacity: 0, y: 20 },
+-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+-  }
+-
+-  return (
+-    <div className="container py-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+-      <div className="space-y-2 mb-8">
+-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Explore Projects</h1>
+-        <p className="text-muted-foreground">Find the perfect project to build with AI assistance</p>
++    .filter(project => activeTab === "all" || project.id.includes(activeTab))
++    .filter(project => searchQuery === "" || project.title.toLowerCase().includes(searchQuery.toLowerCase()) || project.description.toLowerCase().includes(searchQuery.toLowerCase()))
++
++  return <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
++    <div className="mb-10 grid gap-6 md:grid-cols-[1fr_20rem] md:items-end">
++      <div><p className="mb-3 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Project library</p>
++        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Explore Projects</h1>
++        <p className="mt-4 max-w-xl text-muted-foreground">Choose a project to build with AI assistance</p>
+       </div>
+-
+-      <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between mb-8">
+-        <AnimatedTabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} variant="pills" className="md:w-auto" />
+-
+-        <div className="relative w-full md:w-64">
+-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+-          <Input
+-            placeholder="Search projects..."
+-            className="pl-9"
+-            value={searchQuery}
+-            onChange={(e) => setSearchQuery(e.target.value)}
+-          />
+-        </div>
+-      </div>
+-
+-      {mounted && (
+-        <motion.div
+-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+-          variants={containerVariants}
+-          initial="hidden"
+-          animate="show"
+-        >
+-          {filteredProjects.map((project) => (
+-            <motion.div key={project.id} variants={itemVariants}>
+-              <GlassCard className="flex flex-col h-full overflow-hidden" variant="light" hoverEffect="lift">
+-                <div className="relative aspect-video">
+-                  <img
+-                    src={project.previewImage || "/placeholder.svg"}
+-                    alt={project.title}
+-                    className="object-cover w-full h-full"
+-                  />
+-                  <div className="absolute top-2 right-2">
+-                    <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
+-                      {project.difficulty}
+-                    </Badge>
+-                  </div>
+-                </div>
+-                <div className="flex flex-col flex-1 p-5">
+-                  <div className="space-y-1.5 mb-3">
+-                    <h2 className="text-xl font-bold">{project.title}</h2>
+-                    <p className="text-muted-foreground text-sm">{project.description}</p>
+-                  </div>
+-                  <div className="flex items-center text-sm text-muted-foreground mb-4">
+-                    <Clock className="mr-1 h-4 w-4" />
+-                    {project.timeEstimate}
+-                    <div className="ml-auto flex items-center">
+-                      <Star className="h-4 w-4 text-amber-500 mr-1" />
+-                      <AnimatedCounter to={project.completionCount} formatter={(value) => `${Math.round(value)}+`} />
+-                    </div>
+-                  </div>
+-                  <div className="mt-auto pt-4 border-t">
+-                    <Button asChild className="w-full group">
+-                      <Link href={`/projects/${project.id}`}>
+-                        Select Project
+-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+-                      </Link>
+-                    </Button>
+-                  </div>
+-                </div>
+-              </GlassCard>
+-            </motion.div>
+-          ))}
+-        </motion.div>
+-      )}
+-
+-      {filteredProjects.length === 0 && (
+-        <div className="text-center py-12">
+-          <h3 className="text-lg font-medium mb-2">No projects found</h3>
+-          <p className="text-muted-foreground mb-6">Try adjusting your search or filter criteria</p>
+-          <Button
+-            onClick={() => {
+-              setActiveTab("all")
+-              setSearchQuery("")
+-            }}
+-          >
+-            Reset Filters
+-          </Button>
+-        </div>
+-      )}
++      <div><label htmlFor="project-search" className="mb-2 block text-sm font-medium">Search projects</label><div className="relative">
++        <Search aria-hidden="true" className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
++        <Input id="project-search" placeholder="Search projects..." className="h-11 pl-9" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
++      </div></div>
++    </div>
++    <div aria-label="Project categories" className="mb-2 flex flex-wrap gap-x-6 gap-y-2 border-b pb-4">
++      {tabs.map(tab => <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} onClick={() => setActiveTab(tab.id)} className={`min-h-11 border-b-2 py-2 text-sm font-medium ${activeTab === tab.id ? "border-primary text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}>{tab.label}</button>)}
+     </div>
+-  )
++    <p role="status" className="py-4 text-sm text-muted-foreground">{filteredProjects.length} projects</p>
++    {mounted && <div>{filteredProjects.map(project => <article key={project.id} className="grid gap-5 border-b py-7 md:grid-cols-[10rem_minmax(0,1fr)_11rem] md:gap-8">
++      <img src={project.previewImage || "/placeholder.svg"} alt={project.title} className="aspect-video w-full max-w-xs object-cover md:w-40" />
++      <div className="min-w-0"><h2 className="text-xl font-semibold">{project.title}</h2><p className="mt-2 max-w-prose text-sm text-muted-foreground">{project.description}</p>
++        <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm"><div><dt className="inline text-muted-foreground">Level </dt><dd className="inline">{project.difficulty}</dd></div>{project.timeEstimate && <div><dt className="inline text-muted-foreground">Time </dt><dd className="inline">{project.timeEstimate}</dd></div>}<div><dt className="inline text-muted-foreground">Completions </dt><dd className="inline tabular-nums">{Math.round(project.completionCount || 0)}+</dd></div></dl>
++      </div><div className="flex items-start md:justify-end"><Button variant="outline" asChild className="min-h-11"><Link href={`/projects/${project.id}`} aria-label={`Select ${project.title}`}>Select Project <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></Button></div>
++    </article>)}</div>}
++    {filteredProjects.length === 0 && <div className="py-16"><h2 className="text-xl font-semibold">No projects found</h2><p className="mt-2 text-muted-foreground">Try adjusting your search or filter criteria</p><Button className="mt-6 min-h-11" onClick={() => { setActiveTab("all"); setSearchQuery("") }}>Reset Filters</Button></div>}
++  </div>
+ }
+diff --git a/app/start/page.tsx b/app/start/page.tsx
+index 5893280..9ef33c4 100644
+--- a/app/start/page.tsx
++++ b/app/start/page.tsx
+@@ -45,7 +45,7 @@ export default function GoalSettingPage() {
+   }
+ 
+   return (
+-    <div className="container max-w-4xl py-10">
++    <div className="container max-w-4xl px-5 py-12 md:py-16">
+       <Link href="/" className="inline-flex items-center text-sm font-medium mb-6 hover:underline">
+         <ArrowLeft className="mr-1 h-4 w-4" />
+         Back to home
+@@ -62,18 +62,18 @@ export default function GoalSettingPage() {
+             <motion.div variants={container} className="grid gap-4">
+               <motion.div variants={item}>
+                 <Card
+-                  className={`relative border-2 cursor-pointer transition-all ${
+-                    selectedGoal === "quick-win" ? "border-primary" : "border-primary/20"
++                  className={`relative border-0 border-b rounded-none shadow-none cursor-pointer transition-colors ${
++                    selectedGoal === "quick-win" ? "border-primary bg-muted" : "border-border bg-transparent"
+                   }`}
+                   onClick={() => handleCardClick("quick-win")}
+                 >
+                   <CardHeader>
+                     <div className="flex items-start justify-between">
+                       <div>
+-                        <CardTitle>Just a quick win</CardTitle>
++                        <CardTitle id="goal-title-quick-win">Just a quick win</CardTitle>
+                         <CardDescription>Something I can build in a single sitting (1-2 hours)</CardDescription>
+                       </div>
+-                      <RadioGroupItem value="quick-win" id="quick-win" className="mt-1" />
++                      <RadioGroupItem aria-labelledby="goal-title-quick-win" value="quick-win" id="quick-win" className="mt-1" />
+                     </div>
+                   </CardHeader>
+                 </Card>
+@@ -81,18 +81,18 @@ export default function GoalSettingPage() {
+ 
+               <motion.div variants={item}>
+                 <Card
+-                  className={`relative border-2 cursor-pointer transition-all ${
+-                    selectedGoal === "shareable" ? "border-primary" : "border-primary/20"
++                  className={`relative border-0 border-b rounded-none shadow-none cursor-pointer transition-colors ${
++                    selectedGoal === "shareable" ? "border-primary bg-muted" : "border-border bg-transparent"
+                   }`}
+                   onClick={() => handleCardClick("shareable")}
+                 >
+                   <CardHeader>
+                     <div className="flex items-start justify-between">
+                       <div>
+-                        <CardTitle>Something I can share</CardTitle>
++                        <CardTitle id="goal-title-shareable">Something I can share</CardTitle>
+                         <CardDescription>A project I can show colleagues or friends (half-day)</CardDescription>
+                       </div>
+-                      <RadioGroupItem value="shareable" id="shareable" className="mt-1" />
++                      <RadioGroupItem aria-labelledby="goal-title-shareable" value="shareable" id="shareable" className="mt-1" />
+                     </div>
+                   </CardHeader>
+                 </Card>
+@@ -100,18 +100,18 @@ export default function GoalSettingPage() {
+ 
+               <motion.div variants={item}>
+                 <Card
+-                  className={`relative border-2 cursor-pointer transition-all ${
+-                    selectedGoal === "prototype" ? "border-primary" : "border-primary/20"
++                  className={`relative border-0 border-b rounded-none shadow-none cursor-pointer transition-colors ${
++                    selectedGoal === "prototype" ? "border-primary bg-muted" : "border-border bg-transparent"
+                   }`}
+                   onClick={() => handleCardClick("prototype")}
+                 >
+                   <CardHeader>
+                     <div className="flex items-start justify-between">
+                       <div>
+-                        <CardTitle>Working prototype</CardTitle>
++                        <CardTitle id="goal-title-prototype">Working prototype</CardTitle>
+                         <CardDescription>A functional demo of a product idea (full day)</CardDescription>
+                       </div>
+-                      <RadioGroupItem value="prototype" id="prototype" className="mt-1" />
++                      <RadioGroupItem aria-labelledby="goal-title-prototype" value="prototype" id="prototype" className="mt-1" />
+                     </div>
+                   </CardHeader>
+                 </Card>
+@@ -119,18 +119,18 @@ export default function GoalSettingPage() {
+ 
+               <motion.div variants={item}>
+                 <Card
+-                  className={`relative border-2 cursor-pointer transition-all ${
+-                    selectedGoal === "mvp" ? "border-primary" : "border-primary/20"
++                  className={`relative border-0 border-b rounded-none shadow-none cursor-pointer transition-colors ${
++                    selectedGoal === "mvp" ? "border-primary bg-muted" : "border-border bg-transparent"
+                   }`}
+                   onClick={() => handleCardClick("mvp")}
+                 >
+                   <CardHeader>
+                     <div className="flex items-start justify-between">
+                       <div>
+-                        <CardTitle>Minimum viable product</CardTitle>
++                        <CardTitle id="goal-title-mvp">Minimum viable product</CardTitle>
+                         <CardDescription>A basic but complete version of my app idea (weekend)</CardDescription>
+                       </div>
+-                      <RadioGroupItem value="mvp" id="mvp" className="mt-1" />
++                      <RadioGroupItem aria-labelledby="goal-title-mvp" value="mvp" id="mvp" className="mt-1" />
+                     </div>
+                   </CardHeader>
+                 </Card>
+@@ -138,18 +138,18 @@ export default function GoalSettingPage() {
+ 
+               <motion.div variants={item}>
+                 <Card
+-                  className={`relative border-2 cursor-pointer transition-all ${
+-                    selectedGoal === "existing" ? "border-primary" : "border-primary/20"
++                  className={`relative border-0 border-b rounded-none shadow-none cursor-pointer transition-colors ${
++                    selectedGoal === "existing" ? "border-primary bg-muted" : "border-border bg-transparent"
+                   }`}
+                   onClick={() => handleCardClick("existing")}
+                 >
+                   <CardHeader>
+                     <div className="flex items-start justify-between">
+                       <div>
+-                        <CardTitle>Build on existing codebase</CardTitle>
++                        <CardTitle id="goal-title-existing">Build on existing codebase</CardTitle>
+                         <CardDescription>Add features to something I already started</CardDescription>
+                       </div>
+-                      <RadioGroupItem value="existing" id="existing" className="mt-1" />
++                      <RadioGroupItem aria-labelledby="goal-title-existing" value="existing" id="existing" className="mt-1" />
+                     </div>
+                   </CardHeader>
+                 </Card>
+diff --git a/components/mobile-nav.tsx b/components/mobile-nav.tsx
+index 6c379f5..0c099fd 100644
+--- a/components/mobile-nav.tsx
++++ b/components/mobile-nav.tsx
+@@ -40,7 +40,7 @@ export function MobileNav() {
+         <div className="px-7">
+           <div className="flex items-center justify-between">
+             <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
+-              <span className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-transparent bg-clip-text">
++              <span className="font-bold text-xl text-violet-700 dark:text-violet-300">
+                 VibeCodex
+               </span>
+             </Link>
+diff --git a/components/site-footer.tsx b/components/site-footer.tsx
+index d9135ec..0db68bc 100644
+--- a/components/site-footer.tsx
++++ b/components/site-footer.tsx
+@@ -10,7 +10,7 @@ export function SiteFooter() {
+           <div className="flex items-center gap-2">
+             <Link
+               href="/"
+-              className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-transparent bg-clip-text"
++              className="font-bold text-xl text-violet-700 dark:text-violet-300"
+             >
+               VibeCodex
+             </Link>
+diff --git a/components/site-header-minimal.tsx b/components/site-header-minimal.tsx
+index fb83c0a..c3762b9 100644
+--- a/components/site-header-minimal.tsx
++++ b/components/site-header-minimal.tsx
+@@ -38,7 +38,7 @@ export function SiteHeaderMinimal() {
+       <div className="container flex h-16 items-center justify-between max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="flex items-center">
+           <Link href="/" className="flex items-center mr-6">
+-            <span className="font-bold text-2xl bg-gradient-to-r from-cyan-500 to-violet-500 text-transparent bg-clip-text">
++            <span className="font-bold text-2xl text-violet-700 dark:text-violet-300">
+               VibeCodex
+             </span>
+           </Link>
+diff --git a/components/ui/gradient-button.tsx b/components/ui/gradient-button.tsx
+index 6880db8..732e58f 100644
+--- a/components/ui/gradient-button.tsx
++++ b/components/ui/gradient-button.tsx
+@@ -23,7 +23,7 @@ const gradientButtonVariants = cva(
+       },
+     },
+     defaultVariants: {
+-      variant: "primary",
++      variant: "default",
+       size: "default",
+     },
+   },
+@@ -37,7 +37,7 @@ export interface GradientButtonProps
+ 
+ const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
+   ({ className, variant, size, asChild = false, ...props }, ref) => {
+-    return <Button className={cn(gradientButtonVariants({ variant, size, className }))} ref={ref} {...props} />
++    return <Button className={cn(gradientButtonVariants({ variant, size, className }))} ref={ref} asChild={asChild} {...props} />
+   },
+ )
+ GradientButton.displayName = "GradientButton"
+diff --git a/project-design-brief.md b/project-design-brief.md
+new file mode 100644
+index 0000000..4e4dfc7
+--- /dev/null
++++ b/project-design-brief.md
+@@ -0,0 +1,28 @@
++# VibeCodex redesign brief
++
++A public AI-coding learning catalog, built with v0.dev and Cursor according to its README. Improve four screens: project catalog, learning guide catalog, goal selection and learning path. Use Editorial calm with a restrained violet identity accent. Preserve all data and destinations. No upstream publication.
++
++## Discovery
++
++Next 14.2.16 App Router, React 18, Tailwind 3, shadcn/Radix, next-themes. Existing HSL variables in app/globals.css are the source. No auth, roles, analytics or server mutations in the selected flow. Project and guide data are local. Goal selection writes selectedGoal to localStorage and pushes /projects. Build disables type and lint checks upstream; run TypeScript separately and report failures.
++
++## Behavior contract
++
++| ID | Trigger | Expected result | Check |
++| --- | --- | --- | --- |
++| C1 | Search catalog | Case-insensitive title/description filter | Search Kanban, then no-match term |
++| C2 | Select catalog category | Original project.id.includes category filter remains | Data category empty and reset |
++| C3 | Reset filters | All tab and empty query restored | Empty-state reset |
++| C4 | Select project | Original /projects/id destination | Compare rendered hrefs |
++| C5 | Choose goal, continue | Same selectedGoal string saved, /projects push | Pick prototype and inspect storage |
++| C6 | Learning experience buttons | Correct beginner/intermediate/advanced content | Click each, inspect headings |
++| C7 | Theme toggle | Light/dark root class and persistent theme | Toggle then reload |
++| C8 | Mobile navigation | Sheet opens, Escape closes, focus returns, links navigate | Keyboard and mobile smoke |
++| C9 | Guide links | Original local/external destinations unchanged | Compare href inventory |
++| C10 | Dropdown navigation/share | Existing menu items and URLs stay | Open More and Share, Escape |
++
++No credentials or external service calls. Empty project filter exists. Loading is hydration/mount animation, not a network request. No application error state exists for local data. Long content can be tested with the longest real titles; no fabricated backend error.
++
++## Composition
++
++Project catalog is the representative screen. Keep preview media because it describes actual projects, use hairline-separated rows for comparing title, effort and difficulty. Extend a shared page title/section anatomy to the other three screens. Retain the goal form's radio selection and learning-path controls. Tokens first, then layout, then functional copy.

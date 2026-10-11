@@ -1,0 +1,104 @@
+{
+  "start_utc": "2026-10-11T09:23:46Z",
+  "end_utc": "2026-10-11T09:29:00.466606Z",
+  "tool_call_count": 14,
+  "design_brief": {
+    "audiences": [
+      "Laboratory operator finding and updating today\u2019s demo samples",
+      "Council officer arranging water monitoring"
+    ],
+    "scope": "One queue restructure and one public hero, autonomous implementation authorized",
+    "stack": "Standalone HTML/CSS and baseline JavaScript; no dependencies or remote mutation",
+    "data": "Four supplied demo records; localStorage fieldwater-status; no auth, remote API or analytics",
+    "behavior_contract": "Preserve IDs, field names, supplied records, search/filter/reset, native required validation, local status persistence, Escape dismissal, focus return, theme toggle and anchors"
+  },
+  "decisions": [
+    "Queue uses aligned sample/station/due/status/action rows to compare due times without repeated cards. Narrow layout restores visible metadata labels.",
+    "Status text is paired with a colored dot; no status relies on color alone.",
+    "Graphite actions, warm neutral canvas, system sans and teal water accent form a project variant of the selected direction.",
+    "Hero composition A places a plan-first heading beside a field-to-laboratory sample drawing; composition B would use a full-width heading over a horizontal field/analysis process. A was selected because the service and action stay adjacent on desktop and precede the drawing on mobile.",
+    "Hero depicts one labelled sample rather than invented measurements, safety results or accreditation."
+  ],
+  "checks": [
+    {
+      "check": "Baseline Chromium snapshot and smoke",
+      "result": "4 samples, native dialog valid, Escape returns focus to Update FW-104",
+      "evidence": "baseline-desktop.png"
+    },
+    {
+      "check": "Final viewport/theme matrix",
+      "result": "No horizontal overflow at 320, 375 and 1280 CSS px in light and dark. Computed backgrounds match themes.",
+      "evidence": "checks.json; screen/hero width-theme PNGs"
+    },
+    {
+      "check": "200% text",
+      "result": "All body and descendant computed font sizes doubled once. Final 375 and 1280 layouts have no out-of-viewport elements. Screenshots reviewed for line overlap and clipping.",
+      "evidence": "reflow-checks.json; screen/hero width-text200.png"
+    },
+    {
+      "check": "Queue behavior",
+      "result": "North search and Received filter return 2; missing query shows empty state; reset returns 4. Save changes FW-104 to Processing, stores locally and survives reload. Escape, Cancel and Save return focus. Empty required status invalidates native form. Theme toggle sets aria-pressed true. Methods anchor resolves.",
+      "evidence": "checks.json"
+    },
+    {
+      "check": "Hero actions",
+      "result": "Primary mailto is sampling@example.com, visibly labelled demonstration address. Secondary action resolves #methods.",
+      "evidence": "checks.json"
+    },
+    {
+      "check": "Contrast",
+      "result": "Light/dark text roles >=5.55:1. Focus >=6.84:1. Essential control boundaries >=3.64:1 against page and >=3.84:1 against control surface. Primary text >=12.88:1. Ratios calculated from rendered solid CSS roles. Placeholder uses measured muted role.",
+      "evidence": "accessibility-checks.json"
+    },
+    {
+      "check": "Keyboard and forced colors",
+      "result": "Keyboard Tab shows solid 3px focus. Native modal dialog keeps page inert. Chromium briefly reports BODY during tab wrap, matching baseline. Forced-colors active keeps solid focus outline.",
+      "evidence": "accessibility-checks.json; baseline/screen direct comparison"
+    },
+    {
+      "check": "Reduced motion and text spacing",
+      "result": "Reduced-motion media emulation active; no animation or transitions added. User text-spacing overrides cause no horizontal overflow on either page.",
+      "evidence": "checks.json; accessibility-checks.json"
+    },
+    {
+      "check": "Static contract",
+      "result": "All baseline IDs and field names preserved. No external asset href/src. Inline behavior source unchanged except adding status data attribute for CSS."
+    }
+  ],
+  "limitations": [
+    "Chromium only; no physical-device, screen-reader or other-engine tests.",
+    "Scripting-disabled and storage-blocked states were not tested; queue retains the supplied JavaScript behavior contract.",
+    "No system automatic theme selection added because supplied theme is a manual toggle.",
+    "Composition alternative recorded as a bounded sketch description; only selected composition built.",
+    "Some enlarged hero words wrap across lines; full content remains readable.",
+    "No server build applies to standalone HTML."
+  ],
+  "tool_count_basis": "14 functions.exec orchestration calls. No delegation, network requests, added dependencies or writes outside this output directory.",
+  "resolved_failures": [
+    "Initial 200% mobile hero overflow fixed with zero-minimum grid tracks, heading wrapping and HTML diagram labels.",
+    "Initial 200% mobile metadata label overlap fixed with max-content label tracks."
+  ],
+  "self_review_scores": {
+    "baseline": {
+      "hierarchy": 2,
+      "grouping_density": 1,
+      "product_fit": 2,
+      "responsive": 2,
+      "states_copy": 3,
+      "interaction": 3,
+      "accessibility": 3
+    },
+    "final": {
+      "hierarchy": 3,
+      "grouping_density": 4,
+      "product_fit": 3,
+      "responsive": 3,
+      "states_copy": 3,
+      "interaction": 3,
+      "accessibility": 3
+    },
+    "limits": "Self-review based on inspected browser states, not independent taste approval or certification."
+  },
+  "elapsed_limit_minutes": 15,
+  "tool_limit": 18
+}

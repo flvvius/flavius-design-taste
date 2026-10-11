@@ -1,0 +1,2547 @@
+{
+  "at": "2026-10-11T09:11:23.171Z",
+  "browser": "149.0.7827.55",
+  "reports": [
+    {
+      "theme": "light",
+      "route": "/projects",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore Projects",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Find the perfect project to build with AI assistance",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "All Projects",
+          "ratio": 1.0040180509809489,
+          "minimum": 4.5
+        },
+        {
+          "text": "Web Apps",
+          "ratio": 4.611721442949278,
+          "minimum": 4.5
+        },
+        {
+          "text": "Mobile Apps",
+          "ratio": 4.611721442949278,
+          "minimum": 4.5
+        },
+        {
+          "text": "Data Projects",
+          "ratio": 4.611721442949278,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "VibeCodex"
+      ],
+      "inputBoundary": {
+        "color": "rgb(228, 228, 231)",
+        "ratio": 1.2688774649087908,
+        "minimum": 3
+      },
+      "reducedMotionAnimations": [],
+      "rootClass": "light",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(0, 95, 204)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "light",
+      "route": "/guides",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Guides",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Comprehensive guides to help you master AI-assisted development and build better",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guide Categories",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Explore our collection of guides covering various aspects of AI-assisted develop",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development Guide",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to effectively leverage AI tools to accelerate your development workfl",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore guide",
+          "ratio": 17.71676507806213,
+          "minimum": 4.5
+        },
+        {
+          "text": "Requirements Template",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "A structured approach to defining project requirements before implementation for",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "View template",
+          "ratio": 17.71676507806213,
+          "minimum": 4.5
+        },
+        {
+          "text": "From v0 to Cursor",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to transition your AI-generated prototype to a professional local deve",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "View Workflow",
+          "ratio": 17.71676507806213,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub Basics",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to save, manage, and share your AI-generated code with GitHub, the con",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore guide",
+          "ratio": 17.71676507806213,
+          "minimum": 4.5
+        },
+        {
+          "text": "Cursor Rules & Prompt Templates",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Master the art of communicating with AI coding tools through effective prompts a",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Read Guide",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tool Deep Dives",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "In-depth guides on getting the most out of specific AI tools, with a focus on Cu",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Coming soon",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources & TipsNew",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "New",
+          "ratio": 5.822387685771017,
+          "minimum": 4.5
+        },
+        {
+          "text": "Checklists, prompt samples, expert tips, and curated links to help you go furthe",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Browse resources",
+          "ratio": 3.6820433648230324,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Featured Guide",
+        "AI Development Guide",
+        "Our comprehensive guide to AI-assisted development covers everything from planni",
+        "Planning with AI",
+        "AI Tools Comparison",
+        "Development Workflow",
+        "Best Practices",
+        "Explore Guide",
+        "VibeCodex"
+      ],
+      "inputBoundary": null,
+      "reducedMotionAnimations": [
+        "float",
+        "float",
+        "float"
+      ],
+      "rootClass": "light",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(0, 95, 204)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "light",
+      "route": "/start",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Back to home",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "What are you looking to achieve?",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Select a goal that matches your available time and ambition.",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Just a quick win",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Something I can build in a single sitting (1-2 hours)",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Something I can share",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "A project I can show colleagues or friends (half-day)",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Working prototype",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "A functional demo of a product idea (full day)",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Minimum viable product",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "A basic but complete version of my app idea (weekend)",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build on existing codebase",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Add features to something I already started",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Continue to Projects",
+        "VibeCodex"
+      ],
+      "inputBoundary": {
+        "color": "rgb(24, 24, 27)",
+        "ratio": 17.71676507806213,
+        "minimum": 3
+      },
+      "reducedMotionAnimations": [],
+      "rootClass": "light",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(0, 95, 204)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "light",
+      "route": "/learning-path",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Your AI Development Journey",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "A structured learning path to take you from beginner to confident AI-assisted de",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Browse Projects",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Choose Your Path",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Select the learning path that matches your current experience level and goals",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner",
+          "ratio": 1.0955171955711072,
+          "minimum": 4.5
+        },
+        {
+          "text": "New to coding",
+          "ratio": 4.411519582433118,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 4.411519582433118,
+          "minimum": 4.5
+        },
+        {
+          "text": "Some experience",
+          "ratio": 4.411519582433118,
+          "minimum": 4.5
+        },
+        {
+          "text": "Advanced",
+          "ratio": 4.411519582433118,
+          "minimum": 4.5
+        },
+        {
+          "text": "Experienced coder",
+          "ratio": 4.411519582433118,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner Path",
+          "ratio": 7.565758731363827,
+          "minimum": 4.5
+        },
+        {
+          "text": "Start Your AI Development Journey",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Perfect for those with little to no coding experience. This path will guide you ",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Your Learning Milestones",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Follow these steps to go from complete beginner to confidently building with AI ",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "1",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "1-2 hours",
+          "ratio": 14.449048567498336,
+          "minimum": 4.5
+        },
+        {
+          "text": "Quick Win",
+          "ratio": 2.9523254855960968,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build Your First Project with v0",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Create a simple project using v0 without writing any code",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "v0",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Prompt writing",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project planning",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Basic UI concepts",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "2",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Half-day",
+          "ratio": 14.449048567498336,
+          "minimum": 4.5
+        },
+        {
+          "text": "Shareable",
+          "ratio": 2.9523254855960968,
+          "minimum": 4.5
+        },
+        {
+          "text": "Save & Manage Your Code",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to save your AI-generated code and prepare for more advanced developme",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "github",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub basics",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Code organization",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Simple code editing",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "3",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full day",
+          "ratio": 14.449048567498336,
+          "minimum": 4.5
+        },
+        {
+          "text": "Working Prototype",
+          "ratio": 2.9523254855960968,
+          "minimum": 4.5
+        },
+        {
+          "text": "Extend Your Project with an IDE",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Move from v0 to Cursor when your project grows beyond 40-50 files",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "cursor",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "IDE basics",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Code navigation",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Making larger changes",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "4",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Weekend",
+          "ratio": 14.449048567498336,
+          "minimum": 4.5
+        },
+        {
+          "text": "MVP",
+          "ratio": 2.9523254855960968,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build a Complete Application",
+          "ratio": 19.895357656776593,
+          "minimum": 3
+        },
+        {
+          "text": "Create a more complex project using everything you've learned",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "v0",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "github",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "cursor",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "vercel",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full project workflow",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Adding features",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Debugging",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Deployment",
+          "ratio": 16.118381484528566,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 4.832895561154151,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.895357656776593,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Find Your Path",
+        "Start Learning",
+        "VibeCodex"
+      ],
+      "inputBoundary": null,
+      "reducedMotionAnimations": [
+        "float",
+        "float",
+        "float"
+      ],
+      "rootClass": "light",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(0, 95, 204)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "dark",
+      "route": "/projects",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore Projects",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Find the perfect project to build with AI assistance",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "All Projects",
+          "ratio": 1.0003873758291841,
+          "minimum": 4.5
+        },
+        {
+          "text": "Web Apps",
+          "ratio": 6.915436439600302,
+          "minimum": 4.5
+        },
+        {
+          "text": "Mobile Apps",
+          "ratio": 6.915436439600302,
+          "minimum": 4.5
+        },
+        {
+          "text": "Data Projects",
+          "ratio": 6.915436439600302,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Modern Personal Dashboard",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "A sleek, data-driven personal dashboard to track metrics and tasks.",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Team Collaboration Kanban Board",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Build a drag-and-drop kanban board for team task management",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full day1243+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "1243+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Personal Dashboard for Tracking Habits",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Create a customizable dashboard to track daily habits and goals",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Half-day2156+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "2156+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Product Landing Page with Signup Form",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Build a professional landing page with email signup functionality",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "1-2 hours0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Advanced",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Simple Content Management System",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Build a basic CMS for managing blog posts or articles",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Weekend0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Personal Expense Tracker",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Build an app to track and categorize personal expenses",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full day0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 13.994444598527048,
+          "minimum": 4.5
+        },
+        {
+          "text": "Recipe Finder with Search and Filters",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Create a recipe discovery app with search and filtering capabilities",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full day0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "0+",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Select Project",
+          "ratio": 16.973898642198108,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "VibeCodex"
+      ],
+      "inputBoundary": {
+        "color": "rgb(39, 39, 42)",
+        "ratio": 1.3357440312430557,
+        "minimum": 3
+      },
+      "reducedMotionAnimations": [],
+      "rootClass": "dark",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(153, 200, 255)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "dark",
+      "route": "/guides",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Guides",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Comprehensive guides to help you master AI-assisted development and build better",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guide Categories",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Explore our collection of guides covering various aspects of AI-assisted develop",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development Guide",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to effectively leverage AI tools to accelerate your development workfl",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore guide",
+          "ratio": 18.003422226070697,
+          "minimum": 4.5
+        },
+        {
+          "text": "Requirements Template",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "A structured approach to defining project requirements before implementation for",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "View template",
+          "ratio": 18.003422226070697,
+          "minimum": 4.5
+        },
+        {
+          "text": "From v0 to Cursor",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to transition your AI-generated prototype to a professional local deve",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "View Workflow",
+          "ratio": 18.003422226070697,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub Basics",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to save, manage, and share your AI-generated code with GitHub, the con",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Explore guide",
+          "ratio": 18.003422226070697,
+          "minimum": 4.5
+        },
+        {
+          "text": "Cursor Rules & Prompt Templates",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "Master the art of communicating with AI coding tools through effective prompts a",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Read Guide",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tool Deep Dives",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "In-depth guides on getting the most out of specific AI tools, with a focus on Cu",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Coming soon",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources & TipsNew",
+          "ratio": 18.003422226070697,
+          "minimum": 3
+        },
+        {
+          "text": "New",
+          "ratio": 5.822387685771017,
+          "minimum": 4.5
+        },
+        {
+          "text": "Checklists, prompt samples, expert tips, and curated links to help you go furthe",
+          "ratio": 7.332040476864347,
+          "minimum": 4.5
+        },
+        {
+          "text": "Browse resources",
+          "ratio": 5.1035102327348785,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Featured Guide",
+        "AI Development Guide",
+        "Our comprehensive guide to AI-assisted development covers everything from planni",
+        "Planning with AI",
+        "AI Tools Comparison",
+        "Development Workflow",
+        "Best Practices",
+        "Explore Guide",
+        "VibeCodex"
+      ],
+      "inputBoundary": null,
+      "reducedMotionAnimations": [
+        "float",
+        "float",
+        "float"
+      ],
+      "rootClass": "dark",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(153, 200, 255)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "dark",
+      "route": "/start",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Back to home",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "What are you looking to achieve?",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Select a goal that matches your available time and ambition.",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Just a quick win",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Something I can build in a single sitting (1-2 hours)",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Something I can share",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "A project I can show colleagues or friends (half-day)",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Working prototype",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "A functional demo of a product idea (full day)",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Minimum viable product",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "A basic but complete version of my app idea (weekend)",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build on existing codebase",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Add features to something I already started",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Continue to Projects",
+        "VibeCodex"
+      ],
+      "inputBoundary": {
+        "color": "rgb(250, 250, 250)",
+        "ratio": 19.061142529601344,
+        "minimum": 3
+      },
+      "reducedMotionAnimations": [],
+      "rootClass": "dark",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(153, 200, 255)",
+        "width": "1px"
+      }
+    },
+    {
+      "theme": "dark",
+      "route": "/learning-path",
+      "text": [
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Learning Path",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "More",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Share",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Your AI Development Journey",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "A structured learning path to take you from beginner to confident AI-assisted de",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Browse Projects",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Choose Your Path",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Select the learning path that matches your current experience level and goals",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner",
+          "ratio": 20.172843484025293,
+          "minimum": 4.5
+        },
+        {
+          "text": "New to coding",
+          "ratio": 7.867596661581724,
+          "minimum": 4.5
+        },
+        {
+          "text": "Intermediate",
+          "ratio": 7.871075602514989,
+          "minimum": 4.5
+        },
+        {
+          "text": "Some experience",
+          "ratio": 7.867596661581724,
+          "minimum": 4.5
+        },
+        {
+          "text": "Advanced",
+          "ratio": 7.871075602514989,
+          "minimum": 4.5
+        },
+        {
+          "text": "Experienced coder",
+          "ratio": 7.867596661581724,
+          "minimum": 4.5
+        },
+        {
+          "text": "Beginner Path",
+          "ratio": 9.712535180740469,
+          "minimum": 4.5
+        },
+        {
+          "text": "Start Your AI Development Journey",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Perfect for those with little to no coding experience. This path will guide you ",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Your Learning Milestones",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Follow these steps to go from complete beginner to confidently building with AI ",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "1",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "1-2 hours",
+          "ratio": 15.384174372751602,
+          "minimum": 4.5
+        },
+        {
+          "text": "Quick Win",
+          "ratio": 10.500385140242301,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build Your First Project with v0",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Create a simple project using v0 without writing any code",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "v0",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Prompt writing",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project planning",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Basic UI concepts",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "2",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Half-day",
+          "ratio": 15.384174372751602,
+          "minimum": 4.5
+        },
+        {
+          "text": "Shareable",
+          "ratio": 10.500385140242301,
+          "minimum": 4.5
+        },
+        {
+          "text": "Save & Manage Your Code",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Learn how to save your AI-generated code and prepare for more advanced developme",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "github",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub basics",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Code organization",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Simple code editing",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "3",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full day",
+          "ratio": 15.384174372751602,
+          "minimum": 4.5
+        },
+        {
+          "text": "Working Prototype",
+          "ratio": 10.500385140242301,
+          "minimum": 4.5
+        },
+        {
+          "text": "Extend Your Project with an IDE",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Move from v0 to Cursor when your project grows beyond 40-50 files",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "cursor",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "IDE basics",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Code navigation",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Making larger changes",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "4",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Weekend",
+          "ratio": 15.384174372751602,
+          "minimum": 4.5
+        },
+        {
+          "text": "MVP",
+          "ratio": 10.500385140242301,
+          "minimum": 4.5
+        },
+        {
+          "text": "Build a Complete Application",
+          "ratio": 19.061142529601344,
+          "minimum": 3
+        },
+        {
+          "text": "Create a more complex project using everything you've learned",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Tools:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "v0",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "github",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "cursor",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "vercel",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Skills:",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Full project workflow",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Adding features",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Debugging",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Deployment",
+          "ratio": 14.270056301028625,
+          "minimum": 4.5
+        },
+        {
+          "text": "Show Details",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "An open-source project by Zentrik AI to help everyone build with AI—no coding re",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Project",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Projects",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contribute",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Resources",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "Guides",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "AI Development",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Documentation",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Community",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "GitHub",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Medium",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Contributors",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Legal",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        },
+        {
+          "text": "License",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Privacy",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Terms",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "© 2026 VibeCodex. Released under the MIT License.",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "Built with ❤️ by",
+          "ratio": 7.762805693682826,
+          "minimum": 4.5
+        },
+        {
+          "text": "zentrik.ai",
+          "ratio": 19.061142529601344,
+          "minimum": 4.5
+        }
+      ],
+      "skippedComplex": [
+        "VibeCodex",
+        "Get Started",
+        "Find Your Path",
+        "Start Learning",
+        "VibeCodex"
+      ],
+      "inputBoundary": null,
+      "reducedMotionAnimations": [
+        "float",
+        "float",
+        "float"
+      ],
+      "rootClass": "dark",
+      "focus": {
+        "text": "VibeCodex",
+        "outline": "rgb(153, 200, 255)",
+        "width": "1px"
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+
+> vibecodex@0.6.0 prebuild
+> node scripts/generate-docs-tree.js
+
+Docs tree written to /private/tmp/flavius-design-practice/phase6/vibecodex-audit/public/docs-tree.json
+
+> vibecodex@0.6.0 build
+> next build
+
+  ▲ Next.js 14.2.16
+
+   Creating an optimized production build ...
+(node:85597) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:85617) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled successfully
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/38) ...
+   Generating static pages (9/38) 
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+   Generating static pages (18/38) 
+   Generating static pages (28/38) 
+ ✓ Generating static pages (38/38)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      11.8 kB         114 kB
+├ ○ /_not-found                            162 B          87.5 kB
+├ ○ /community                             3.61 kB         106 kB
+├ ○ /contribute                            5.96 kB         117 kB
+├ ○ /docs                                  1.04 kB         103 kB
+├ ● /docs/[...slug]                        148 kB          251 kB
+├   ├ /docs/README
+├   ├ /docs/architecture-overview
+├   ├ /docs/documentation-management
+├   └ [+8 more paths]
+├ ○ /guides                                6.26 kB         153 kB
+├ ○ /guides/ai-development                 6.05 kB         152 kB
+├ ○ /guides/ai-development/best-practices  6.95 kB         118 kB
+├ ○ /guides/ai-development/planning        6.92 kB         118 kB
+├ ○ /guides/ai-development/tools           6.17 kB         114 kB
+├ ○ /guides/ai-development/workflow        6.37 kB         162 kB
+├ ○ /guides/cursor-rules-templates         1.82 kB         135 kB
+├ ○ /guides/from-v0-to-cursor              7.28 kB         115 kB
+├ ○ /guides/github-basics                  15.7 kB         132 kB
+├ ○ /guides/nextjs-quickstart              4.84 kB         107 kB
+├ ○ /guides/requirements-template          7.88 kB         119 kB
+├ ○ /learning-path                         7.77 kB         119 kB
+├ ○ /license                               162 B          87.5 kB
+├ ○ /privacy                               162 B          87.5 kB
+├ ○ /projects                              3.12 kB         169 kB
+├ ƒ /projects/[id]                         4.55 kB         169 kB
+├ ƒ /projects/[id]/[tool]                  6.95 kB         197 kB
+├ ƒ /projects/[id]/complete                3.31 kB         169 kB
+├ ○ /resources                             1.04 kB         103 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /sitemap.xml                           0 B                0 B
+├ ○ /start                                 7.69 kB         160 kB
+└ ○ /terms                                 162 B          87.5 kB
++ First Load JS shared by all              87.4 kB
+  ├ chunks/9435-ff4b264afb7f14aa.js        31.8 kB
+  ├ chunks/d409e9fb-947bc02f77fc62d5.js    53.6 kB
+  └ other shared chunks (total)            1.99 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand
+

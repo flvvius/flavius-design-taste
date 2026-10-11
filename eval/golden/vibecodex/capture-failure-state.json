@@ -1,0 +1,12 @@
+[
+  {
+    "route": "/projects",
+    "name": "intentional-invalid-action",
+    "actions": [
+      {
+        "selector": "body",
+        "unsupported": true
+      }
+    ]
+  }
+]

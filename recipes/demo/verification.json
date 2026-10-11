@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-11T09:16:38.792Z",
+  "browser": "149.0.7827.55",
+  "base": "http://127.0.0.1:4314",
+  "checks": [
+    "Preference local callback and announcement",
+    "Search success, empty and clear",
+    "Native modal focus, Escape and restoration",
+    "settings-page 200% all rendered fonts fit 375px",
+    "table-and-filters 200% all rendered fonts fit 375px",
+    "onboarding-flow 200% all rendered fonts fit 375px",
+    "editorial-landing 200% all rendered fonts fit 375px",
+    "case-study-page 200% all rendered fonts fit 375px",
+    "ink 200% all rendered fonts fit 375px",
+    "Reduced motion renders static complete underline"
+  ],
+  "failures": [],
+  "limits": "No screen-reader or cross-engine claim; color roles are verified by canonical palette checks."
+}

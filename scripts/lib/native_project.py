@@ -5,9 +5,9 @@ import shutil
 
 def create_project(root: Path, base: Path, without_font: bool = False):
     base.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(root / 'eval/cycles/15/NativeRoom.swift', base / 'NativeRoom.swift')
-    shutil.copyfile(root / 'eval/cycles/16/RoomUITests.swift', base / 'RoomUITests.swift')
-    for name, source in [('tokens.json', 'skills/personal-room/assets/tokens.json'), ('Schoolbell-Regular.ttf', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf'), ('Schoolbell-LICENSE.txt', 'skills/personal-room/assets/fonts/LICENSE.txt'), ('Schoolbell-NOTICE.txt', 'skills/personal-room/assets/fonts/NOTICE.txt'), ('LICENSE.txt', 'LICENSE')]:
+    shutil.copyfile(root / 'eval/archive/eval/cycles/15/NativeRoom.swift', base / 'NativeRoom.swift')
+    shutil.copyfile(root / 'eval/archive/eval/cycles/16/RoomUITests.swift', base / 'RoomUITests.swift')
+    for name, source in [('tokens.json', 'directions/personal-room/assets/tokens.json'), ('Schoolbell-Regular.ttf', 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf'), ('Schoolbell-LICENSE.txt', 'directions/personal-room/assets/fonts/LICENSE.txt'), ('Schoolbell-NOTICE.txt', 'directions/personal-room/assets/fonts/NOTICE.txt'), ('LICENSE.txt', 'LICENSE')]:
         if name != 'Schoolbell-Regular.ttf' or not without_font:
             shutil.copyfile(root / source, base / name)
     (base / 'Info.plist').write_bytes(plistlib.dumps({'CFBundleExecutable': '$(EXECUTABLE_NAME)', 'CFBundleIdentifier': '$(PRODUCT_BUNDLE_IDENTIFIER)', 'CFBundleName': '$(PRODUCT_NAME)', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'UILaunchScreen': {}, 'UIAppFonts': [] if without_font else ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}))

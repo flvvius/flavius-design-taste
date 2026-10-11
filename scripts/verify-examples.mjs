@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {chromium, firefox, webkit} from '@playwright/test';
-import {mkdir, writeFile, mkdtemp} from 'node:fs/promises';
+import {mkdir, writeFile, mkdtemp, readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
@@ -21,6 +21,7 @@ if (!Object.hasOwn(engines, browserName)) throw new Error('--browser requires ch
 const outputIndex = argumentsList.indexOf('--output');
 if (outputIndex !== -1 && !argumentsList[outputIndex + 1]) throw new Error('--output requires a directory');
 const output = outputIndex === -1 ? await mkdtemp(resolve(tmpdir(), 'taste-browser-')) : resolve(root, argumentsList[outputIndex + 1]);
+if (output === resolve(root, 'eval/archive') || output.startsWith(resolve(root, 'eval/archive') + '/')) throw new Error('Output must be outside the frozen archive');
 await mkdir(output, {recursive: true});
 let browser;
 const reports = [], failures = [], interactions = [], unverified = [];
@@ -29,10 +30,10 @@ const requestedSurfaces = argumentsList.flatMap((value, index) => value === '--s
 const allSurfaces = [
   {name: 'personal-room', path: 'examples/personal-room/index.html', themes: ['paper', 'night'], palette: '[data-palette]', setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click()},
   {name: 'editorial-calm', path: 'examples/index.html', themes: ['light', 'dark'], setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}},
-  {name: 'usage-chart', path: 'eval/cycles/07/index.html', themes: ['light', 'dark'], states: ['week', 'month'], setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: async (page, state) => {await page.locator('#period').selectOption(state); await page.locator('details summary').click();}},
-  {name: 'article-search', path: 'eval/cycles/09/index.html', themes: ['light', 'dark'], states: ['untouched', 'loading', 'results', 'empty', 'error'], beforeLoad: installSearchClock, setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: setupSearchState},
-  {name: 'document-library', path: 'eval/cycles/04/index.html', themes: ['light', 'dark'], states: libraryStates, setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}, setup: setupLibraryState},
-  {name: 'repair-notebook', path: 'eval/cycles/12/index.html', themes: ['paper', 'night'], setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click(), setup: async page => page.locator('#edit').click()}
+  {name: 'usage-chart', path: 'eval/archive/eval/cycles/07/index.html', themes: ['light', 'dark'], states: ['week', 'month'], setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: async (page, state) => {await page.locator('#period').selectOption(state); await page.locator('details summary').click();}},
+  {name: 'article-search', path: 'eval/archive/eval/cycles/09/index.html', themes: ['light', 'dark'], states: ['untouched', 'loading', 'results', 'empty', 'error'], beforeLoad: installSearchClock, setTheme: async (page, theme) => page.locator('#theme').selectOption(theme), setup: setupSearchState},
+  {name: 'document-library', path: 'eval/archive/eval/cycles/04/index.html', themes: ['light', 'dark'], states: libraryStates, setTheme: async (page, theme) => {if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.locator('#theme').click();}, setup: setupLibraryState},
+  {name: 'repair-notebook', path: 'eval/archive/eval/cycles/12/index.html', themes: ['paper', 'night'], setTheme: async (page, theme) => page.locator(`[data-palette="${theme}"]`).click(), setup: async page => page.locator('#edit').click()}
 ];
 for (const name of requestedSurfaces) if (!allSurfaces.some(surface => surface.name === name)) throw new Error(`Unknown surface: ${name}`);
 const surfaces = allSurfaces.filter(surface => !requestedSurfaces.length || requestedSurfaces.includes(surface.name));
@@ -41,7 +42,16 @@ const variants = [
   {width: 320, mode: 'all-text-200'}, {width: 320, height: 480, mode: 'all-text-200-short'}, {width: 320, mode: 'spacing'},
   {width: 320, mode: 'forced-colors'}, {width: 1440, mode: 'forced-colors'}
 ];
-const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/theme-checks.mjs', 'scripts/lib/specimen-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/cycles/04/index.html', 'eval/cycles/09/index.html', 'eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'eval/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/cycles/12/index.html', 'eval/cycles/12/style.css', 'eval/cycles/12/notebook.js', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/tokens.css', 'skills/personal-room/assets/fonts.css', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'skills/editorial-calm/assets/tokens.json', 'skills/editorial-calm/assets/tokens.css', 'skills/editorial-calm/assets/fonts.css', 'skills/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'skills/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+const sourcePaths = ['scripts/verify-examples.mjs', 'scripts/lib/browser-checks.mjs', 'scripts/lib/theme-checks.mjs', 'scripts/lib/specimen-checks.mjs', 'scripts/lib/source-snapshot.mjs', 'scripts/lib/usage-chart-checks.mjs', 'scripts/lib/search-checks.mjs', 'scripts/lib/library-checks.mjs', 'eval/archive/eval/cycles/04/index.html', 'eval/archive/eval/cycles/09/index.html', 'eval/archive/eval/cycles/07/index.html', 'package-lock.json', 'examples/index.html', 'eval/index.html', 'examples/personal-room/index.html', 'examples/personal-room/style.css', 'examples/personal-room/room.js', 'eval/archive/eval/cycles/12/index.html', 'eval/archive/eval/cycles/12/style.css', 'eval/archive/eval/cycles/12/notebook.js', 'directions/personal-room/assets/tokens.json', 'directions/personal-room/assets/tokens.css', 'directions/personal-room/assets/fonts.css', 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf', 'directions/editorial-calm/assets/tokens.json', 'directions/editorial-calm/assets/tokens.css', 'directions/editorial-calm/assets/fonts.css', 'directions/editorial-calm/assets/fonts/inter-latin-wght-normal.woff2', 'directions/editorial-calm/assets/fonts/inter-latin-ext-wght-normal.woff2'];
+async function archivedAssets(directory = 'eval/archive/skills') {
+  const paths = [];
+  for (const entry of await readdir(resolve(root, directory), {withFileTypes: true})) {
+    const path = directory + '/' + entry.name;
+    paths.push(...(entry.isDirectory() ? await archivedAssets(path) : [path]));
+  }
+  return paths;
+}
+sourcePaths.push(...await archivedAssets());
 let server, snapshot, editorialColors;
 async function check(name, operation) {
   try {await operation(); interactions.push({name, passed: true});}
@@ -49,7 +59,7 @@ async function check(name, operation) {
 }
 try {
   snapshot = await captureSources(root, sourcePaths);
-  editorialColors = JSON.parse(snapshot.files.get(resolve(root, 'skills/editorial-calm/assets/tokens.json')).toString()).colors;
+  editorialColors = JSON.parse(snapshot.files.get(resolve(root, 'directions/editorial-calm/assets/tokens.json')).toString()).colors;
   server = await serve(root, snapshot.files);
   browser = await engines[browserName].launch();
   capabilities.forcedColors = await forcedColorSupport(browser);
@@ -156,7 +166,7 @@ try {
       const searchPage = await browser.newPage({viewport: {width: 320, height: 960}});
       try {
         await installSearchClock(searchPage);
-        await searchPage.goto(`${server.url}/eval/cycles/09/index.html`);
+        await searchPage.goto(`${server.url}/eval/archive/eval/cycles/09/index.html`);
         await pauseSearchClock(searchPage);
         const timeline = await assertSearchTransitions(searchPage);
         await writeFile(resolve(output, 'article-search-transitions.json'), JSON.stringify(timeline, null, 2) + '\n');
@@ -167,7 +177,7 @@ try {
         const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: variant.width, height: 960}});
         try {
           if (variant.mode.endsWith('missing-font')) await fallback.route('**/*.woff2', route => route.abort());
-          await fallback.goto(`${server.url}/eval/cycles/09/index.html`); await waitForFonts(fallback);
+          await fallback.goto(`${server.url}/eval/archive/eval/cycles/09/index.html`); await waitForFonts(fallback);
           assert.deepEqual(await fallback.locator('#results summary').allTextContents(), articleTitles);
           assert.equal(await fallback.locator('#search input:enabled, #search button:enabled, #theme:enabled').count(), 0);
           assert.match(await fallback.locator('#status').textContent(), /Six sample articles are available/);
@@ -193,7 +203,7 @@ try {
         const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: variant.width, height: 960}, forcedColors: variant.mode === 'forced-colors' ? 'active' : 'none'});
         try {
           if (variant.mode.endsWith('missing-font')) await fallback.route('**/*.woff2', route => route.abort());
-          await fallback.goto(`${server.url}/eval/cycles/07/index.html`);
+          await fallback.goto(`${server.url}/eval/archive/eval/cycles/07/index.html`);
           await waitForFonts(fallback);
           assert(await fallback.locator('#period').isDisabled());
           assert(await fallback.locator('#theme').isDisabled());
@@ -215,7 +225,7 @@ try {
       });
     }
     await check('usage-chart live resizing preserves the period and exposes one values view', async () => {
-      await page.goto(`${server.url}/eval/cycles/07/index.html`);
+      await page.goto(`${server.url}/eval/archive/eval/cycles/07/index.html`);
       await page.locator('details summary').click();
       await page.locator('#period').selectOption('month');
       const snapshots = [];
@@ -235,7 +245,7 @@ try {
       await page.setViewportSize({width: 390, height: 844});
     });
     await check('usage-chart repeated period changes preserve exact values and focus', async () => {
-      await page.goto(`${server.url}/eval/cycles/07/index.html`);
+      await page.goto(`${server.url}/eval/archive/eval/cycles/07/index.html`);
       await page.locator('details summary').click();
       await page.locator('#period').focus();
       for (const period of ['month', 'week', 'month']) {
@@ -254,6 +264,8 @@ try {
     await link.click(); assert(await page.locator('#project-walks').evaluate(element => element.open));
   });
   await check('keyboard project activation focuses visible summary', async () => {
+    await page.goto(`${server.url}/examples/personal-room/index.html`);
+    await waitForFonts(page);
     await page.locator('.object-link').nth(1).focus(); await page.keyboard.press('Enter');
     await page.waitForFunction(() => document.activeElement?.matches('#project-notes summary'));
     await page.waitForFunction(() => {
@@ -396,7 +408,7 @@ try {
   }
   if (surfaces.some(surface => surface.name === 'repair-notebook')) {
   await check('repair notebook validation, cancel, save and reload', async () => {
-    await page.goto(`${server.url}/eval/cycles/12/index.html`);
+    await page.goto(`${server.url}/eval/archive/eval/cycles/12/index.html`);
     await page.locator('#edit').click(); await page.locator('#note-title').fill('');
     await page.locator('button[type="submit"]').click();
     assert.equal(await page.locator('#note-title').getAttribute('aria-invalid'), 'true');
@@ -430,7 +442,7 @@ try {
   await check('repair notebook without JavaScript remains readable', async () => {
     const fallback = await browser.newPage({javaScriptEnabled: false, viewport: {width: 320, height: 844}});
     try {
-      await fallback.goto(`${server.url}/eval/cycles/12/index.html`);
+      await fallback.goto(`${server.url}/eval/archive/eval/cycles/12/index.html`);
       await fallback.locator('#alba-cover summary').click();
       assert(await fallback.locator('#alba-cover').evaluate(element => element.open));
       assert.match(await fallback.locator('#alba-cover .entry-body').textContent(), /Încet/);
@@ -443,7 +455,7 @@ try {
       const fallback = await browser.newPage({viewport: {width: 320, height: 960}});
       try {
         await fallback.route('**/*.woff2', route => route.abort());
-        await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+        await fallback.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(fallback);
         assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
         if (await fallback.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await fallback.locator('#theme').click();
         await enlargeText(fallback); const library = await assertLibraryState(fallback, 'active');
@@ -471,7 +483,7 @@ try {
           if (initializationFaults[mode]) await fallback.addInitScript(initializationFaults[mode].script);
           const missingFont = variant.setting.startsWith('missing-font');
           if (missingFont) await fallback.route('**/*.woff2', route => route.abort());
-          await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+          await fallback.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(fallback);
           if (missingFont) assert(await fallback.evaluate(() => [...document.fonts].some(face => face.status === 'error')));
           if (variant.setting.endsWith('all-text-200')) await enlargeText(fallback);
           if (variant.setting === 'spacing') await applyTextSpacing(fallback);
@@ -491,7 +503,7 @@ try {
       const errors = []; fallback.on('pageerror', error => errors.push(error.message));
       try {
         if (initializationFaults[mode]) await fallback.addInitScript(initializationFaults[mode].script);
-        await fallback.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(fallback);
+        await fallback.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(fallback);
         const timeline = [];
         for (const scheme of ['light', 'dark', 'light']) {
           await fallback.emulateMedia({colorScheme: scheme});
@@ -506,7 +518,7 @@ try {
     await check('document library automatic and explicit themes', async () => {
       const themed = await browser.newPage({colorScheme: 'light', viewport: {width: 320, height: 960}});
       try {
-        await themed.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(themed);
+        await themed.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(themed);
         const timeline = await assertLibraryThemeTransitions(themed, editorialColors);
         await writeFile(resolve(output, 'document-library-theme-transitions.json'), JSON.stringify(timeline, null, 2) + '\n');
       } finally {await themed.close();}
@@ -514,7 +526,7 @@ try {
     await check('document library coarse-pointer padding and row navigation', async () => {
       const touch = await browser.newPage({viewport: {width: 320, height: 960}, hasTouch: true});
       try {
-        await touch.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(touch);
+        await touch.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(touch);
         assert(await touch.evaluate(() => matchMedia('(pointer:coarse)').matches));
         const targets = await assertLibraryPointerTargets(touch, {touch: true});
         await assertLibraryState(touch, 'active');
@@ -525,7 +537,7 @@ try {
       const library = await browser.newPage({viewport: {width: 1440, height: 960}, reducedMotion: 'reduce'});
       try {
         const errors = []; library.on('pageerror', error => errors.push(error.message));
-        await library.goto(`${server.url}/eval/cycles/04/index.html`); await waitForFonts(library);
+        await library.goto(`${server.url}/eval/archive/eval/cycles/04/index.html`); await waitForFonts(library);
         if (await library.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await library.locator('#theme').click();
         const focus = await assertLibraryFocus(library);
         await writeFile(resolve(output, `document-library-${theme}-focus.json`), JSON.stringify(focus, null, 2) + '\n');
@@ -544,8 +556,8 @@ try {
   }
   const editorialConsumers = [
     {name: 'editorial-calm', path: 'examples/index.html', control: 'button'},
-    {name: 'usage-chart', path: 'eval/cycles/07/index.html', control: 'select'},
-    {name: 'article-search', path: 'eval/cycles/09/index.html', control: 'select'},
+    {name: 'usage-chart', path: 'eval/archive/eval/cycles/07/index.html', control: 'select'},
+    {name: 'article-search', path: 'eval/archive/eval/cycles/09/index.html', control: 'select'},
     {name: 'evaluation-gallery', path: 'eval/index.html', control: 'button'}
   ].filter(consumer => consumer.name === 'evaluation-gallery' ? !requestedSurfaces.length : surfaces.some(surface => surface.name === consumer.name));
   for (const consumer of editorialConsumers) {

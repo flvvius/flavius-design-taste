@@ -1,0 +1,39 @@
+{
+  "mapping": {
+    "FFF6": {
+      "condition": "no skill",
+      "scratch": "a",
+      "sha256": {
+        "screen.html": "f54529cbcbe7afbb2c56e31abbf81621d400d63918371663cfe5153a4a729885",
+        "hero.html": "f4002a887b9e40b077cefc2bc110c5be9312dad2f0c6e412202fcc35253b8cea"
+      }
+    },
+    "1FE9": {
+      "condition": "new flavius-design + core",
+      "scratch": "c",
+      "sha256": {
+        "screen.html": "52091c81e279dd8afd65cfd6e750a42e57fd8d1488bae4f44c5ecdd21ac36dc0",
+        "hero.html": "5cb11eca3191d8ae76115e21d7b75aac6d8a31554b844b0fbb60e3af3e7c8bdd"
+      }
+    },
+    "3BBD": {
+      "condition": "v1 direction skills",
+      "scratch": "b",
+      "sha256": {
+        "screen.html": "7abccd49fca24e357d766b4f488f3786eac493f9479d5ac9583ce291b42e107b",
+        "hero.html": "13c0b9d42c7182354bd45991e4572cfab3bc3f3b5331e06ac617d187289e8b8a"
+      }
+    }
+  },
+  "model": "Same inherited parent model, no model overrides. Backend revision and billed tokens are not exposed.",
+  "sharedBudget": {
+    "maxToolCalls": 18,
+    "maxElapsedMinutes": 15
+  },
+  "originalTag": "v1-before-restructure",
+  "newSkillRevision": "eaf25d0",
+  "briefSha256": "0a5a6f3fa72f11c7829891ff44868b2b6138a158b82d0d6d24d9506cabb9bdd3",
+  "baselineSha256": "79d2f54f4b4e38e5e704e0ba1964c0d669418ec4bcfdc66fd484e04a1837f893",
+  "frozenAt": "2026-10-11T09:29:57.372044+00:00",
+  "notes": "Outputs frozen before common evaluation. Sources were not corrected after freezing. Human ratings remain blank."
+}

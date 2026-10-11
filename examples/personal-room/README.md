@@ -4,7 +4,7 @@ Open `index.html` directly in a browser. No server, build step or network connec
 
 This is fictional content with original SVG drawings. It demonstrates a paper composition based on Flavius's portfolio and a navy poster composition informed by Cluj House. It does not contain their photographs, logos, music artwork or exact copy. The contact section explains its role instead of pointing to a fictional inbox.
 
-Run `npm run check:browser -- --surface personal-room` from the repository to repeat the maintained checks. The failing baseline and fixes are recorded in [cycle 11](../../eval/cycles/11/outcome.md).
+Run `npm run check:browser -- --surface personal-room` from the repository to repeat the maintained checks. The failing baseline and fixes are recorded in [cycle 11](../../eval/archive/eval/cycles/11/outcome.md).
 
 The screenshots were captured from this example in Chromium on 9 October 2026, at 1440px desktop and 390px mobile widths. They are browser renders, not generated mockups.
 

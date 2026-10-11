@@ -1,0 +1,323 @@
+{
+  "capturedAt": "2026-10-11T09:20:33.659Z",
+  "browser": "149.0.7827.55",
+  "base": "http://localhost:4326",
+  "checks": [
+    {
+      "id": "C1 search",
+      "pass": true,
+      "detail": "PROJECT LIBRARY\n\nExplore Projects\n\nChoose a project to build with AI assistance\n\nSearch projects\nAll Projects\nWeb Apps\nMobile Apps\nData Projects\n\n1 projects\n\nTeam Collaboration Kanban Board\n\nBuild a drag-and-drop kanban board for team task management\n\nLevel Intermediate\nTime Full day\nCompletions 1243+\nSelect Project"
+    },
+    {
+      "id": "C1 empty",
+      "pass": true,
+      "detail": "No-match state"
+    },
+    {
+      "id": "C3 reset",
+      "pass": true,
+      "detail": "Seven real records"
+    },
+    {
+      "id": "C2 category",
+      "pass": true,
+      "detail": "Original category filter returns empty"
+    },
+    {
+      "id": "C4 links",
+      "pass": true,
+      "detail": "Original seven destinations"
+    },
+    {
+      "id": "C5 goal",
+      "pass": true,
+      "detail": "prototype persisted, /projects"
+    },
+    {
+      "id": "C6 Intermediate",
+      "pass": true,
+      "detail": [
+        "Level Up Your AI Development Skills"
+      ]
+    },
+    {
+      "id": "C6 Advanced",
+      "pass": true,
+      "detail": [
+        "Master AI-Assisted Development"
+      ]
+    },
+    {
+      "id": "C6 Beginner",
+      "pass": true,
+      "detail": [
+        "Start Your AI Development Journey"
+      ]
+    },
+    {
+      "id": "C7 theme",
+      "pass": true,
+      "detail": "light"
+    },
+    {
+      "id": "C10 more",
+      "pass": true,
+      "detail": "More destinations present"
+    },
+    {
+      "id": "C10 share",
+      "pass": true,
+      "detail": "Share URL menu present"
+    },
+    {
+      "id": "C8 open",
+      "pass": true,
+      "detail": "Sheet shown"
+    },
+    {
+      "id": "C8 escape",
+      "pass": true,
+      "detail": "Toggle menu"
+    }
+  ],
+  "inventory": {
+    "/projects": [
+      "/projects/content-management",
+      "/projects/expense-tracker",
+      "/projects/kanban-board",
+      "/projects/modern-personal-dashboard",
+      "/projects/personal-dashboard",
+      "/projects/product-landing",
+      "/projects/recipe-finder"
+    ],
+    "/guides": [
+      "/guides/ai-development",
+      "/guides/ai-development",
+      "/guides/cursor-rules-templates",
+      "/guides/from-v0-to-cursor",
+      "/guides/github-basics",
+      "/guides/requirements-template",
+      "/resources"
+    ],
+    "/start": [
+      "/"
+    ],
+    "/learning-path": [
+      "#beginner-milestones",
+      "#learning-paths",
+      "/projects"
+    ]
+  },
+  "metrics": [
+    {
+      "route": "/projects",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": []
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "outsideViewport": []
+    },
+    {
+      "route": "/projects",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": []
+    },
+    {
+      "route": "/projects",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "outsideViewport": []
+    },
+    {
+      "route": "/projects",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": []
+    },
+    {
+      "route": "/projects",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "outsideViewport": []
+    },
+    {
+      "route": "/guides",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "outsideViewport": []
+    },
+    {
+      "route": "/guides",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "outsideViewport": []
+    },
+    {
+      "route": "/guides",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "outsideViewport": []
+    },
+    {
+      "route": "/start",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": [
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "outsideViewport": []
+    },
+    {
+      "route": "/start",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": [
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "outsideViewport": []
+    },
+    {
+      "route": "/start",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": [
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 20"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "outsideViewport": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "outsideViewport": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "outsideViewport": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "outsideViewport": []
+    }
+  ]
+}

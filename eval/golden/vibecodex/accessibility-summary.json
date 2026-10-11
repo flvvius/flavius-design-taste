@@ -1,0 +1,130 @@
+[
+  {
+    "route": "/projects",
+    "theme": "light",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(127, 122, 118)",
+      "ratio": 4.071288009889213,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(99, 66, 154)",
+      "width": "2px",
+      "background": "rgb(251, 250, 249)",
+      "contrast": 7.255348494972845
+    }
+  },
+  {
+    "route": "/guides",
+    "theme": "light",
+    "fails": [],
+    "boundary": null,
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(99, 66, 154)",
+      "width": "2px",
+      "background": "rgb(251, 250, 249)",
+      "contrast": 7.255348494972845
+    }
+  },
+  {
+    "route": "/start",
+    "theme": "light",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(50, 46, 42)",
+      "ratio": 11.820853617980916,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(99, 66, 154)",
+      "width": "2px",
+      "background": "rgb(251, 250, 249)",
+      "contrast": 7.255348494972845
+    }
+  },
+  {
+    "route": "/learning-path",
+    "theme": "light",
+    "fails": [],
+    "boundary": null,
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(99, 66, 154)",
+      "width": "2px",
+      "background": "rgb(251, 250, 249)",
+      "contrast": 7.255348494972845
+    }
+  },
+  {
+    "route": "/projects",
+    "theme": "dark",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(140, 140, 151)",
+      "ratio": 5.474552495356725,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(181, 154, 223)",
+      "width": "2px",
+      "background": "rgb(21, 21, 25)",
+      "contrast": 7.503133416485306
+    }
+  },
+  {
+    "route": "/guides",
+    "theme": "dark",
+    "fails": [],
+    "boundary": null,
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(181, 154, 223)",
+      "width": "2px",
+      "background": "rgb(21, 21, 25)",
+      "contrast": 7.503133416485306
+    }
+  },
+  {
+    "route": "/start",
+    "theme": "dark",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(241, 240, 238)",
+      "ratio": 13.564092207166217,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(181, 154, 223)",
+      "width": "2px",
+      "background": "rgb(21, 21, 25)",
+      "contrast": 7.503133416485306
+    }
+  },
+  {
+    "route": "/learning-path",
+    "theme": "dark",
+    "fails": [],
+    "boundary": null,
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(181, 154, 223)",
+      "width": "2px",
+      "background": "rgb(21, 21, 25)",
+      "contrast": 7.503133416485306
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/jalcantarab/v0-vibecodex",
+  "originalRevision": "00a158c69399389aba48c190ff514fecfb298bb0",
+  "redesignedRevision": "f6f3b44f4b783b10a7391a158ac0119e5640ba2a",
+  "retrievedAt": "2026-10-11T09:13:26.699346+00:00",
+  "license": "MIT",
+  "licenseSource": "https://github.com/jalcantarab/v0-vibecodex/blob/00a158c69399389aba48c190ff514fecfb298bb0/LICENSE",
+  "aiBuildEvidence": "https://github.com/jalcantarab/v0-vibecodex/blob/00a158c69399389aba48c190ff514fecfb298bb0/README.md",
+  "aiBuildStatement": "README credits v0.dev, cursor.com and Zentrik; app/layout.tsx metadata generator is v0.dev.",
+  "originalDataSha256": "e3bee277d8edef31688b51a66a61e7177a4538e93004e357a35687a3b5671170",
+  "afterDataSha256": "e3bee277d8edef31688b51a66a61e7177a4538e93004e357a35687a3b5671170",
+  "dataUnchanged": true,
+  "noUpstreamWrites": true,
+  "environment": {
+    "node": "22.13.0 in scratch execution",
+    "next": "14.2.16",
+    "react": "18.3.1",
+    "tailwind": "3",
+    "browser": "Chromium149.0.7827.55"
+  }
+}

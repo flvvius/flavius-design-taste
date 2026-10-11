@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-11T09:16:37.996Z",
+  "browser": "149.0.7827.55",
+  "results": [
+    {
+      "width": 375,
+      "scheme": "light",
+      "errors": [],
+      "focus": {
+        "tag": "A",
+        "outline": "2px"
+      },
+      "contrast": {
+        "body": 19.193111494067868,
+        "muted": 5.845535323949666,
+        "action": 13.320031335410473
+      },
+      "enlargedText": "pass",
+      "contacts": "mailto, no sent claim",
+      "nativeDetails": "pass",
+      "sectionAnchor": "pass"
+    },
+    {
+      "width": 375,
+      "scheme": "dark",
+      "errors": [],
+      "focus": {
+        "tag": "A",
+        "outline": "2px"
+      },
+      "contrast": {
+        "body": 16.13278026071185,
+        "muted": 6.169190281716384,
+        "action": 15.304971659604353
+      },
+      "enlargedText": "pass",
+      "contacts": "mailto, no sent claim",
+      "nativeDetails": "pass",
+      "sectionAnchor": "pass"
+    },
+    {
+      "width": 1280,
+      "scheme": "light",
+      "errors": [],
+      "focus": {
+        "tag": "A",
+        "outline": "2px"
+      },
+      "contrast": {
+        "body": 19.193111494067868,
+        "muted": 5.845535323949666,
+        "action": 13.320031335410473
+      },
+      "enlargedText": "pass",
+      "contacts": "mailto, no sent claim",
+      "nativeDetails": "pass",
+      "sectionAnchor": "pass"
+    },
+    {
+      "width": 1280,
+      "scheme": "dark",
+      "errors": [],
+      "focus": {
+        "tag": "A",
+        "outline": "2px"
+      },
+      "contrast": {
+        "body": 16.13278026071185,
+        "muted": 6.169190281716384,
+        "action": 15.304971659604353
+      },
+      "enlargedText": "pass",
+      "contacts": "mailto, no sent claim",
+      "nativeDetails": "pass",
+      "sectionAnchor": "pass"
+    }
+  ],
+  "failures": [],
+  "limits": "No analytics, transport or screen-reader integration was requested or tested."
+}

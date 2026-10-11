@@ -1,23 +1,31 @@
+import {tmpdir} from 'node:os';
+import {serve, waitForFonts} from './lib/browser-checks.mjs';
+import {captureSources} from './lib/source-snapshot.mjs';
 import { chromium } from '@playwright/test';
 import { createServer } from 'node:http';
-import { readFile, writeFile, stat } from 'node:fs/promises';
+import { readFile, writeFile, stat, mkdir, mkdtemp, readdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = resolve(fileURLToPath(new URL('../', import.meta.url)));
 const cycle = process.argv[2];
 if (!/^\d{2}$/.test(cycle ?? '')) throw new Error('Usage: node scripts/evaluate.mjs 01');
-const dir = resolve(root, 'eval/cycles', cycle);
-const mime = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.json':'application/json','.woff2':'font/woff2','.png':'image/png'};
-const server = createServer(async (req, res) => {
-  try {
-    const path = resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://local').pathname));
-    if (!path.startsWith(root + sep)) { res.writeHead(403).end(); return; }
-    const file = (await stat(path)).isDirectory() ? resolve(path,'index.html') : path;
-    res.setHeader('Content-Type', mime[extname(file)] ?? 'application/octet-stream');
-    res.end(await readFile(file));
-  } catch { res.writeHead(404).end(); }
-});
-await new Promise(done => server.listen(0,'127.0.0.1',done));
+const outputIndex = process.argv.indexOf('--output');
+if (outputIndex !== -1 && !process.argv[outputIndex + 1]) throw new Error('--output requires a directory');
+const dir = outputIndex === -1 ? await mkdtemp(resolve(tmpdir(), 'taste-archive-')) : resolve(process.argv[outputIndex + 1]);
+const archive = resolve(root, 'eval/archive');
+if (dir === archive || dir.startsWith(archive + sep)) throw new Error('Output must be outside the frozen archive');
+await mkdir(dir, {recursive: true});
+async function inputs(directory) {
+  const paths = [];
+  for (const entry of await readdir(resolve(root, directory), {withFileTypes: true})) {
+    const path = directory + '/' + entry.name;
+    paths.push(...(entry.isDirectory() ? await inputs(path) : [path]));
+  }
+  return paths;
+}
+const sourcePaths = [...await inputs('eval/archive/skills'), ...await inputs('eval/archive/eval/cycles/' + cycle)];
+const snapshot = await captureSources(root, sourcePaths);
+const server = await serve(root, snapshot.files);
 const browser = await chromium.launch({headless:true});
 const reports = [];
 try {
@@ -27,10 +35,10 @@ try {
     const errors = []; const failedRequests = [];
     page.on('pageerror',error=>errors.push(error.message));
     page.on('response',response=>{if(response.status()>=400)failedRequests.push({url:response.url(),status:response.status()});});
-    const response=await page.goto(`http://127.0.0.1:${server.address().port}/eval/cycles/${cycle}/`,{waitUntil:'networkidle'});
+    const response=await page.goto(`${server.url}/eval/archive/eval/cycles/${cycle}/`,{waitUntil:'networkidle'});
     if (!response?.ok()) throw new Error(`Cycle ${cycle} did not load: ${response?.status()}`);
-    await page.evaluate(t=>{document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.style.colorScheme=t;},theme);
-    await page.evaluate(()=>document.fonts.ready);
+    await page.evaluate(t=>{document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;},theme);
+    await waitForFonts(page);
     if(fontScale!==1)await page.evaluate(scale=>{const sizes=[...document.querySelectorAll('body,body *')].filter(el=>el instanceof HTMLElement&&!['SCRIPT','STYLE'].includes(el.tagName)).map(el=>[el,parseFloat(getComputedStyle(el).fontSize)]);for(const [el,size] of sizes)el.style.fontSize=size*scale+'px';},fontScale);
     const audit = await page.evaluate(() => {
       const canvas=document.createElement('canvas');canvas.width=canvas.height=1;
@@ -62,6 +70,7 @@ try {
     reports.push({width,theme,fontScale,errors,failedRequests,...audit,keyboardFocus});
     await context.close();
   }
-  await writeFile(resolve(dir,'checks.json'),JSON.stringify({cycle,reports,note:'Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review.'},null,2)+'\n');
+  await writeFile(resolve(dir,'checks.json'),JSON.stringify({cycle,output:dir,sources:snapshot.hashes,reports,note:'Contrast scan covers visible direct text on composited solid backgrounds. Images, pseudo-elements, opacity, charts, focus boundaries and interaction semantics require independent review.'},null,2)+'\n');
   console.log(JSON.stringify({cycle,reports:reports.map(({width,theme,fontScale,errors,failedRequests,overflow,contrast,unlabeled,smallTargets})=>({width,theme,fontScale,errors,failedRequests,overflow,contrastIssues:contrast.length,unlabeled,smallTargets}))}));
-} finally {await browser.close();server.close();}
+  if(reports.some(report=>report.errors.length||report.failedRequests.length||report.overflow||report.contrast.length||report.unlabeled.length||report.smallTargets.length))process.exitCode=1;
+} finally {await browser.close();await server.close();}

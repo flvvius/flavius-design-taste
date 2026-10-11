@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-11T09:08:19.002Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://localhost:4326",
+  "scenarios": [
+    {
+      "route": "/projects",
+      "name": "intentional-invalid-action",
+      "actions": [
+        {
+          "selector": "body",
+          "unsupported": true
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "route": "/projects",
+      "state": "intentional-invalid-action",
+      "width": 375,
+      "requestedScheme": "light",
+      "status": 200,
+      "file": "000-failed-375-light.png",
+      "errors": [
+        "Unsupported capture action"
+      ],
+      "failed": true
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}

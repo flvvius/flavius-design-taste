@@ -9,7 +9,7 @@ import {fileURLToPath} from 'node:url';
 const engine = {chromium, firefox, webkit}[process.env.TASTE_TEST_BROWSER ?? 'chromium'];
 if (!engine) throw new Error('Unknown TASTE_TEST_BROWSER');
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const tokens = JSON.parse(await readFile(new URL('../../skills/editorial-calm/assets/tokens.json', import.meta.url), 'utf8'));
+const tokens = JSON.parse(await readFile(new URL('../../directions/editorial-calm/assets/tokens.json', import.meta.url), 'utf8'));
 
 test('portable palettes follow automatic media and retain legacy manual modes', async () => {
   const browser = await engine.launch(), css = outputs(tokens)['tokens.css'];
@@ -43,16 +43,16 @@ test('library system changes and explicit choices produce the actual palette', a
   const server = await serve(root), browser = await engine.launch();
   try {
     const page = await browser.newPage({colorScheme: 'light'});
-    await page.goto(server.url + '/eval/cycles/04/index.html'); await waitForFonts(page);
+    await page.goto(server.url + '/eval/archive/eval/cycles/04/index.html'); await waitForFonts(page);
     const timeline = await assertLibraryThemeTransitions(page, tokens.colors);
     assert.equal(timeline.length, 8);
     await page.close();
-    const source = await readFile(new URL('../../eval/cycles/04/index.html', import.meta.url), 'utf8');
+    const source = await readFile(new URL('../../eval/archive/eval/cycles/04/index.html', import.meta.url), 'utf8');
     const override = "if(chosen)document.documentElement.dataset.theme=dark?'dark':'light';";
     assert.equal(source.split(override).length - 1, 1);
     const defective = await browser.newPage({colorScheme: 'light'});
-    await defective.route('**/eval/cycles/04/index.html', route => route.fulfill({contentType: 'text/html', body: source.replace(override, '')}));
-    await defective.goto(server.url + '/eval/cycles/04/index.html');
+    await defective.route('**/eval/archive/eval/cycles/04/index.html', route => route.fulfill({contentType: 'text/html', body: source.replace(override, '')}));
+    await defective.goto(server.url + '/eval/archive/eval/cycles/04/index.html');
     await assert.rejects(assertLibraryThemeTransitions(defective, tokens.colors), error => error instanceof assert.AssertionError && error.actual?.background === tokens.colors.dark.background && error.expected?.background === tokens.colors.light.background);
   } finally {await browser.close(); await server.close();}
 });
@@ -60,7 +60,7 @@ test('library system changes and explicit choices produce the actual palette', a
 test('maintained Editorial calm consumers honour automatic and explicit preferences', async () => {
   const {assertButtonThemeTransitions, assertSelectThemeTransitions} = await import('../lib/theme-checks.mjs');
   const server = await serve(root), browser = await engine.launch();
-  const targets = [['examples/index.html', 'button'], ['eval/cycles/07/index.html', 'select'], ['eval/cycles/09/index.html', 'select'], ['eval/index.html', 'button']];
+  const targets = [['examples/index.html', 'button'], ['eval/archive/eval/cycles/07/index.html', 'select'], ['eval/archive/eval/cycles/09/index.html', 'select'], ['eval/index.html', 'button']];
   try {
     for (const [path, control] of targets) {
       const reading = await browser.newPage({javaScriptEnabled: false, colorScheme: 'dark'});
@@ -74,12 +74,12 @@ test('maintained Editorial calm consumers honour automatic and explicit preferen
       else await assertButtonThemeTransitions(page, tokens.colors, {light: 'Dark theme', dark: 'Light theme'});
       assert.deepEqual(errors, []); await page.close();
     }
-    const source = await readFile(new URL('../../eval/cycles/07/index.html', import.meta.url), 'utf8');
+    const source = await readFile(new URL('../../eval/archive/eval/cycles/07/index.html', import.meta.url), 'utf8');
     const setting = "  document.documentElement.dataset.theme = el('theme').value === 'system' ? 'auto' : el('theme').value;";
     assert.equal(source.split(setting).length - 1, 1);
     const page = await browser.newPage({colorScheme: 'light'});
-    await page.route('**/eval/cycles/07/index.html', route => route.fulfill({contentType: 'text/html', body: source.replace(setting, '')}));
-    await page.goto(server.url + '/eval/cycles/07/index.html');
+    await page.route('**/eval/archive/eval/cycles/07/index.html', route => route.fulfill({contentType: 'text/html', body: source.replace(setting, '')}));
+    await page.goto(server.url + '/eval/archive/eval/cycles/07/index.html');
     await assert.rejects(assertSelectThemeTransitions(page, tokens.colors), error => error instanceof assert.AssertionError && error.actual === 'auto' && error.expected === 'light');
   } finally {await browser.close(); await server.close();}
 });

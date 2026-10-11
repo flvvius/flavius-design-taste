@@ -26,7 +26,7 @@ def run(*command, **kwargs):
     return subprocess.run(command, check=True, text=True, capture_output=True, **kwargs).stdout.strip()
 
 try:
-    paths = ['eval/cycles/15/NativeRoom.swift', 'eval/cycles/16/RoomUITests.swift', 'scripts/verify-native-interactions.py', 'scripts/lib/native_project.py', 'scripts/lib/source_snapshot.py', 'LICENSE', 'skills/personal-room/assets/fonts/LICENSE.txt', 'skills/personal-room/assets/fonts/NOTICE.txt', 'skills/personal-room/assets/tokens.json', 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
+    paths = ['eval/archive/eval/cycles/15/NativeRoom.swift', 'eval/archive/eval/cycles/16/RoomUITests.swift', 'scripts/verify-native-interactions.py', 'scripts/lib/native_project.py', 'scripts/lib/source_snapshot.py', 'LICENSE', 'directions/personal-room/assets/fonts/LICENSE.txt', 'directions/personal-room/assets/fonts/NOTICE.txt', 'directions/personal-room/assets/tokens.json', 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf']
     snapshot = SourceSnapshot(ROOT, [ROOT / path for path in paths])
     if platform.system() != 'Darwin':
         raise RuntimeError('Native UI tests require macOS, Xcode and an iOS simulator runtime.')

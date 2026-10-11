@@ -1,0 +1,15 @@
+f6f3b44 POLISH: wrap tool names exposed by left and right text checks
+33fb355 POLISH: keep small descriptive text readable when enlarged
+852cd17 POLISH: override utility line heights with measured reading rhythm
+f201d53 POLISH: repair doubled-text overlap seen in rendered goal form
+77a23bc POLISH: omit absent time metadata without inventing estimates
+00698b9 POLISH: allow goal option text to shrink inside its radio grid
+0696703 POLISH: let long action labels wrap at 320px with doubled text
+8819fdf POLISH: make experience selection contrast and state explicit
+2b181ea POLISH: repair measured text reflow and quiet milestone metadata
+5898f5c POLISH: make catalog descriptions direct without changing their facts
+27fb934 POLISH: preserve control semantics and readable focus at enlarged text
+1e786f7 RESTRUCTURE: extend catalog anatomy to goals and learning screens
+40a494c RESTRUCTURE: compare projects in readable catalog rows
+4b57841 POLISH: set readable catalog tokens and focus boundaries
+991cb72 Record reproducible baseline environment and behavior contract

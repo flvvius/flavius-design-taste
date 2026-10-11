@@ -1,0 +1,45 @@
+{
+  "scale": "0-4",
+  "review": "Agent self-review; taste remains provisional until human review",
+  "scores": {
+    "hierarchy": {
+      "before": 2,
+      "after": 3
+    },
+    "grouping and density": {
+      "before": 1,
+      "after": 3
+    },
+    "product fit": {
+      "before": 2,
+      "after": 3
+    },
+    "responsive composition": {
+      "before": 1,
+      "after": 3
+    },
+    "states and copy": {
+      "before": 3,
+      "after": 3
+    },
+    "interaction": {
+      "before": 3,
+      "after": 3
+    },
+    "accessibility": {
+      "before": 1,
+      "after": 3
+    }
+  },
+  "gates": {
+    "build": "pass before and after",
+    "contract": "14 exercised triggers pass after; additional state smoke verifies sheet focus containment/return and milestone expansion",
+    "accessibility": "checked rendered solid-color text and essential control/focus boundaries pass;320/375/1280 and200%text reflow pass",
+    "typecheck": "known upstream failures unchanged byte-for-byte, not passed"
+  },
+  "limitations": [
+    "No screen reader or physical device test",
+    "Image/chart/texture contrast is not certified by text scanner",
+    "No auth/server mutation paths exist in selected flow"
+  ]
+}

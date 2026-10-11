@@ -1,0 +1,332 @@
+{
+  "capturedAt": "2026-10-11T09:04:33.779Z",
+  "browser": "149.0.7827.55",
+  "base": "http://localhost:4326",
+  "checks": [
+    {
+      "id": "C1 search",
+      "pass": true,
+      "detail": "Explore Projects\n\nFind the perfect project to build with AI assistance\n\nAll Projects\nWeb Apps\nMobile Apps\nData Projects\nIntermediate\nTeam Collaboration Kanban Board\n\nBuild a drag-and-drop kanban board for team task management\n\nFull day\n552+\nSelect Project"
+    },
+    {
+      "id": "C1 empty",
+      "pass": true,
+      "detail": "No-match state"
+    },
+    {
+      "id": "C3 reset",
+      "pass": true,
+      "detail": "Seven real records"
+    },
+    {
+      "id": "C2 category",
+      "pass": true,
+      "detail": "Original category filter returns empty"
+    },
+    {
+      "id": "C4 links",
+      "pass": true,
+      "detail": "Original seven destinations"
+    },
+    {
+      "id": "C5 goal",
+      "pass": true,
+      "detail": "prototype persisted, /projects"
+    },
+    {
+      "id": "C6 Intermediate",
+      "pass": true,
+      "detail": [
+        "Level Up Your AI Development Skills"
+      ]
+    },
+    {
+      "id": "C6 Advanced",
+      "pass": true,
+      "detail": [
+        "Master AI-Assisted Development"
+      ]
+    },
+    {
+      "id": "C6 Beginner",
+      "pass": true,
+      "detail": [
+        "Start Your AI Development Journey"
+      ]
+    },
+    {
+      "id": "C7 theme",
+      "pass": true,
+      "detail": "light"
+    },
+    {
+      "id": "C10 more",
+      "pass": true,
+      "detail": "More destinations present"
+    },
+    {
+      "id": "C10 share",
+      "pass": true,
+      "detail": "Share URL menu present"
+    },
+    {
+      "id": "C8 open",
+      "pass": true,
+      "detail": "Sheet shown"
+    },
+    {
+      "id": "C8 escape",
+      "pass": false,
+      "detail": "Toggle theme"
+    }
+  ],
+  "inventory": {
+    "/projects": [
+      "/projects/content-management",
+      "/projects/expense-tracker",
+      "/projects/kanban-board",
+      "/projects/modern-personal-dashboard",
+      "/projects/personal-dashboard",
+      "/projects/product-landing",
+      "/projects/recipe-finder"
+    ],
+    "/guides": [
+      "/guides/ai-development",
+      "/guides/ai-development",
+      "/guides/cursor-rules-templates",
+      "/guides/from-v0-to-cursor",
+      "/guides/github-basics",
+      "/guides/requirements-template",
+      "/resources"
+    ],
+    "/start": [
+      "/"
+    ],
+    "/learning-path": [
+      "#beginner-milestones",
+      "#learning-paths",
+      "/projects"
+    ]
+  },
+  "metrics": [
+    {
+      "route": "/projects",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 364,
+      "innerWidth": 320,
+      "unnamedControls": [
+        "<input class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medi"
+      ]
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 580,
+      "innerWidth": 320
+    },
+    {
+      "route": "/projects",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": [
+        "<input class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medi"
+      ]
+    },
+    {
+      "route": "/projects",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 580,
+      "innerWidth": 375
+    },
+    {
+      "route": "/projects",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": [
+        "<input class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medi"
+      ]
+    },
+    {
+      "route": "/projects",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280
+    },
+    {
+      "route": "/guides",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 386,
+      "innerWidth": 320
+    },
+    {
+      "route": "/guides",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 405,
+      "innerWidth": 375
+    },
+    {
+      "route": "/guides",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": []
+    },
+    {
+      "route": "/guides",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280
+    },
+    {
+      "route": "/start",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": [
+        "<button type=\"button\" role=\"radio\" aria-checked=\"true\" data-state=\"checked\" value=\"quick-win\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offs",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"shareable\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"prototype\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"mvp\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"existing\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-of",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 386,
+      "innerWidth": 320
+    },
+    {
+      "route": "/start",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": [
+        "<button type=\"button\" role=\"radio\" aria-checked=\"true\" data-state=\"checked\" value=\"quick-win\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offs",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"shareable\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"prototype\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"mvp\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"existing\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-of",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 405,
+      "innerWidth": 375
+    },
+    {
+      "route": "/start",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": [
+        "<button type=\"button\" role=\"radio\" aria-checked=\"true\" data-state=\"checked\" value=\"quick-win\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offs",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"shareable\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"prototype\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-o",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"mvp\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16",
+        "<button type=\"button\" role=\"radio\" aria-checked=\"false\" data-state=\"unchecked\" value=\"existing\" class=\"aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-of",
+        "<input type=\"radio\" aria-hidden=\"true\" tabindex=\"-1\" style=\"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 16px; height: 16"
+      ]
+    },
+    {
+      "route": "/start",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280
+    },
+    {
+      "route": "/learning-path",
+      "width": 320,
+      "zoom": 100,
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 320,
+      "zoom": 200,
+      "scrollWidth": 386,
+      "innerWidth": 320
+    },
+    {
+      "route": "/learning-path",
+      "width": 375,
+      "zoom": 100,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 375,
+      "zoom": 200,
+      "scrollWidth": 405,
+      "innerWidth": 375
+    },
+    {
+      "route": "/learning-path",
+      "width": 1280,
+      "zoom": 100,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "unnamedControls": []
+    },
+    {
+      "route": "/learning-path",
+      "width": 1280,
+      "zoom": 200,
+      "scrollWidth": 1280,
+      "innerWidth": 1280
+    }
+  ]
+}

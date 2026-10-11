@@ -1,0 +1,154 @@
+{
+  "root": "/private/tmp/flavius-design-practice/phase6/vibecodex",
+  "frameworks": {
+    "next": "14.2.16",
+    "react": "^18",
+    "tailwindcss": "^3.3.5"
+  },
+  "componentLibraries": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-alert-dialog": "1.1.14",
+    "@radix-ui/react-aspect-ratio": "1.1.7",
+    "@radix-ui/react-avatar": "1.1.10",
+    "@radix-ui/react-checkbox": "1.3.2",
+    "@radix-ui/react-collapsible": "1.1.11",
+    "@radix-ui/react-context-menu": "2.2.15",
+    "@radix-ui/react-dialog": "latest",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-hover-card": "1.1.14",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-menubar": "1.1.15",
+    "@radix-ui/react-navigation-menu": "1.2.13",
+    "@radix-ui/react-popover": "1.1.14",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-radio-group": "^1.1.3",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-select": "2.2.5",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slider": "1.3.5",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "1.2.5",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toast": "1.2.14",
+    "@radix-ui/react-toggle": "1.1.9",
+    "@radix-ui/react-toggle-group": "1.1.10",
+    "@radix-ui/react-tooltip": "^1.0.7"
+  },
+  "routes": [
+    "app/community/page.tsx",
+    "app/contribute/page.tsx",
+    "app/docs/[...slug]/page.tsx",
+    "app/docs/page.tsx",
+    "app/guides/ai-development/best-practices/page.tsx",
+    "app/guides/ai-development/page.tsx",
+    "app/guides/ai-development/planning/page.tsx",
+    "app/guides/ai-development/tools/page.tsx",
+    "app/guides/ai-development/workflow/page.tsx",
+    "app/guides/cursor-rules-templates/page.tsx",
+    "app/guides/from-v0-to-cursor/page.tsx",
+    "app/guides/github-basics/page.tsx",
+    "app/guides/nextjs-quickstart/page.tsx",
+    "app/guides/page.tsx",
+    "app/guides/requirements-template/page.tsx",
+    "app/learning-path/page.tsx",
+    "app/license/page.tsx",
+    "app/page.tsx",
+    "app/privacy/page.tsx",
+    "app/projects/[id]/[tool]/page.tsx",
+    "app/projects/[id]/complete/page.tsx",
+    "app/projects/[id]/page.tsx",
+    "app/projects/page.tsx",
+    "app/resources/page.tsx",
+    "app/start/page.tsx",
+    "app/terms/page.tsx"
+  ],
+  "findings": [
+    {
+      "file": "app/globals.css",
+      "reasons": [
+        "Global/theme/token source",
+        "49 CSS variable definitions",
+        "8 hex and 6 rgb/rgba occurrences"
+      ],
+      "variables": 49,
+      "hex": 8,
+      "rgb": 6
+    },
+    {
+      "file": "app/guides/cursor-rules-templates/page.tsx",
+      "reasons": [
+        "20 hex and 0 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 20,
+      "rgb": 0
+    },
+    {
+      "file": "components.json",
+      "reasons": [
+        "shadcn configuration"
+      ],
+      "variables": 0,
+      "hex": 0,
+      "rgb": 0
+    },
+    {
+      "file": "components/social-share-buttons.tsx",
+      "reasons": [
+        "2 hex and 0 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 2,
+      "rgb": 0
+    },
+    {
+      "file": "components/ui/chart.tsx",
+      "reasons": [
+        "5 hex and 0 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 5,
+      "rgb": 0
+    },
+    {
+      "file": "lib/design-system.ts",
+      "reasons": [
+        "0 hex and 3 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 0,
+      "rgb": 3
+    },
+    {
+      "file": "lib/mock-data.ts",
+      "reasons": [
+        "88 hex and 1 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 88,
+      "rgb": 1
+    },
+    {
+      "file": "styles/globals.css",
+      "reasons": [
+        "Global/theme/token source",
+        "65 CSS variable definitions"
+      ],
+      "variables": 65,
+      "hex": 0,
+      "rgb": 0
+    },
+    {
+      "file": "tailwind.config.ts",
+      "reasons": [
+        "Tailwind configuration",
+        "0 hex and 1 rgb/rgba occurrences"
+      ],
+      "variables": 0,
+      "hex": 0,
+      "rgb": 1
+    }
+  ],
+  "limits": "Occurrences are lexical candidates. Follow imports to identify active definitions; this does not establish runtime theme precedence."
+}
+

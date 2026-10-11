@@ -1,0 +1,70 @@
+
+> vibecodex@0.6.0 prebuild
+> node scripts/generate-docs-tree.js
+
+Docs tree written to /private/tmp/flavius-design-practice/phase6/vibecodex-build/public/docs-tree.json
+
+> vibecodex@0.6.0 build
+> next build
+
+  ▲ Next.js 14.2.16
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/38) ...
+   Generating static pages (9/38) 
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+   Generating static pages (18/38) 
+   Generating static pages (28/38) 
+ ✓ Generating static pages (38/38)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      11.8 kB         114 kB
+├ ○ /_not-found                            161 B          87.4 kB
+├ ○ /community                             3.6 kB          106 kB
+├ ○ /contribute                            5.94 kB         117 kB
+├ ○ /docs                                  1.03 kB         103 kB
+├ ● /docs/[...slug]                        148 kB          250 kB
+├   ├ /docs/README
+├   ├ /docs/architecture-overview
+├   ├ /docs/documentation-management
+├   └ [+8 more paths]
+├ ○ /guides                                3.13 kB         105 kB
+├ ○ /guides/ai-development                 6.03 kB         152 kB
+├ ○ /guides/ai-development/best-practices  6.93 kB         118 kB
+├ ○ /guides/ai-development/planning        6.89 kB         118 kB
+├ ○ /guides/ai-development/tools           6.15 kB         113 kB
+├ ○ /guides/ai-development/workflow        6.34 kB         162 kB
+├ ○ /guides/cursor-rules-templates         1.8 kB          135 kB
+├ ○ /guides/from-v0-to-cursor              7.25 kB         114 kB
+├ ○ /guides/github-basics                  15.7 kB         132 kB
+├ ○ /guides/nextjs-quickstart              4.82 kB         107 kB
+├ ○ /guides/requirements-template          7.85 kB         119 kB
+├ ○ /learning-path                         6.05 kB         117 kB
+├ ○ /license                               161 B          87.4 kB
+├ ○ /privacy                               161 B          87.4 kB
+├ ○ /projects                              2.73 kB         117 kB
+├ ƒ /projects/[id]                         4.79 kB         168 kB
+├ ƒ /projects/[id]/[tool]                  7.25 kB         196 kB
+├ ƒ /projects/[id]/complete                10.3 kB         169 kB
+├ ○ /resources                             1.03 kB         103 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /sitemap.xml                           0 B                0 B
+├ ○ /start                                 7.75 kB         159 kB
+└ ○ /terms                                 161 B          87.4 kB
++ First Load JS shared by all              87.2 kB
+  ├ chunks/9435-49424dbae8bce7a2.js        31.6 kB
+  ├ chunks/d409e9fb-2a795f4ef23da56e.js    53.6 kB
+  └ other shared chunks (total)            1.99 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand
+

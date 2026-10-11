@@ -10,7 +10,10 @@
     "check:browser": "node scripts/verify-examples.mjs",
     "test:tooling": "node --test scripts/tests/*.test.mjs",
     "check:native": "python3 scripts/verify-native-room.py",
-    "check:native-ui": "python3 scripts/verify-native-interactions.py"
+    "check:native-ui": "python3 scripts/verify-native-interactions.py",
+    "check:links": "node scripts/check-links.mjs",
+    "check:archive": "node scripts/check-archive.mjs",
+    "bundle": "node scripts/bundle-skill.mjs"
   },
   "license": "MIT",
   "devDependencies": {

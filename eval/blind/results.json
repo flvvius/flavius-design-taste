@@ -1,0 +1,985 @@
+{
+  "checkedAt": "2026-10-11T09:32:04.484Z",
+  "browser": "149.0.7827.55",
+  "limits": "Solid-color text/name/focus/reflow checks are bounded. Gradients/images and screen-reader behavior remain unverified. Human image review is a separate gate; never average a failure away.",
+  "results": [
+    {
+      "id": "FFF6",
+      "cases": [
+        {
+          "width": 375,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "rgb(245, 247, 245)",
+            "foreground": "rgb(29, 48, 46)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "rgb(245, 247, 245)",
+            "foreground": "rgb(29, 48, 46)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 375,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "rgb(20, 37, 34)",
+            "foreground": "rgb(232, 238, 233)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "rgb(20, 37, 34)",
+            "foreground": "rgb(232, 238, 233)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "rgb(245, 247, 245)",
+            "foreground": "rgb(29, 48, 46)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "rgb(245, 247, 245)",
+            "foreground": "rgb(29, 48, 46)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "rgb(20, 37, 34)",
+            "foreground": "rgb(232, 238, 233)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "rgb(20, 37, 34)",
+            "foreground": "rgb(232, 238, 233)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        }
+      ],
+      "functionalFailures": [],
+      "accessibilityFailures": [
+        {
+          "width": 375,
+          "scheme": "light",
+          "page": "screen",
+          "textFailures": [],
+          "boundaryFailures": [
+            {
+              "name": "query",
+              "ratio": 1.3866931894941568,
+              "minimum": 3
+            },
+            {
+              "name": "filter",
+              "ratio": 1.3866931894941568,
+              "minimum": 3
+            }
+          ],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        },
+        {
+          "width": 375,
+          "scheme": "light",
+          "page": "hero",
+          "textFailures": [
+            {
+              "text": "01 · Planning",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "02 · In the field",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "03 · In the laboratory",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "Collection and analysis, in one monitoring plan.",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            }
+          ],
+          "boundaryFailures": [],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        },
+        {
+          "width": 375,
+          "scheme": "dark",
+          "page": "screen",
+          "textFailures": [],
+          "boundaryFailures": [
+            {
+              "name": "query",
+              "ratio": 1.8278773697584683,
+              "minimum": 3
+            },
+            {
+              "name": "filter",
+              "ratio": 1.8278773697584683,
+              "minimum": 3
+            }
+          ],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        },
+        {
+          "width": 1280,
+          "scheme": "light",
+          "page": "screen",
+          "textFailures": [],
+          "boundaryFailures": [
+            {
+              "name": "query",
+              "ratio": 1.3866931894941568,
+              "minimum": 3
+            },
+            {
+              "name": "filter",
+              "ratio": 1.3866931894941568,
+              "minimum": 3
+            }
+          ],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        },
+        {
+          "width": 1280,
+          "scheme": "light",
+          "page": "hero",
+          "textFailures": [
+            {
+              "text": "01 · Planning",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "02 · In the field",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "03 · In the laboratory",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            },
+            {
+              "text": "Collection and analysis, in one monitoring plan.",
+              "ratio": 4.437592342559956,
+              "minimum": 4.5
+            }
+          ],
+          "boundaryFailures": [],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        },
+        {
+          "width": 1280,
+          "scheme": "dark",
+          "page": "screen",
+          "textFailures": [],
+          "boundaryFailures": [
+            {
+              "name": "query",
+              "ratio": 1.8278773697584683,
+              "minimum": 3
+            },
+            {
+              "name": "filter",
+              "ratio": 1.8278773697584683,
+              "minimum": 3
+            }
+          ],
+          "unnamedControls": [],
+          "unverifiedBackgrounds": []
+        }
+      ],
+      "unverified": [],
+      "functionalGate": "pass",
+      "accessibilityGate": "fail",
+      "visualReview": "pending human inspection of line spacing, clipping and reading order"
+    },
+    {
+      "id": "1FE9",
+      "cases": [
+        {
+          "width": 375,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "rgb(250, 249, 246)",
+            "foreground": "rgb(32, 36, 35)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "rgb(250, 249, 246)",
+            "foreground": "rgb(32, 36, 35)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 375,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "rgb(22, 28, 27)",
+            "foreground": "rgb(240, 241, 235)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "rgb(22, 28, 27)",
+            "foreground": "rgb(240, 241, 235)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "rgb(250, 249, 246)",
+            "foreground": "rgb(32, 36, 35)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "rgb(250, 249, 246)",
+            "foreground": "rgb(32, 36, 35)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "rgb(22, 28, 27)",
+            "foreground": "rgb(240, 241, 235)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "rgb(22, 28, 27)",
+            "foreground": "rgb(240, 241, 235)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        }
+      ],
+      "functionalFailures": [],
+      "accessibilityFailures": [],
+      "unverified": [],
+      "functionalGate": "pass",
+      "accessibilityGate": "pass",
+      "visualReview": "pending human inspection of line spacing, clipping and reading order"
+    },
+    {
+      "id": "3BBD",
+      "cases": [
+        {
+          "width": 375,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "oklch(0.99 0.002 80)",
+            "foreground": "oklch(0.15 0.01 60)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "oklch(0.99 0.002 80)",
+            "foreground": "oklch(0.15 0.01 60)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 375,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "oklch(0.14 0.008 270)",
+            "foreground": "oklch(0.93 0.005 80)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "oklch(0.14 0.008 270)",
+            "foreground": "oklch(0.93 0.005 80)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 375,
+            "scrollWidth": 375,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "light",
+          "capturedTheme": {
+            "background": "oklch(0.99 0.002 80)",
+            "foreground": "oklch(0.15 0.01 60)",
+            "rootClass": ""
+          },
+          "heroTheme": {
+            "background": "oklch(0.99 0.002 80)",
+            "foreground": "oklch(0.15 0.01 60)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "A",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        },
+        {
+          "width": 1280,
+          "scheme": "dark",
+          "capturedTheme": {
+            "background": "oklch(0.14 0.008 270)",
+            "foreground": "oklch(0.93 0.005 80)",
+            "rootClass": "dark"
+          },
+          "heroTheme": {
+            "background": "oklch(0.14 0.008 270)",
+            "foreground": "oklch(0.93 0.005 80)"
+          },
+          "checks": [
+            {
+              "name": "Case-insensitive station search",
+              "pass": true
+            },
+            {
+              "name": "Empty and reset",
+              "pass": true
+            },
+            {
+              "name": "Status filter",
+              "pass": true
+            },
+            {
+              "name": "Dialog data, Escape and focus return",
+              "pass": true
+            },
+            {
+              "name": "Required status validation",
+              "pass": true
+            },
+            {
+              "name": "Mutation, disappearing row focus and persistence",
+              "pass": true
+            },
+            {
+              "name": "Theme toggles rendered colors",
+              "pass": true
+            },
+            {
+              "name": "Methods anchor",
+              "pass": true
+            },
+            {
+              "name": "Hero contact and methods",
+              "pass": true
+            }
+          ],
+          "focus": {
+            "tag": "INPUT",
+            "outline": "solid",
+            "width": "3px"
+          },
+          "geometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "heroGeometry": {
+            "width": 1280,
+            "scrollWidth": 1280,
+            "outside": []
+          },
+          "errors": []
+        }
+      ],
+      "functionalFailures": [],
+      "accessibilityFailures": [],
+      "unverified": [],
+      "functionalGate": "pass",
+      "accessibilityGate": "pass",
+      "visualReview": "pending human inspection of line spacing, clipping and reading order"
+    }
+  ]
+}

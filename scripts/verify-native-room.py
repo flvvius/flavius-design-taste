@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BUNDLE = 'dev.flavius.taste.cycle15'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, default=ROOT / '.artifacts/native-room')
-parser.add_argument('--source', type=Path, default=ROOT / 'eval/cycles/15/NativeRoom.swift')
+parser.add_argument('--source', type=Path, default=ROOT / 'eval/archive/eval/cycles/15/NativeRoom.swift')
 parser.add_argument('--without-font', action='store_true', help='Omit Schoolbell from the app bundle and verify the native fallback.')
 parser.add_argument('--device', help='Use a dedicated test simulator instead of creating one.')
 args = parser.parse_args()
@@ -51,7 +51,7 @@ def audit(report):
     return issues
 
 try:
-    sources = [args.source.resolve(), ROOT / 'scripts/verify-native-room.py', ROOT / 'scripts/lib/source_snapshot.py', ROOT / 'LICENSE', ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', ROOT / 'skills/personal-room/assets/tokens.json', ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf']
+    sources = [args.source.resolve(), ROOT / 'scripts/verify-native-room.py', ROOT / 'scripts/lib/source_snapshot.py', ROOT / 'LICENSE', ROOT / 'directions/personal-room/assets/fonts/LICENSE.txt', ROOT / 'directions/personal-room/assets/fonts/NOTICE.txt', ROOT / 'directions/personal-room/assets/tokens.json', ROOT / 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf']
     snapshot = SourceSnapshot(ROOT, sources)
     if platform.system() != 'Darwin':
         raise RuntimeError('This verification requires macOS, Xcode and an installed iOS simulator runtime.')
@@ -72,11 +72,11 @@ try:
         app.mkdir()
         info = {'CFBundleExecutable': 'Room', 'CFBundleIdentifier': BUNDLE, 'CFBundleName': 'Repair notes', 'CFBundlePackageType': 'APPL', 'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0', 'LSRequiresIPhoneOS': True, 'MinimumOSVersion': '17.0', 'UIDeviceFamily': [1, 2], 'UILaunchScreen': {}, 'UIAppFonts': [] if args.without_font else ['Schoolbell-Regular.ttf'], 'UISupportedInterfaceOrientations': ['UIInterfaceOrientationPortrait']}
         (app / 'Info.plist').write_bytes(plistlib.dumps(info))
-        snapshot.write_to(ROOT / 'skills/personal-room/assets/tokens.json', app / 'tokens.json')
+        snapshot.write_to(ROOT / 'directions/personal-room/assets/tokens.json', app / 'tokens.json')
         if not args.without_font:
-            snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
-        snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/LICENSE.txt', app / 'Schoolbell-LICENSE.txt')
-        snapshot.write_to(ROOT / 'skills/personal-room/assets/fonts/NOTICE.txt', app / 'Schoolbell-NOTICE.txt')
+            snapshot.write_to(ROOT / 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf', app / 'Schoolbell-Regular.ttf')
+        snapshot.write_to(ROOT / 'directions/personal-room/assets/fonts/LICENSE.txt', app / 'Schoolbell-LICENSE.txt')
+        snapshot.write_to(ROOT / 'directions/personal-room/assets/fonts/NOTICE.txt', app / 'Schoolbell-NOTICE.txt')
         snapshot.write_to(ROOT / 'LICENSE', app / 'LICENSE.txt')
         source = Path(directory) / 'NativeRoom.swift'
         snapshot.write_to(args.source, source)

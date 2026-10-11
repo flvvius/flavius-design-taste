@@ -1,0 +1,241 @@
+{
+  "capturedAt": "2026-10-11T09:05:02.486Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://localhost:4327",
+  "scenarios": [
+    {
+      "route": "/projects",
+      "name": "projects",
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/projects",
+      "name": "projects-empty",
+      "actions": [
+        {
+          "selector": "input",
+          "fill": "zzzz-no-match"
+        }
+      ],
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/projects",
+      "name": "projects-search",
+      "actions": [
+        {
+          "selector": "input",
+          "fill": "kanban"
+        }
+      ],
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    }
+  ],
+  "reports": [
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "000-projects-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "001-projects-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "002-projects-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "003-projects-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "004-projects-empty-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "005-projects-empty-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "006-projects-empty-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "007-projects-empty-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "008-projects-search-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "009-projects-search-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(251, 250, 249)",
+        "foreground": "rgb(39, 36, 33)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "010-projects-search-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(21, 21, 25)",
+        "foreground": "rgb(241, 240, 238)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "011-projects-search-1280-dark.png",
+      "errors": []
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}

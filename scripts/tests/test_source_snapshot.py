@@ -16,12 +16,12 @@ class NativeSnapshotTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory) / 'workspace'
             contents = {
-                'eval/cycles/15/NativeRoom.swift': b'original app',
-                'eval/cycles/16/RoomUITests.swift': b'original tests',
-                'skills/personal-room/assets/tokens.json': b'{"original": true}',
-                'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf': b'original font',
-                'skills/personal-room/assets/fonts/LICENSE.txt': b'font licence',
-                'skills/personal-room/assets/fonts/NOTICE.txt': b'font notice',
+                'eval/archive/eval/cycles/15/NativeRoom.swift': b'original app',
+                'eval/archive/eval/cycles/16/RoomUITests.swift': b'original tests',
+                'directions/personal-room/assets/tokens.json': b'{"original": true}',
+                'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf': b'original font',
+                'directions/personal-room/assets/fonts/LICENSE.txt': b'font licence',
+                'directions/personal-room/assets/fonts/NOTICE.txt': b'font notice',
                 'LICENSE': b'repository licence',
             }
             for path, data in contents.items():
@@ -29,8 +29,8 @@ class NativeSnapshotTests(unittest.TestCase):
                 file.parent.mkdir(parents=True, exist_ok=True)
                 file.write_bytes(data)
             snapshot = SourceSnapshot(root, [root / path for path in contents])
-            (root / 'eval/cycles/15/NativeRoom.swift').write_bytes(b'edited app')
-            (root / 'skills/personal-room/assets/fonts/Schoolbell-Regular.ttf').unlink()
+            (root / 'eval/archive/eval/cycles/15/NativeRoom.swift').write_bytes(b'edited app')
+            (root / 'directions/personal-room/assets/fonts/Schoolbell-Regular.ttf').unlink()
             captured_root = Path(directory) / 'captured'
             snapshot.materialize(captured_root)
             for omitted in [False, True]:
@@ -43,7 +43,7 @@ class NativeSnapshotTests(unittest.TestCase):
                 self.assertEqual(font.exists(), not omitted)
                 if font.exists():
                     self.assertEqual(font.read_bytes(), b'original font')
-            self.assertEqual(snapshot.hashes['eval/cycles/15/NativeRoom.swift'], hashlib.sha256(b'original app').hexdigest())
+            self.assertEqual(snapshot.hashes['eval/archive/eval/cycles/15/NativeRoom.swift'], hashlib.sha256(b'original app').hexdigest())
 
     def test_external_baseline_source_is_captured_without_relocating_its_identity(self):
         with tempfile.TemporaryDirectory() as directory:
