@@ -1,0 +1,66 @@
+.next/types/app/docs/[...slug]/page.ts(28,13): error TS2344: Type 'OmitWithTag<DocsPageProps, keyof PageProps, "default">' does not satisfy the constraint '{ [x: string]: never; }'.
+  Property 'doc' is incompatible with index signature.
+    Type '{ frontmatter: any; content: string; filePath: string; }' is not assignable to type 'never'.
+app/guides/ai-development/tools/page.tsx(120,33): error TS2322: Type '{ toolId: string; size: "sm"; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/guides/ai-development/tools/page.tsx(146,33): error TS2322: Type '{ toolId: string; size: "sm"; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/guides/ai-development/tools/page.tsx(172,33): error TS2322: Type '{ toolId: string; size: "sm"; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/guides/ai-development/tools/page.tsx(198,33): error TS2322: Type '{ toolId: string; size: "sm"; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(50,46): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(50,80): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(57,65): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(60,54): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(60,86): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(61,32): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/from-v0-to-cursor/page.tsx(83,28): error TS2322: Type '{ toolId: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoSmallProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoSmallProps'. Did you mean 'tool'?
+app/guides/nextjs-quickstart/page.tsx(220,29): error TS2322: Type '"gradient"' is not assignable to type '"link" | "secondary" | "destructive" | "default" | "outline" | "ghost" | null | undefined'.
+app/projects/[id]/[tool]/page.tsx(122,25): error TS2322: Type '{ toolId: any; size: "sm"; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/projects/[id]/[tool]/page.tsx(134,31): error TS2322: Type '{ toolId: any; size: "sm"; className: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+app/projects/[id]/[tool]/page.tsx(210,32): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+app/projects/[id]/[tool]/page.tsx(210,39): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/projects/[id]/complete/page.tsx(75,42): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+app/projects/[id]/complete/page.tsx(75,49): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/projects/[id]/complete/page.tsx(91,50): error TS7006: Parameter 'point' implicitly has an 'any' type.
+app/projects/[id]/complete/page.tsx(91,57): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/projects/[id]/page.tsx(104,38): error TS7006: Parameter 'phase' implicitly has an 'any' type.
+app/projects/[id]/page.tsx(104,45): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/projects/[id]/page.tsx(138,46): error TS7006: Parameter 'point' implicitly has an 'any' type.
+app/projects/[id]/page.tsx(138,53): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/projects/[id]/page.tsx(177,43): error TS2322: Type '{ toolId: any; size: "sm"; className: string; }' is not assignable to type 'IntrinsicAttributes & ToolLogoProps'.
+  Property 'toolId' does not exist on type 'IntrinsicAttributes & ToolLogoProps'. Did you mean 'tool'?
+components/markdown-renderer.tsx(218,19): error TS2322: Type 'string | undefined' is not assignable to type 'Url'.
+  Type 'undefined' is not assignable to type 'Url'.
+components/ui/animated-counter.tsx(53,19): error TS2540: Cannot assign to 'current' because it is a read-only property.
+components/ui/calendar.tsx(57,9): error TS2353: Object literal may only specify known properties, and 'IconLeft' does not exist in type 'Partial<CustomComponents>'.
+components/ui/chart.tsx(119,7): error TS2339: Property 'payload' does not exist on type 'Omit<Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; includeHidden?: boolean | undefined; ... 17 more ...; axisId?: AxisId | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }, "ref">'.
+components/ui/chart.tsx(124,7): error TS2339: Property 'label' does not exist on type 'Omit<Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; includeHidden?: boolean | undefined; ... 17 more ...; axisId?: AxisId | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }, "ref">'.
+components/ui/chart.tsx(188,25): error TS7006: Parameter 'item' implicitly has an 'any' type.
+components/ui/chart.tsx(188,31): error TS7006: Parameter 'index' implicitly has an 'any' type.
+components/ui/chart.tsx(264,41): error TS2344: Type '"verticalAlign" | "payload"' does not satisfy the constraint '"string" | "media" | "spacing" | "order" | "height" | "width" | "transformOrigin" | "rotate" | "scale" | "cursor" | "fill" | "stroke" | "strokeWidth" | "fontFamily" | "fontSize" | ... 428 more ... | "onBBoxUpdate"'.
+  Type '"payload"' is not assignable to type '"string" | "media" | "spacing" | "order" | "height" | "width" | "transformOrigin" | "rotate" | "scale" | "cursor" | "fill" | "stroke" | "strokeWidth" | "fontFamily" | "fontSize" | ... 428 more ... | "onBBoxUpdate"'.
+components/ui/chart.tsx(275,19): error TS2339: Property 'length' does not exist on type '{}'.
+components/ui/chart.tsx(288,18): error TS2339: Property 'map' does not exist on type '{}'.
+components/ui/chart.tsx(288,23): error TS7006: Parameter 'item' implicitly has an 'any' type.
+lib/mock-data.ts(3,36): error TS2307: Cannot find module '@/lib/types' or its corresponding type declarations.
+scripts/generate-docs-tree.ts(30,22): error TS7006: Parameter 'filename' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(31,94): error TS7006: Parameter 'c' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(34,51): error TS7006: Parameter 'rootDocNames' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(44,16): error TS7006: Parameter 'filename' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(45,13): error TS7006: Parameter 'filename' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(63,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(64,13): error TS7006: Parameter 'item' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(104,24): error TS7006: Parameter 'a' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(104,27): error TS7006: Parameter 'b' implicitly has an 'any' type.
+scripts/generate-docs-tree.ts(114,16): error TS2554: Expected 3 arguments, but got 0.

@@ -19,3 +19,7 @@ Report three categories:
 - Unverified: what was not run and why.
 
 Tests do not certify screen readers, native platforms or physical devices without direct evidence. Deliver before/after, rationale, regression results and known limits with reviewable code. Do not publish or contact anyone merely because a handoff template exists.
+
+A failed capture is evidence too. Keep its attempted route/state, response status, page errors and screenshot when available. If a development page stalls before hydration, diagnose the disabled control or runtime error before retrying; keep the failed attempt separate from the successful matrix.
+
+For doubled-text review, inspect the actual image as well as geometry. Fixed pixel line heights can overlap larger text while scrollWidth still equals the viewport. Check leftward overflow and readable line spacing before calling reflow a pass.

@@ -1,0 +1,14 @@
+{
+  "search": 1,
+  "empty": true,
+  "count": 7,
+  "focus": {
+    "element": "<a class=\"font-bold text-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-transparent bg-clip-text\" href=\"/\">VibeCodex</a>",
+    "outline": "rgb(181, 154, 223) solid 2px"
+  },
+  "width": {
+    "innerWidth": 375,
+    "scrollWidth": 375
+  },
+  "review": "Viewed actual1280light catalog capture. Representative screen only; other screens intentionally unchanged."
+}

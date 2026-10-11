@@ -1,0 +1,214 @@
+{
+  "capturedAt": "2026-10-11T09:10:50.894Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://127.0.0.1:4315",
+  "scenarios": [
+    {
+      "route": "/",
+      "name": "/"
+    },
+    {
+      "route": "/options/a",
+      "name": "/options/a"
+    },
+    {
+      "route": "/options/b",
+      "name": "/options/b"
+    }
+  ],
+  "reports": [
+    {
+      "route": "/",
+      "state": "/",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "000-_-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "/",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "001-_-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "/",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "002-_-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "/",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "003-_-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/options/a",
+      "state": "/options/a",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "004-_options_a-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/options/a",
+      "state": "/options/a",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "005-_options_a-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/options/a",
+      "state": "/options/a",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "006-_options_a-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/options/a",
+      "state": "/options/a",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "007-_options_a-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/options/b",
+      "state": "/options/b",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "008-_options_b-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/options/b",
+      "state": "/options/b",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "009-_options_b-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/options/b",
+      "state": "/options/b",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "010-_options_b-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/options/b",
+      "state": "/options/b",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "011-_options_b-1280-dark.png",
+      "errors": []
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}

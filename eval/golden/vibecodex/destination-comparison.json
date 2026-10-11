@@ -1,0 +1,66 @@
+{
+  "/projects": {
+    "before": [
+      "/projects/content-management",
+      "/projects/expense-tracker",
+      "/projects/kanban-board",
+      "/projects/modern-personal-dashboard",
+      "/projects/personal-dashboard",
+      "/projects/product-landing",
+      "/projects/recipe-finder"
+    ],
+    "after": [
+      "/projects/content-management",
+      "/projects/expense-tracker",
+      "/projects/kanban-board",
+      "/projects/modern-personal-dashboard",
+      "/projects/personal-dashboard",
+      "/projects/product-landing",
+      "/projects/recipe-finder"
+    ],
+    "equal": true
+  },
+  "/guides": {
+    "before": [
+      "/guides/ai-development",
+      "/guides/ai-development",
+      "/guides/cursor-rules-templates",
+      "/guides/from-v0-to-cursor",
+      "/guides/github-basics",
+      "/guides/requirements-template",
+      "/resources"
+    ],
+    "after": [
+      "/guides/ai-development",
+      "/guides/ai-development",
+      "/guides/cursor-rules-templates",
+      "/guides/from-v0-to-cursor",
+      "/guides/github-basics",
+      "/guides/requirements-template",
+      "/resources"
+    ],
+    "equal": true
+  },
+  "/start": {
+    "before": [
+      "/"
+    ],
+    "after": [
+      "/"
+    ],
+    "equal": true
+  },
+  "/learning-path": {
+    "before": [
+      "#beginner-milestones",
+      "#learning-paths",
+      "/projects"
+    ],
+    "after": [
+      "#beginner-milestones",
+      "#learning-paths",
+      "/projects"
+    ],
+    "equal": true
+  }
+}

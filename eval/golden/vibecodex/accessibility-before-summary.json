@@ -1,0 +1,199 @@
+[
+  {
+    "route": "/projects",
+    "theme": "light",
+    "fails": [
+      {
+        "text": "All Projects",
+        "ratio": 1.0040180509809489,
+        "minimum": 4.5
+      }
+    ],
+    "boundary": {
+      "color": "rgb(228, 228, 231)",
+      "ratio": 1.2688774649087908,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(0, 95, 204)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/guides",
+    "theme": "light",
+    "fails": [
+      {
+        "text": "Browse resources",
+        "ratio": 3.6820433648230324,
+        "minimum": 4.5
+      }
+    ],
+    "boundary": null,
+    "animations": [
+      "float",
+      "float",
+      "float"
+    ],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(0, 95, 204)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/start",
+    "theme": "light",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(24, 24, 27)",
+      "ratio": 17.71676507806213,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(0, 95, 204)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/learning-path",
+    "theme": "light",
+    "fails": [
+      {
+        "text": "Beginner",
+        "ratio": 1.0955171955711072,
+        "minimum": 4.5
+      },
+      {
+        "text": "New to coding",
+        "ratio": 4.411519582433118,
+        "minimum": 4.5
+      },
+      {
+        "text": "Intermediate",
+        "ratio": 4.411519582433118,
+        "minimum": 4.5
+      },
+      {
+        "text": "Some experience",
+        "ratio": 4.411519582433118,
+        "minimum": 4.5
+      },
+      {
+        "text": "Advanced",
+        "ratio": 4.411519582433118,
+        "minimum": 4.5
+      },
+      {
+        "text": "Experienced coder",
+        "ratio": 4.411519582433118,
+        "minimum": 4.5
+      },
+      {
+        "text": "Quick Win",
+        "ratio": 2.9523254855960968,
+        "minimum": 4.5
+      },
+      {
+        "text": "Shareable",
+        "ratio": 2.9523254855960968,
+        "minimum": 4.5
+      },
+      {
+        "text": "Working Prototype",
+        "ratio": 2.9523254855960968,
+        "minimum": 4.5
+      },
+      {
+        "text": "MVP",
+        "ratio": 2.9523254855960968,
+        "minimum": 4.5
+      }
+    ],
+    "boundary": null,
+    "animations": [
+      "float",
+      "float",
+      "float"
+    ],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(0, 95, 204)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/projects",
+    "theme": "dark",
+    "fails": [
+      {
+        "text": "All Projects",
+        "ratio": 1.0003873758291841,
+        "minimum": 4.5
+      }
+    ],
+    "boundary": {
+      "color": "rgb(39, 39, 42)",
+      "ratio": 1.3357440312430557,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(153, 200, 255)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/guides",
+    "theme": "dark",
+    "fails": [],
+    "boundary": null,
+    "animations": [
+      "float",
+      "float",
+      "float"
+    ],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(153, 200, 255)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/start",
+    "theme": "dark",
+    "fails": [],
+    "boundary": {
+      "color": "rgb(250, 250, 250)",
+      "ratio": 19.061142529601344,
+      "minimum": 3
+    },
+    "animations": [],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(153, 200, 255)",
+      "width": "1px"
+    }
+  },
+  {
+    "route": "/learning-path",
+    "theme": "dark",
+    "fails": [],
+    "boundary": null,
+    "animations": [
+      "float",
+      "float",
+      "float"
+    ],
+    "focus": {
+      "text": "VibeCodex",
+      "outline": "rgb(153, 200, 255)",
+      "width": "1px"
+    }
+  }
+]

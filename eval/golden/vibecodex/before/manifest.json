@@ -1,0 +1,539 @@
+{
+  "capturedAt": "2026-10-11T09:03:21.973Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://localhost:4326",
+  "scenarios": [
+    {
+      "route": "/projects",
+      "name": "projects",
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/guides",
+      "name": "guides",
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/start",
+      "name": "start",
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/learning-path",
+      "name": "learning-path",
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/projects",
+      "name": "projects-empty",
+      "actions": [
+        {
+          "selector": "input",
+          "fill": "zzzz-no-match"
+        }
+      ],
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/projects",
+      "name": "projects-search",
+      "actions": [
+        {
+          "selector": "input",
+          "fill": "kanban"
+        }
+      ],
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    },
+    {
+      "route": "/learning-path",
+      "name": "learning-advanced",
+      "actions": [
+        {
+          "selector": "button:has-text(\"Advanced\")",
+          "click": true
+        }
+      ],
+      "themeActions": {
+        "light": [
+          {
+            "selector": "button:has-text(\"Toggle theme\")",
+            "click": true
+          }
+        ],
+        "dark": []
+      }
+    }
+  ],
+  "reports": [
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "000-projects-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "001-projects-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "002-projects-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "003-projects-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "state": "guides",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "004-guides-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "state": "guides",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "005-guides-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "state": "guides",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "006-guides-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "state": "guides",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "007-guides-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/start",
+      "state": "start",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "008-start-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/start",
+      "state": "start",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "009-start-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/start",
+      "state": "start",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "010-start-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/start",
+      "state": "start",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "011-start-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-path",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "012-learning-path-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-path",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "013-learning-path-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-path",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "014-learning-path-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-path",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "015-learning-path-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "016-projects-empty-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "017-projects-empty-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "018-projects-empty-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-empty",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "019-projects-empty-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "020-projects-search-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "021-projects-search-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "022-projects-search-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/projects",
+      "state": "projects-search",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "023-projects-search-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-advanced",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "024-learning-advanced-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-advanced",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "025-learning-advanced-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-advanced",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "rgb(255, 255, 255)",
+        "foreground": "rgb(9, 9, 11)",
+        "rootClass": "light",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "026-learning-advanced-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/learning-path",
+      "state": "learning-advanced",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "rgb(9, 9, 11)",
+        "foreground": "rgb(250, 250, 250)",
+        "rootClass": "dark",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "027-learning-advanced-1280-dark.png",
+      "errors": []
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}

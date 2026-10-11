@@ -1,0 +1,111 @@
+[
+  {
+    "route": "/projects",
+    "name": "projects",
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/guides",
+    "name": "guides",
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/start",
+    "name": "start",
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/learning-path",
+    "name": "learning-path",
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/projects",
+    "name": "projects-empty",
+    "actions": [
+      {
+        "selector": "input",
+        "fill": "zzzz-no-match"
+      }
+    ],
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/projects",
+    "name": "projects-search",
+    "actions": [
+      {
+        "selector": "input",
+        "fill": "kanban"
+      }
+    ],
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  },
+  {
+    "route": "/learning-path",
+    "name": "learning-advanced",
+    "actions": [
+      {
+        "selector": "button:has-text(\"Advanced\")",
+        "click": true
+      }
+    ],
+    "themeActions": {
+      "light": [
+        {
+          "selector": "button:has-text(\"Toggle theme\")",
+          "click": true
+        }
+      ],
+      "dark": []
+    }
+  }
+]

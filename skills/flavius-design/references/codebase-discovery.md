@@ -19,3 +19,5 @@ Write the behavior contract in the project's design brief:
 For each entry, specify a trigger, expected result and verification method. Mark absent features as absent with code evidence. Mark unavailable services as unverified; do not replace their contract with a fabricated success path.
 
 Run the existing build/tests before changing anything. Capture normal screens, empty/loading/error states, long content, an open dialog and mobile where they exist. If a state cannot be induced safely, record why. One screenshot of a dashboard is not a baseline for an entire flow.
+
+Inspect build configuration for skipped checks. A successful framework build can hide TypeScript or lint failures. Run those checks separately when the project disables them, record the baseline failures, and compare the same commands after the visual change.

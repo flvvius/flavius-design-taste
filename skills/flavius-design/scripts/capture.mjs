@@ -20,14 +20,23 @@ for(const scenario of scenarios)for(const width of [375,1280])for(const theme of
  const page=await browser.newPage({viewport:{width,height:960},colorScheme:theme,reducedMotion:'reduce'}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));
  const url=new URL(scenario.route,base).href;
- const response=await page.goto(url,{waitUntil:'networkidle',timeout:45000});
+ let response;
+ try {
+ response=await page.goto(url,{waitUntil:'networkidle',timeout:45000});
  if(!response?.ok())throw new Error(`${url}: HTTP ${response?.status()}`);
  await act(page,scenario.themeActions?.[theme]);await act(page,scenario.actions);
  await page.waitForFunction(()=>document.fonts.status==='loaded');
  const file=`${reports.length.toString().padStart(3,'0')}-${(scenario.name||scenario.route).replace(/[^a-z0-9-]/gi,'_')}-${width}-${theme}.png`;
  await page.screenshot({path:resolve(output,file),fullPage:true,animations:'disabled'});
  const observed=await page.evaluate(()=>({background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color,rootTheme:document.documentElement.dataset.theme,rootClass:document.documentElement.className,width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));
- reports.push({route:scenario.route,state:scenario.name||scenario.route,width,requestedScheme:theme,observed,file,errors});await page.close();
+ reports.push({route:scenario.route,state:scenario.name||scenario.route,width,requestedScheme:theme,observed,file,errors});
+ } catch(error) {
+  errors.push(error.message);
+  const file=`${reports.length.toString().padStart(3,'0')}-failed-${width}-${theme}.png`;
+  let screenshot;try{await page.screenshot({path:resolve(output,file),fullPage:true,animations:'disabled'});screenshot=file;}catch{}
+  reports.push({route:scenario.route,state:scenario.name||scenario.route,width,requestedScheme:theme,status:response?.status(),file:screenshot,errors,failed:true});
+  throw error;
+ } finally {await page.close();}
 }
 }finally{
  await writeFile(resolve(output,'manifest.json'),JSON.stringify({capturedAt:new Date().toISOString(),browser:browser.version(),baseUrl:base,scenarios,reports,note:'Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference.'},null,2)+'\n');

@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-11T09:18:53.796Z",
+  "browser": "149.0.7827.55",
+  "records": [
+    {
+      "theme": "light",
+      "contained": true,
+      "returned": "Toggle menu",
+      "shown": 1,
+      "closed": true,
+      "rootClass": "light"
+    },
+    {
+      "theme": "dark",
+      "contained": true,
+      "returned": "Toggle menu",
+      "shown": 1,
+      "closed": true,
+      "rootClass": "dark"
+    }
+  ]
+}
