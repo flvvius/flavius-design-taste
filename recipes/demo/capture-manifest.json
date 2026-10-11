@@ -1,0 +1,418 @@
+{
+  "capturedAt": "2026-10-11T09:04:57.151Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://127.0.0.1:4314",
+  "scenarios": [
+    {
+      "route": "/settings-page",
+      "name": "/settings-page"
+    },
+    {
+      "route": "/table-and-filters",
+      "name": "/table-and-filters"
+    },
+    {
+      "route": "/onboarding-flow",
+      "name": "/onboarding-flow"
+    },
+    {
+      "route": "/editorial-landing",
+      "name": "/editorial-landing"
+    },
+    {
+      "route": "/case-study-page",
+      "name": "/case-study-page"
+    },
+    {
+      "route": "/ink",
+      "name": "/ink"
+    }
+  ],
+  "reports": [
+    {
+      "route": "/settings-page",
+      "state": "/settings-page",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "000-_settings-page-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/settings-page",
+      "state": "/settings-page",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "001-_settings-page-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/settings-page",
+      "state": "/settings-page",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "002-_settings-page-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/settings-page",
+      "state": "/settings-page",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "003-_settings-page-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/table-and-filters",
+      "state": "/table-and-filters",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "004-_table-and-filters-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/table-and-filters",
+      "state": "/table-and-filters",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "005-_table-and-filters-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/table-and-filters",
+      "state": "/table-and-filters",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "006-_table-and-filters-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/table-and-filters",
+      "state": "/table-and-filters",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "007-_table-and-filters-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/onboarding-flow",
+      "state": "/onboarding-flow",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "008-_onboarding-flow-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/onboarding-flow",
+      "state": "/onboarding-flow",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "009-_onboarding-flow-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/onboarding-flow",
+      "state": "/onboarding-flow",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "010-_onboarding-flow-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/onboarding-flow",
+      "state": "/onboarding-flow",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "011-_onboarding-flow-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/editorial-landing",
+      "state": "/editorial-landing",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "012-_editorial-landing-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/editorial-landing",
+      "state": "/editorial-landing",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "013-_editorial-landing-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/editorial-landing",
+      "state": "/editorial-landing",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "014-_editorial-landing-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/editorial-landing",
+      "state": "/editorial-landing",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "015-_editorial-landing-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/case-study-page",
+      "state": "/case-study-page",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "016-_case-study-page-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/case-study-page",
+      "state": "/case-study-page",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "017-_case-study-page-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/case-study-page",
+      "state": "/case-study-page",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "018-_case-study-page-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/case-study-page",
+      "state": "/case-study-page",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "019-_case-study-page-1280-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/ink",
+      "state": "/ink",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "020-_ink-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/ink",
+      "state": "/ink",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "021-_ink-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/ink",
+      "state": "/ink",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(98.846 0.111073 0.751436)",
+        "foreground": "lab(3.03542 0.975616 1.60148)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "022-_ink-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/ink",
+      "state": "/ink",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(2.45562 0.0755936 -1.50316)",
+        "foreground": "lab(91.8947 0.282824 1.88165)",
+        "rootTheme": "auto",
+        "rootClass": "",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "023-_ink-1280-dark.png",
+      "errors": []
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}
