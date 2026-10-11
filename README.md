@@ -2,10 +2,10 @@
 
 My design taste as two reusable skills for AI agents. Choose a direction for the project; each works without a framework or model API.
 
-- [Editorial calm](skills/editorial-calm/SKILL.md) is for app interfaces with restrained typography, warm neutrals and separated rows.
-- [Personal room](skills/personal-room/SKILL.md) is for personal sites, portfolios, communities and expressive screens. Handwriting, meaningful objects, imperfect outlines and a conversational voice give it character.
+- [Editorial calm](directions/editorial-calm/SKILL.md) is for app interfaces with restrained typography, warm neutrals and separated rows.
+- [Personal room](directions/personal-room/SKILL.md) is for personal sites, portfolios, communities and expressive screens. Handwriting, meaningful objects, imperfect outlines and a conversational voice give it character.
 
-Personal room draws on my [portfolio](https://flavius.pro) and [Cluj House](https://clujhouse.com/). It adds warm paper and navy poster directions. The [source notes](skills/personal-room/references/sources.md) explain the extraction and adaptations. Editorial calm keeps its existing guidance and assets.
+Personal room draws on my [portfolio](https://flavius.pro) and [Cluj House](https://clujhouse.com/). It adds warm paper and navy poster directions. The [source notes](directions/personal-room/references/sources.md) explain the extraction and adaptations. Editorial calm keeps its existing guidance and assets.
 
 ## Choose the direction
 
@@ -28,11 +28,11 @@ Open the [interactive example](examples/personal-room/index.html) locally to try
 
 Ask your agent:
 
-> Read `skills/personal-room/SKILL.md` and use Personal room for this project. Choose objects and a voice that belong to its subject, then apply the paper or night direction. Preserve the product behaviour.
+> Read `directions/personal-room/SKILL.md` and use Personal room for this project. Choose objects and a voice that belong to its subject, then apply the paper or night direction. Preserve the product behaviour.
 
-Install the whole `skills/personal-room` folder in `~/.codex/skills/personal-room` for Codex or `.claude/skills/personal-room` for Claude Code. Other agents can read the Markdown directly. The folder includes the [portable tokens](skills/personal-room/assets/tokens.json), [generated CSS](skills/personal-room/assets/tokens.css), [optional font stylesheet](skills/personal-room/assets/fonts.css) and [implementation guide](skills/personal-room/references/implementation.md). It does not depend on the Editorial calm folder. The [repair notebook](eval/cycles/12/index.html) shows the same taste on a reading and editing screen, without an illustrated room.
+Install the whole `directions/personal-room` folder in `~/.codex/skills/personal-room` for Codex or `.claude/skills/personal-room` for Claude Code. Other agents can read the Markdown directly. The folder includes the [portable tokens](directions/personal-room/assets/tokens.json), [generated CSS](directions/personal-room/assets/tokens.css), [optional font stylesheet](directions/personal-room/assets/fonts.css) and [implementation guide](directions/personal-room/references/implementation.md). It does not depend on the Editorial calm folder. The [repair notebook](eval/archive/eval/cycles/12/index.html) shows the same taste on a reading and editing screen, without an illustrated room.
 
-Schoolbell is bundled under the [Apache License 2.0](skills/personal-room/assets/fonts/LICENSE.txt). Reference photos, music artwork and logos are not part of this package.
+Schoolbell is bundled under the [Apache License 2.0](directions/personal-room/assets/fonts/LICENSE.txt). Reference photos, music artwork and logos are not part of this package.
 
 ## Editorial calm
 
@@ -73,9 +73,9 @@ See the [capture notes](examples/screenshots/README.md) for provenance. The sepa
 
 Clone this repository into your project or a shared tools directory. Ask your agent:
 
-> Read `skills/editorial-calm/SKILL.md` and use Flavius design taste for this app. Read the reference for my platform. Preserve the product's behaviour and use this system for its visual decisions.
+> Read `directions/editorial-calm/SKILL.md` and use Flavius design taste for this app. Read the reference for my platform. Preserve the product's behaviour and use this system for its visual decisions.
 
-Agents that support skills can install the `skills/editorial-calm` folder in their skill directory. For Codex, copy it into `~/.codex/skills/editorial-calm`. For Claude Code, copy it into `.claude/skills/editorial-calm` in your project. Agents without skill support can read the Markdown directly. No model API or build dependency is required.
+Agents that support skills can install the `directions/editorial-calm` folder in their skill directory. For Codex, copy it into `~/.codex/skills/editorial-calm`. For Claude Code, copy it into `.claude/skills/editorial-calm` in your project. Agents without skill support can read the Markdown directly. No model API or build dependency is required.
 
 ## Works well with shadcn/ui
 
@@ -83,20 +83,20 @@ This taste combines well with [shadcn/ui](https://ui.shadcn.com). Its [CSS varia
 
 Use shadcn/ui for buttons, inputs, dialogs, menus and other controls. Apply this taste to the page layout, typography, spacing and choice of surfaces. Ordinary sections stay on the page; a dialog earns its own surface.
 
-Copy the token values into your existing theme or import `tokens.css` after the default theme definitions. Keep your Tailwind semantic mappings and dark-mode setup. Map the component radii to the supplied control, media and overlay values. Charts and sidebars may need additional app-specific tokens. The [web guide](skills/editorial-calm/references/web.md) covers the integration.
+Copy the token values into your existing theme or import `tokens.css` after the default theme definitions. Keep your Tailwind semantic mappings and dark-mode setup. Map the component radii to the supplied control, media and overlay values. Charts and sidebars may need additional app-specific tokens. The [web guide](directions/editorial-calm/references/web.md) covers the integration.
 
 shadcn/ui is optional. The skill and tokens also work with other component libraries and native controls.
 
 ## Use the assets
 
-- [tokens.json](skills/editorial-calm/assets/tokens.json) is the portable source of truth.
-- [tokens.css](skills/editorial-calm/assets/tokens.css) provides CSS custom properties.
-- [tokens.srgb.json](skills/editorial-calm/assets/tokens.srgb.json) provides colours for platforms without OKLCH support.
-- [fonts.css](skills/editorial-calm/assets/fonts.css) loads the bundled Inter variable fonts, covering Latin and Latin Extended text.
+- [tokens.json](directions/editorial-calm/assets/tokens.json) is the portable source of truth.
+- [tokens.css](directions/editorial-calm/assets/tokens.css) provides CSS custom properties.
+- [tokens.srgb.json](directions/editorial-calm/assets/tokens.srgb.json) provides colours for platforms without OKLCH support.
+- [fonts.css](directions/editorial-calm/assets/fonts.css) loads the bundled Inter variable fonts, covering Latin and Latin Extended text.
 - [Reference assets](examples/reference-assets/README.md) include the live app logo for visual reference.
-- [Web guide](skills/editorial-calm/references/web.md) covers browser implementations.
-- [Mobile guide](skills/editorial-calm/references/mobile.md) covers React Native, SwiftUI and Compose.
-- [Desktop guide](skills/editorial-calm/references/desktop.md) covers desktop layouts and interaction.
+- [Web guide](directions/editorial-calm/references/web.md) covers browser implementations.
+- [Mobile guide](directions/editorial-calm/references/mobile.md) covers React Native, SwiftUI and Compose.
+- [Desktop guide](directions/editorial-calm/references/desktop.md) covers desktop layouts and interaction.
 
 Edit the relevant skill's `assets/tokens.json` first. Run `node scripts/build.mjs` to regenerate both skills' CSS and Editorial calm's portable sRGB values. Run `node scripts/check.mjs` to verify generated assets, links, palette contrast and font packaging.
 
@@ -104,9 +104,9 @@ Edit the relevant skill's `assets/tokens.json` first. Run `node scripts/build.mj
 
 The [evaluation log](eval/README.md) records build, review and fix cycles. The first ten used independent agents; later cycles identify self-review explicitly. It includes working screens, builder notes, findings, browser checks and screenshots. These exercises test how the tastes transfer to different tasks, including enlarged text and both themes.
 
-The [research notes](eval/research/2026-10-09.md) compare seven design-skill repositories, published designer methods and primary accessibility guidance. They explain which ideas fit this repo and which were excluded.
+The [research notes](eval/archive/eval/research/2026-10-09.md) compare seven design-skill repositories, published designer methods and primary accessibility guidance. They explain which ideas fit this repo and which were excluded.
 
-The [chart study](eval/research/2026-10-10.md) adds a pinned Observable Plot source review and forced-colour rendering evidence. Further studies examine [responsive values](eval/research/2026-10-10-tables.md), [search state](eval/research/2026-10-10-search.md) and [focus persistence](eval/research/2026-10-10-focus.md), with pinned USWDS, Adobe and Radix source comparisons. The [control study](eval/research/2026-10-10-controls.md) adds GOV.UK source review and checks for native hit areas and empty rows. The [progressive reading study](eval/research/2026-10-10-progressive-reading.md) examines how initial content survives unavailable scripts and interrupted setup. The [system-colour study](eval/research/2026-10-10-system-colours.md) adds a pinned Primer CSS comparison and checks automatic palettes before initialization. The [native-command study](eval/research/2026-10-10-native-commands.md) checks actual Review activation and unavailable preview controls before enhancement.
+The [chart study](eval/archive/eval/research/2026-10-10.md) adds a pinned Observable Plot source review and forced-colour rendering evidence. Further studies examine [responsive values](eval/archive/eval/research/2026-10-10-tables.md), [search state](eval/archive/eval/research/2026-10-10-search.md) and [focus persistence](eval/archive/eval/research/2026-10-10-focus.md), with pinned USWDS, Adobe and Radix source comparisons. The [control study](eval/archive/eval/research/2026-10-10-controls.md) adds GOV.UK source review and checks for native hit areas and empty rows. The [progressive reading study](eval/archive/eval/research/2026-10-10-progressive-reading.md) examines how initial content survives unavailable scripts and interrupted setup. The [system-colour study](eval/archive/eval/research/2026-10-10-system-colours.md) adds a pinned Primer CSS comparison and checks automatic palettes before initialization. The [native-command study](eval/archive/eval/research/2026-10-10-native-commands.md) checks actual Review activation and unavailable preview controls before enhancement.
 
 ## Verify a change
 
@@ -127,7 +127,7 @@ The browser runner checks both specimens, the repair notebook, both usage-chart 
 
 Browser and native runners capture their input bytes before testing. Browsers receive those captured assets, and native builds compile and package the captured files. Report hashes identify those bytes even if the working tree changes during a run. This is a per-file capture, not an atomic Git checkout or a claim that every screenshot or binary is reproducible byte for byte. `python3 -m unittest discover -s scripts/tests -p 'test_*.py'` checks native capture and project packaging without Xcode; these fixtures also run in CI.
 
-On macOS with Xcode and an available iOS simulator runtime, `npm run check:native -- --output .artifacts/native-room` compiles the [native Personal room specimen](eval/cycles/15/index.html). It creates and removes an isolated simulator, checks ordinary and largest accessibility text, tests live size changes, and captures the results. The skill folders do not depend on this tooling. Simulator layout and programmatic control events do not establish physical-device gestures or VoiceOver behavior.
+On macOS with Xcode and an available iOS simulator runtime, `npm run check:native -- --output .artifacts/native-room` compiles the [native Personal room specimen](eval/archive/eval/cycles/15/index.html). It creates and removes an isolated simulator, checks ordinary and largest accessibility text, tests live size changes, and captures the results. The skill folders do not depend on this tooling. Simulator layout and programmatic control events do not establish physical-device gestures or VoiceOver behavior.
 
 `npm run check:native-ui -- --output .artifacts/native-ui` adds XCTest swipes, taps and unfiltered accessibility audits at ordinary and largest text sizes in both appearances. It retains full Xcode result bundles and screenshots. Choose a fresh output directory for each run. These tests still need separate VoiceOver and physical-device review. Add `--without-font` to either native command to build without Schoolbell and check the system-font fallback. The ordinary build still requires the expected custom face to load.
 
@@ -139,4 +139,4 @@ Choose content, navigation and domain colours for the app you're building. Dense
 
 ## Licence
 
-Licensed under MIT. Commercial and closed-source use is permitted. Include the copyright and permission notice in copies or substantial portions of the software. See [LICENSE](LICENSE). Bundled Inter fonts have their own [SIL Open Font License](skills/editorial-calm/assets/fonts/OFL.txt). Screenshots contain app content and publisher imagery for visual reference; the MIT licence does not relicense third-party material shown in them.
+Licensed under MIT. Commercial and closed-source use is permitted. Include the copyright and permission notice in copies or substantial portions of the software. See [LICENSE](LICENSE). Bundled Inter fonts have their own [SIL Open Font License](directions/editorial-calm/assets/fonts/OFL.txt). Screenshots contain app content and publisher imagery for visual reference; the MIT licence does not relicense third-party material shown in them.

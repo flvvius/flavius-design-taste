@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-personal-room="paper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A small collection | Personal room example</title>
+  <link rel="stylesheet" href="../../skills/personal-room/assets/tokens.css">
+  <link rel="stylesheet" href="../../skills/personal-room/assets/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="room.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+<svg class="definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <symbol id="camera" viewBox="0 0 260 200">
+      <path d="M26 62 Q24 59 32 58 L76 57 L90 39 Q95 35 102 36 L151 38 L166 57 L231 59 Q238 60 237 67 L235 165 Q233 172 225 171 L34 169 Q26 169 27 162 Z"/>
+      <path d="M28 88 Q124 85 236 89 M42 59 L42 49 L69 50 L68 58 M177 67 L219 67 L219 80 L177 80 Z"/>
+      <path d="M166 121 C164 160 105 160 104 122 C101 82 165 81 166 121 Z M155 122 C154 145 116 145 115 122 C114 95 153 96 155 122 Z"/>
+      <path d="M128 103 L118 115 M139 145 L148 136 M39 145 L52 133 M40 155 L61 134 M50 157 L72 135 M188 149 L210 149"/>
+    </symbol>
+    <symbol id="notebook" viewBox="0 0 180 200">
+      <path d="M34 17 Q104 12 151 19 L149 182 Q91 187 34 182 Z M48 17 L48 182 M59 45 Q99 42 133 45 M61 58 L126 58 M63 106 Q86 86 108 104 T137 102 M64 117 Q103 139 133 114 M62 158 L93 158"/>
+      <path d="M41 30 C16 23 18 41 40 36 M41 61 C18 53 18 72 40 68 M41 94 C18 87 18 105 40 100 M41 125 C18 118 18 137 40 132 M41 157 C18 150 18 168 40 163 M126 168 L137 158 M129 176 L140 165"/>
+    </symbol>
+    <symbol id="lamp" viewBox="0 0 300 340">
+      <path d="M81 301 Q148 294 218 302 L231 319 Q159 325 68 320 Z M144 299 L151 190 L170 194 L163 299 M159 186 L112 92 L126 84 L177 184 Z M103 87 Q72 87 58 98 L75 48 Q119 26 155 49 L168 99 Q129 84 103 87 Z"/>
+      <path d="M58 98 Q105 120 168 99 M76 104 Q116 126 146 106 M89 59 L84 86 M100 53 L96 84 M183 140 L214 128 M190 165 L230 163 M182 191 L210 208 M91 287 L127 288 M166 309 L211 310"/>
+      <circle cx="163" cy="188" r="11"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="page-header wrap">
+  <a class="wordmark" href="#main">a small collection<span>by someone who keeps making things</span></a>
+  <nav aria-label="Main"><a href="#work">the work</a><a href="#notes">a note</a><a href="#contact">say hello</a></nav>
+  <div class="palette" role="group" aria-label="Example palette" hidden>
+    <button type="button" data-palette="paper" aria-pressed="true">paper</button>
+    <button type="button" data-palette="night" aria-pressed="false">night</button>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <section class="opening wrap" aria-labelledby="title">
+    <div class="opening-copy">
+      <h1 id="title">a few things<br>worth keeping.</h1>
+      <svg class="underline" viewBox="0 0 350 20" aria-hidden="true"><path d="M4 12 Q84 5 173 11 T344 9"/></svg>
+      <p>little tools, weekend photographs,<br class="desktop-break"> and ideas that made it out of the notebook.</p>
+      <a class="sketch-button" href="#work">see what i'm making</a>
+    </div>
+    <figure class="opening-object">
+      <span class="margin-note">usually on<br>past midnight</span>
+      <svg class="ink-art" viewBox="0 0 300 340" aria-hidden="true"><use href="#lamp"/></svg>
+      <figcaption>one desk. plenty of unfinished ideas.</figcaption>
+    </figure>
+  </section>
+  <section class="work wrap" id="work" aria-labelledby="work-title">
+    <div class="section-intro"><h2 id="work-title">off the desk</h2><p>A few small projects.<br>Each started with something I wanted to use.</p><aside class="paper-note">still making room<br>for the next one</aside></div>
+    <div class="objects">
+      <article class="object-item">
+        <a class="object-link" href="#project-walks"><svg class="ink-art camera" viewBox="0 0 260 200" aria-hidden="true"><use href="#camera"/></svg><span class="object-title">the long way home</span></a>
+        <p>photos from walks with no particular destination</p>
+      </article>
+      <article class="object-item">
+        <a class="object-link" href="#project-notes"><svg class="ink-art notebook" viewBox="0 0 180 200" aria-hidden="true"><use href="#notebook"/></svg><span class="object-title">a pocket notebook</span></a>
+        <p>a tiny place to save an idea before it disappears</p>
+      </article>
+    </div>
+  </section>
+  <section class="stories wrap" aria-label="Project stories">
+    <details id="project-walks"><summary>the long way home</summary><p>I kept taking the same route to the station. Taking a different turn gave me a reason to bring the camera again. This collection is a place to keep those walks together.</p></details>
+    <details id="project-notes"><summary>a pocket notebook</summary><p>I wanted somewhere to put a sentence without choosing a folder first. One text field, a date, and a search. That's the whole idea so far.</p></details>
+  </section>
+  <section class="notes wrap" id="notes" aria-labelledby="notes-title">
+    <div><h2 id="notes-title">a note to myself</h2><p class="aside-copy">written after a very long Saturday</p></div>
+    <article class="reading"><h3>leave something unfinished</h3><p>I used to wait until a project looked complete before putting it online. Then I had a folder full of finished-looking things nobody had used.</p><p>These days I put the useful part out first. The rough edges give me somewhere to start tomorrow.</p><p class="annotation">there's always tomorrow.</p></article>
+  </section>
+  <section class="contact wrap" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">what are you making?</h2><p>I'd rather hear about the thing on your desk<br class="desktop-break"> than read another polished introduction.</p><p class="contact-note">A real site would put the owner's contact link here.</p></section>
+</main>
+<footer class="wrap"><span>made a little at a time</span><a href="../../README.md">Personal room design example</a></footer>
+</body>
+</html>

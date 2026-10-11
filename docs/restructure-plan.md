@@ -1,6 +1,6 @@
 # Design practice restructure plan
 
-Checkpoint 0. No existing files have moved, and no design guidance or token values have changed. Phase 1 waits for Flavius's OK.
+Checkpoint 0 was approved. Flavius subsequently authorized every remaining phase without further approval and requested a commit and push at each checkpoint. The original gate table below records the initial plan; checkpoint reports now accompany continued work. Client approval gates in the reusable skill still respect each client's authorization.
 
 ## Baseline and safety
 

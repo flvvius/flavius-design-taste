@@ -4,7 +4,7 @@ export function checkLocalAssetLinks(root) {
   const failures=[];
   const visit=dir=>{
     for(const name of readdirSync(dir)) {
-      if(['.git','node_modules'].includes(name))continue;
+      if(['.git','node_modules','.artifacts','dist','.next'].includes(name))continue;
       const path=resolve(dir,name);
       if(statSync(path).isDirectory()){visit(path);continue;}
       if(!/\.(md|html|css)$/.test(name))continue;

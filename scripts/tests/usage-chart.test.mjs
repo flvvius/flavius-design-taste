@@ -12,7 +12,7 @@ test('chart audit detects erased patterns, fragmented value labels and a mislead
   const server = await serve(root), browser = await engine.launch();
   try {
     const page = await browser.newPage({forcedColors: 'active', viewport: {width: 320, height: 960}});
-    await page.goto(server.url + '/eval/cycles/07/index.html');
+    await page.goto(server.url + '/eval/archive/eval/cycles/07/index.html');
     await page.locator('details summary').click();
     await assertUsageChart(page, 'week');
     await page.addStyleTag({content: '.previous {background-image: none !important}'});

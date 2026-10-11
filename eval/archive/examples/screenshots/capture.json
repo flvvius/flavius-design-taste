@@ -1,0 +1,60 @@
+{
+  "capturedAt": "2026-10-09T14:27:36.163Z",
+  "method": "Unmodified browser screenshots of public live pages. Theme preference selected through the app storage setting. Desktop feed scrollY 800; desktop detail scrollY 880; mobile feed at top.",
+  "screenshots": [
+    {
+      "file": "feed-light.png",
+      "url": "https://www.miez.news/",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "theme": "light"
+    },
+    {
+      "file": "detail-light.png",
+      "url": "https://www.miez.news/event/grindeanu-mesaj-de-pace-catre-pnl-si-udmr-sa-puna-umarul-la-construirea-unei-maj-2026-10-08-8fwyg7",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "theme": "light"
+    },
+    {
+      "file": "mobile-light.png",
+      "url": "https://www.miez.news/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light"
+    },
+    {
+      "file": "feed-dark.png",
+      "url": "https://www.miez.news/",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "theme": "dark"
+    },
+    {
+      "file": "detail-dark.png",
+      "url": "https://www.miez.news/event/grindeanu-mesaj-de-pace-catre-pnl-si-udmr-sa-puna-umarul-la-construirea-unei-maj-2026-10-08-8fwyg7",
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "theme": "dark"
+    },
+    {
+      "file": "mobile-dark.png",
+      "url": "https://www.miez.news/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark"
+    }
+  ]
+}

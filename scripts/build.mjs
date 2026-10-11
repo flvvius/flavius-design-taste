@@ -1,8 +1,8 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-const base=new URL('../skills/editorial-calm/assets/',import.meta.url);
+const base=new URL('../directions/editorial-calm/assets/',import.meta.url);
 const tokens=JSON.parse(readFileSync(new URL('tokens.json',base),'utf8'));
-const personalBase=new URL('../skills/personal-room/assets/',import.meta.url);
+const personalBase=new URL('../directions/personal-room/assets/',import.meta.url);
 export function personalOutputs(){
  const source=JSON.parse(readFileSync(new URL('tokens.json',personalBase),'utf8'));
  const palettes=Object.entries(source.colors).map(([name,roles])=>`${name==='paper'?':root, [data-personal-room="paper"]':'[data-personal-room="night"]'} {\n  color-scheme: ${name==='paper'?'light':'dark'};\n${Object.entries(roles).map(([key,value])=>`  --pr-${key}: ${value};`).join('\n')}\n}`).join('\n\n');
