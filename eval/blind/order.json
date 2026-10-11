@@ -1,0 +1,8 @@
+{
+  "samples": [
+    "FFF6",
+    "1FE9",
+    "3BBD"
+  ],
+  "randomization": "SystemRandom shuffle plus independent random anonymous labels; keep key closed before human scoring"
+}

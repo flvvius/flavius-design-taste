@@ -3,10 +3,10 @@
 For a shadcn app that already has `components.json`:
 
 ```sh
-npx shadcn@latest add https://raw.githubusercontent.com/flvvius/flavius-design-taste/restructure/design-practice/registry/r/editorial-calm.json
+npx shadcn@latest add https://raw.githubusercontent.com/flvvius/flavius-design-taste/main/registry/r/editorial-calm.json
 ```
 
-After the PR merges, replace `restructure/design-practice` with `main`. The branch URL works as soon as its generated file is pushed. To test locally, serve the repository and use its item URL:
+The main URL is the stable install command after the restructure PR merges. The checkpoint verified both a local URL and the pushed branch URL through the actual CLI. To test locally, serve the repository and use its item URL:
 
 ```sh
 python3 -m http.server 4320 --bind 127.0.0.1

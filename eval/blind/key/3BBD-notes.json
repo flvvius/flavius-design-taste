@@ -1,0 +1,43 @@
+{
+  "start_utc": "2026-10-11T09:23:36Z",
+  "end_utc": "2026-10-11T09:28:07.847642Z",
+  "elapsed_seconds": 271.8,
+  "tool_call_count": 16,
+  "tool_count_definition": "16 underlying tool invocations, dispatched through 9 functions.exec orchestration calls. Includes the notes-writing invocation.",
+  "limits": {
+    "max_tool_calls": 18,
+    "max_elapsed_minutes": 15,
+    "no_network_requests": true,
+    "no_dependencies_added": true,
+    "writes_confined_to_output_directory": true,
+    "no_delegation": true
+  },
+  "design_decisions": [
+    "Used Editorial calm for both pages because council officers need a municipal monitoring service and operators need a scan-friendly queue. Personal room would add a personal voice the organization does not have.",
+    "Replaced repeated sample cards with aligned rows. Mobile rows keep station, due time, status and update action visible.",
+    "Used system typography, shared page backgrounds, tabular figures, control boundaries and quiet separators. Status colors retain text labels.",
+    "The public hero leads with the concrete service, a sampling-plan request and a demonstration-address note. An inline diagram relates collection sites, sample and laboratory.",
+    "Kept the baseline behavior script, IDs and field names. Added status data attributes for styling and system-theme initialization. Controls remain disabled until scripts initialize.",
+    "Reduced the narrow hero title to 2.5rem after inspecting its 200% rendering, so complete words fit the viewport."
+  ],
+  "checks_run": [
+    "Chromium 149.0.7827.55. Automated assertions passed for initial records, station search, status filter, empty result and reset.",
+    "Opened sample dialogs and checked station/due values, native form validity, required-status rejection, Cancel, Escape and return focus.",
+    "Saved a status, checked the visible record and focus, reloaded and verified local persistence. Cleared test storage afterward.",
+    "Checked theme toggle, system dark preference and explicit light override.",
+    "Checked no page overflow at 375px and 1280px, with normal and 200% root text, on both pages.",
+    "Inspected screenshots of queue wide/narrow, both dark pages and both 200% narrow pages. Rechecked the hero title with text ranges after adjusting its size.",
+    "Checked enlarged dialog width, required status validation and a visible keyboard focus outline.",
+    "Verified hero mailto destination and working methods anchor. Verified screen methods destination.",
+    "Reduced-motion emulation preserved visible content. No animation is used.",
+    "With JavaScript disabled, queue records remain readable, filter controls are disabled and the hero contact link remains available.",
+    "No page errors occurred during the main interaction matrix. Static check found no remote script, stylesheet or image dependencies."
+  ],
+  "known_limitations": [
+    "Self-review in Chromium only. Safari, Firefox, assistive technology and forced-colors behavior were not tested.",
+    "Contrast was visually reviewed with the supplied semantic palette; no automated numeric contrast audit was run.",
+    "The baseline localStorage parser still assumes valid saved JSON. Malformed storage and storage-denied environments were not tested.",
+    "Inline diagram labels scale with the illustration rather than root text size. Its accessible description and caption carry the meaning.",
+    "Screenshots are local review artifacts. The final hero title adjustment was checked with text ranges after the earlier visual review."
+  ]
+}

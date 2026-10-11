@@ -1,0 +1,146 @@
+{
+  "start_utc": "2026-10-11T09:23:27Z",
+  "end_utc": "2026-10-11T09:26:38Z",
+  "tool_call_count": 18,
+  "tool_count_definition": "Conservative count includes 7 functions.exec orchestration calls and 11 nested tool invocations.",
+  "limits": {
+    "maximum_tool_calls": 18,
+    "maximum_elapsed_minutes": 15,
+    "no_network": true,
+    "no_dependencies_added": true,
+    "no_delegation": true,
+    "writes_only_in_output_directory": true,
+    "read_sources": [
+      "brief.md",
+      "baseline.html",
+      "mandatory writing skill"
+    ]
+  },
+  "design_decisions": [
+    "A desktop list aligns sample IDs, stations, due times and status labels for scanning. On small screens, each record stacks its fields and action.",
+    "Status colors have matching text labels. The queue uses restrained green navigation and separate amber, blue and green status labels.",
+    "The public page names council monitoring as its purpose and gives the sampling-plan email first priority. A simple process diagram connects planning, collection and laboratory analysis.",
+    "Both pages share a system-font interface, green palette, visible focus outlines and a dark-theme toggle. The public headline uses an installed serif font.",
+    "Existing JavaScript is preserved except for adding status-specific CSS classes. IDs, form names, localStorage key and supplied records are retained."
+  ],
+  "checks_run": {
+    "results": [
+      {
+        "page": "screen",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "page": "screen",
+        "width": 375,
+        "dark": true
+      },
+      {
+        "page": "screen",
+        "width": 1280,
+        "overflow": false
+      },
+      {
+        "page": "screen",
+        "width": 1280,
+        "dark": true
+      },
+      {
+        "page": "hero",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "page": "hero",
+        "width": 375,
+        "dark": true
+      },
+      {
+        "page": "hero",
+        "width": 1280,
+        "overflow": false
+      },
+      {
+        "page": "hero",
+        "width": 1280,
+        "dark": true
+      },
+      {
+        "initialRows": 4
+      },
+      {
+        "searchRows": 2
+      },
+      {
+        "filteredRows": 2
+      },
+      {
+        "emptyVisible": true
+      },
+      {
+        "resetRows": 4
+      },
+      {
+        "escapeClosed": true,
+        "focusReturn": true
+      },
+      {
+        "persisted": "Processing",
+        "requiredFields": 3
+      },
+      {
+        "primary": "mailto:sampling@example.com"
+      },
+      {
+        "methodsAnchor": "#methods",
+        "methodsContent": "OUR METHODS\n\nStart with the monitoring question.\n\nA sampling plan identifies where to collect water and what to analyze. Tell us about the sites you manage, the purpose of monitoring and any existing requirements so we can discuss the scope.\n\nCollection\n\nThe plan sets out the sampling locations and collection approach. Sample records connect each collection to its site.\n\nLaboratory analysis\n\nSamples proceed through laboratory processing and review. The analysis requested in the plan determines the methods used."
+      },
+      {
+        "reducedMotion": true
+      },
+      {
+        "page": "screen",
+        "desktop200PercentLayoutProxy": 640,
+        "overflow": false
+      },
+      {
+        "page": "hero",
+        "desktop200PercentLayoutProxy": 640,
+        "overflow": false
+      }
+    ],
+    "errors": []
+  },
+  "enlarged_text_checks": [
+    {
+      "name": "screen",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "name": "screen",
+      "width": 1280,
+      "overflow": false
+    },
+    {
+      "name": "hero",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "name": "hero",
+      "width": 1280,
+      "overflow": false
+    }
+  ],
+  "visual_checks": [
+    "Inspected desktop queue and mobile hero screenshots.",
+    "Inspected desktop queue and mobile hero with computed text sizes doubled."
+  ],
+  "known_limitations": [
+    "Testing used Chromium only. No screen-reader audit or measured contrast audit was performed.",
+    "200 percent text was simulated by doubling computed font sizes. A 640-pixel viewport also served as a desktop zoom layout proxy. Browser-native text zoom was not tested.",
+    "Form required attributes were checked; an invalid submission was not separately exercised.",
+    "Reduced-motion preference was checked. Neither page uses animation."
+  ]
+}
