@@ -1,0 +1,86 @@
+{
+  "capturedAt": "2026-10-11T08:59:26.854Z",
+  "browser": "149.0.7827.55",
+  "baseUrl": "http://127.0.0.1:4313",
+  "scenarios": [
+    {
+      "route": "/",
+      "name": "settings",
+      "themeActions": {
+        "dark": [
+          {
+            "selector": "button:has-text('Use dark theme')",
+            "click": true
+          }
+        ]
+      }
+    }
+  ],
+  "reports": [
+    {
+      "route": "/",
+      "state": "settings",
+      "width": 375,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(100 0 0)",
+        "foreground": "lab(2.75381 0 0)",
+        "rootTheme": "auto",
+        "rootClass": "font-sans geist_da832ead-module__aN_Ytq__variable",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "000-settings-375-light.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "settings",
+      "width": 375,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(100 0 0)",
+        "foreground": "lab(2.75381 0 0)",
+        "rootTheme": "auto",
+        "rootClass": "font-sans geist_da832ead-module__aN_Ytq__variable",
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "file": "001-settings-375-dark.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "settings",
+      "width": 1280,
+      "requestedScheme": "light",
+      "observed": {
+        "background": "lab(100 0 0)",
+        "foreground": "lab(2.75381 0 0)",
+        "rootTheme": "auto",
+        "rootClass": "font-sans geist_da832ead-module__aN_Ytq__variable",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "002-settings-1280-light.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "state": "settings",
+      "width": 1280,
+      "requestedScheme": "dark",
+      "observed": {
+        "background": "lab(100 0 0)",
+        "foreground": "lab(2.75381 0 0)",
+        "rootTheme": "auto",
+        "rootClass": "font-sans geist_da832ead-module__aN_Ytq__variable",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      "file": "003-settings-1280-dark.png",
+      "errors": []
+    }
+  ],
+  "note": "Requested media scheme is not proof of a supported palette. Inspect observed colors and use explicit themeActions when the app overrides system preference."
+}

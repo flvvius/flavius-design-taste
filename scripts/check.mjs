@@ -1,6 +1,6 @@
 import {readFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
-import {outputs,srgb,personalOutputs} from './build.mjs';
+import {outputs,srgb,personalOutputs,themeOutputs} from './build.mjs';
 import {contrast} from './lib/contrast.mjs';
 import {checkLocalAssetLinks} from './lib/asset-links.mjs';
 import {fileURLToPath} from 'node:url';
@@ -66,3 +66,10 @@ console.log('Verified standalone skill links and licences.');
  assert.match(readFileSync(new URL('fonts/LICENSE.txt',base),'utf8'),/Apache License/);
  console.log('Verified Personal room palettes, generated CSS, text and control contrast, skill identity and bundled font licence.');
 }
+
+for(const [name,expected] of Object.entries(themeOutputs()))assert.equal(readFileSync(new URL('tokens/exports/'+name,root),'utf8'),expected,`${name} needs regeneration`);
+assert.equal(readFileSync(new URL('registry/r/editorial-calm.json',root),'utf8'),themeOutputs()['editorial-calm.json']);
+assert.deepEqual(JSON.parse(readFileSync(new URL('registry/registry.json',root))).items,[JSON.parse(themeOutputs()['editorial-calm.json'])]);
+assert.equal(readFileSync(new URL('skills/flavius-design/assets/starter/app/tokens.css',root),'utf8'),outputs()['tokens.css']);
+assert.equal(readFileSync(new URL('skills/flavius-design/assets/starter/app/theme.css',root),'utf8'),themeOutputs()['editorial-calm.theme.css']);
+console.log('Verified registry, Tailwind aliases and starter against canonical token sources.');

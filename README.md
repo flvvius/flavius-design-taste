@@ -89,7 +89,7 @@ shadcn/ui is optional. The skill and tokens also work with other component libra
 
 ## Use the assets
 
-- [tokens.json](directions/editorial-calm/assets/tokens.json) is the portable source of truth.
+- [tokens.json](directions/editorial-calm/assets/tokens.json) is a generated portable copy. Edit `tokens/editorial-calm/tokens.json`.
 - [tokens.css](directions/editorial-calm/assets/tokens.css) provides CSS custom properties.
 - [tokens.srgb.json](directions/editorial-calm/assets/tokens.srgb.json) provides colours for platforms without OKLCH support.
 - [fonts.css](directions/editorial-calm/assets/fonts.css) loads the bundled Inter variable fonts, covering Latin and Latin Extended text.
@@ -98,7 +98,7 @@ shadcn/ui is optional. The skill and tokens also work with other component libra
 - [Mobile guide](directions/editorial-calm/references/mobile.md) covers React Native, SwiftUI and Compose.
 - [Desktop guide](directions/editorial-calm/references/desktop.md) covers desktop layouts and interaction.
 
-Edit the relevant skill's `assets/tokens.json` first. Run `node scripts/build.mjs` to regenerate both skills' CSS and Editorial calm's portable sRGB values. Run `node scripts/check.mjs` to verify generated assets, links, palette contrast and font packaging.
+Edit the relevant `tokens/*/tokens.json` source first. Run `node scripts/build.mjs` to regenerate both skills' CSS and Editorial calm's portable sRGB values. Run `node scripts/check.mjs` to verify generated assets, links, palette contrast and font packaging.
 
 ## Tested with agents
 
